@@ -8,6 +8,11 @@ var ghostSpeedX = 5;
 var ghostSpeedY =7;
 
 
+var monsterX=75;
+var monsterY=75;
+var monsterSpeedX = 5;
+var monsterSpeedY =7;
+
 function ghostReset(){
    ghostX=canvas.width/2;
    ghostY = canvas.height/1.5;
@@ -42,13 +47,10 @@ function ghostMove() {
 
 }
 
-function colorCircle(centerX, centerY, radius, fillColor) {
-  canvasContext.fillStyle = fillColor;
-  canvasContext.beginPath(); //hover functions 
-  canvasContext.arc(centerX, centerY, radius, 0, Math.PI * 2, true); // this will work because the Math.PI * 2 will never change  nor the other lines and this is just simplifying things for us.  
-  canvasContext.fill();
+ 
 
-}
+
+
 
 
 window.onload = function () {
@@ -105,11 +107,18 @@ function moveAll() {
 function drawAll() {
   drawTracks();
   blueHero.draw();
-  colorCircle(ghostX, ghostY, 18, 'black');
-  colorCircle(ghostX, ghostY, 12, 'red');
-  colorCircle(ghostX+2, ghostY, 5, 'white');
-  colorCircle(ghostX, ghostY, 2, 'black');
+  ghostCircle(ghostX, ghostY, 18, 'black');
+  ghostCircle(ghostX, ghostY, 12, 'red');
+  ghostCircle(ghostX+2, ghostY, 5, 'white');
+  ghostCircle(ghostX, ghostY, 2, 'black');
+
+  // monsterCircle(monsterX, monsterY, 20, 'green');
+  monsterCircle(monsterX, ghostY, 12, 'green');
+  monsterCircle(monsterX-1, ghostY, 5, 'white');
+  monsterCircle(monsterX-2, ghostY+2, 2, 'black');
+
   
+ 
  
 }
 
