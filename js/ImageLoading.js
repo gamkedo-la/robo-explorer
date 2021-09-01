@@ -45,12 +45,13 @@ function loadImages() {
     { trackType: WORLD_LADDER_CONNECTOR, theFile: "track_ladderConnector.png" },
     { trackType: WORLD_KEY, theFile: "key2.png" },
     { trackType: WORLD_DOOR, theFile: "track_door.png" },
-    { trackType: WORLD_LOWERTUNNEL, theFile: "world_lowerTunnel.png" },
+    { trackType: WORLD_TUNNEL_UP, theFile: "world_lowerTunnel.png" },
     { trackType: WORLD_SWORD, theFile: "sword.png" },
     { trackType: WORLD_TRAP, theFile: "spike1.png" },
     { trackType: WORLD_SPEAR, theFile: "spear2.png" },
     { trackType: WORLD_RAT, theFile: "rat.png" },
-    { trackType: WORLD_ARROW, theFile: "world_arrow3.png" }
+    { trackType: WORLD_ARROW, theFile: "world_arrow3.png" },
+    { trackType: WORLD_TUNNEL_RIGHT, theFile: "world_lowerTunnel-right.png" }
   
     
 

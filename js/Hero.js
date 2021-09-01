@@ -12,13 +12,13 @@ const AIR_RESISTANCE = 0.95;
 function heroClass() {
   // var sound = document.getElementById("heroSound");
   // var play = 0;
- 
+
   this.x = 75;
   this.y = 75;
-  
+
   this.jumperOnGround = false;
-  this.jumperSpeedX =0, jumperSpeedY=0;
-  
+  (this.jumperSpeedX = 0), (jumperSpeedY = 0);
+
   this.width = 40;
   this.height = 50;
   this.frameX = 0;
@@ -102,7 +102,6 @@ function heroClass() {
     document.getElementById("arrow").innerHTML = "3. Arrow";
   };
 
-  
   this.updateSpearReadout = function () {
     document.getElementById("spear").innerHTML = "4. Spear";
   };
@@ -115,17 +114,14 @@ function heroClass() {
 
     if (this.keyHeld_Jump) {
       // beginLoadingImage(rocketBooster);
-     
+
       nextY -= JUMP_POWER;
-     
+
       // console.log("JUMP_POWER");
-     
-     
     } else {
-      
-      nextY +=  GRAVITY +10;
-      if (this.jumperSpeedY > this.JUMPER_HEIGHT){
-          this.jumperSpeedY = this.height;
+      nextY += GRAVITY + 10;
+      if (this.jumperSpeedY > this.JUMPER_HEIGHT) {
+        this.jumperSpeedY = this.height;
       }
       // if(this.keyHeld_Jump == false){
       //   GRAVITY == 2;
@@ -146,7 +142,7 @@ function heroClass() {
 
     if (this.keyHeld_TurnLeft) {
       nextX -= PLAYER_MOVEMENT_SPEED;
-   
+
       // switchCostume(costumeList[1]);
       // this.speed -= REVERSE_POWER;
       console.log("keyHeld_TurnLeft");
@@ -183,19 +179,25 @@ function heroClass() {
       //   console.log(this.name + " WINS!");
       //   loadLevel(levelOne);
       //   break;
-      case WORLD_SLINGSHOT:
+      case WORLD_TUNNEL_RIGHT:
         loadLevel(levelTwo);
         // nextX += PLAYER_MOVEMENT_SPEED + 10;
-        
         worldGrid[walkIntoTileIndex] = WORLD_ROAD;
-        this.updateSlingshotReadout();
+        // this.updateSlingshotReadout();
         break;
+      case WORLD_SLINGSHOT:
+          // loadLevel(levelTwo);
+          // nextX += PLAYER_MOVEMENT_SPEED + 10;
+  
+          worldGrid[walkIntoTileIndex] = WORLD_ROAD;
+          this.updateSlingshotReadout();
+      break;
       case WORLD_SWORD:
         // loadLevel(levelFour);
         worldGrid[walkIntoTileIndex] = WORLD_ROAD;
         this.updateSwordReadout();
         break;
-      case WORLD_LOWERTUNNEL:
+      case WORLD_TUNNEL_UP:
         loadLevel(levelThree);
         worldGrid[walkIntoTileIndex] = WORLD_ROAD;
         break;
@@ -206,10 +208,10 @@ function heroClass() {
         break;
 
       case WORLD_SPEAR:
-          loadLevel(levelFive);
-          worldGrid[walkIntoTileIndex] = WORLD_ROAD;
-          this.updateSpearReadout();
-          break;
+        loadLevel(levelFive);
+        worldGrid[walkIntoTileIndex] = WORLD_ROAD;
+        this.updateSpearReadout();
+        break;
       case WORLD_DOOR:
         if (this.keysHeld > 0) {
           this.keysHeld--;
@@ -239,6 +241,12 @@ function heroClass() {
           console.log("keyHeld_Climb");
         }
         break;
+      case WORLD_RAT:
+        // loadLevel(levelTwo);
+        // nextX += PLAYER_MOVEMENT_SPEED + 10;
+
+        worldGrid[walkIntoTileIndex] = WORLD_ROAD;
+        break;
       case WORLD_TRAP:
         // alert("GAME OVER");
         // this.life--;
@@ -248,11 +256,11 @@ function heroClass() {
         // }
 
         break;
-      default:
+     
+       default:
         break;
     }
   };
-
 
   // function animate(){
   //   this.myHeroPic,
@@ -262,12 +270,8 @@ function heroClass() {
   //   this.frameY
 
   // };
-  
 
   this.draw = function () {
     drawBitmapCenteredWithRotation(this.myHeroPic, this.x, this.y, this.ang);
-   
   };
-
- 
 }
