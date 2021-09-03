@@ -13,6 +13,9 @@ var monsterY=75;
 var monsterSpeedX = 5;
 var monsterSpeedY =7;
 
+var camPanX = 100;
+var camPanY = -100;
+
 function ghostReset(){
    ghostX=canvas.width/2;
    ghostY = canvas.height/1.5;
@@ -101,10 +104,19 @@ function updateAll() {
 function moveAll() {
   blueHero.move();
   ghostMove();
- 
+  camPanX = blueHero.x - canvas.width/2;
+
+  camPanY = blueHero.y - canvas.height/2;
 }
 
 function drawAll() {
+  colorRect(0, 0, canvas.width, canvas.height, 'black');
+  canvasContext.save(); // needed to undo this .translate() used for scroll
+
+  // this next line is like subtracting camPanX and camPanY from every
+  // canvasContext draw operation up until we call canvasContext.restore
+  // this way we can just draw them at their "actual" position coordinates
+  canvasContext.translate(-camPanX,-camPanY);
   drawTracks();
   blueHero.draw();
   ghostCircle(ghostX, ghostY, 18, 'black');
@@ -117,8 +129,8 @@ function drawAll() {
   monsterCircle(monsterX-1, ghostY, 5, 'white');
   monsterCircle(monsterX-2, ghostY+2, 2, 'black');
 
-  
- 
+  canvasContext.restore();
+  //Draw UI here
  
 }
 
