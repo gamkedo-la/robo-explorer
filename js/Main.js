@@ -13,8 +13,8 @@ var monsterY=75;
 var monsterSpeedX = 5;
 var monsterSpeedY =7;
 
-var camPanX = 100;
-var camPanY = -100;
+var camPanX = 3;
+var camPanY = -3;
 
 function ghostReset(){
    ghostX=canvas.width/2;
@@ -117,6 +117,7 @@ function drawAll() {
   // canvasContext draw operation up until we call canvasContext.restore
   // this way we can just draw them at their "actual" position coordinates
   canvasContext.translate(-camPanX,-camPanY);
+  
   drawTracks();
   blueHero.draw();
   ghostCircle(ghostX, ghostY, 18, 'black');
