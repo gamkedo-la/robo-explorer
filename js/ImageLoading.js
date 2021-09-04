@@ -51,7 +51,8 @@ function loadImages() {
     { trackType: WORLD_SPEAR, theFile: "spear2.png" },
     { trackType: WORLD_RAT, theFile: "rat-ashleigh-with-bgcolor.png" },
     { trackType: WORLD_ARROW, theFile: "world_arrow3.png" },
-    { trackType: WORLD_TUNNEL_RIGHT, theFile: "world_lowerTunnel-right.png" }
+    { trackType: WORLD_TUNNEL_RIGHT, theFile: "world_lowerTunnel-right.png" },
+    { trackType: WORLD_CROSSBOW, theFile: "crossbow.png" }
   
     
 
