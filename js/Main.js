@@ -13,8 +13,8 @@ var monsterY=75;
 var monsterSpeedX = 5;
 var monsterSpeedY =7;
 
-var camPanX = 3;
-var camPanY = -3;
+var camPanX = 0.0;
+var camPanY = 0.0;
 
 function ghostReset(){
    ghostX=canvas.width/2;
@@ -51,6 +51,33 @@ function ghostMove() {
 }
 
  
+function drawOnlyBricksOnScreen() {
+  // what are the top-left most col and row visible on canvas?
+  var cameraLeftMostCol = Math.floor(camPanX / WORLD_W);
+  var cameraTopMostRow = Math.floor(camPanY / WORLD_H);
+
+  // how many columns and rows of tiles fit on one screenful of area?
+  var colsThatFitOnScreen = Math.floor(canvas.width / WORLD_W);
+  var rowsThatFitOnScreen = Math.floor(canvas.height / WORLD_H);
+
+  // finding the rightmost and bottommost tiles to draw.
+  // the +1 and + 2 on each pushes the new tile popping in off visible area
+  // +2 for columns since WORLD_W doesn't divide evenly into canvas.width
+  var cameraRightMostCol = cameraLeftMostCol + colsThatFitOnScreen + 2;
+  var cameraBottomMostRow = cameraTopMostRow + rowsThatFitOnScreen + 1;
+  
+  for(var eachCol=cameraLeftMostCol; eachCol<cameraRightMostCol; eachCol++) {
+    for(var eachRow=cameraTopMostRow; eachRow<cameraBottomMostRow; eachRow++) {
+    
+      // if( isBrickAtTileCoord(eachCol, eachRow) ) {
+      //   var brickLeftEdgeX = eachCol * WORLD_W;
+      //   var brickTopEdgeY = eachRow * WORLD_H;
+      //   colorRect(brickLeftEdgeX, brickTopEdgeY,
+      //            WORLD_W - WORLD_GAP, WORLD_H - WORLD_GAP, 'blue' );
+      // } // end of isBrickAtTileCoord()
+    } // end of for eachRow
+  } // end of for eachCol
+} // end of drawBricks()
 
 
 
@@ -117,6 +144,7 @@ function drawAll() {
   // canvasContext draw operation up until we call canvasContext.restore
   // this way we can just draw them at their "actual" position coordinates
   canvasContext.translate(-camPanX,-camPanY);
+  drawOnlyBricksOnScreen();
   
   drawTracks();
   blueHero.draw();
