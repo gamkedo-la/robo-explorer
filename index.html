@@ -93,12 +93,30 @@
         }
 
         #spear {
-                font-size: 12px;
-                position:absolute;
-                top: 19%;
-                left: 2%;
-            }
-/****************************************************************************/
+            font-size: 12px;
+            position: absolute;
+            top: 19%;
+            left: 2%;
+        }
+
+
+        #crossbow {
+            height: "50px";
+            width: "50px";
+            position: absolute;
+            top: 25%;
+            left: 1%;
+            display: none;
+        }
+
+        #collected-crossbows{
+            font-size: 12px;
+            position: absolute;
+            top: 25%;
+            left: 5%;
+        }
+
+        /****************************************************************************/
         /* .text{
             background-color: white;
             box-shadow:5px 5px 0px black;            
@@ -189,6 +207,7 @@
             }
 
 
+
         }
     </style>
 </head>
@@ -214,6 +233,11 @@
         <p id="sword"></p>
         <p id="arrow"></p>
         <p id="spear"></p>
+        <div class="img-container">
+            <p id="collected-crossbows"></p>
+            <img src="images/crossbow.png" id="crossbow" alt="crossbow" />
+        </div>
+
 
     </div>
     <div class="text">

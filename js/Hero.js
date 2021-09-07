@@ -106,6 +106,11 @@ function heroClass() {
     document.getElementById("spear").innerHTML = "4. Spear";
   };
 
+  this.updateCrossbowReadout = function () {
+    document.getElementById("crossbow").style.display = "block";
+    document.getElementById("collected-crossbows").innerHTML = "1";
+  };
+
   this.move = function () {
     // this.speed *= GROUNDSPEED_DECAY_MULT;
 
@@ -213,12 +218,18 @@ function heroClass() {
         this.updateSpearReadout();
         break;
 
-        case WORLD_TUNNEL_RIGHT_5:
-          loadLevel(levelSix);
-          // nextX += PLAYER_MOVEMENT_SPEED + 10;
-          worldGrid[walkIntoTileIndex] = WORLD_ROAD;
-          // this.updateSlingshotReadout();
-          break;
+      case WORLD_TUNNEL_RIGHT_5:
+        loadLevel(levelSix);
+        // nextX += PLAYER_MOVEMENT_SPEED + 10;
+        worldGrid[walkIntoTileIndex] = WORLD_ROAD;
+        // this.updateSlingshotReadout();
+        break;
+
+      case WORLD_CROSSBOW:
+        // loadLevel(levelFive);
+        worldGrid[walkIntoTileIndex] = WORLD_ROAD;
+        this.updateCrossbowReadout();
+        break;
       case WORLD_DOOR:
         if (this.keysHeld > 0) {
           this.keysHeld--;
