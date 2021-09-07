@@ -123,7 +123,7 @@ function heroClass() {
       if (this.jumperSpeedY > this.JUMPER_HEIGHT) {
         this.jumperSpeedY = this.height;
       }
-      // if(this.keyHeld_Jump == false){
+      //   // if(this.keyHeld_Jump == false){
       //   GRAVITY == 2;
       // }
     }
@@ -186,12 +186,12 @@ function heroClass() {
         // this.updateSlingshotReadout();
         break;
       case WORLD_SLINGSHOT:
-          // loadLevel(levelTwo);
-          // nextX += PLAYER_MOVEMENT_SPEED + 10;
-  
-          worldGrid[walkIntoTileIndex] = WORLD_ROAD;
-          this.updateSlingshotReadout();
-      break;
+        // loadLevel(levelTwo);
+        // nextX += PLAYER_MOVEMENT_SPEED + 10;
+
+        worldGrid[walkIntoTileIndex] = WORLD_ROAD;
+        this.updateSlingshotReadout();
+        break;
       case WORLD_SWORD:
         // loadLevel(levelFour);
         worldGrid[walkIntoTileIndex] = WORLD_ROAD;
@@ -212,6 +212,13 @@ function heroClass() {
         worldGrid[walkIntoTileIndex] = WORLD_ROAD;
         this.updateSpearReadout();
         break;
+
+        case WORLD_TUNNEL_RIGHT_5:
+          loadLevel(levelSix);
+          // nextX += PLAYER_MOVEMENT_SPEED + 10;
+          worldGrid[walkIntoTileIndex] = WORLD_ROAD;
+          // this.updateSlingshotReadout();
+          break;
       case WORLD_DOOR:
         if (this.keysHeld > 0) {
           this.keysHeld--;
@@ -256,8 +263,8 @@ function heroClass() {
         // }
 
         break;
-     
-       default:
+
+      default:
         break;
     }
   };
