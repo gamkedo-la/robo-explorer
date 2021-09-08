@@ -35,7 +35,7 @@ function loadImages() {
  
   var imageList = [
     // { varName: heroPic, theFile: "rocketMan3.png"},
-    { varName: heroPic, theFile: "robo-explorer-armor2-with-rocket.png"},
+    { varName: heroPic, theFile: "robo-explorer-armor2.png"},
 
     
 
