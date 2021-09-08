@@ -124,10 +124,13 @@ function heroClass() {
 
       // console.log("JUMP_POWER");
     } else {
+    
+     
+
       nextY += GRAVITY + 10;
-      if (this.jumperSpeedY > this.JUMPER_HEIGHT) {
-        this.jumperSpeedY = this.height;
-      }
+      // if (this.jumperSpeedY > this.JUMPER_HEIGHT) {
+      //   this.jumperSpeedY = this.height;
+      // }
       //   // if(this.keyHeld_Jump == false){
       //   GRAVITY == 2;
       // }
@@ -247,22 +250,23 @@ function heroClass() {
         worldGrid[walkIntoTileIndex] = WORLD_ROAD;
         break;
 
-      case WORLD_LADDER:
-        if (this.keyHeld_Climb) {
-          nextY -= PLAYER_MOVEMENT_SPEED + 20;
-          console.log("keyHeld_Climb");
-        }
-        break;
-      case WORLD_LADDER_CONNECTOR:
-        if (this.keyHeld_Climb && WORLD_LADDER_CONNECTOR) {
-          nextY -= PLAYER_MOVEMENT_SPEED + 20;
-          console.log("keyHeld_Climb");
-        }
-        break;
+      // case WORLD_LADDER:
+      //   if (this.keyHeld_Climb) {
+      //     nextY -= PLAYER_MOVEMENT_SPEED + 20;
+      //     console.log("keyHeld_Climb");
+      //   }
+      //   break;
+      // case WORLD_LADDER_CONNECTOR:
+      //   if (this.keyHeld_Climb && WORLD_LADDER_CONNECTOR) {
+      //     nextY -= PLAYER_MOVEMENT_SPEED + 20;
+      //     console.log("keyHeld_Climb");
+      //   }
+      //   break;
       case WORLD_RAT:
         // loadLevel(levelTwo);
         // nextX += PLAYER_MOVEMENT_SPEED + 10;
-
+        
+       
         worldGrid[walkIntoTileIndex] = WORLD_ROAD;
         break;
       case WORLD_TRAP:

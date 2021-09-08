@@ -34,13 +34,16 @@ function loadImageForTrackCode(trackCode, fileName) {
 function loadImages() {
  
   var imageList = [
-    { varName: heroPic, theFile: "rocketMan3.png"},
+    // { varName: heroPic, theFile: "rocketMan3.png"},
+    { varName: heroPic, theFile: "robo-explorer-armor2-with-rocket.png"},
+
     
 
     // {trackType: WORLD_UPPERROAD, theFile:"world_road3.png"},
     { trackType: WORLD_ROAD, theFile: "track_road2.png" },
     { trackType: WORLD_WALL, theFile: "bricks3.png" },
     { trackType: WORLD_SLINGSHOT, theFile: "tirador.png" },
+    { trackType: WORLD_ROCK, theFile: "rock.png" },
     { trackType: WORLD_LADDER, theFile: "track_ladder.png" },
     { trackType: WORLD_LADDER_CONNECTOR, theFile: "track_ladderConnector.png" },
     { trackType: WORLD_KEY, theFile: "key2.png" },
