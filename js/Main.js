@@ -1,14 +1,40 @@
 var canvas, canvasContext;
 var blueHero = new heroClass();
 // var rat = new ratClass();
-var particles = new ballClass();
 
-var particleX = 75;
-var particleY = 75;
-var particleSpeedX =5;
-var particleSpeedY = 7;
+function particleClass() {
+  this.x = 75;
+  this.y = 75;
+  this.velX = 5;
+  this.velY = 7;
+
+  this.move = function () {
+    this.x += this.velX;
+    this.y += this.velY;
+    if (this.x < 0) {
+      this.velX *= -1;
+    }
+    if (this.x > canvas.width) {
+      this.velX *= -1;
+    }
+    if (this.y < 0) {
+      this.velY *= -1;
+    }
+    if (this.y > canvas.height) {
+      this.velY *= -1;
+    }
+  }
+
+  this.draw = function(){
+    particleCircle(this.x, this.y, 5, "yellow");
+
+  }
+}// end of particleClass def
 
 
+var oneParticle = new particleClass();
+var secondParticle = new particleClass();
+/************************************************** */
 var ghostX = 75;
 var ghostY = 75;
 var ghostSpeedX = 5;
@@ -57,33 +83,13 @@ function ghostMove() {
 
 /**************************************FUNCTION FOR PARTICLE MOVEMENT************************************* */
 function particleReset() {
-  particleX = canvas.width / 1.5;
-  particleY = canvas.height / 2;
+  this.x = canvas.width / 1.5;
+  this.y = canvas.height / 2;
 }
 
+// function particleMove() {
 
-function particleMove() {
-  particleX += particleSpeedX;
-  if (particleX < 0 && particleSpeedX < 0.0) {
-    //left side
-    particleSpeedX *= -1;
-  }
-  if (particleX > canvas.width && particleSpeedX > 0.0) {
-    // right side
-    particleSpeedX *= -1;
-  }
-  particleY += particleSpeedY;
-  if (particleY < 0 && particleSpeedY < 0.0) {
-    //top edge
-    particleSpeedY *= -1;
-  }
- 
-  if (particleY > canvas.height) {
-    //bottom of the screen
-    particleSpeedY *= -1;
-   
-  }
-}
+// }
 
 /**************************************BRICKS FOR CAMERA SPAN************************************* */
 function drawOnlyBricksOnScreen() {
@@ -130,11 +136,11 @@ window.onload = function () {
   colorRect(0, 0, canvas.width, canvas.height, "black");
 
   colorText("LOADING IMAGES", canvas.width / 2, canvas.height / 2, "white");
-  
-  
+
   loadImages();
   ghostReset();
-  particleReset()
+  secondParticle.x= 20;
+  particleReset();
 };
 
 /****************************FUNCTION FOR IMAGELOADING**************************** */
@@ -175,19 +181,18 @@ function updateAll() {
   drawAll();
 }
 
-
 /**********************FUNCTION FOR UPDATING moveAll ****************************** */
 function moveAll() {
   blueHero.move();
   ghostMove();
-  particleMove()
+  oneParticle.move();
+  secondParticle.move();
 
   /*----------------------CAMERA VARIABLES-------------------------------- */
   camPanX = blueHero.x - canvas.width / 2;
 
   camPanY = blueHero.y - canvas.height / 2;
 }
-
 
 /*********************FUNCTION DRAWALL******************************************************* */
 function drawAll() {
@@ -197,15 +202,16 @@ function drawAll() {
   // this next line is like subtracting camPanX and camPanY from every
   // canvasContext draw operation up until we call canvasContext.restore
   // this way we can just draw them at their "actual" position coordinates
-  colorCircle(this.X,this.Y, 10, 'white'); //draw ball
+  colorCircle(this.X, this.Y, 10, "white"); //draw ball
 
   canvasContext.translate(-camPanX, -camPanY);
-
 
   drawTracks();
   blueHero.draw();
   // rat.draw();
-  particleCircle(particleX,particleY,5,"yellow");
+  // particleCircle(this.x, this.y, 5, "yellow");
+  oneParticle.draw();
+  secondParticle.draw();
 
   ghostCircle(ghostX, ghostY, 18, "black");
   ghostCircle(ghostX, ghostY, 12, "red");
@@ -218,6 +224,6 @@ function drawAll() {
   monsterCircle(monsterX - 2, ghostY + 2, 2, "black");
   canvasContext.restore();
   drawOnlyBricksOnScreen();
- 
+
   //Draw UI here
 }
