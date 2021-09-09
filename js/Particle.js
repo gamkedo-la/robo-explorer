@@ -86,6 +86,8 @@ this.removeBall = function () {
   };
 }
 
+var oneBall = new ballClass();
+
 var ballList = [];
 
 // function addBall() {

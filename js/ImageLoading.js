@@ -1,5 +1,7 @@
 var heroPic = document.createElement("img");
 // var otherCarPic = document.createElement("img");
+// var ratPic = document.createElement("img");
+
 var trackPics = [];
 
 var picsToLoad = 0; //set automatically based on imageList in loadImages
@@ -36,6 +38,7 @@ function loadImages() {
   var imageList = [
     // { varName: heroPic, theFile: "rocketMan3.png"},
     { varName: heroPic, theFile: "robo-explorer-armor2.png"},
+    // { varRat: ratPic, theFile: "rat.png"},
 
     
 
@@ -71,4 +74,12 @@ function loadImages() {
       loadImageForTrackCode(imageList[i].trackType, imageList[i].theFile);
     }
   }
+
+  // for (var i = 0; i < imageList.length; i++) {
+  //   if (imageList[i].varRat != undefined) {
+  //     beginLoadingImage(imageList[i].varRat, imageList[i].theFile);
+  //   } else {
+  //     loadImageForTrackCode(imageList[i].trackType, imageList[i].theFile);
+  //   }
+  // }
 }

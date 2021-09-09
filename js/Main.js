@@ -1,6 +1,13 @@
 var canvas, canvasContext;
 var blueHero = new heroClass();
+// var rat = new ratClass();
 var particles = new ballClass();
+
+var particleX = 75;
+var particleY = 75;
+var particleSpeedX =5;
+var particleSpeedY = 7;
+
 
 var ghostX = 75;
 var ghostY = 75;
@@ -15,6 +22,7 @@ var monsterSpeedY = 7;
 var camPanX = 0.0;
 var camPanY = 0.0;
 
+/*******************************FUNCTION FOR GHOST MOVEMENT********************************** */
 function ghostReset() {
   ghostX = canvas.width / 2;
   ghostY = canvas.height / 1.5;
@@ -47,6 +55,37 @@ function ghostMove() {
   }
 }
 
+/**************************************FUNCTION FOR PARTICLE MOVEMENT************************************* */
+function particleReset() {
+  particleX = canvas.width / 1.5;
+  particleY = canvas.height / 2;
+}
+
+
+function particleMove() {
+  particleX += particleSpeedX;
+  if (particleX < 0 && particleSpeedX < 0.0) {
+    //left side
+    particleSpeedX *= -1;
+  }
+  if (particleX > canvas.width && particleSpeedX > 0.0) {
+    // right side
+    particleSpeedX *= -1;
+  }
+  particleY += particleSpeedY;
+  if (particleY < 0 && particleSpeedY < 0.0) {
+    //top edge
+    particleSpeedY *= -1;
+  }
+ 
+  if (particleY > canvas.height) {
+    //bottom of the screen
+    particleSpeedY *= -1;
+   
+  }
+}
+
+/**************************************BRICKS FOR CAMERA SPAN************************************* */
 function drawOnlyBricksOnScreen() {
   // what are the top-left most col and row visible on canvas?
   var cameraLeftMostCol = Math.floor(camPanX / WORLD_W);
@@ -82,16 +121,23 @@ function drawOnlyBricksOnScreen() {
   } // end of for eachCol
 } // end of drawBricks()
 
+/*************************************Windows Onload*****************************************/
+
 window.onload = function () {
   canvas = document.getElementById("gameCanvas");
   canvasContext = canvas.getContext("2d");
 
   colorRect(0, 0, canvas.width, canvas.height, "black");
-  colorText("LOADING IMAGES", canvas.width / 2, canvas.height / 2, "white");
 
+  colorText("LOADING IMAGES", canvas.width / 2, canvas.height / 2, "white");
+  
+  
   loadImages();
   ghostReset();
+  particleReset()
 };
+
+/****************************FUNCTION FOR IMAGELOADING**************************** */
 
 function imageLoadingDoneSoStartGame() {
   var framesPersecond = 30;
@@ -105,6 +151,7 @@ function imageLoadingDoneSoStartGame() {
   // blueHero.reset(heroPic, "Black Fire");
 }
 
+/*********************FUNCTION FOR NEXT LEVEL****************************************** */
 function nextLevel() {
   levelNow++;
   if (levelNow >= levelList.length) {
@@ -117,24 +164,32 @@ function loadLevel(whichLevel) {
   worldGrid = whichLevel.slice();
   // blueCar.reset(otherCarPic, "Machine Raider");
   blueHero.reset(heroPic, "Black Fire");
-
+  // rat.reset(ratPic, "Black Fire");
   //worldGrid[30] = 5;
   //console.log(whichLevel[30]);
 }
 
+/**********************FUNCTION FOR UPDATING moveAll and drawAll FUNCTION****************************** */
 function updateAll() {
   moveAll();
   drawAll();
 }
 
+
+/**********************FUNCTION FOR UPDATING moveAll ****************************** */
 function moveAll() {
   blueHero.move();
   ghostMove();
+  particleMove()
+
+  /*----------------------CAMERA VARIABLES-------------------------------- */
   camPanX = blueHero.x - canvas.width / 2;
 
   camPanY = blueHero.y - canvas.height / 2;
 }
 
+
+/*********************FUNCTION DRAWALL******************************************************* */
 function drawAll() {
   colorRect(0, 0, canvas.width, canvas.height, "black");
   canvasContext.save(); // needed to undo this .translate() used for scroll
@@ -142,14 +197,16 @@ function drawAll() {
   // this next line is like subtracting camPanX and camPanY from every
   // canvasContext draw operation up until we call canvasContext.restore
   // this way we can just draw them at their "actual" position coordinates
- 
+  colorCircle(this.X,this.Y, 10, 'white'); //draw ball
 
   canvasContext.translate(-camPanX, -camPanY);
 
-  
+
   drawTracks();
   blueHero.draw();
-  particles.draw();
+  // rat.draw();
+  particleCircle(particleX,particleY,5,"yellow");
+
   ghostCircle(ghostX, ghostY, 18, "black");
   ghostCircle(ghostX, ghostY, 12, "red");
   ghostCircle(ghostX + 2, ghostY, 5, "white");
