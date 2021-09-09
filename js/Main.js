@@ -1,40 +1,8 @@
 var canvas, canvasContext;
 var blueHero = new heroClass();
 // var rat = new ratClass();
-
-function particleClass() {
-  this.x = 75;
-  this.y = 75;
-  this.velX = 5;
-  this.velY = 7;
-
-  this.move = function () {
-    this.x += this.velX;
-    this.y += this.velY;
-    if (this.x < 0) {
-      this.velX *= -1;
-    }
-    if (this.x > canvas.width) {
-      this.velX *= -1;
-    }
-    if (this.y < 0) {
-      this.velY *= -1;
-    }
-    if (this.y > canvas.height) {
-      this.velY *= -1;
-    }
-  }
-
-  this.draw = function(){
-    particleCircle(this.x, this.y, 5, "yellow");
-
-  }
-}// end of particleClass def
-
-
-var oneParticle = new particleClass();
-var secondParticle = new particleClass();
 /************************************************** */
+
 var ghostX = 75;
 var ghostY = 75;
 var ghostSpeedX = 5;
@@ -80,6 +48,41 @@ function ghostMove() {
     // ghostReset();
   }
 }
+
+/**********************************PARTICLE CLASS********************************** */
+function particleClass() {
+  this.x = 75;
+  this.y = 75;
+  this.velX = 5;
+  this.velY = 7;
+
+  this.move = function () {
+    this.x += this.velX;
+    this.y += this.velY;
+    if (this.x < 0) {
+      this.velX *= -1;
+    }
+    if (this.x > canvas.width) {
+      this.velX *= -1;
+    }
+    if (this.y < 0) {
+      this.velY *= -1;
+    }
+    if (this.y > canvas.height) {
+      this.velY *= -1;
+    }
+  }
+
+  this.draw = function(){
+    particleCircle(this.x, this.y, 5, "yellow");
+
+  }
+}// end of particleClass def
+
+
+// var oneParticle = new particleClass();
+// var secondParticle = new particleClass();
+var particleList = [];
 
 /**************************************FUNCTION FOR PARTICLE MOVEMENT************************************* */
 function particleReset() {
@@ -133,13 +136,22 @@ window.onload = function () {
   canvas = document.getElementById("gameCanvas");
   canvasContext = canvas.getContext("2d");
 
+  var tempParticle = new particleClass();
+  tempParticle.x = 100;
+  tempParticle.y=100;
+  particleList.push(tempParticle);
+
+  tempParticle = new particleClass();
+  tempParticle.x = 300;
+  particleList.push(tempParticle);
+
   colorRect(0, 0, canvas.width, canvas.height, "black");
 
   colorText("LOADING IMAGES", canvas.width / 2, canvas.height / 2, "white");
 
   loadImages();
   ghostReset();
-  secondParticle.x= 20;
+  // secondParticle.x= 20;
   particleReset();
 };
 
@@ -185,8 +197,16 @@ function updateAll() {
 function moveAll() {
   blueHero.move();
   ghostMove();
-  oneParticle.move();
-  secondParticle.move();
+  for(var i=0;i < particleList.length;i++){
+    particleList[i].move();
+  }
+  //Just illustration-- not going to keep this.
+  // particleList[0].move();
+  // particleList[1].move();
+
+
+  // oneParticle.move();
+  // secondParticle.move();
 
   /*----------------------CAMERA VARIABLES-------------------------------- */
   camPanX = blueHero.x - canvas.width / 2;
@@ -210,8 +230,13 @@ function drawAll() {
   blueHero.draw();
   // rat.draw();
   // particleCircle(this.x, this.y, 5, "yellow");
-  oneParticle.draw();
-  secondParticle.draw();
+
+  for(var i=0;i < particleList.length;i++){
+    particleList[i].draw();
+  }
+  // oneParticle.draw();
+  // secondParticle.draw();
+
 
   ghostCircle(ghostX, ghostY, 18, "black");
   ghostCircle(ghostX, ghostY, 12, "red");
