@@ -32,7 +32,7 @@ function heroClass() {
   // this.life = 3;
 
   this.keyHeld_Climb = false;
-  this.keyHeld_Reverse = false;
+  this.keyHeld_ClimbDown = false;
   this.keyHeld_WalkLeft = false;
   this.keyHeld_WalkRight = false;
   this.keyHeld_Jump = false;
@@ -142,7 +142,7 @@ function heroClass() {
     // //   console.log("keyHeld_Climb");
 
     //  }
-    if (this.keyHeld_Reverse) {
+    if (this.keyHeld_ClimbDown) {
       // this.speed -= REVERSE_POWER;
     }
 

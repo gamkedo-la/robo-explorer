@@ -42,7 +42,7 @@ function keySet(keyEvent, setTo) {
     blueHero.keyHeld_Climb = setTo;
   }
   if (keyEvent.keyCode == blueHero.controlKeyDown) {
-    blueHero.keyHeld_Reverse = setTo;
+    blueHero.keyHeld_ClimbDown = setTo;
   }
 
   if (keyEvent.keyCode == blueHero.controlKeyJump) {
