@@ -74,7 +74,7 @@ function particleClass() {
   }
 
   this.draw = function(){
-    particleCircle(this.x, this.y, 5, "yellow");
+    particleCircle(this.x, this.y, 2, "yellow");
 
   }
 }// end of particleClass def
@@ -147,7 +147,7 @@ window.onload = function () {
 
   var tempParticle;
 
-  for(var i=0; i<50;i++){
+  for(var i=0; i<5000;i++){
     tempParticle = new particleClass();
     tempParticle.x = Math.random()*canvas.width;
     tempParticle.y=Math.random()*canvas.height;
