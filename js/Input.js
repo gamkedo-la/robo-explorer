@@ -32,10 +32,10 @@ function updateMousePosition(mouseEvent) {
 
 function keySet(keyEvent, setTo) {
   if (keyEvent.keyCode == blueHero.controlKeyLeft) {
-    blueHero.keyHeld_TurnLeft = setTo;
+    blueHero.keyHeld_WalkLeft = setTo;
   }
   if (keyEvent.keyCode == blueHero.controlKeyRight) {
-    blueHero.keyHeld_TurnRight = setTo;
+    blueHero.keyHeld_WalkRight = setTo;
   }
 
   if (keyEvent.keyCode == blueHero.controlKeyUp) {

@@ -103,7 +103,7 @@ var levelFive = [  1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
         var levelNow = 0;
         var worldGrid = [];      
         
-        const WORLD_ROAD = 0;
+        const WORLD_EMPTY = 0;
         const WORLD_WALL = 1;
         const WORLD_PLAYERSTART = 2;
         const WORLD_SLINGSHOT = 3;
@@ -134,7 +134,7 @@ var levelFive = [  1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
         //     if(col >=  0 && col < WORLD_COLS &&
         //         row >= 0 && row < WORLD_ROWS){
         //             var trackIndexUnderCoord = rowColToArrayIndex(col,row);
-        //             return (worldGrid[trackIndexUnderCoord] != WORLD_ROAD);
+        //             return (worldGrid[trackIndexUnderCoord] != WORLD_EMPTY);
         //         } else {
         //             return false;
         //         }
@@ -179,7 +179,7 @@ var levelFive = [  1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
                    
     //                     // newLevel()
                     
-    //           }else if (tileHere != WORLD_ROAD) {
+    //           }else if (tileHere != WORLD_EMPTY) {
     //                  whichCar.x -= Math.cos(whichCar.ang) * whichCar.speed;
 	// 		         whichCar.y -= Math.sin(whichCar.ang) * whichCar.speed;
     //                  whichCar.speed *= -0.5;
@@ -226,7 +226,7 @@ var levelFive = [  1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
            
 
            if( tileTypeHasTransparency(tileKindHere) ) {
-				canvasContext.drawImage(trackPics[WORLD_ROAD],drawTileX,drawTileY);
+				canvasContext.drawImage(trackPics[WORLD_EMPTY],drawTileX,drawTileY);
 			}
 			canvasContext.drawImage(useImg,drawTileX,drawTileY);
               drawTileX += WORLD_W;

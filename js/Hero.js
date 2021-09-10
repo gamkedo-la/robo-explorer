@@ -33,8 +33,8 @@ function heroClass() {
 
   this.keyHeld_Climb = false;
   this.keyHeld_Reverse = false;
-  this.keyHeld_TurnLeft = false;
-  this.keyHeld_TurnRight = false;
+  this.keyHeld_WalkLeft = false;
+  this.keyHeld_WalkRight = false;
   this.keyHeld_Jump = false;
   // this.sound = false;
 
@@ -75,7 +75,7 @@ function heroClass() {
       for (var eachCol = 0; eachCol < WORLD_COLS; eachCol++) {
         var arrayIndex = rowColToArrayIndex(eachCol, eachRow);
         if (worldGrid[arrayIndex] == WORLD_PLAYERSTART) {
-          worldGrid[arrayIndex] = WORLD_ROAD;
+          worldGrid[arrayIndex] = WORLD_EMPTY;
           // this.ang = -Math.PI / 2;
           this.x = eachCol * WORLD_W + WORLD_W / 2;
           this.y = eachRow * WORLD_H + WORLD_H / 2;
@@ -146,17 +146,17 @@ function heroClass() {
       // this.speed -= REVERSE_POWER;
     }
 
-    if (this.keyHeld_TurnLeft) {
+    if (this.keyHeld_WalkLeft) {
       nextX -= PLAYER_MOVEMENT_SPEED;
 
       // switchCostume(costumeList[1]);
       // this.speed -= REVERSE_POWER;
-      console.log("keyHeld_TurnLeft");
+      console.log("keyHeld_WalkLeft");
     }
 
-    if (this.keyHeld_TurnRight) {
+    if (this.keyHeld_WalkRight) {
       nextX += PLAYER_MOVEMENT_SPEED;
-      console.log("keyHeld_TurnRight");
+      console.log("keyHeld_WalkRight");
 
       // this.speed += DRIVE_POWER;
     }
@@ -196,38 +196,38 @@ function heroClass() {
     // this.updateLifeReadout= function(){
     //   document.getElementById("life").innerHTML = "Life: " + this.life;
     // }
-    if(this.keyHeld_Jump && walkIntoTileTypeTop == WORLD_ROAD){
+    if(this.keyHeld_Jump && walkIntoTileTypeTop == WORLD_EMPTY){
       this.y = nextY;
-    }else if(walkIntoTileTypeTop != WORLD_ROAD){
+    }else if(walkIntoTileTypeTop != WORLD_EMPTY){
       this.y++;
     }
 
-    if(this.keyHeld_Jump == false && walkIntoTileTypeBottom == WORLD_ROAD){
+    if(this.keyHeld_Jump == false && walkIntoTileTypeBottom == WORLD_EMPTY){
       this.y = nextY;
-    }else if(walkIntoTileTypeBottom != WORLD_ROAD){
+    }else if(walkIntoTileTypeBottom != WORLD_EMPTY){
       // this.y--;//Makes character shake we will add a nicer fix.
       this.y = (1+Math.floor(this.y/WORLD_H))*WORLD_H-this.height/2;
     }
 
-    if(this.keyHeld_TurnLeft && walkIntoTileTypeLeft == WORLD_ROAD){
+    if(this.keyHeld_WalkLeft && walkIntoTileTypeLeft == WORLD_EMPTY){
       this.x = nextX;
-    }else if(walkIntoTileTypeLeft != WORLD_ROAD){
+    }else if(walkIntoTileTypeLeft != WORLD_EMPTY){
       this.x++;
     }
 
-    if(this.keyHeld_TurnRight && walkIntoTileTypeRight == WORLD_ROAD){
+    if(this.keyHeld_WalkRight && walkIntoTileTypeRight == WORLD_EMPTY){
       this.x = nextX;
-    }else if(walkIntoTileTypeRight != WORLD_ROAD){
+    }else if(walkIntoTileTypeRight != WORLD_EMPTY){
       this.x--;
     }
 
    //Which Tile we are grabbing or opening.
-    var walkIntoTileType = WORLD_ROAD;
+    var walkIntoTileType = WORLD_EMPTY;
     var walkIntoTileIndex;
-    if(this.keyHeld_TurnLeft){
+    if(this.keyHeld_WalkLeft){
       walkIntoTileType = walkIntoTileTypeLeft;
       walkIntoTileIndex = walkIntoTileIndexLeft;
-    }else if(this.keyHeld_TurnRight){
+    }else if(this.keyHeld_WalkRight){
       walkIntoTileType = walkIntoTileTypeRight;
       walkIntoTileIndex = walkIntoTileIndexRight;
     }else if(this.keyHeld_Jump){
@@ -240,7 +240,7 @@ function heroClass() {
 
 
     switch (walkIntoTileType) {
-      case WORLD_ROAD:
+      case WORLD_EMPTY:
        break;
       // case WORLD_GOAL:
       //   console.log(this.name + " WINS!");
@@ -249,54 +249,54 @@ function heroClass() {
       case WORLD_TUNNEL_RIGHT:
         loadLevel(levelTwo);
         // nextX += PLAYER_MOVEMENT_SPEED + 10;
-        worldGrid[walkIntoTileIndex] = WORLD_ROAD;
+        worldGrid[walkIntoTileIndex] = WORLD_EMPTY;
         // this.updateSlingshotReadout();
         break;
       case WORLD_SLINGSHOT:
         // loadLevel(levelTwo);
         // nextX += PLAYER_MOVEMENT_SPEED + 10;
 
-        worldGrid[walkIntoTileIndex] = WORLD_ROAD;
+        worldGrid[walkIntoTileIndex] = WORLD_EMPTY;
         this.updateSlingshotReadout();
         break;
       case WORLD_SWORD:
         // loadLevel(levelFour);
-        worldGrid[walkIntoTileIndex] = WORLD_ROAD;
+        worldGrid[walkIntoTileIndex] = WORLD_EMPTY;
         this.updateSwordReadout();
         break;
       case WORLD_TUNNEL_UP:
         loadLevel(levelThree);
-        worldGrid[walkIntoTileIndex] = WORLD_ROAD;
+        worldGrid[walkIntoTileIndex] = WORLD_EMPTY;
         break;
       case WORLD_ARROW:
         loadLevel(levelFour);
-        worldGrid[walkIntoTileIndex] = WORLD_ROAD;
+        worldGrid[walkIntoTileIndex] = WORLD_EMPTY;
         this.updateArrowReadout();
         break;
 
       case WORLD_SPEAR:
         loadLevel(levelFive);
-        worldGrid[walkIntoTileIndex] = WORLD_ROAD;
+        worldGrid[walkIntoTileIndex] = WORLD_EMPTY;
         this.updateSpearReadout();
         break;
 
       case WORLD_TUNNEL_RIGHT_5:
         loadLevel(levelSix);
         // nextX += PLAYER_MOVEMENT_SPEED + 10;
-        worldGrid[walkIntoTileIndex] = WORLD_ROAD;
+        worldGrid[walkIntoTileIndex] = WORLD_EMPTY;
         // this.updateSlingshotReadout();
         break;
 
       case WORLD_CROSSBOW:
         // loadLevel(levelFive);
-        worldGrid[walkIntoTileIndex] = WORLD_ROAD;
+        worldGrid[walkIntoTileIndex] = WORLD_EMPTY;
         this.updateCrossbowReadout();
         break;
       case WORLD_DOOR:
         if (this.keysHeld > 0) {
           this.keysHeld--;
           this.updateKeyReadout();
-          worldGrid[walkIntoTileIndex] = WORLD_ROAD;
+          worldGrid[walkIntoTileIndex] = WORLD_EMPTY;
         }
         break;
       case WORLD_KEY:
@@ -306,7 +306,7 @@ function heroClass() {
         this.updateKeyReadout();
         var audio = new Audio("keyCollectionSound2.wav");
         audio.play();
-        worldGrid[walkIntoTileIndex] = WORLD_ROAD;
+        worldGrid[walkIntoTileIndex] = WORLD_EMPTY;
         break;
 
       // case WORLD_LADDER:
@@ -326,7 +326,7 @@ function heroClass() {
         // nextX += PLAYER_MOVEMENT_SPEED + 10;
         
        
-        worldGrid[walkIntoTileIndex] = WORLD_ROAD;
+        worldGrid[walkIntoTileIndex] = WORLD_EMPTY;
         break;
       case WORLD_TRAP:
         // alert("GAME OVER");
