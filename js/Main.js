@@ -135,8 +135,10 @@ function drawOnlyBricksOnScreen() {
 function addParticles(){
   var tempParticle;
   tempParticle = new particleClass();
-  tempParticle.x = Math.random()*canvas.width;
-  tempParticle.y=Math.random()*canvas.height;
+  // tempParticle.x = Math.random()*canvas.width;
+  // tempParticle.y=Math.random()*canvas.height;
+  tempParticle.x = blueHero.x;
+  tempParticle.y = blueHero.y;
   tempParticle.velX=5-Math.random()*10;
   tempParticle.velY=5-Math.random()*10;
   particleList.push(tempParticle);
