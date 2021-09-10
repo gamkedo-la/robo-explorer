@@ -130,6 +130,24 @@ function drawOnlyBricksOnScreen() {
   } // end of for eachCol
 } // end of drawBricks()
 
+
+/**********************************FUNCTION ADD PARTICLES********************************** */
+function addParticles(){
+  var tempParticle;
+  tempParticle = new particleClass();
+  tempParticle.x = Math.random()*canvas.width;
+  tempParticle.y=Math.random()*canvas.height;
+  tempParticle.velX=5-Math.random()*10;
+  tempParticle.velY=5-Math.random()*10;
+  particleList.push(tempParticle);
+
+}
+
+// function keyPressed(evt){
+//   addParticles();
+// }
+
+
 /*************************************Windows Onload*****************************************/
 
 window.onload = function () {
@@ -145,7 +163,7 @@ window.onload = function () {
   // tempParticle.x = 300;
   // particleList.push(tempParticle);
 
-  var tempParticle;
+  /*var tempParticle;
 
   for(var i=0; i<5000;i++){
     tempParticle = new particleClass();
@@ -156,8 +174,14 @@ window.onload = function () {
     particleList.push(tempParticle);
   
   }
+ */
 
+  for(var i=0; i<2;i++){
+    addParticles();
+  }
 
+  /*hook for dynamically adding a particle when pressing a key*/
+  // document.addEventListener("keydown", keyPressed);
 
   colorRect(0, 0, canvas.width, canvas.height, "black");
   colorText("LOADING IMAGES", canvas.width / 2, canvas.height / 2, "white");

@@ -121,7 +121,7 @@ function heroClass() {
       // beginLoadingImage(rocketBooster);
 
       nextY -= JUMP_POWER;
-
+      addParticles();
       // console.log("JUMP_POWER");
     } else {
     
