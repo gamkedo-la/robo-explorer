@@ -20,7 +20,7 @@ function heroClass() {
   (this.jumperSpeedX = 0), (jumperSpeedY = 0);
 
   this.width = 40;
-  this.height = 50;
+  this.height = 39;
   this.frameX = 0;
   this.frameY = 0;
   // this.ang = 0;
@@ -206,6 +206,7 @@ function heroClass() {
       this.y = nextY;
     }else if(walkIntoTileTypeBottom != WORLD_ROAD){
       // this.y--;//Makes character shake we will add a nicer fix.
+      this.y = (1+Math.floor(this.y/WORLD_H))*WORLD_H-this.height/2;
     }
 
     if(this.keyHeld_TurnLeft && walkIntoTileTypeLeft == WORLD_ROAD){
