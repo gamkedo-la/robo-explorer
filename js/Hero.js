@@ -125,8 +125,6 @@ function heroClass() {
       // console.log("JUMP_POWER");
     } else {
     
-     
-
       nextY += GRAVITY + 10;
       // if (this.jumperSpeedY > this.JUMPER_HEIGHT) {
       //   this.jumperSpeedY = this.height;
@@ -167,22 +165,82 @@ function heroClass() {
 
     // heroTrackHandling(this);
 
-    var walkIntoTileIndex = getTileIndexAtPixelCoord(nextX, nextY);
-    var walkIntoTileType = WORLD_WALL;
+    var walkIntoTileIndexTop = getTileIndexAtPixelCoord(nextX, nextY-this.height/2) ;
+    var walkIntoTileTypeTop = WORLD_WALL;
 
-    if (walkIntoTileIndex != undefined) {
-      walkIntoTileType = worldGrid[walkIntoTileIndex];
+    var walkIntoTileIndexBottom = getTileIndexAtPixelCoord(nextX, nextY+this.height/2);
+    var walkIntoTileTypeBottom = WORLD_WALL;
+
+    var walkIntoTileIndexLeft = getTileIndexAtPixelCoord(nextX-this.width/2, nextY);
+    var walkIntoTileTypeLeft = WORLD_WALL;
+
+    var walkIntoTileIndexRight = getTileIndexAtPixelCoord(nextX+this.width/2, nextY);
+    var walkIntoTileTypeRight = WORLD_WALL;
+
+    if (walkIntoTileIndexTop != undefined) {
+      walkIntoTileTypeTop = worldGrid[walkIntoTileIndexTop];
+    }
+
+    if (walkIntoTileIndexBottom != undefined) {
+      walkIntoTileTypeBottom = worldGrid[walkIntoTileIndexBottom];
+    }
+
+    if (walkIntoTileIndexLeft != undefined) {
+      walkIntoTileTypeLeft = worldGrid[walkIntoTileIndexLeft];
+    }
+
+    if (walkIntoTileIndexRight != undefined) {
+      walkIntoTileTypeRight = worldGrid[walkIntoTileIndexRight];
     }
 
     // this.updateLifeReadout= function(){
     //   document.getElementById("life").innerHTML = "Life: " + this.life;
     // }
+    if(this.keyHeld_Jump && walkIntoTileTypeTop == WORLD_ROAD){
+      this.y = nextY;
+    }else if(walkIntoTileTypeTop != WORLD_ROAD){
+      this.y++;
+    }
+
+    if(this.keyHeld_Jump == false && walkIntoTileTypeBottom == WORLD_ROAD){
+      this.y = nextY;
+    }else if(walkIntoTileTypeBottom != WORLD_ROAD){
+      // this.y--;//Makes character shake we will add a nicer fix.
+    }
+
+    if(this.keyHeld_TurnLeft && walkIntoTileTypeLeft == WORLD_ROAD){
+      this.x = nextX;
+    }else if(walkIntoTileTypeLeft != WORLD_ROAD){
+      this.x++;
+    }
+
+    if(this.keyHeld_TurnRight && walkIntoTileTypeRight == WORLD_ROAD){
+      this.x = nextX;
+    }else if(walkIntoTileTypeRight != WORLD_ROAD){
+      this.x--;
+    }
+
+   //Which Tile we are grabbing or opening.
+    var walkIntoTileType = WORLD_ROAD;
+    var walkIntoTileIndex;
+    if(this.keyHeld_TurnLeft){
+      walkIntoTileType = walkIntoTileTypeLeft;
+      walkIntoTileIndex = walkIntoTileIndexLeft;
+    }else if(this.keyHeld_TurnRight){
+      walkIntoTileType = walkIntoTileTypeRight;
+      walkIntoTileIndex = walkIntoTileIndexRight;
+    }else if(this.keyHeld_Jump){
+      walkIntoTileType = walkIntoTileTypeTop;
+      walkIntoTileIndex = walkIntoTileIndexTop;
+    }else { // Feet
+      walkIntoTileType = walkIntoTileTypeBottom;
+      walkIntoTileIndex = walkIntoTileIndexBottom;
+    }
+
 
     switch (walkIntoTileType) {
       case WORLD_ROAD:
-        this.x = nextX;
-        this.y = nextY;
-        break;
+       break;
       // case WORLD_GOAL:
       //   console.log(this.name + " WINS!");
       //   loadLevel(levelOne);

@@ -214,7 +214,7 @@ function moveAll() {
   camPanY = blueHero.y - canvas.height / 2;
 }
 
-/*********************FUNCTION DRAWALL******************************************************* */
+/*********************FUNCTION DRAWALL********************************************************/
 function drawAll() {
   colorRect(0, 0, canvas.width, canvas.height, "black");
   canvasContext.save(); // needed to undo this .translate() used for scroll
