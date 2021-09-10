@@ -126,6 +126,7 @@ function heroClass() {
     } else {
     
       nextY += GRAVITY + 10;
+      removeParticles();
       // if (this.jumperSpeedY > this.JUMPER_HEIGHT) {
       //   this.jumperSpeedY = this.height;
       // }

@@ -132,6 +132,12 @@ function drawOnlyBricksOnScreen() {
 
 
 /**********************************FUNCTION ADD PARTICLES********************************** */
+function removeParticles(){
+  if(particleList.length > 0){
+    particleList.splice(0,1);
+  }
+}
+
 function addParticles(){
   var tempParticle;
   tempParticle = new particleClass();
