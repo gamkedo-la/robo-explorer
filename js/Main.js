@@ -136,19 +136,29 @@ window.onload = function () {
   canvas = document.getElementById("gameCanvas");
   canvasContext = canvas.getContext("2d");
 
-  var tempParticle = new particleClass();
-  tempParticle.x = 100;
-  tempParticle.y=100;
-  particleList.push(tempParticle);
+  // var tempParticle = new particleClass();
+  // tempParticle.x = 100;
+  // tempParticle.y=100;
+  // particleList.push(tempParticle);
 
-  tempParticle = new particleClass();
-  tempParticle.x = 300;
-  particleList.push(tempParticle);
+  // tempParticle = new particleClass();
+  // tempParticle.x = 300;
+  // particleList.push(tempParticle);
+
+  var tempParticle;
+
+  for(var i=0; i<50;i++){
+    tempParticle = new particleClass();
+    tempParticle.x = Math.random()*canvas.width;
+    tempParticle.y=Math.random()*canvas.height;
+    particleList.push(tempParticle);
+  
+  }
+
+
 
   colorRect(0, 0, canvas.width, canvas.height, "black");
-
   colorText("LOADING IMAGES", canvas.width / 2, canvas.height / 2, "white");
-
   loadImages();
   ghostReset();
   // secondParticle.x= 20;
