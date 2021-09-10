@@ -151,6 +151,8 @@ window.onload = function () {
     tempParticle = new particleClass();
     tempParticle.x = Math.random()*canvas.width;
     tempParticle.y=Math.random()*canvas.height;
+    tempParticle.velX=5-Math.random()*10;
+    tempParticle.velY=5-Math.random()*10;
     particleList.push(tempParticle);
   
   }
