@@ -1,6 +1,16 @@
 var canvas, canvasContext;
 var blueHero = new heroClass();
 // var rat = new ratClass();
+
+var ratPic = document.createElement("img");
+var ratPicLoaded = false;
+
+var ratX = 75;
+var ratY = 75;
+var ratSpeedX =5;
+var ratSpeedY =7;
+
+
 /************************************************** */
 
 var ghostX = 75;
@@ -162,6 +172,11 @@ window.onload = function () {
   canvas = document.getElementById("gameCanvas");
   canvasContext = canvas.getContext("2d");
 
+  ratPic.onload = function(){
+    ratPicLoaded=true;
+  }
+
+  ratPic.src = "rat-ashleigh.png"
   // var tempParticle = new particleClass();
   // tempParticle.x = 100;
   // tempParticle.y=100;
@@ -280,6 +295,11 @@ function drawAll() {
   }
   // oneParticle.draw();
   // secondParticle.draw();
+
+  if(ratPicLoaded){
+    canvasContext.drawImage(ratPic,
+        ratX - ratPic.width/2, ratY - ratPic.height/2);
+  }
 
 
   ghostCircle(ghostX, ghostY, 18, "black");

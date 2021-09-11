@@ -36,9 +36,9 @@ function loadImageForTrackCode(trackCode, fileName) {
 function loadImages() {
  
   var imageList = [
-    // { varName: heroPic, theFile: "rocketMan3.png"},
-    { varName: heroPic, theFile: "robo-explorer-armor2.png"},
-    // { varRat: ratPic, theFile: "rat.png"},
+     //{ varName: heroPic, theFile: "rocketMan3.png"},
+     { varName: heroPic, theFile: "robo-explorer-armor3.png"},
+    //{ varRat: ratPic, theFile: "rat-sprite-start-of-walk-cycle.png"},
 
     
 
