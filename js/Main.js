@@ -285,14 +285,16 @@ function drawAll() {
 
   canvasContext.translate(-camPanX, -camPanY);
 
+  
   drawTracks();
+  for(var i=0;i < particleList.length;i++){
+    particleList[i].draw();
+  }
   blueHero.draw();
   // rat.draw();
   // particleCircle(this.x, this.y, 5, "yellow");
 
-  for(var i=0;i < particleList.length;i++){
-    particleList[i].draw();
-  }
+ 
   // oneParticle.draw();
   // secondParticle.draw();
 
