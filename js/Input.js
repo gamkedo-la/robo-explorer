@@ -9,6 +9,16 @@ const KEY_S = 83; // keyboard S
 const KEY_D = 68; //keyboard D
 const KEY_SPACEBAR = 32; //JUMP
 
+const KEY_1 = 49; // keyboard 1
+const KEY_2 = 50; // keyboard 2
+const KEY_3 = 51; // keyboard 3
+const KEY_4 = 52; // keyboard 4
+const KEY_5 = 53; // keyboard 5
+const KEY_6 = 54; // keyboard 6
+const KEY_7 = 55; // keyboard 7
+const KEY_8 = 56; // keyboard 8
+const KEY_9 = 57; // keyboard 9
+
 // const KEY_E =
 
 var mouseX = 0;
@@ -48,6 +58,10 @@ function keySet(keyEvent, setTo) {
   if (keyEvent.keyCode == blueHero.controlKeyJump) {
     blueHero.keyHeld_Jump = setTo;
   }
+
+  if (CHEATS_ENABLED) {
+    checkForLevelSkip(keyEvent.keyCode)
+  }
 }
 function keyPressed(evt) {
   keySet(evt, true);
@@ -60,4 +74,36 @@ function keyReleased(evt) {
   keySet(evt, false);
   // keySet(evt,blueHero,false);
   // keySet(evt,blueCar,false);
+}
+
+function checkForLevelSkip (keyCode) {
+  switch (keyCode) {
+    case KEY_1:
+      loadLevel(levelOne);
+      break
+    case KEY_2:
+      loadLevel(levelTwo);
+      break
+    case KEY_3:
+      loadLevel(levelThree);
+      break
+    case KEY_4:
+      loadLevel(levelFour);
+      break
+    case KEY_5:
+      loadLevel(levelFive);
+      break
+    case KEY_6:
+      loadLevel(levelSix);
+      break
+    case KEY_7:
+      // loadLevel(levelSeven); //Not yet defined
+      break
+    case KEY_8:
+      // loadLevel(levelEight); //Not yet defined
+      break
+    case KEY_9:
+      // loadLevel(levelNine); //Not yet defined
+      break                                                                        
+    }
 }

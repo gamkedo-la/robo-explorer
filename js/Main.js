@@ -2,6 +2,8 @@ var canvas, canvasContext;
 var blueHero = new heroClass();
 // var rat = new ratClass();
 
+var CHEATS_ENABLED = true
+
 var ratPic = document.createElement("img");
 var ratPicLoaded = false;
 
