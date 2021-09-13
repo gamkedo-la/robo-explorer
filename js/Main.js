@@ -96,8 +96,49 @@ function particleClass() {
 // var secondParticle = new particleClass();
 var particleList = [];
 
+
+
+/**********************************SLINGSHOT BULLET CLASS********************************** */
+function slingShotClass() {
+  this.x = 75;
+  this.y = 75;
+  this.velX = 5;
+  this.velY = 7;
+
+  this.move = function () {
+    this.x += this.velX;
+    this.y += this.velY;
+    if (this.x < 0) {
+      this.velX *= -1;
+    }
+    if (this.x > canvas.width) {
+      this.velX *= -1;
+    }
+    if (this.y < 0) {
+      this.velY *= -1;
+    }
+    if (this.y > canvas.height) {
+      this.velY *= -1;
+    }
+  }
+
+  this.draw = function(){
+    slingShotCircle(this.x, this.y, 2, "green");
+
+  }
+}// end of particleClass def
+
+
+// var oneParticle = new particleClass();
+// var secondParticle = new particleClass();
+var slingShotList = [];
 /**************************************FUNCTION FOR PARTICLE MOVEMENT************************************* */
 function particleReset() {
+  this.x = canvas.width / 1.5;
+  this.y = canvas.height / 2;
+}
+
+function slingShotReset() {
   this.x = canvas.width / 1.5;
   this.y = canvas.height / 2;
 }
@@ -168,6 +209,31 @@ function addParticles(){
 // }
 
 
+/**********************************FUNCTION ADD SLINGSHOT BULLETS********************************** */
+function removeSlingShot(){
+  if(slingShotList.length > 0){
+    slingShotList.splice(0,1);
+  }
+}
+
+function addSlingShot(){
+  var tempSlingShot;
+  tempSlingShot = new slingShotClass();
+  // tempParticle.x = Math.random()*canvas.width;
+  // tempParticle.y=Math.random()*canvas.height;
+  tempSlingShot.x = blueHero.x;
+  tempSlingShot.y = blueHero.y;
+  tempSlingShot.velX=5-Math.random()*10;
+  tempSlingShot.velY=5-Math.random()*10;
+  slingShotList.push(tempSlingShot);
+
+}
+
+// function keyPressed(evt){
+//   addParticles();
+// }
+
+
 /*************************************Windows Onload*****************************************/
 
 window.onload = function () {
@@ -203,6 +269,10 @@ window.onload = function () {
 
   for(var i=0; i<2;i++){
     addParticles();
+  }
+
+  for(var i=0; i<2;i++){
+    addSlingShot();
   }
 
   /*hook for dynamically adding a particle when pressing a key*/
@@ -261,6 +331,10 @@ function moveAll() {
   for(var i=0;i < particleList.length;i++){
     particleList[i].move();
   }
+
+  for(var i=0;i < slingShotList.length;i++){
+    slingShotList[i].move();
+  }
   //Just illustration-- not going to keep this.
   // particleList[0].move();
   // particleList[1].move();
@@ -289,9 +363,15 @@ function drawAll() {
 
   
   drawTracks();
+ 
   for(var i=0;i < particleList.length;i++){
     particleList[i].draw();
   }
+
+  for(var i=0;i < slingShotList.length;i++){
+    slingShotList[i].draw();
+  }
+
   blueHero.draw();
   // rat.draw();
   // particleCircle(this.x, this.y, 5, "yellow");

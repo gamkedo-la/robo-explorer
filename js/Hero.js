@@ -122,11 +122,13 @@ function heroClass() {
 
       nextY -= JUMP_POWER;
       addParticles();
+      addSlingShot();
       // console.log("JUMP_POWER");
     } else {
     
       nextY += GRAVITY + 10;
       removeParticles();
+      removeSlingShot();
       // if (this.jumperSpeedY > this.JUMPER_HEIGHT) {
       //   this.jumperSpeedY = this.height;
       // }
