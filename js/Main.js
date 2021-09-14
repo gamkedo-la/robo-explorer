@@ -223,8 +223,10 @@ function addSlingShot(){
   // tempParticle.y=Math.random()*canvas.height;
   tempSlingShot.x = blueHero.x;
   tempSlingShot.y = blueHero.y;
-  tempSlingShot.velX=5-Math.random()*10;
-  tempSlingShot.velY=5-Math.random()*10;
+  // tempSlingShot.velX=5-Math.random()*10;
+  // tempSlingShot.velY=5-Math.random()*10;
+  tempSlingShot.velX=10;
+  tempSlingShot.velY=0;
   slingShotList.push(tempSlingShot);
 
 }
