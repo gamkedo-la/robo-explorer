@@ -8,6 +8,7 @@ const KEY_A = 65; //keyboard A
 const KEY_S = 83; // keyboard S
 const KEY_D = 68; //keyboard D
 const KEY_SPACEBAR = 32; //JUMP
+const KEY_R=82;//SlingshotBullet
 
 const KEY_1 = 49; // keyboard 1
 const KEY_2 = 50; // keyboard 2
@@ -29,7 +30,7 @@ function setupInput() {
   document.addEventListener("keydown", keyPressed);
   document.addEventListener("keyup", keyReleased);
 
-  blueHero.setupInput(KEY_W, KEY_D, KEY_S, KEY_A, KEY_SPACEBAR);
+  blueHero.setupInput(KEY_W, KEY_D, KEY_S, KEY_A, KEY_SPACEBAR,KEY_R);
   //   blueCar.setupInput(KEY_UP_ARROW, KEY_RIGHT_ARROW, KEY_DOWN_ARROW, KEY_LEFT_ARROW);
 }
 
@@ -40,6 +41,7 @@ function updateMousePosition(mouseEvent) {
   mouseY = mouseEvent.clientY - rect.top - root.scrollTop;
 }
 
+/*****************KEY PRESSED CODE********************* */
 function keySet(keyEvent, setTo) {
   if (keyEvent.keyCode == blueHero.controlKeyLeft) {
     blueHero.keyHeld_WalkLeft = setTo;
@@ -59,6 +61,11 @@ function keySet(keyEvent, setTo) {
     blueHero.keyHeld_Jump = setTo;
   }
 
+  if (keyEvent.keyCode == blueHero.controlKeySlingshot) {
+    blueHero.keyHeld_Slingshot = setTo;
+  }
+  
+/********************CHEAT CODE****************** */
   if (CHEATS_ENABLED) {
     checkForLevelSkip(keyEvent.keyCode)
   }

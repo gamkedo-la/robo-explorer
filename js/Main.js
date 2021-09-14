@@ -123,10 +123,10 @@ function slingShotClass() {
   }
 
   this.draw = function(){
-    slingShotCircle(this.x, this.y, 2, "green");
+    slingShotCircle(this.x, this.y, 5, "blue");
 
   }
-}// end of particleClass def
+}// end of slingShot def
 
 
 // var oneParticle = new particleClass();

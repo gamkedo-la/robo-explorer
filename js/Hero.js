@@ -36,6 +36,7 @@ function heroClass() {
   this.keyHeld_WalkLeft = false;
   this.keyHeld_WalkRight = false;
   this.keyHeld_Jump = false;
+  this.keyHeld_Slingshot = false;
   // this.sound = false;
 
   this.controlKeyUp;
@@ -43,6 +44,7 @@ function heroClass() {
   this.controlKeyDown;
   this.controlKeyLeft;
   this.controlKeyJump;
+  this.controlKeySlingshot
   // this.playSound = function(){
   //   if(play == 0){
   //     play = 1;
@@ -53,12 +55,13 @@ function heroClass() {
   //   }
   // }
 
-  this.setupInput = function (upKey, rightKey, downKey, leftKey, jumpKey) {
+  this.setupInput = function (upKey, rightKey, downKey, leftKey, jumpKey,slingshotKey) {
     this.controlKeyUp = upKey;
     this.controlKeyRight = rightKey;
     this.controlKeyDown = downKey;
     this.controlKeyLeft = leftKey;
     this.controlKeyJump = jumpKey;
+    this.controlKeySlingshot = slingshotKey;
   };
 
   this.reset = function (whichImage, heroName) {
@@ -122,13 +125,13 @@ function heroClass() {
 
       nextY -= JUMP_POWER;
       addParticles();
-      addSlingShot();
+      // addSlingShot();
       // console.log("JUMP_POWER");
     } else {
     
       nextY += GRAVITY + 10;
       removeParticles();
-      removeSlingShot();
+      // removeSlingShot();
       // if (this.jumperSpeedY > this.JUMPER_HEIGHT) {
       //   this.jumperSpeedY = this.height;
       // }
@@ -167,6 +170,15 @@ function heroClass() {
     // this.y += Math.sin(this.ang) * this.speed;
 
     // heroTrackHandling(this);
+
+    if (this.keyHeld_Slingshot) {
+      addSlingShot();
+      // console.log("");
+
+      // this.speed += DRIVE_POWER;
+    }else{
+         removeSlingShot();
+    }
 
     var walkIntoTileIndexTop = getTileIndexAtPixelCoord(nextX, nextY-this.height/2) ;
     var walkIntoTileTypeTop = WORLD_WALL;
