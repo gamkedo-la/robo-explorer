@@ -22,6 +22,17 @@ function ratClass() {
   }
 
   this.draw = function(){
+
+  /* might need this?
+  if (ratPicLoaded) {
+    canvasContext.drawImage(
+      ratPic,
+      ratX - ratPic.width / 2,
+      ratY - ratPic.height / 2
+    );
+  }
+  */
+
     drawRat();
   }
   //   for (var eachRow = 0; eachRow < WORLD_ROWS; eachRow++) {

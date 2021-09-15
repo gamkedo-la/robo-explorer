@@ -384,18 +384,12 @@ function drawAll() {
   }
 
   blueHero.draw();
-  // rat.draw();
+  // rat.draw(); //i would think you would want to use this...
   // particleCircle(this.x, this.y, 5, "yellow");
   // oneParticle.draw();
   // secondParticle.draw();
 
-  if (ratPicLoaded) {
-    canvasContext.drawImage(
-      ratPic,
-      ratX - ratPic.width / 2,
-      ratY - ratPic.height / 2
-    );
-  }
+
 
   ghostCircle(ghostX, ghostY, 18, "black");
   ghostCircle(ghostX, ghostY, 12, "red");
