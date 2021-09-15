@@ -257,7 +257,7 @@ window.onload = function () {
     ratPicLoaded = true;
   };
 
-  ratPic.src = "rat-ashleigh.png";
+  //ratPic.src = "rat-ashleigh.png"; //unsure why this is in here, commenting out for right now
   // var tempParticle = new particleClass();
   // tempParticle.x = 100;
   // tempParticle.y=100;
