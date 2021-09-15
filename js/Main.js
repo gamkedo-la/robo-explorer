@@ -83,7 +83,9 @@ function particleClass() {
       this.velY *= -1;
     }
     if (this.y > canvas.height) {
-      this.velY *= -1;
+      this.y -= this.velY;
+       this.velY *= -0.3;//Dampen Velocity
+      // this.velY *= -1;
     }
   };
 
