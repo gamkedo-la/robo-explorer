@@ -196,7 +196,7 @@ function addParticles() {
   // tempParticle.x = Math.random()*canvas.width;
   // tempParticle.y=Math.random()*canvas.height;
   tempParticle.x = blueHero.x;
-  tempParticle.y = blueHero.y;
+  tempParticle.y = blueHero.y+2;
   tempParticle.velX = 0 - Math.random() * 10;
   tempParticle.velY = 10 - Math.random() * 10;
 
