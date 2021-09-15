@@ -27,6 +27,8 @@ var monsterSpeedY = 7;
 var camPanX = 0.0;
 var camPanY = 0.0;
 
+const GRAVITY_PARTICLE_PER_CYCLE = 10;
+
 /*******************************FUNCTION FOR GHOST MOVEMENT********************************** */
 function ghostReset() {
   ghostX = canvas.width / 2;
@@ -106,6 +108,8 @@ function slingShotClass() {
 
 
   this.move = function () {
+    this.velY += GRAVITY_PARTICLE_PER_CYCLE;
+
     this.x += this.velX;
     this.y += this.velY;
     if (this.x < 0) {
