@@ -254,9 +254,10 @@ function heroClass() {
     }
 
 
+
     switch (walkIntoTileType) {
       case WORLD_EMPTY:
-       break;
+      break;
       // case WORLD_GOAL:
       //   console.log(this.name + " WINS!");
       //   loadLevel(levelOne);

@@ -2,16 +2,15 @@ var canvas, canvasContext;
 var blueHero = new heroClass();
 // var rat = new ratClass();
 
-var CHEATS_ENABLED = true
+var CHEATS_ENABLED = true;
 
 var ratPic = document.createElement("img");
 var ratPicLoaded = false;
 
 var ratX = 75;
 var ratY = 75;
-var ratSpeedX =5;
-var ratSpeedY =7;
-
+var ratSpeedX = 5;
+var ratSpeedY = 7;
 
 /************************************************** */
 
@@ -83,20 +82,16 @@ function particleClass() {
     if (this.y > canvas.height) {
       this.velY *= -1;
     }
-  }
+  };
 
-  this.draw = function(){
+  this.draw = function () {
     particleCircle(this.x, this.y, 2, "yellow");
-
-  }
-}// end of particleClass def
-
+  };
+} // end of particleClass def
 
 // var oneParticle = new particleClass();
 // var secondParticle = new particleClass();
 var particleList = [];
-
-
 
 /**********************************SLINGSHOT BULLET CLASS********************************** */
 function slingShotClass() {
@@ -104,6 +99,7 @@ function slingShotClass() {
   this.y = 75;
   this.velX = 5;
   this.velY = 7;
+
 
   this.move = function () {
     this.x += this.velX;
@@ -120,23 +116,23 @@ function slingShotClass() {
     if (this.y > canvas.height) {
       this.velY *= -1;
     }
-  }
+  };
 
-  this.draw = function(){
+  this.draw = function () {
     slingShotCircle(this.x, this.y, 5, "blue");
-
-  }
-}// end of slingShot def
-
+  };
+} // end of slingShot def
 
 // var oneParticle = new particleClass();
 // var secondParticle = new particleClass();
 var slingShotList = [];
-/**************************************FUNCTION FOR PARTICLE MOVEMENT************************************* */
+/**************************************FUNCTION FOR PARTICLE RESET************************************* */
 function particleReset() {
   this.x = canvas.width / 1.5;
   this.y = canvas.height / 2;
 }
+
+/**************************************FUNCTION FOR SLINGSHOT RESET************************************* */
 
 function slingShotReset() {
   this.x = canvas.width / 1.5;
@@ -183,40 +179,39 @@ function drawOnlyBricksOnScreen() {
   } // end of for eachCol
 } // end of drawBricks()
 
-
 /**********************************FUNCTION ADD PARTICLES********************************** */
-function removeParticles(){
-  if(particleList.length > 0){
-    particleList.splice(0,1);
+function removeParticles() {
+  if (particleList.length > 0) {
+    particleList.splice(0, 1);
   }
 }
 
-function addParticles(){
+function addParticles() {
   var tempParticle;
   tempParticle = new particleClass();
   // tempParticle.x = Math.random()*canvas.width;
   // tempParticle.y=Math.random()*canvas.height;
   tempParticle.x = blueHero.x;
   tempParticle.y = blueHero.y;
-  tempParticle.velX=5-Math.random()*10;
-  tempParticle.velY=5-Math.random()*10;
+  tempParticle.velX = 0 - Math.random() * 10;
+  tempParticle.velY = 10 - Math.random() * 10;
   particleList.push(tempParticle);
-
 }
 
 // function keyPressed(evt){
 //   addParticles();
 // }
 
-
 /**********************************FUNCTION ADD SLINGSHOT BULLETS********************************** */
-function removeSlingShot(){
-  if(slingShotList.length > 0){
-    slingShotList.splice(0,1);
+
+
+function removeSlingShot() {
+  if (slingShotList.length > 0) {
+    slingShotList.splice(0, 1);
   }
 }
 
-function addSlingShot(){
+function addSlingShot() {
   var tempSlingShot;
   tempSlingShot = new slingShotClass();
   // tempParticle.x = Math.random()*canvas.width;
@@ -225,16 +220,14 @@ function addSlingShot(){
   tempSlingShot.y = blueHero.y;
   // tempSlingShot.velX=5-Math.random()*10;
   // tempSlingShot.velY=5-Math.random()*10;
-  tempSlingShot.velX=10;
-  tempSlingShot.velY=0;
+  tempSlingShot.velX = 15;
+  tempSlingShot.velY = 0;
   slingShotList.push(tempSlingShot);
-
 }
 
 // function keyPressed(evt){
 //   addParticles();
 // }
-
 
 /*************************************Windows Onload*****************************************/
 
@@ -242,11 +235,11 @@ window.onload = function () {
   canvas = document.getElementById("gameCanvas");
   canvasContext = canvas.getContext("2d");
 
-  ratPic.onload = function(){
-    ratPicLoaded=true;
-  }
+  ratPic.onload = function () {
+    ratPicLoaded = true;
+  };
 
-  ratPic.src = "rat-ashleigh.png"
+  ratPic.src = "rat-ashleigh.png";
   // var tempParticle = new particleClass();
   // tempParticle.x = 100;
   // tempParticle.y=100;
@@ -269,11 +262,11 @@ window.onload = function () {
   }
  */
 
-  for(var i=0; i<2;i++){
+  for (var i = 0; i < 2; i++) {
     addParticles();
   }
 
-  for(var i=0; i<2;i++){
+  for (var i = 0; i < 2; i++) {
     addSlingShot();
   }
 
@@ -330,17 +323,16 @@ function updateAll() {
 function moveAll() {
   blueHero.move();
   ghostMove();
-  for(var i=0;i < particleList.length;i++){
+  for (var i = 0; i < particleList.length; i++) {
     particleList[i].move();
   }
 
-  for(var i=0;i < slingShotList.length;i++){
+  for (var i = 0; i < slingShotList.length; i++) {
     slingShotList[i].move();
   }
   //Just illustration-- not going to keep this.
   // particleList[0].move();
   // particleList[1].move();
-
 
   // oneParticle.move();
   // secondParticle.move();
@@ -363,30 +355,29 @@ function drawAll() {
 
   canvasContext.translate(-camPanX, -camPanY);
 
-  
   drawTracks();
- 
-  for(var i=0;i < particleList.length;i++){
+
+  for (var i = 0; i < particleList.length; i++) {
     particleList[i].draw();
   }
 
-  for(var i=0;i < slingShotList.length;i++){
+  for (var i = 0; i < slingShotList.length; i++) {
     slingShotList[i].draw();
   }
 
   blueHero.draw();
   // rat.draw();
   // particleCircle(this.x, this.y, 5, "yellow");
-
- 
   // oneParticle.draw();
   // secondParticle.draw();
 
-  if(ratPicLoaded){
-    canvasContext.drawImage(ratPic,
-        ratX - ratPic.width/2, ratY - ratPic.height/2);
+  if (ratPicLoaded) {
+    canvasContext.drawImage(
+      ratPic,
+      ratX - ratPic.width / 2,
+      ratY - ratPic.height / 2
+    );
   }
-
 
   ghostCircle(ghostX, ghostY, 18, "black");
   ghostCircle(ghostX, ghostY, 12, "red");
@@ -397,6 +388,7 @@ function drawAll() {
   monsterCircle(monsterX, ghostY, 12, "green");
   monsterCircle(monsterX - 1, ghostY, 5, "white");
   monsterCircle(monsterX - 2, ghostY + 2, 2, "black");
+
   canvasContext.restore();
   drawOnlyBricksOnScreen();
 
