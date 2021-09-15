@@ -8,6 +8,7 @@ const PLAYER_MOVEMENT_SPEED = 10.0;
 const JUMP_POWER = 15;
 const GRAVITY = 0.5;
 const AIR_RESISTANCE = 0.95;
+const START_PARTICLES=2;
 
 function heroClass() {
   // var sound = document.getElementById("heroSound");
@@ -124,7 +125,10 @@ function heroClass() {
       // beginLoadingImage(rocketBooster);
 
       nextY -= JUMP_POWER;
-      addParticles();
+      for (var i = 0; i < START_PARTICLES; i++) {
+        addParticles();
+      }
+      // addParticles();
       // addSlingShot();
       // console.log("JUMP_POWER");
     } else {
@@ -172,6 +176,7 @@ function heroClass() {
     // heroTrackHandling(this);
 
     if (this.keyHeld_Slingshot) {
+      
       addSlingShot();
       // console.log("");
 

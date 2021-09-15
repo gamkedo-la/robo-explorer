@@ -66,6 +66,7 @@ function particleClass() {
   this.y = 75;
   this.velX = 5;
   this.velY = 7;
+  this.myColor;
 
   this.move = function () {
     this.x += this.velX;
@@ -85,8 +86,11 @@ function particleClass() {
   };
 
   this.draw = function () {
-    particleCircle(this.x, this.y, 2, "yellow");
+    // particleCircle(this.x, this.y, 2, "yellow");
+    particleCircle(this.x, this.y, 2,  this.myColor);
+   
   };
+
 } // end of particleClass def
 
 // var oneParticle = new particleClass();
@@ -195,6 +199,14 @@ function addParticles() {
   tempParticle.y = blueHero.y;
   tempParticle.velX = 0 - Math.random() * 10;
   tempParticle.velY = 10 - Math.random() * 10;
+
+  if(Math.random() < 0.5){
+    tempParticle.myColor = "red";
+  }else{
+    tempParticle.myColor = "yellow";
+  }
+  
+
   particleList.push(tempParticle);
 }
 
@@ -262,9 +274,9 @@ window.onload = function () {
   }
  */
 
-  for (var i = 0; i < 2; i++) {
-    addParticles();
-  }
+  // for (var i = 0; i < 2; i++) {
+  //   addParticles();
+  // }
 
   for (var i = 0; i < 2; i++) {
     addSlingShot();
