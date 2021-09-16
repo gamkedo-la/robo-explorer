@@ -228,20 +228,8 @@ var levelFive = [  1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
            if( tileTypeHasTransparency(tileKindHere) ) {
 				canvasContext.drawImage(trackPics[WORLD_EMPTY],drawTileX,drawTileY);
             }
-            //first implementation of the sprite sheet
-            if(tileKindHere == 15){ //rat
-                canvasContext.drawImage(useImg,drawTileX,drawTileY);
-                /*
-                //var trackTypeHere = trackGrid[ trackIndex ]; // getting the track code for this tile        
-                canvasContext.drawImage(useImg,
-                0, // top-left corner of tile art, multiple of tile width
-                WORLD_W, WORLD_H, // get full tile size from source
-                drawTileX,drawTileY, // x,y top-left corner for image destination
-                WORLD_W, WORLD_H); // draw full full tile size for destination          
-                */
-            } else {
-                canvasContext.drawImage(useImg,drawTileX,drawTileY);
-            }
+
+            canvasContext.drawImage(useImg,drawTileX,drawTileY);
 
               drawTileX += WORLD_W;
               arrayIndex++;

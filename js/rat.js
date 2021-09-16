@@ -2,18 +2,11 @@ const RAT_MOVEMENT_SPEED = 2.0;
 const RAT_IMAGE_NAME = "rat";
 const RAT_FRAMES = 0;
 
-var ratPic = document.createElement("img");
-
 function ratClass() {
   this.x = 75;
   this.y = 75;
 
   this.speedX = RAT_MOVEMENT_SPEED;
-
-  this.nextX = this.x; 
-  this.nextY = this.y;
-  //used for collision
-  this.nextTile = getTileIndexAtPixelCoord(nextX, nextY) ;
 
   this.width = 40;
   this.height = 50;
@@ -26,29 +19,40 @@ function ratClass() {
   this.reset = function (whichImage, ratPic) {
     this.name = ratPic;
     this.myRatPic = whichImage;
+
+    /*
+    //var trackTypeHere = trackGrid[ trackIndex ]; // getting the track code for this tile        
+    canvasContext.drawImage(useImg,
+    0, // top-left corner of tile art, multiple of tile width
+    WORLD_W, WORLD_H, // get full tile size from source
+    drawTileX,drawTileY, // x,y top-left corner for image destination
+    WORLD_W, WORLD_H); // draw full full tile size for destination          
+    */
   }
 
   this.move = function(){
+
+    let nextX = this.x + this.speedX; //calc this in just one place
+    let nextY = this.y; //no vert movement...yet
+    //used for collision
+    let nextTile = getTileIndexAtPixelCoord(nextX, nextY) ;
+
     if(nextTile != WORLD_WALL){
-      this.x += this.speedX;
+      this.x = nextX;
+      this.y = nextY; 
     } else {
       this.speedX = -this.speedX;
+      //no y behavior
     }
   }
 
   this.draw = function(){
-
-  /* might need this?
-  if (ratPicLoaded) {
     canvasContext.drawImage(
       ratPic,
-      ratX - ratPic.width / 2,
-      ratY - ratPic.height / 2
+      this.x - ratPic.width / 2,
+      this.y - ratPic.height / 2
     );
-  }
-  */
 
-    //drawRat();
   }
   //   for (var eachRow = 0; eachRow < WORLD_ROWS; eachRow++) {
   //     for (var eachCol = 0; eachCol < WORLD_COLS; eachCol++) {

@@ -161,12 +161,11 @@ function heroClass() {
 
       // switchCostume(costumeList[1]);
       // this.speed -= REVERSE_POWER;
-      console.log("keyHeld_WalkLeft");
+
     }
 
     if (this.keyHeld_WalkRight) {
       nextX += PLAYER_MOVEMENT_SPEED;
-      console.log("keyHeld_WalkRight");
 
       // this.speed += DRIVE_POWER;
     }

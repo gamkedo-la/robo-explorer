@@ -1,6 +1,5 @@
 var heroPic = document.createElement("img");
-// var otherCarPic = document.createElement("img");
-// var ratPic = document.createElement("img");
+var ratPic = document.createElement("img");
 
 var trackPics = [];
 
