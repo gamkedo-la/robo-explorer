@@ -71,6 +71,7 @@ function particleClass() {
   this.myColor;
 
   this.move = function () {
+    this.velY += GRAVITY_PARTICLE_PER_CYCLE;
     this.x += this.velX;
     this.y += this.velY;
     if (this.x < 0) {
@@ -110,7 +111,7 @@ function slingShotClass() {
 
 
   this.move = function () {
-    this.velY += GRAVITY_PARTICLE_PER_CYCLE;
+    
 
     this.x += this.velX;
     this.y += this.velY;
