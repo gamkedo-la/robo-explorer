@@ -314,7 +314,7 @@ function loadLevel(whichLevel) {
   worldGrid = whichLevel.slice();
   // blueCar.reset(otherCarPic, "Machine Raider");
   blueHero.reset(heroPic, "Black Fire");
-  rat.reset(ratPic, "Black Fire"); //TODO need 2 keep looping and instantiating
+  rat.reset(); //TODO need 2 keep looping and instantiating
   //worldGrid[30] = 5;
   //console.log(whichLevel[30]);
 }
@@ -373,7 +373,7 @@ function drawAll() {
   }
 
   blueHero.draw();
-  rat.draw(); //i would think you would want to use this...
+  rat.draw();
   // particleCircle(this.x, this.y, 5, "yellow");
   // oneParticle.draw();
   // secondParticle.draw();
