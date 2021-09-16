@@ -342,7 +342,7 @@ function heroClass() {
       //     console.log("keyHeld_Climb");
       //   }
       //   break;
-      case WORLD_RAT:
+      case WORLD_RAT: //"kills" rat when player makes contact with rat
         // loadLevel(levelTwo);
         // nextX += PLAYER_MOVEMENT_SPEED + 10;
         

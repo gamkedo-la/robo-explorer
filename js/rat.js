@@ -8,6 +8,13 @@ function ratClass() {
   this.x = 75;
   this.y = 75;
 
+  this.speedX = RAT_MOVEMENT_SPEED;
+
+  this.nextX = this.x; 
+  this.nextY = this.y;
+  //used for collision
+  this.nextTile = getTileIndexAtPixelCoord(nextX, nextY) ;
+
   this.width = 40;
   this.height = 50;
   this.frameX = 0;
@@ -19,6 +26,14 @@ function ratClass() {
   this.reset = function (whichImage, ratPic) {
     this.name = ratPic;
     this.myRatPic = whichImage;
+  }
+
+  this.move = function(){
+    if(nextTile != WORLD_WALL){
+      this.x += this.speedX;
+    } else {
+      this.speedX = -this.speedX;
+    }
   }
 
   this.draw = function(){
@@ -33,7 +48,7 @@ function ratClass() {
   }
   */
 
-    drawRat();
+    //drawRat();
   }
   //   for (var eachRow = 0; eachRow < WORLD_ROWS; eachRow++) {
   //     for (var eachCol = 0; eachCol < WORLD_COLS; eachCol++) {
