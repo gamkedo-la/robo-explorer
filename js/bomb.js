@@ -29,7 +29,7 @@ function bombClass() {
   };
 
   this.draw = function () {
-    //console.log('bomb draw is reached');
+    console.log('bomb draw is reached');
     var frame = 0;
     var bombFrameW = 40;
     canvasContext.drawImage(

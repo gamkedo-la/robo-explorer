@@ -1,7 +1,7 @@
 var canvas, canvasContext;
 var blueHero = new heroClass();
 var rat = new ratClass();
-// var bomb = new bombClass();
+var bomb = new bombClass();
 
 var CHEATS_ENABLED = true;
 
@@ -132,15 +132,13 @@ function slingShotClass() {
 var slingShotList = [];
 /**************************************FUNCTION FOR PARTICLE RESET************************************* */
 function particleReset() {
-  this.x = canvas.width / 1.5;
-  this.y = canvas.height / 2;
+  particleList = [];
 }
 
 /**************************************FUNCTION FOR SLINGSHOT RESET************************************* */
 
 function slingShotReset() {
-  this.x = canvas.width / 1.5;
-  this.y = canvas.height / 2;
+  slingShotList = [];
 }
 
 // function particleMove() {
@@ -313,9 +311,12 @@ function nextLevel() {
 
 function loadLevel(whichLevel) {
   worldGrid = whichLevel.slice();
+  particleReset();
+  slingShotReset();
   // blueCar.reset(otherCarPic, "Machine Raider");
   blueHero.reset(heroPic, "Black Fire");
   rat.reset(); //TODO need 2 keep looping and instantiating
+  bomb.reset();
   //worldGrid[30] = 5;
   //console.log(whichLevel[30]);
 }
@@ -375,7 +376,7 @@ function drawAll() {
 
   blueHero.draw();
   rat.draw();
-  // bomb.draw();
+   bomb.draw();
   // particleCircle(this.x, this.y, 5, "yellow");
   // oneParticle.draw();
   // secondParticle.draw();
