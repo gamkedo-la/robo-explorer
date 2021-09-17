@@ -115,6 +115,8 @@ function heroClass() {
     document.getElementById("collected-crossbows").innerHTML = "1";
   };
 
+
+  /**************************CODE FOR CHARACTER TO MOVE*********************************** */
   this.move = function () {
     // this.speed *= GROUNDSPEED_DECAY_MULT;
 
