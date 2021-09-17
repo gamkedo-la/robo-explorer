@@ -8,7 +8,7 @@ var picsToLoad = 0; //set automatically based on imageList in loadImages
 
 function countLoadedImagesAndLaunchIfReady() {
   picsToLoad--;
-  console.log(picsToLoad);
+  //console.log(picsToLoad);
   if (picsToLoad == 0) {
     imageLoadingDoneSoStartGame();
   }
@@ -39,7 +39,7 @@ function loadImages() {
      //{ varName: heroPic, theFile: "rocketMan3.png"},
     { varName: heroPic, theFile: "robo-explorer-armor3-withSlingshot.png"},
     { varName: ratPic, theFile: "rat-walk-cycle.png"},
-    { varName: bombPic, theFile: "bomb.png"},
+    { varName: bombPic, theFile: "bomb-sprite.png"},
     // {trackType: WORLD_UPPERROAD, theFile:"WORLD_EMPTY3.png"},
     { trackType: WORLD_EMPTY, theFile: "track_road2.png" },
     { trackType: WORLD_WALL, theFile: "bricks3.png" },

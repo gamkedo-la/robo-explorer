@@ -38,6 +38,7 @@ function heroClass() {
   this.keyHeld_WalkRight = false;
   this.keyHeld_Jump = false;
   this.keyHeld_Slingshot = false;
+  this.keyHeld_Bomb=false;
   // this.sound = false;
 
   this.controlKeyUp;
@@ -45,7 +46,8 @@ function heroClass() {
   this.controlKeyDown;
   this.controlKeyLeft;
   this.controlKeyJump;
-  this.controlKeySlingshot
+  this.controlKeySlingshot;
+  this.controlKeyBomb;
   // this.playSound = function(){
   //   if(play == 0){
   //     play = 1;
@@ -56,13 +58,14 @@ function heroClass() {
   //   }
   // }
 
-  this.setupInput = function (upKey, rightKey, downKey, leftKey, jumpKey,slingshotKey) {
+  this.setupInput = function (upKey, rightKey, downKey, leftKey, jumpKey,slingshotKey,bombKey) {
     this.controlKeyUp = upKey;
     this.controlKeyRight = rightKey;
     this.controlKeyDown = downKey;
     this.controlKeyLeft = leftKey;
     this.controlKeyJump = jumpKey;
     this.controlKeySlingshot = slingshotKey;
+    this.controlKeyBomb= bombKey;
   };
 
   this.reset = function (whichImage, heroName) {
@@ -182,6 +185,16 @@ function heroClass() {
       // console.log("");
 
       // this.speed += DRIVE_POWER;
+    }
+
+    if(this.keyHeld_Bomb){
+      this.keyHeld_Bomb=false;
+      //console.log("bomb");
+      var newBomb = new bombClass();
+      newBomb.reset();
+      newBomb.x = this.x;
+      newBomb.y = this.y;
+      bombList.push(newBomb);
     }
 
     var walkIntoTileIndexTop = getTileIndexAtPixelCoord(nextX, nextY-this.height/2) ;
