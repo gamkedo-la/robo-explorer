@@ -62,8 +62,13 @@ function particleClass() {
   this.velX = 5;
   this.velY = 7;
   this.myColor;
+  this.readyToRemove=false;
+  this.life=15+Math.random()*20;
 
   this.move = function () {
+    if(this.life-- < 0){
+      this.readyToRemove=true;
+    }
     this.velY += GRAVITY_PARTICLE_PER_CYCLE;
     this.x += this.velX;
     this.y += this.velY;
@@ -101,24 +106,22 @@ function slingShotClass() {
   this.y = 75;
   this.velX = 5;
   this.velY = 7;
-
+  this.readyToRemove=false;
 
   this.move = function () {
-    
-
     this.x += this.velX;
     this.y += this.velY;
     if (this.x < 0) {
-      this.velX *= -1;
+      this.readyToRemove= true;
     }
     if (this.x > canvas.width) {
-      this.velX *= -1;
+      this.readyToRemove= true;
     }
     if (this.y < 0) {
-      this.velY *= -1;
+      this.readyToRemove= true;
     }
     if (this.y > canvas.height) {
-      this.velY *= -1;
+      this.readyToRemove= true;
     }
   };
 
@@ -215,11 +218,6 @@ function addParticles() {
 /**********************************FUNCTION ADD SLINGSHOT BULLETS********************************** */
 
 
-function removeSlingShot() {
-  if (slingShotList.length > 0) {
-    slingShotList.splice(0, 1);
-  }
-}
 
 function addSlingShot() {
   var tempSlingShot;
@@ -334,10 +332,16 @@ function moveAll() {
   ghostMove();
   for (var i = 0; i < particleList.length; i++) {
     particleList[i].move();
+    if(particleList[i].readyToRemove){
+      particleList.splice(i,1);
+    }
   }
 
-  for (var i = 0; i < slingShotList.length; i++) {
+  for (var i = slingShotList.length-1; i >= 0; i--) {
     slingShotList[i].move();
+    if(slingShotList[i].readyToRemove){
+      slingShotList.splice(i,1);
+    }
   }
   //Just illustration-- not going to keep this.
   // particleList[0].move();

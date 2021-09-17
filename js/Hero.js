@@ -177,13 +177,11 @@ function heroClass() {
     // heroTrackHandling(this);
 
     if (this.keyHeld_Slingshot) {
-      
+      this.keyHeld_Slingshot=false;
       addSlingShot();
       // console.log("");
 
       // this.speed += DRIVE_POWER;
-    }else{
-         removeSlingShot();
     }
 
     var walkIntoTileIndexTop = getTileIndexAtPixelCoord(nextX, nextY-this.height/2) ;
