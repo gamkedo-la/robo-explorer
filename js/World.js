@@ -123,6 +123,7 @@ var levelFive = [  1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
         const WORLD_CROSSBOW = 17;
         const WORLD_TUNNEL_RIGHT_5=18;
         const WORLD_ROCK=19;
+        const WORLD_BOMB=20;
         
         // const WORLD_RAT2=20;
 

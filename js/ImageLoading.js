@@ -1,5 +1,6 @@
 var heroPic = document.createElement("img");
 var ratPic = document.createElement("img");
+var bombPic = document.createElement("img");
 
 var trackPics = [];
 
@@ -38,6 +39,7 @@ function loadImages() {
      //{ varName: heroPic, theFile: "rocketMan3.png"},
     { varName: heroPic, theFile: "robo-explorer-armor3-withSlingshot.png"},
     { varName: ratPic, theFile: "rat-walk-cycle.png"},
+    { varName: bombPic, theFile: "bomb.png"},
     // {trackType: WORLD_UPPERROAD, theFile:"WORLD_EMPTY3.png"},
     { trackType: WORLD_EMPTY, theFile: "track_road2.png" },
     { trackType: WORLD_WALL, theFile: "bricks3.png" },
