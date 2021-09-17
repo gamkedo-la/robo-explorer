@@ -1,6 +1,7 @@
 var canvas, canvasContext;
 var blueHero = new heroClass();
 var rat = new ratClass();
+// var bomb = new bombClass();
 
 var CHEATS_ENABLED = true;
 
@@ -374,6 +375,7 @@ function drawAll() {
 
   blueHero.draw();
   rat.draw();
+  // bomb.draw();
   // particleCircle(this.x, this.y, 5, "yellow");
   // oneParticle.draw();
   // secondParticle.draw();
