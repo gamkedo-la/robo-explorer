@@ -1,16 +1,8 @@
 var canvas, canvasContext;
 var blueHero = new heroClass();
-// var rat = new ratClass();
+var rat = new ratClass();
 
 var CHEATS_ENABLED = true;
-
-var ratPic = document.createElement("img");
-var ratPicLoaded = false;
-
-var ratX = 75;
-var ratY = 75;
-var ratSpeedX = 5;
-var ratSpeedY = 7;
 
 /************************************************** */
 
@@ -254,11 +246,6 @@ window.onload = function () {
   canvas = document.getElementById("gameCanvas");
   canvasContext = canvas.getContext("2d");
 
-  ratPic.onload = function () {
-    ratPicLoaded = true;
-  };
-
-  //ratPic.src = "rat-ashleigh.png"; //unsure why this is in here, commenting out for right now
   // var tempParticle = new particleClass();
   // tempParticle.x = 100;
   // tempParticle.y=100;
@@ -327,7 +314,7 @@ function loadLevel(whichLevel) {
   worldGrid = whichLevel.slice();
   // blueCar.reset(otherCarPic, "Machine Raider");
   blueHero.reset(heroPic, "Black Fire");
-  // rat.reset(ratPic, "Black Fire");
+  rat.reset(); //TODO need 2 keep looping and instantiating
   //worldGrid[30] = 5;
   //console.log(whichLevel[30]);
 }
@@ -341,6 +328,7 @@ function updateAll() {
 /**********************FUNCTION FOR UPDATING moveAll ****************************** */
 function moveAll() {
   blueHero.move();
+  rat.move();
   ghostMove();
   for (var i = 0; i < particleList.length; i++) {
     particleList[i].move();
@@ -385,7 +373,7 @@ function drawAll() {
   }
 
   blueHero.draw();
-  // rat.draw(); //i would think you would want to use this...
+  rat.draw();
   // particleCircle(this.x, this.y, 5, "yellow");
   // oneParticle.draw();
   // secondParticle.draw();

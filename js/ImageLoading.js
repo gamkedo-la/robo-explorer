@@ -1,6 +1,5 @@
 var heroPic = document.createElement("img");
-// var otherCarPic = document.createElement("img");
-// var ratPic = document.createElement("img");
+var ratPic = document.createElement("img");
 
 var trackPics = [];
 
@@ -37,7 +36,8 @@ function loadImages() {
  
   var imageList = [
      //{ varName: heroPic, theFile: "rocketMan3.png"},
-     { varName: heroPic, theFile: "robo-explorer-armor3-withSlingshot.png"},
+    { varName: heroPic, theFile: "robo-explorer-armor3-withSlingshot.png"},
+    { varName: ratPic, theFile: "rat-walk-cycle.png"},
     // {trackType: WORLD_UPPERROAD, theFile:"WORLD_EMPTY3.png"},
     { trackType: WORLD_EMPTY, theFile: "track_road2.png" },
     { trackType: WORLD_WALL, theFile: "bricks3.png" },
@@ -51,8 +51,8 @@ function loadImages() {
     { trackType: WORLD_SWORD, theFile: "sword.png" },
     { trackType: WORLD_TRAP, theFile: "spike1.png" },
     { trackType: WORLD_SPEAR, theFile: "spear2.png" },
-    { trackType: WORLD_RAT, theFile: "rat-walk-cycle.png" },
     { trackType: WORLD_ARROW, theFile: "world_arrow3.png" },
+    { trackType: WORLD_RAT, theFile: "rat-walk-cycle.png" }, //visual feedback, did a WORLD_RAT not get scrubbed in worldGrid thru reset
     { trackType: WORLD_TUNNEL_RIGHT, theFile: "world_lowerTunnel-right.png" },
     { trackType: WORLD_TUNNEL_RIGHT_5, theFile: "world_lowerTunnel-right5.png" },
     { trackType: WORLD_CROSSBOW, theFile: "crossbow.png" }
