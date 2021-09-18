@@ -13,6 +13,7 @@ function ratClass() {
   this.frameX = 0;
   this.frameY = 0;
   this.frame = 0;
+  this.numberOfFrames = 1; //how many frames are in the spritesheet
 
   this.reset = function () {
 
@@ -49,6 +50,7 @@ function ratClass() {
   this.draw = function(){
 
 
+    /*
     if(this.frame == 0){
       //console.log('frame flip is reached');
       this.frame = 1;
@@ -57,6 +59,7 @@ function ratClass() {
     if(this.frame == 1){
       this.frame = 0;
     }
+    */
 
     //two things
     //1, this is effectively doing nothing, this.frame is just reset
@@ -81,7 +84,7 @@ function ratClass() {
     }
     */
     
-    //console.log(this.frame);
+    console.log(this.frame);
     var ratFrameW = 40;
     //console.log('frame right before rat is draw is... ' + frame);
     canvasContext.drawImage(
@@ -91,15 +94,12 @@ function ratClass() {
       this.x - ratPic.width / 2, this.y - ratPic.height / 2, //position on screen, centers image relative to self
       ratFrameW, ratPic.height //size of image on screen
     );
-
-    /*
-    //var trackTypeHere = trackGrid[ trackIndex ]; // getting the track code for this tile        
-    canvasContext.drawImage(useImg,
-    0, // top-left corner of tile art, multiple of tile width
-    WORLD_W, WORLD_H, // get full tile size from source
-    drawTileX,drawTileY, // x,y top-left corner for image destination
-    WORLD_W, WORLD_H); // draw full full tile size for destination          
-    */
-    
+  
+    this.frame++;
+    //console.log(this.frame);
+    if(this.frame > this.numberOfFrames){
+      this.frame = 0;
+    } 
+    //console.log(this.frame);
   }
 };
