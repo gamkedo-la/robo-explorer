@@ -12,8 +12,12 @@ function ratClass() {
   this.height = 50;
   this.frameX = 0;
   this.frameY = 0;
+
+  //properties for sprite animation
   this.frame = 0;
   this.numberOfFrames = 1; //how many frames are in the spritesheet
+  this.animationSpeed = 5;
+  this.animationCounter = 0;
 
   this.reset = function () {
 
@@ -48,45 +52,8 @@ function ratClass() {
   }
 
   this.draw = function(){
-
-
-    /*
-    if(this.frame == 0){
-      //console.log('frame flip is reached');
-      this.frame = 1;
-      //console.log(this.frame);
-    }
-    if(this.frame == 1){
-      this.frame = 0;
-    }
-    */
-
-    //two things
-    //1, this is effectively doing nothing, this.frame is just reset
-    //2, I think this should be done at the _end_ of this.draw
-    //oh you could just increment frame once at the end of each this.draw call, try that! tomorrow...
-
-    /*
-    //var frame = 0; move this into a object level prop
-    var frameTime = 10;
-    //TODO, flip frame between 0 and 1, based on a counter
-    for(var i = 0; i <= frameTime; i++){
-      if(i == frameTime){
-        console.log('frame in conditional is...' + frame);
-        if(frame == 0){
-          frame = 1;
-          console.log('frame in "one" conditional is...' + frame);
-        }
-        if(frame == 1){
-          frame = 0;
-        }
-      }
-    }
-    */
     
-    console.log(this.frame);
     var ratFrameW = 40;
-    //console.log('frame right before rat is draw is... ' + frame);
     canvasContext.drawImage(
       ratPic,
       this.frame * ratFrameW, 0, //top left corner of spritesheet frame
@@ -95,11 +62,17 @@ function ratClass() {
       ratFrameW, ratPic.height //size of image on screen
     );
   
-    this.frame++;
-    //console.log(this.frame);
-    if(this.frame > this.numberOfFrames){
-      this.frame = 0;
-    } 
-    //console.log(this.frame);
+    //SPRITE ANIMATION CODE
+
+    this.animationCounter++;
+    if(this.animationCounter == this.animationSpeed){
+      this.frame++;
+      if(this.frame > this.numberOfFrames){
+        this.frame = 0;
+      } 
+      this.animationCounter = 0;
+    }
+    console.log(this.animationCounter);
+    console.log(this.frame); //caught the problem...this is reaching beyond number of frames...
   }
 };
