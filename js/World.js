@@ -98,7 +98,7 @@ var levelFive = [  1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
                     1,0,0,0,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,                                                                                                                         
                     2,0,0,0,5,1,1,1,1,1,1,0,0,0,0,0,5,1,1,1,
                     1,0,0,0,0,1,1,1,1,1,1,6,1,1,1,1,1,1,1,1,
-                    1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1];
+                    1,1,1,1,1,1,1,1,1,1,1,21,1,1,1,1,1,1,1,1];
         var levelList = [levelOne,levelTwo,levelThree,levelFour,levelFive,levelSix];
         var levelNow = 0;
         var worldGrid = [];      
@@ -124,6 +124,7 @@ var levelFive = [  1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
         const WORLD_TUNNEL_RIGHT_5=18;
         const WORLD_ROCK=19;
         const WORLD_BOMB=20;
+        const WORLD_PIPE_BOTTOM=21;
         
         // const WORLD_RAT2=20;
 
