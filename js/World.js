@@ -84,23 +84,6 @@ var levelFive = [  1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,24,1,1,1,
                    1,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
                    1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1];
 
- var sideQuest1 = [
-     1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,  
-     1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,
-     1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,                        
-     1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,
-     1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,  
-     1,0,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
-     1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,                                           
-     1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,  
-     1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,
-     1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,
-     1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,
-     1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,                                                                                                                         
-     1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,
-     1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,18,
-     1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1];
-
  var levelSix = [  1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,  
                     1,0,0,0,1,1,1,1,1,1,1,1,1,0,0,6,0,1,1,1,
                     1,0,0,0,1,0,0,0,1,1,1,1,1,0,1,1,5,1,1,1,                        
@@ -116,35 +99,57 @@ var levelFive = [  1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,24,1,1,1,
                     2,0,0,0,5,1,1,1,1,1,1,0,0,0,0,0,5,1,1,1,
                     1,0,0,0,0,1,1,1,1,1,1,6,1,1,1,1,1,1,1,1,
                     1,1,1,1,1,1,1,1,1,1,1,21,1,1,1,1,1,1,1,1];
-        var levelList = [levelOne,levelTwo,levelThree,levelFour,sideQuest1, levelFive, ,levelSix];
+
+
+                    
+ var sideQuest1 = [
+    1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,  
+    1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,
+    1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,                        
+    1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,
+    1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,  
+    1,0,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+    1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,                                           
+    1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,  
+    1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,
+    1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,
+    1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,
+    1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,                                                                                                                         
+    1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,
+    1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,18,
+    1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1];
+    
+        var levelList = [levelOne,levelTwo,levelThree,levelFour, levelFive,levelSix];
         var levelNow = 0;
+        var sideQuest=0;
+        var sideQuestList = [sideQuest1];
         var worldGrid = [];      
         
         const WORLD_EMPTY = 0;
-        const WORLD_WALL = 1;
+        const WORLD_WALL = 1; //World.js
         const WORLD_PLAYERSTART = 2;
-        const WORLD_SLINGSHOT = 3;
-        const WORLD_LADDER = 4;
-        const WORLD_KEY = 5;
-        const WORLD_DOOR = 6;
-        const WORLD_TRAP =7;
-        const WORLD_LADDER_CONNECTOR = 8;
-        const WORLD_HERO = 9;
-        const WORLD_UPPERROAD =10;
-        const WORLD_TUNNEL_UP =11;
-        const WORLD_SWORD =12;
-        const WORLD_ARROW =13;
-        const WORLD_SPEAR = 14;
-        const WORLD_RAT = 15;
-        const WORLD_TUNNEL_RIGHT = 16;
-        const WORLD_CROSSBOW = 17;
-        const WORLD_TUNNEL_RIGHT_5=18;
-        const WORLD_ROCK=19;
-        const WORLD_BOMB=20;
-        const WORLD_PIPE_BOTTOM=21;
-        const WORLD_TUNNEL_RIGHT_3=22;
-        const WORLD_TUNNEL_RIGHT_4=23;
-        const WORLD_PIPE_UP_SIDEQUEST1=24;
+        const WORLD_SLINGSHOT = 3; //World.js
+        const WORLD_LADDER = 4; //World.js
+        const WORLD_KEY = 5; //World.js
+        const WORLD_DOOR = 6; //World.js
+        const WORLD_TRAP =7; //World.js
+        const WORLD_LADDER_CONNECTOR = 8; //World.js
+        const WORLD_HERO = 9; 
+        const WORLD_UPPERROAD =10; //World.js
+        const WORLD_TUNNEL_UP =11; //World.js
+        const WORLD_SWORD =12; //World.js
+        const WORLD_ARROW =13; //World.js
+        const WORLD_SPEAR = 14; //World.js
+        const WORLD_RAT = 15; 
+        const WORLD_TUNNEL_RIGHT = 16; //World.js
+        const WORLD_CROSSBOW = 17; //World.js
+        const WORLD_TUNNEL_RIGHT_5=18; //World.js
+        const WORLD_ROCK=19; //World.js
+        const WORLD_BOMB=20; 
+        const WORLD_PIPE_BOTTOM=21; //World.js
+        const WORLD_TUNNEL_RIGHT_3=22; //World.js
+        const WORLD_TUNNEL_RIGHT_4=23; //World.js
+        const WORLD_PIPE_UP_SIDEQUEST1=24; //World.js
         
         // const WORLD_RAT2=20;
 
