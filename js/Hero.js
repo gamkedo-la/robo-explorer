@@ -108,6 +108,7 @@ function heroClass() {
   this.updateArrowReadout = function () {
     document.getElementById("arrow").innerHTML = "3. Arrow";
   };
+  
 
   this.updateSpearReadout = function () {
     document.getElementById("spear").innerHTML = "4. Spear";
@@ -302,11 +303,14 @@ function heroClass() {
         worldGrid[walkIntoTileIndex] = WORLD_EMPTY;
         break;
       case WORLD_ARROW:
-        loadLevel(levelFour);
+        // loadLevel(levelFour);
         worldGrid[walkIntoTileIndex] = WORLD_EMPTY;
         this.updateArrowReadout();
         break;
-
+      case WORLD_TUNNEL_RIGHT_3:
+         loadLevel(levelFour);
+         worldGrid[walkIntoTileIndex] = WORLD_EMPTY;
+         break;
       case WORLD_SPEAR:
         loadLevel(levelFive);
         worldGrid[walkIntoTileIndex] = WORLD_EMPTY;
