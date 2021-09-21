@@ -311,19 +311,28 @@ function heroClass() {
          loadLevel(levelFour);
          worldGrid[walkIntoTileIndex] = WORLD_EMPTY;
          break;
-      case WORLD_SPEAR:
+      case WORLD_TUNNEL_RIGHT_4:
         loadLevel(levelFive);
+        worldGrid[walkIntoTileIndex] = WORLD_EMPTY;
+        break;
+      case WORLD_SPEAR:
+        //loadLevel(levelFive);
         worldGrid[walkIntoTileIndex] = WORLD_EMPTY;
         this.updateSpearReadout();
         break;
 
-      case WORLD_TUNNEL_RIGHT_5:
-        loadLevel(levelSix);
-        // nextX += PLAYER_MOVEMENT_SPEED + 10;
-        worldGrid[walkIntoTileIndex] = WORLD_EMPTY;
-        // this.updateSlingshotReadout();
-        break;
+     
 
+        case WORLD_PIPE_UP_SIDEQUEST1:
+          loadLevel(sideQuest1);
+          worldGrid[walkIntoTileIndex] = WORLD_EMPTY;
+          break;
+          case WORLD_TUNNEL_RIGHT_5:
+            loadLevel(levelSix);
+            // nextX += PLAYER_MOVEMENT_SPEED + 10;
+            worldGrid[walkIntoTileIndex] = WORLD_EMPTY;
+            // this.updateSlingshotReadout();
+            break;
       case WORLD_CROSSBOW:
         // loadLevel(levelFive);
         worldGrid[walkIntoTileIndex] = WORLD_EMPTY;

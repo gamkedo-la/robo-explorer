@@ -57,7 +57,9 @@ function loadImages() {
     { trackType: WORLD_RAT, theFile: "rat-walk-cycle.png" }, //visual feedback, did a WORLD_RAT not get scrubbed in worldGrid thru reset
     { trackType: WORLD_TUNNEL_RIGHT, theFile: "world_lowerTunnel-right.png" },
     { trackType: WORLD_TUNNEL_RIGHT_3, theFile: "world_lowerTunnel-right3.png" },
+    { trackType: WORLD_TUNNEL_RIGHT_4, theFile: "world_lowerTunnel-right3.png" },
     { trackType: WORLD_TUNNEL_RIGHT_5, theFile: "world_lowerTunnel-right5.png" },
+    { trackType: WORLD_PIPE_UP_SIDEQUEST1, theFile: "world_pipe_up_sidequest1.png" },
     { trackType: WORLD_CROSSBOW, theFile: "crossbow.png" },
     { trackType: WORLD_PIPE_BOTTOM, theFile: "world_pipe_bottom.png" }
   
