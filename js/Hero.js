@@ -8,7 +8,7 @@ const PLAYER_MOVEMENT_SPEED = 10.0;
 const JUMP_POWER = 15;
 const GRAVITY = 0.5;
 const AIR_RESISTANCE = 0.95;
-const START_PARTICLES=2;
+const START_PARTICLES = 2;
 
 function heroClass() {
   // var sound = document.getElementById("heroSound");
@@ -38,7 +38,7 @@ function heroClass() {
   this.keyHeld_WalkRight = false;
   this.keyHeld_Jump = false;
   this.keyHeld_Slingshot = false;
-  this.keyHeld_Bomb=false;
+  this.keyHeld_Bomb = false;
   // this.sound = false;
 
   this.controlKeyUp;
@@ -58,14 +58,22 @@ function heroClass() {
   //   }
   // }
 
-  this.setupInput = function (upKey, rightKey, downKey, leftKey, jumpKey,slingshotKey,bombKey) {
+  this.setupInput = function (
+    upKey,
+    rightKey,
+    downKey,
+    leftKey,
+    jumpKey,
+    slingshotKey,
+    bombKey
+  ) {
     this.controlKeyUp = upKey;
     this.controlKeyRight = rightKey;
     this.controlKeyDown = downKey;
     this.controlKeyLeft = leftKey;
     this.controlKeyJump = jumpKey;
     this.controlKeySlingshot = slingshotKey;
-    this.controlKeyBomb= bombKey;
+    this.controlKeyBomb = bombKey;
   };
 
   this.reset = function (whichImage, heroName) {
@@ -108,7 +116,6 @@ function heroClass() {
   this.updateArrowReadout = function () {
     document.getElementById("arrow").innerHTML = "3. Arrow";
   };
-  
 
   this.updateSpearReadout = function () {
     document.getElementById("spear").innerHTML = "4. Spear";
@@ -118,7 +125,6 @@ function heroClass() {
     document.getElementById("crossbow").style.display = "block";
     document.getElementById("collected-crossbows").innerHTML = "1";
   };
-
 
   /**************************CODE FOR CHARACTER TO MOVE*********************************** */
   this.move = function () {
@@ -138,7 +144,6 @@ function heroClass() {
       // addSlingShot();
       // console.log("JUMP_POWER");
     } else {
-    
       nextY += GRAVITY + 10;
       removeParticles();
       // removeSlingShot();
@@ -167,7 +172,6 @@ function heroClass() {
 
       // switchCostume(costumeList[1]);
       // this.speed -= REVERSE_POWER;
-
     }
 
     if (this.keyHeld_WalkRight) {
@@ -181,15 +185,15 @@ function heroClass() {
     // heroTrackHandling(this);
 
     if (this.keyHeld_Slingshot) {
-      this.keyHeld_Slingshot=false;
+      this.keyHeld_Slingshot = false;
       addSlingShot();
       // console.log("");
 
       // this.speed += DRIVE_POWER;
     }
 
-    if(this.keyHeld_Bomb){
-      this.keyHeld_Bomb=false;
+    if (this.keyHeld_Bomb) {
+      this.keyHeld_Bomb = false;
       //console.log("bomb");
       var newBomb = new bombClass();
       newBomb.reset();
@@ -198,16 +202,28 @@ function heroClass() {
       bombList.push(newBomb);
     }
 
-    var walkIntoTileIndexTop = getTileIndexAtPixelCoord(nextX, nextY-this.height/2) ;
+    var walkIntoTileIndexTop = getTileIndexAtPixelCoord(
+      nextX,
+      nextY - this.height / 2
+    );
     var walkIntoTileTypeTop = WORLD_WALL;
 
-    var walkIntoTileIndexBottom = getTileIndexAtPixelCoord(nextX, nextY+this.height/2);
+    var walkIntoTileIndexBottom = getTileIndexAtPixelCoord(
+      nextX,
+      nextY + this.height / 2
+    );
     var walkIntoTileTypeBottom = WORLD_WALL;
 
-    var walkIntoTileIndexLeft = getTileIndexAtPixelCoord(nextX-this.width/2, nextY);
+    var walkIntoTileIndexLeft = getTileIndexAtPixelCoord(
+      nextX - this.width / 2,
+      nextY
+    );
     var walkIntoTileTypeLeft = WORLD_WALL;
 
-    var walkIntoTileIndexRight = getTileIndexAtPixelCoord(nextX+this.width/2, nextY);
+    var walkIntoTileIndexRight = getTileIndexAtPixelCoord(
+      nextX + this.width / 2,
+      nextY
+    );
     var walkIntoTileTypeRight = WORLD_WALL;
 
     if (walkIntoTileIndexTop != undefined) {
@@ -229,53 +245,52 @@ function heroClass() {
     // this.updateLifeReadout= function(){
     //   document.getElementById("life").innerHTML = "Life: " + this.life;
     // }
-    if(this.keyHeld_Jump && walkIntoTileTypeTop == WORLD_EMPTY){
+    if (this.keyHeld_Jump && walkIntoTileTypeTop == WORLD_EMPTY) {
       this.y = nextY;
-    }else if(walkIntoTileTypeTop != WORLD_EMPTY){
+    } else if (walkIntoTileTypeTop != WORLD_EMPTY) {
       this.y++;
     }
 
-    if(this.keyHeld_Jump == false && walkIntoTileTypeBottom == WORLD_EMPTY){
+    if (this.keyHeld_Jump == false && walkIntoTileTypeBottom == WORLD_EMPTY) {
       this.y = nextY;
-    }else if(walkIntoTileTypeBottom != WORLD_EMPTY){
+    } else if (walkIntoTileTypeBottom != WORLD_EMPTY) {
       // this.y--;//Makes character shake we will add a nicer fix.
-      this.y = (1+Math.floor(this.y/WORLD_H))*WORLD_H-this.height/2;
+      this.y = (1 + Math.floor(this.y / WORLD_H)) * WORLD_H - this.height / 2;
     }
 
-    if(this.keyHeld_WalkLeft && walkIntoTileTypeLeft == WORLD_EMPTY){
+    if (this.keyHeld_WalkLeft && walkIntoTileTypeLeft == WORLD_EMPTY) {
       this.x = nextX;
-    }else if(walkIntoTileTypeLeft != WORLD_EMPTY){
+    } else if (walkIntoTileTypeLeft != WORLD_EMPTY) {
       this.x++;
     }
 
-    if(this.keyHeld_WalkRight && walkIntoTileTypeRight == WORLD_EMPTY){
+    if (this.keyHeld_WalkRight && walkIntoTileTypeRight == WORLD_EMPTY) {
       this.x = nextX;
-    }else if(walkIntoTileTypeRight != WORLD_EMPTY){
+    } else if (walkIntoTileTypeRight != WORLD_EMPTY) {
       this.x--;
     }
 
-   //Which Tile we are grabbing or opening.
+    //Which Tile we are grabbing or opening.
     var walkIntoTileType = WORLD_EMPTY;
     var walkIntoTileIndex;
-    if(this.keyHeld_WalkLeft){
+    if (this.keyHeld_WalkLeft) {
       walkIntoTileType = walkIntoTileTypeLeft;
       walkIntoTileIndex = walkIntoTileIndexLeft;
-    }else if(this.keyHeld_WalkRight){
+    } else if (this.keyHeld_WalkRight) {
       walkIntoTileType = walkIntoTileTypeRight;
       walkIntoTileIndex = walkIntoTileIndexRight;
-    }else if(this.keyHeld_Jump){
+    } else if (this.keyHeld_Jump) {
       walkIntoTileType = walkIntoTileTypeTop;
       walkIntoTileIndex = walkIntoTileIndexTop;
-    }else { // Feet
+    } else {
+      // Feet
       walkIntoTileType = walkIntoTileTypeBottom;
       walkIntoTileIndex = walkIntoTileIndexBottom;
     }
 
-
-
     switch (walkIntoTileType) {
       case WORLD_EMPTY:
-      break;
+        break;
       // case WORLD_GOAL:
       //   console.log(this.name + " WINS!");
       //   loadLevel(levelOne);
@@ -308,9 +323,9 @@ function heroClass() {
         this.updateArrowReadout();
         break;
       case WORLD_TUNNEL_RIGHT_3:
-         loadLevel(levelFour);
-         worldGrid[walkIntoTileIndex] = WORLD_EMPTY;
-         break;
+        loadLevel(levelFour);
+        worldGrid[walkIntoTileIndex] = WORLD_EMPTY;
+        break;
       case WORLD_TUNNEL_RIGHT_4:
         loadLevel(levelFive);
         worldGrid[walkIntoTileIndex] = WORLD_EMPTY;
@@ -320,19 +335,17 @@ function heroClass() {
         worldGrid[walkIntoTileIndex] = WORLD_EMPTY;
         this.updateSpearReadout();
         break;
-
-     
-
-        case WORLD_PIPE_UP_SIDEQUEST1:
-          loadLevel(sideQuest1);
-          worldGrid[walkIntoTileIndex] = WORLD_EMPTY;
-          break;
-          case WORLD_TUNNEL_RIGHT_5:
-            loadLevel(levelSix);
-            // nextX += PLAYER_MOVEMENT_SPEED + 10;
-            worldGrid[walkIntoTileIndex] = WORLD_EMPTY;
-            // this.updateSlingshotReadout();
-            break;
+      case WORLD_TUNNEL_RIGHT_5:
+        loadLevel(levelSix);
+        // nextX += PLAYER_MOVEMENT_SPEED + 10;
+        worldGrid[walkIntoTileIndex] = WORLD_EMPTY;
+                  // this.updateSlingshotReadout();
+        break;
+      case WORLD_PIPE_UP_SIDEQUEST1:
+         loadLevel(sideQuest1);
+         worldGrid[walkIntoTileIndex] = WORLD_EMPTY;
+         break;
+      
       case WORLD_CROSSBOW:
         // loadLevel(levelFive);
         worldGrid[walkIntoTileIndex] = WORLD_EMPTY;
@@ -370,8 +383,7 @@ function heroClass() {
       case WORLD_RAT: //"kills" rat when player makes contact with rat
         // loadLevel(levelTwo);
         // nextX += PLAYER_MOVEMENT_SPEED + 10;
-        
-       
+
         worldGrid[walkIntoTileIndex] = WORLD_EMPTY;
         break;
       case WORLD_TRAP:
