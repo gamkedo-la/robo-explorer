@@ -31,6 +31,7 @@ function heroClass() {
   this.keysHeld = 0;
   this.items = 0;
   // this.life = 3;
+  this.moveDir=0;
 
   this.keyHeld_Climb = false;
   this.keyHeld_ClimbDown = false;
@@ -173,17 +174,17 @@ function heroClass() {
     if (this.keyHeld_ClimbDown) {
       // this.speed -= REVERSE_POWER;
     }
-
+    this.moveDir=0;
     if (this.keyHeld_WalkLeft) {
       nextX -= PLAYER_MOVEMENT_SPEED;
-
+      this.moveDir=-1;
       // switchCostume(costumeList[1]);
       // this.speed -= REVERSE_POWER;
     }
-
+    
     if (this.keyHeld_WalkRight) {
       nextX += PLAYER_MOVEMENT_SPEED;
-
+      this.moveDir=1;
       // this.speed += DRIVE_POWER;
     }
     // this.x += Math.cos(this.ang) * this.speed;
@@ -426,13 +427,20 @@ function heroClass() {
     if(++this.frame >= 8){
       this.frame=0;
     }
+    if(this.moveDir == 0){
+      this.frame = 0;
+    }
+    /*
     canvasContext.drawImage(
       heroPic,
       this.frame * this.width, 0, //top left corner of spritesheet frame
       this.width, this.height, //size of frame
       this.x - this.width / 2, this.y - this.height / 2, //position on screen, centers image relative to self
       this.width, this.height //size of image on screen
-    );
+     );*/
+    var flipLeft = (this.moveDir==-1);
+
+    drawBitmapCenteredWithAnimationFlip(heroPic, this.x, this.y, this.width,this.height,this.frame,0,flipLeft); 
 
 
   };

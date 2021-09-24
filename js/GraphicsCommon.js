@@ -10,6 +10,24 @@ function drawBitmapCenteredWithRotation(useBitmap, atX, atY, withAng) {
   canvasContext.restore();
 }
 
+function drawBitmapCenteredWithAnimationFlip(useBitmap, atX, atY, frameW,frameH,frameNumX,frameNumY,flipHoriz) {
+  canvasContext.save();
+  canvasContext.translate(atX, atY);
+  if(flipHoriz){
+    canvasContext.scale(-1,1);
+  }
+  canvasContext.drawImage(
+    useBitmap,
+    frameNumX*frameW,frameNumY*frameH,
+    frameW,frameH,
+    -frameW / 2, -frameH / 2,
+    frameW,frameH
+  );
+ 
+  canvasContext.restore();
+}
+
+
 function colorRect(topLeftX, topLeftY, boxWidth, boxHeight, fillColor) {
   canvasContext.fillStyle = fillColor;
   canvasContext.fillRect(topLeftX, topLeftY, boxWidth, boxHeight);
