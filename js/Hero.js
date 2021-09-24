@@ -58,6 +58,13 @@ function heroClass() {
   //   }
   // }
 
+  //properties for sprite animation
+  this.frame = 0;
+  this.numberOfFrames = 1; //how many frames are in the spritesheet
+  this.animationSpeed = 5;
+  this.animationCounter = 0;
+
+
   this.setupInput = function (
     upKey,
     rightKey,
