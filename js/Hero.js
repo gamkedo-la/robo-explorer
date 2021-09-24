@@ -210,45 +210,17 @@ function heroClass() {
       bombList.push(newBomb);
     }
 
-    var walkIntoTileIndexTop = getTileIndexAtPixelCoord(
-      nextX,
-      nextY - this.height / 2
-    );
-    var walkIntoTileTypeTop = WORLD_WALL;
+    var walkIntoTileTypes = this.getWalkIntoTileTypes(nextX, nextY)
 
-    var walkIntoTileIndexBottom = getTileIndexAtPixelCoord(
-      nextX,
-      nextY + this.height / 2
-    );
-    var walkIntoTileTypeBottom = WORLD_WALL;
+    var walkIntoTileTypeTop = walkIntoTileTypes.walkIntoTileTypeTop
+    var walkIntoTileTypeRight = walkIntoTileTypes.walkIntoTileTypeRight
+    var walkIntoTileTypeBottom = walkIntoTileTypes.walkIntoTileTypeBottom
+    var walkIntoTileTypeLeft = walkIntoTileTypes.walkIntoTileTypeLeft
 
-    var walkIntoTileIndexLeft = getTileIndexAtPixelCoord(
-      nextX - this.width / 2,
-      nextY
-    );
-    var walkIntoTileTypeLeft = WORLD_WALL;
-
-    var walkIntoTileIndexRight = getTileIndexAtPixelCoord(
-      nextX + this.width / 2,
-      nextY
-    );
-    var walkIntoTileTypeRight = WORLD_WALL;
-
-    if (walkIntoTileIndexTop != undefined) {
-      walkIntoTileTypeTop = worldGrid[walkIntoTileIndexTop];
-    }
-
-    if (walkIntoTileIndexBottom != undefined) {
-      walkIntoTileTypeBottom = worldGrid[walkIntoTileIndexBottom];
-    }
-
-    if (walkIntoTileIndexLeft != undefined) {
-      walkIntoTileTypeLeft = worldGrid[walkIntoTileIndexLeft];
-    }
-
-    if (walkIntoTileIndexRight != undefined) {
-      walkIntoTileTypeRight = worldGrid[walkIntoTileIndexRight];
-    }
+    var walkIntoTileIndexTop = walkIntoTileTypes.walkIntoTileIndexTop
+    var walkIntoTileIndexRight = walkIntoTileTypes.walkIntoTileIndexRight
+    var walkIntoTileIndexBottom = walkIntoTileTypes.walkIntoTileIndexBottom
+    var walkIntoTileIndexLeft = walkIntoTileTypes.walkIntoTileIndexLeft
 
     // this.flyAng =0;
     var targetAng = 0;
@@ -304,6 +276,63 @@ function heroClass() {
       walkIntoTileIndex = walkIntoTileIndexBottom;
     }
 
+    this.reactToTileType(walkIntoTileType, walkIntoTileIndex)
+  };
+
+  this.getWalkIntoTileTypes = function(nextX, nextY) {
+    var walkIntoTileIndexTop = getTileIndexAtPixelCoord(
+      nextX,
+      nextY - this.height / 2
+    );
+    var walkIntoTileTypeTop = WORLD_WALL;
+
+    var walkIntoTileIndexBottom = getTileIndexAtPixelCoord(
+      nextX,
+      nextY + this.height / 2
+    );
+    var walkIntoTileTypeBottom = WORLD_WALL;
+
+    var walkIntoTileIndexLeft = getTileIndexAtPixelCoord(
+      nextX - this.width / 2,
+      nextY
+    );
+    var walkIntoTileTypeLeft = WORLD_WALL;
+
+    var walkIntoTileIndexRight = getTileIndexAtPixelCoord(
+      nextX + this.width / 2,
+      nextY
+    );
+    var walkIntoTileTypeRight = WORLD_WALL;
+
+    if (walkIntoTileIndexTop != undefined) {
+      walkIntoTileTypeTop = worldGrid[walkIntoTileIndexTop];
+    }
+
+    if (walkIntoTileIndexBottom != undefined) {
+      walkIntoTileTypeBottom = worldGrid[walkIntoTileIndexBottom];
+    }
+
+    if (walkIntoTileIndexLeft != undefined) {
+      walkIntoTileTypeLeft = worldGrid[walkIntoTileIndexLeft];
+    }
+
+    if (walkIntoTileIndexRight != undefined) {
+      walkIntoTileTypeRight = worldGrid[walkIntoTileIndexRight];
+    }
+
+    return {
+      walkIntoTileTypeTop,
+      walkIntoTileIndexTop,
+      walkIntoTileTypeBottom,
+      walkIntoTileIndexBottom,
+      walkIntoTileTypeLeft,
+      walkIntoTileIndexLeft,
+      walkIntoTileTypeRight,
+      walkIntoTileIndexRight
+    }
+  };
+
+  this.reactToTileType = function(walkIntoTileType, walkIntoTileIndex) {
     switch (walkIntoTileType) {
       case WORLD_EMPTY:
         break;
