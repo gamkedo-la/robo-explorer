@@ -21,7 +21,7 @@ function heroClass() {
   (this.jumperSpeedX = 0), (jumperSpeedY = 0);
 
   this.width = 40;
-  this.height = 39;
+  this.height = 40;
   this.frameX = 0;
   this.frameY = 0;
   // this.ang = 0;
@@ -422,6 +422,18 @@ function heroClass() {
   // };
 
   this.draw = function () {
-    drawBitmapCenteredWithRotation(this.myHeroPic, this.x, this.y, this.ang);
+    // drawBitmapCenteredWithRotation(this.myHeroPic, this.x, this.y, this.ang);
+    if(++this.frame >= 8){
+      this.frame=0;
+    }
+    canvasContext.drawImage(
+      heroPic,
+      this.frame * this.width, 0, //top left corner of spritesheet frame
+      this.width, this.height, //size of frame
+      this.x - this.width / 2, this.y - this.height / 2, //position on screen, centers image relative to self
+      this.width, this.height //size of image on screen
+    );
+
+
   };
 }

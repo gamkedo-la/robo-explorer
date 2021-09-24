@@ -37,7 +37,7 @@ function loadImages() {
  
   var imageList = [
      //{ varName: heroPic, theFile: "rocketMan3.png"},
-    { varName: heroPic, theFile: "robo-explorer-armor3-withSlingshot.png"},
+    { varName: heroPic, theFile: "robo-explorer-walkcycle2.png"},
     { varName: ratPic, theFile: "rat-walk-cycle.png"},
     { varName: bombPic, theFile: "bomb-sprite.png"},
     // {trackType: WORLD_UPPERROAD, theFile:"WORLD_EMPTY3.png"},
