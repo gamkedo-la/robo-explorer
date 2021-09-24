@@ -19,7 +19,7 @@ function heroClass() {
 
   this.jumperOnGround = false;
   (this.jumperSpeedX = 0), (jumperSpeedY = 0);
-
+  this.flyAng=0;
   this.width = 40;
   this.height = 40;
   this.frameX = 0;
@@ -250,6 +250,14 @@ function heroClass() {
       walkIntoTileTypeRight = worldGrid[walkIntoTileIndexRight];
     }
 
+    // this.flyAng =0;
+    var targetAng = 0;
+    if(nextY < this.y){
+      targetAng = Math.atan2(nextY-this.y,nextX-this.x)+Math.PI/2;
+      // console.log(this.flyAng);
+    }
+    var tiltRate = 0.1;
+    this.flyAng = tiltRate * targetAng + (1.0-tiltRate)* this.flyAng;
     // this.updateLifeReadout= function(){
     //   document.getElementById("life").innerHTML = "Life: " + this.life;
     // }
@@ -440,7 +448,7 @@ function heroClass() {
      );*/
     var flipLeft = (this.moveDir==-1);
 
-    drawBitmapCenteredWithAnimationFlip(heroPic, this.x, this.y, this.width,this.height,this.frame,0,flipLeft); 
+    drawBitmapCenteredWithAnimationFlip(heroPic, this.x, this.y, this.width,this.height,this.frame,0,flipLeft,this.flyAng); 
 
 
   };

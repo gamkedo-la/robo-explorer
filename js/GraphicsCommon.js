@@ -10,9 +10,10 @@ function drawBitmapCenteredWithRotation(useBitmap, atX, atY, withAng) {
   canvasContext.restore();
 }
 
-function drawBitmapCenteredWithAnimationFlip(useBitmap, atX, atY, frameW,frameH,frameNumX,frameNumY,flipHoriz) {
+function drawBitmapCenteredWithAnimationFlip(useBitmap, atX, atY, frameW,frameH,frameNumX,frameNumY,flipHoriz,withAng) {
   canvasContext.save();
   canvasContext.translate(atX, atY);
+  canvasContext.rotate(withAng);
   if(flipHoriz){
     canvasContext.scale(-1,1);
   }
