@@ -14,9 +14,10 @@ function drawBitmapCenteredWithAnimationFlip(useBitmap, atX, atY, frameW,frameH,
   canvasContext.save();
   canvasContext.translate(atX, atY);
   canvasContext.rotate(withAng);
+    
   if(flipHoriz){
-    canvasContext.scale(-1,1);
-  }
+     canvasContext.scale(-1,1);
+   }
   canvasContext.drawImage(
     useBitmap,
     frameNumX*frameW,frameNumY*frameH,

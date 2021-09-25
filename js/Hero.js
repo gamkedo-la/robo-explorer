@@ -222,6 +222,8 @@ function heroClass() {
     var walkIntoTileIndexBottom = walkIntoTileTypes.walkIntoTileIndexBottom
     var walkIntoTileIndexLeft = walkIntoTileTypes.walkIntoTileIndexLeft
 
+/*******************************CODE FOR ANGLED FLIGHT ***************************************************/
+
     // this.flyAng =0;
     var targetAng = 0;
     if(nextY < this.y){
@@ -233,6 +235,8 @@ function heroClass() {
     // this.updateLifeReadout= function(){
     //   document.getElementById("life").innerHTML = "Life: " + this.life;
     // }
+
+/*****************CODE FOR REPLACING WORLD TILES WHEN WALKED INTO********************* */
     if (this.keyHeld_Jump && walkIntoTileTypeTop == WORLD_EMPTY) {
       this.y = nextY;
     } else if (walkIntoTileTypeTop != WORLD_EMPTY) {
