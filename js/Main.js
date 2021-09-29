@@ -1,6 +1,7 @@
 var canvas, canvasContext;
 var blueHero = new heroClass();
 var rat = new ratClass();
+// var trap = new trapClass();
 
 var CHEATS_ENABLED = true;
 
@@ -350,6 +351,7 @@ function updateAll() {
 function moveAll() {
   blueHero.move();
   rat.move();
+  // trap.move();
   ghostMove();
   for (var i = 0; i < particleList.length; i++) {
     particleList[i].move();
@@ -412,6 +414,8 @@ function drawAll() {
 
   blueHero.draw();
   rat.draw();
+  // trap.draw();
+ 
   // particleCircle(this.x, this.y, 5, "yellow");
   // oneParticle.draw();
   // secondParticle.draw();

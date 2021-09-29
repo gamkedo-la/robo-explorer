@@ -35,30 +35,14 @@ function trapClass() {
     } // end foe for
   }
 
-  // this.move = function(){
-
-  //   let nextX = this.x + this.speedX; //calc this in just one place
-  //   let nextY = this.y; //no vert movement...yet
-  //   //used for collision
-  //   let nextTileIndex = getTileIndexAtPixelCoord(nextX, nextY);
-  //   let nextTileType = worldGrid[nextTileIndex];
-  //   if(nextTileType == WORLD_EMPTY){
-  //     this.x = nextX;
-  //     this.y = nextY; 
-  //   } else {
-  //     this.speedX = -this.speedX;
-  //     //no y behavior
-  //   }
-  // }
-
+ 
   
     //SPRITE ANIMATION CODE
 
   
     this.draw = function () {
     
-      var frame = TRAP_FRAMES - Math.floor(this.life/TRAP_TIME_PER_FRAME)-1;
-      // console.log(frame);
+      
       var trapFrameW = 40;
       canvasContext.drawImage(
         trapPic,
@@ -66,8 +50,6 @@ function trapClass() {
         0, //top left corner of spritesheet frame
         trapFrameW,
         trapPic.height, //size of frame
-        this.x - blueHero.width / 2,
-        this.y - blueHero.height / 2, //position on screen, centers image relative to self
         trapFrameW,
         trapPic.height //size of image on screen
       );

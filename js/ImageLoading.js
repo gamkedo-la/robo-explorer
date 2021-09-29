@@ -1,6 +1,7 @@
 var heroPic = document.createElement("img");
 var ratPic = document.createElement("img");
 var bombPic = document.createElement("img");
+var trapPic = document.createElement("img");
 
 var trackPics = [];
 
@@ -40,6 +41,7 @@ function loadImages() {
     { varName: heroPic, theFile: "robo-explorer-walkcycle3.png"},
     { varName: ratPic, theFile: "rat-walk-cycle.png"},
     { varName: bombPic, theFile: "bomb-sprite.png"},
+    // { varName: trapPic, theFile: "spike-sprite.png" },
     // {trackType: WORLD_UPPERROAD, theFile:"WORLD_EMPTY3.png"},
     { trackType: WORLD_EMPTY, theFile: "track_road2.png" },
     { trackType: WORLD_WALL, theFile: "bricks3.png" },
@@ -65,6 +67,7 @@ function loadImages() {
     { trackType: WORLD_SKELETON, theFile: "skeleton2.png" },
     { trackType: WORLD_SKELETON2, theFile: "skeleton3.png" },
     { trackType: WORLD_PIPE_TOP7, theFile: "world_pipe_top7.png" },
+    { trackType: WORLD_LOST_BOY, theFile: "boy-v1.png" }
   
     
 
