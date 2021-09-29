@@ -63,7 +63,8 @@ function loadImages() {
     { trackType: WORLD_CROSSBOW, theFile: "crossbow.png" },
     { trackType: WORLD_PIPE_BOTTOM, theFile: "world_pipe_bottom.png" },
     { trackType: WORLD_SKELETON, theFile: "skeleton2.png" },
-    { trackType: WORLD_SKELETON2, theFile: "skeleton3.png" }
+    { trackType: WORLD_SKELETON2, theFile: "skeleton3.png" },
+    { trackType: WORLD_PIPE_TOP7, theFile: "world_pipe_top7.png" },
   
     
 
