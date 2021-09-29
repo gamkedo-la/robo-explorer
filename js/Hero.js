@@ -194,7 +194,7 @@ function heroClass() {
 
     if (this.keyHeld_Slingshot && this.keyHeld_WalkLeft) {
       this.keyHeld_Slingshot  = false;
-      addSlingShot();
+      addSlingShotLeft();
       // console.log("");
 
       // this.speed += DRIVE_POWER;

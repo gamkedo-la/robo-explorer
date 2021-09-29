@@ -239,6 +239,22 @@ function addSlingShot() {
   slingShotList.push(tempSlingShot);
 }
 
+
+
+
+function addSlingShotLeft() {
+  var tempSlingShot;
+  tempSlingShot = new slingShotClass();
+  // tempParticle.x = Math.random()*canvas.width;
+  // tempParticle.y=Math.random()*canvas.height;
+  tempSlingShot.x = blueHero.x;
+  tempSlingShot.y = blueHero.y;
+  // tempSlingShot.velX=5-Math.random()*10;
+  // tempSlingShot.velY=5-Math.random()*10;
+  tempSlingShot.velX = -15;
+  tempSlingShot.velY = 0;
+  slingShotList.push(tempSlingShot);
+}
 // function keyPressed(evt){
 //   addParticles();
 // }
