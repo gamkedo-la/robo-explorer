@@ -115,7 +115,9 @@ function checkForLevelSkip (keyCode) {
       loadLevel(levelEight); //Not yet defined
       break
     case KEY_9:
-      // loadLevel(levelNine); //Not yet defined
+       loadLevel(levelNine); //Not yet defined
       break                                                                        
+      default:
+        break;
     }
 }

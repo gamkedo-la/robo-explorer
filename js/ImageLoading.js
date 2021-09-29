@@ -67,7 +67,8 @@ function loadImages() {
     { trackType: WORLD_SKELETON, theFile: "skeleton2.png" },
     { trackType: WORLD_SKELETON2, theFile: "skeleton3.png" },
     { trackType: WORLD_PIPE_TOP7, theFile: "world_pipe_top7.png" },
-    { trackType: WORLD_LOST_BOY, theFile: "boy-v1.png" }
+    { trackType: WORLD_LOST_BOY, theFile: "boy-v1.png" },
+    { trackType: WORLD_SEWER_WATER, theFile: "sewerWater.png" }
   
     
 
