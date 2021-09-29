@@ -225,7 +225,7 @@ function addParticles() {
 
 
 
-function addSlingShot() {
+function addSlingShotRight() {
   var tempSlingShot;
   tempSlingShot = new slingShotClass();
   // tempParticle.x = Math.random()*canvas.width;

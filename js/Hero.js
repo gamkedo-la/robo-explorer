@@ -202,7 +202,7 @@ function heroClass() {
 
     if (this.keyHeld_Slingshot && this.keyHeld_WalkRight){
       this.keyHeld_Slingshot = false;
-      addSlingShot();
+      addSlingShotRight();
     }
 
     if (this.keyHeld_Bomb) {
