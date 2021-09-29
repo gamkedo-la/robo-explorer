@@ -192,12 +192,17 @@ function heroClass() {
 
     // heroTrackHandling(this);
 
-    if (this.keyHeld_Slingshot) {
-      this.keyHeld_Slingshot = false;
+    if (this.keyHeld_Slingshot && this.keyHeld_WalkLeft) {
+      this.keyHeld_Slingshot  = false;
       addSlingShot();
       // console.log("");
 
       // this.speed += DRIVE_POWER;
+    }
+
+    if (this.keyHeld_Slingshot && this.keyHeld_WalkRight){
+      this.keyHeld_Slingshot = false;
+      addSlingShot();
     }
 
     if (this.keyHeld_Bomb) {
