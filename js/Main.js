@@ -292,7 +292,7 @@ window.onload = function () {
   // }
 
   for (var i = 0; i < 2; i++) {
-    addSlingShot();
+    addSlingShotRight();
   }
 
   /*hook for dynamically adding a particle when pressing a key*/
