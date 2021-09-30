@@ -63,7 +63,8 @@ function particleClass() {
   this.velY = 7;
   this.myColor;
   this.readyToRemove=false;
-  this.life=15+Math.random()*20;
+  // this.life=15+Math.random()*20;
+  this.life=1+Math.random()*2;
 
   this.move = function () {
     if(this.life-- < 0){
