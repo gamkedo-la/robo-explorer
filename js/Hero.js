@@ -193,8 +193,12 @@ function heroClass() {
     // heroTrackHandling(this);
 
     if (this.keyHeld_Slingshot && this.keyHeld_WalkLeft) {
+
       this.keyHeld_Slingshot  = false;
+      var audio = new Audio("slingShot2.wav");
+      audio.play();
       addSlingShotLeft();
+      
       // console.log("");
 
       // this.speed += DRIVE_POWER;
@@ -202,7 +206,10 @@ function heroClass() {
 
     if (this.keyHeld_Slingshot && this.keyHeld_WalkRight){
       this.keyHeld_Slingshot = false;
+      var audio = new Audio("slingShot2.wav");
+      audio.play();
       addSlingShotRight();
+      
     }
 
     if (this.keyHeld_Bomb) {

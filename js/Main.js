@@ -204,13 +204,14 @@ function addParticles() {
   // tempParticle.x = Math.random()*canvas.width;
   // tempParticle.y=Math.random()*canvas.height;
   tempParticle.x = blueHero.x;
-  tempParticle.y = blueHero.y+2;
-  tempParticle.velX = 0 - Math.random() * 10;
+  tempParticle.y = blueHero.y;
+  tempParticle.velX = 6 - Math.random() * 10;
   tempParticle.velY = 10 - Math.random() * 10;
 
-  if(Math.random() < 0.5){
+  if(Math.random() < 0.3){
     tempParticle.myColor = "red";
   }else{
+    
     tempParticle.myColor = "yellow";
   }
   
