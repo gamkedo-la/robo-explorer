@@ -404,10 +404,19 @@ function heroClass() {
         worldGrid[walkIntoTileIndex] = WORLD_EMPTY;
         break;
 
-        case WORLD_PIPE_TOP7:
-          loadLevel(levelEight);
+      case WORLD_PIPE_TOP7:
+        loadLevel(levelEight);
+         worldGrid[walkIntoTileIndex] = WORLD_EMPTY;
+        break;
+      case WORLD_TUNNEL_RIGHT_8:
+          loadLevel(levelNine);
           worldGrid[walkIntoTileIndex] = WORLD_EMPTY;
-          break;
+        break;
+
+      case WORLD_TUNNEL_RIGHT_9:
+          loadLevel(levelTen);
+          worldGrid[walkIntoTileIndex] = WORLD_EMPTY;
+       break;
 
       case WORLD_CROSSBOW:
         // loadLevel(levelFive);

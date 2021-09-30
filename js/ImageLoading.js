@@ -61,6 +61,8 @@ function loadImages() {
     { trackType: WORLD_TUNNEL_RIGHT_3, theFile: "world_lowerTunnel-right3.png" },
     { trackType: WORLD_TUNNEL_RIGHT_4, theFile: "world_lowerTunnel-right3.png" },
     { trackType: WORLD_TUNNEL_RIGHT_5, theFile: "world_lowerTunnel-right5.png" },
+    { trackType: WORLD_TUNNEL_RIGHT_8, theFile: "world_lowerTunnel-right8.png" },
+    { trackType: WORLD_TUNNEL_RIGHT_9, theFile: "world_lowerTunnel-right9.png" },
     { trackType: WORLD_PIPE_UP_SIDEQUEST1, theFile: "world_pipe_up_sidequest1.png" },
     { trackType: WORLD_CROSSBOW, theFile: "crossbow.png" },
     { trackType: WORLD_PIPE_BOTTOM, theFile: "world_pipe_bottom.png" },
