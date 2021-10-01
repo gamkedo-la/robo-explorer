@@ -1,7 +1,7 @@
 var canvas, canvasContext;
 var blueHero = new heroClass();
 var rat = new ratClass();
-// var trap = new trapClass();
+var trapList = [];
 
 var CHEATS_ENABLED = true;
 
@@ -339,6 +339,16 @@ function loadLevel(whichLevel) {
   // blueCar.reset(otherCarPic, "Machine Raider");
   blueHero.reset(heroPic, "Black Fire");
   rat.reset(); //TODO need 2 keep looping and instantiating
+  trapList = [];
+  var lookForAnotherTrap = true;
+  while(lookForAnotherTrap){
+    var newTrap = new trapClass();
+    var trapHasTile = newTrap.reset();
+    if (trapHasTile){
+      trapList.push(newTrap);
+    }
+    lookForAnotherTrap = trapHasTile;
+  }
   //worldGrid[30] = 5;
   //console.log(whichLevel[30]);
 }
@@ -353,7 +363,12 @@ function updateAll() {
 function moveAll() {
   blueHero.move();
   rat.move();
-  // trap.move();
+  
+  for (var i=0; i < trapList.length; i++){
+    trapList[i].move();
+  }
+
+
   ghostMove();
   for (var i = 0; i < particleList.length; i++) {
     particleList[i].move();
@@ -423,8 +438,9 @@ function drawAll() {
 
   blueHero.draw();
   rat.draw();
-  // trap.draw();
- 
+  for (var i=0; i < trapList.length; i++){
+    trapList[i].draw();
+  } 
   // particleCircle(this.x, this.y, 5, "yellow");
   // oneParticle.draw();
   // secondParticle.draw();

@@ -44,7 +44,7 @@ function loadImages() {
     { varName: bombPic, theFile: "bomb-sprite.png"},
     // { varName: cockroachEggPic, theFile: "cockroachSprite.png"},
 
-    // { varName: trapPic, theFile: "spike-sprite.png" },
+    { varName: trapPic, theFile: "spike-sprite.png" },
     // {trackType: WORLD_UPPERROAD, theFile:"WORLD_EMPTY3.png"},
     { trackType: WORLD_EMPTY, theFile: "track_road2.png" },
     { trackType: WORLD_WALL, theFile: "bricks3.png" },
