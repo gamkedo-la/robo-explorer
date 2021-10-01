@@ -10,6 +10,7 @@ const KEY_D = 68; //keyboard D
 const KEY_SPACEBAR = 32; //JUMP
 const KEY_R=82;//SlingshotBullet
 const KEY_B=66;//Bomb
+const KEY_C=67;//cheat key
 
 const KEY_1 = 49; // keyboard 1
 const KEY_2 = 50; // keyboard 2
@@ -70,12 +71,15 @@ function keySet(keyEvent, setTo) {
     blueHero.keyHeld_Bomb = setTo;
   }
   
-/********************CHEAT CODE****************** */
-  if (CHEATS_ENABLED) {
-    checkForLevelSkip(keyEvent.keyCode)
-  }
+
+  
 }
 function keyPressed(evt) {
+
+  if (CHEATS_ENABLED) {
+    checkForCheatKeys(evt.keyCode)
+  }
+
   keySet(evt, true);
   // keySet(evt,blueHero,true);
   // keySet(evt,blueCar,true);
@@ -88,8 +92,11 @@ function keyReleased(evt) {
   // keySet(evt,blueCar,false);
 }
 
-function checkForLevelSkip (keyCode) {
+function checkForCheatKeys (keyCode) {
   switch (keyCode) {
+    case KEY_C: 
+      blueHero.keysHeld = 999;
+      break
     case KEY_1:
       loadLevel(levelOne);
       break

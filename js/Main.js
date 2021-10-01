@@ -397,7 +397,14 @@ function drawAll() {
   // canvasContext draw operation up until we call canvasContext.restore
   // this way we can just draw them at their "actual" position coordinates
   colorCircle(this.X, this.Y, 10, "white"); //draw ball
-
+  
+ /* var worldMouseX = mouseX + camPanX; // Tile position under mouse used for debugging
+  var worldMouseY = mouseY + camPanY;
+  var mouseIndex = getTileIndexAtPixelCoord(worldMouseX,worldMouseY);
+  var mouseC = mouseIndex % WORLD_COLS;
+  var mouseR = Math.floor(mouseIndex/WORLD_COLS);
+  console.log(mouseC,mouseR);*/
+  
   canvasContext.translate(-camPanX, -camPanY);
 
   drawTracks();
