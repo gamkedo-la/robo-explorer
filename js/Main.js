@@ -115,7 +115,7 @@ function slingShotClass() {
     if (this.x < 0) {
       this.readyToRemove= true;
     }
-    if (this.x > canvas.width) {
+    if (this.x > canvas.width*1.2) { // reason why slingshot is not reaching right wall
       this.readyToRemove= true;
     }
     if (this.y < 0) {
