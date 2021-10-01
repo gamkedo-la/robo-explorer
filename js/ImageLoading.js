@@ -2,6 +2,7 @@ var heroPic = document.createElement("img");
 var ratPic = document.createElement("img");
 var bombPic = document.createElement("img");
 var trapPic = document.createElement("img");
+var rockPic = document.createElement("img");
 // var cockroachEggPic = document.createElement("img");
 
 var trackPics = [];
@@ -42,6 +43,7 @@ function loadImages() {
     { varName: heroPic, theFile: "robo-explorer-walkcycle3.png"},
     { varName: ratPic, theFile: "rat-walk-cycle.png"},
     { varName: bombPic, theFile: "bomb-sprite.png"},
+    { varName: rockPic, theFile: "rock.png"},
     // { varName: cockroachEggPic, theFile: "cockroachSprite.png"},
 
     { varName: trapPic, theFile: "spike-sprite3.png" },

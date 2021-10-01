@@ -128,6 +128,16 @@ function slingShotClass() {
 
   this.draw = function () {
     slingShotCircle(this.x, this.y, 5, "blue");
+   /* const ROCK_HEIGHT = 2;
+    const ROCK_WIDTH =2;
+    canvasContext.drawImage(
+      rockPic,
+      rockPic.height, //size of frame
+      this.x - blueHero.width / 2,
+      this.y - blueHero.height / 2, //position on screen, centers image relative to self
+      rockPic.height //size of image on screen
+    );*/
+    
   };
 } // end of slingShot def
 
