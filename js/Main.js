@@ -127,7 +127,8 @@ function slingShotClass() {
   };
 
   this.draw = function () {
-    slingShotCircle(this.x, this.y, 5, "blue");
+     slingShotCircle(this.x, this.y, 5, "blue");
+     
    /* const ROCK_HEIGHT = 2;
     const ROCK_WIDTH =2;
     canvasContext.drawImage(
