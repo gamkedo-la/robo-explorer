@@ -277,19 +277,29 @@ function heroClass() {
     if (this.keyHeld_WalkLeft) {
       walkIntoTileType = walkIntoTileTypeLeft;
       walkIntoTileIndex = walkIntoTileIndexLeft;
-    } else if (this.keyHeld_WalkRight) {
+      this.reactToTileType(walkIntoTileType, walkIntoTileIndex);
+    } 
+    
+    if (this.keyHeld_WalkRight) {
       walkIntoTileType = walkIntoTileTypeRight;
       walkIntoTileIndex = walkIntoTileIndexRight;
-    } else if (this.keyHeld_Jump) {
+      this.reactToTileType(walkIntoTileType, walkIntoTileIndex);
+    }
+    
+    if (this.keyHeld_Jump) {
       walkIntoTileType = walkIntoTileTypeTop;
       walkIntoTileIndex = walkIntoTileIndexTop;
-    } else {
+      this.reactToTileType(walkIntoTileType, walkIntoTileIndex);
+    }
+    
+    {
       // Feet
       walkIntoTileType = walkIntoTileTypeBottom;
       walkIntoTileIndex = walkIntoTileIndexBottom;
+      this.reactToTileType(walkIntoTileType, walkIntoTileIndex);
     }
 
-    this.reactToTileType(walkIntoTileType, walkIntoTileIndex);
+    // this.reactToTileType(walkIntoTileType, walkIntoTileIndex);
   };
 
   this.getWalkIntoTileTypes = function (nextX, nextY) {
