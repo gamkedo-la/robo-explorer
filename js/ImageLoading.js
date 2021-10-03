@@ -3,7 +3,7 @@ var ratPic = document.createElement("img");
 var bombPic = document.createElement("img");
 var trapPic = document.createElement("img");
 var rockPic = document.createElement("img");
-var waterSewer = document.createElement("img");
+var waterPic = document.createElement("img");
 // var cockroachEggPic = document.createElement("img");
 
 var trackPics = [];
@@ -42,7 +42,7 @@ function loadImages() {
   var imageList = [
      //{ varName: heroPic, theFile: "rocketMan3.png"},
     { varName: heroPic, theFile: "robo-explorer-walkcycle4.png"},
-    { varName: waterSewer, theFile: "sewerWater.png" },
+    { varName: waterPic, theFile: "sewerWater.png" },
     { varName: ratPic, theFile: "rat-walk-cycle.png"},
     { varName: bombPic, theFile: "bomb-sprite.png"},
     { varName: rockPic, theFile: "rock.png"},
@@ -84,7 +84,7 @@ function loadImages() {
     { trackType: WORLD_LOST_BOY, theFile: "boy-v1.png" },
     { trackType: WORLD_COCKROACH_EGG, theFile: "cockroachSprite.png"},
 
-    // { trackType: WORLD_SEWER_WATER, theFile: "sewerWater.png" }
+    // { trackType: WORLD_WATER, theFile: "sewerWater.png" }
   
     
 

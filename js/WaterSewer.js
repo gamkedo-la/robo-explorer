@@ -16,7 +16,7 @@ function waterClass() {
 
   //properties for sprite animation
   this.frame = 0;
-  this.numberOfFrames = 3; //how many frames are in the spritesheet
+  this.numberOfFrames = 1; //how many frames are in the spritesheet
   this.animationDelay = 5;
   this.animationCounter = 0;
 

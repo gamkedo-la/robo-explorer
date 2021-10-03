@@ -2,6 +2,7 @@ var canvas, canvasContext;
 var blueHero = new heroClass();
 var rat = new ratClass();
 var trapList = [];
+var waterList = [];
 
 var CHEATS_ENABLED = true;
 
@@ -360,6 +361,18 @@ function loadLevel(whichLevel) {
     }
     lookForAnotherTrap = trapHasTile;
   }
+
+
+  waterList = [];
+  var lookForAnotherWater = true;
+  while(lookForAnotherWater){
+    var newWater = new trapClass();
+    var waterHasTile = newWater.reset();
+    if (waterHasTile){
+      waterList.push(newTrap);
+    }
+    lookForAnotherWater = waterHasTile;
+  }
   //worldGrid[30] = 5;
   //console.log(whichLevel[30]);
 }
@@ -378,6 +391,10 @@ function moveAll() {
   for (var i=0; i < trapList.length; i++){
     trapList[i].move();
   }
+  
+  for (var i=0; i < waterList.length; i++){
+     waterList[i].move();
+   }
 
 
   ghostMove();
@@ -452,6 +469,11 @@ function drawAll() {
   for (var i=0; i < trapList.length; i++){
     trapList[i].draw();
   } 
+
+
+  for (var i=0; i < waterList.length; i++){
+    waterList[i].draw();
+  }
   // particleCircle(this.x, this.y, 5, "yellow");
   // oneParticle.draw();
   // secondParticle.draw();
