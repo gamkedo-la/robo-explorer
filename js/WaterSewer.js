@@ -1,16 +1,16 @@
-// const TRAP_MOVEMENT_SPEED = 2.0;
-const TRAP_IMAGE_NAME = "trap";
-const TRAP_FRAMES = 0;
-const TRAP_DIM= 50; // DIM for dimension same width and height
+// const WATER_MOVEMENT_SPEED = 2.0;
+const WATER_IMAGE_NAME = "water";
+const WATER_FRAMES = 0;
+const WATER_DIM= 50; // DIM for dimension same width and height
 
-function trapClass() {
+function waterClass() {
   this.x = 75;
   this.y = 75;
 
-//   this.speedX = TRAP_MOVEMENT_SPEED;
+//   this.speedX = WATER_MOVEMENT_SPEED;
 
-  this.width = TRAP_DIM;
-  this.height = TRAP_DIM;
+  this.width = WATER_DIM;
+  this.height = WATER_DIM;
   this.frameX = 0;
   this.frameY = 0;
 
@@ -25,7 +25,7 @@ function trapClass() {
     for (var eachRow = 0; eachRow < WORLD_ROWS; eachRow++) {
       for (var eachCol = 0; eachCol < WORLD_COLS; eachCol++) {
         var arrayIndex = rowColToArrayIndex(eachCol, eachRow);
-        if (worldGrid[arrayIndex] == WORLD_TRAP) {
+        if (worldGrid[arrayIndex] == WORLD_WATER) {
           worldGrid[arrayIndex] = WORLD_EMPTY;
           // this.ang = -Math.PI / 2;
           this.x = eachCol * WORLD_W + WORLD_W / 2;
@@ -34,7 +34,7 @@ function trapClass() {
         } //end of player start if
       } // end of col for
     } // end foe for
-    return false; // no more traps
+    return false; // no more waters
   }
   
   this.move = function () {
@@ -49,7 +49,7 @@ function trapClass() {
     var playerDistX = Math.abs(blueHero.x - this.x);
     var playerDistY = Math.abs(blueHero.y - this.y);
     var approxDist = playerDistX + playerDistY;
-    if (approxDist < TRAP_DIM / 2){
+    if (approxDist < WATER_DIM / 2){
        //
     }
   }
@@ -58,14 +58,14 @@ function trapClass() {
 
   
     this.draw = function () {      
-      var trapFrameW = TRAP_DIM;
+      var waterFrameW = WATER_DIM;
       canvasContext.drawImage(
-        trapPic,
-        this.frame * trapFrameW,
+        waterPic,
+        this.frame * waterFrameW,
         0, //top left corner of spritesheet frame
-        trapFrameW,trapPic.height, //size of frame
+        waterFrameW,waterPic.height, //size of frame
         this.x-this.width/2,this.y-this.height/2,//location in world or on screen
-        trapFrameW,trapPic.height //size of image on screen
+        waterFrameW,waterPic.height //size of image on screen
       );
     };
   
