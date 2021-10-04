@@ -15,7 +15,7 @@ function cockroach_eggClass() {
 
   //properties for sprite animation
   this.frame = 0;
-  this.numberOfFrames = 5; //how many frames are in the spritesheet
+  this.numberOfFrames = 4; //how many frames are in the spritesheet
   this.animationSpeed = 5;
   this.animationCounter = 0;
 
