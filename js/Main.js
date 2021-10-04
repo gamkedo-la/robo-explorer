@@ -1,6 +1,7 @@
 var canvas, canvasContext;
 var blueHero = new heroClass();
 var rat = new ratClass();
+var cockroach_egg = new cockroach_eggClass();
 var trapList = [];
 var waterList = [];
 
@@ -351,6 +352,7 @@ function loadLevel(whichLevel) {
   // blueCar.reset(otherCarPic, "Machine Raider");
   blueHero.reset(heroPic, "Black Fire");
   rat.reset(); //TODO need 2 keep looping and instantiating
+  cockroach_egg.reset();
   trapList = [];
   var lookForAnotherTrap = true;
   while(lookForAnotherTrap){
@@ -387,6 +389,7 @@ function updateAll() {
 function moveAll() {
   blueHero.move();
   rat.move();
+  cockroach_egg.move();
   
   for (var i=0; i < trapList.length; i++){
     trapList[i].move();
@@ -466,6 +469,7 @@ function drawAll() {
 
   blueHero.draw();
   rat.draw();
+  cockroach_egg.draw();
   for (var i=0; i < trapList.length; i++){
     trapList[i].draw();
   } 

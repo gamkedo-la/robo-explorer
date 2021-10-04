@@ -15,7 +15,7 @@ function cockroach_eggClass() {
 
   //properties for sprite animation
   this.frame = 0;
-  this.numberOfFrames = 1; //how many frames are in the spritesheet
+  this.numberOfFrames = 5; //how many frames are in the spritesheet
   this.animationSpeed = 5;
   this.animationCounter = 0;
 
@@ -53,13 +53,13 @@ function cockroach_eggClass() {
 
   this.draw = function(){
     
-    var cockroach_eggFrameW = 40;
+    var cockroacheggFrameW = 40;
     canvasContext.drawImage(
-      cockroach_eggPic,
-      this.frame * cockroach_eggFrameW, 0, //top left corner of spritesheet frame
-      cockroach_eggFrameW, cockroach_eggPic.height, //size of frame
-      this.x - cockroach_eggPic.width / 2, this.y - cockroach_eggPic.height / 2, //position on screen, centers image relative to self
-      cockroach_eggFrameW, cockroach_eggPic.height //size of image on screen
+      cockroachEggPic,
+      this.frame * cockroacheggFrameW, 0, //top left corner of spritesheet frame
+      cockroacheggFrameW, cockroachEggPic.height, //size of frame
+      this.x - cockroachEggPic.width / 2, this.y - cockroachEggPic.height / 2, //position on screen, centers image relative to self
+      cockroacheggFrameW, cockroachEggPic.height //size of image on screen
     );
   
     //SPRITE ANIMATION CODE
