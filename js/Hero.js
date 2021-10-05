@@ -482,7 +482,7 @@ function heroClass() {
 
   // };
 
-  /********************CODE FOR DRAW FUNCTION************************************** */
+  /********************CODE FOR DRAW FUNCTION********************************************************************** */
 
   this.draw = function () {
     // drawBitmapCenteredWithRotation(this.myHeroPic, this.x, this.y, this.ang);
