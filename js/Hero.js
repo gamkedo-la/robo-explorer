@@ -134,7 +134,7 @@ function heroClass() {
     document.getElementById("collected-crossbows").innerHTML = "1";
   };
 
-  /**************************CODE FOR CHARACTER TO MOVE*********************************** */
+/**************************CODE FOR CHARACTER TO MOVE******************************************* */
   this.move = function () {
     // this.speed *= GROUNDSPEED_DECAY_MULT;
 
@@ -176,7 +176,7 @@ function heroClass() {
       // this.speed -= REVERSE_POWER;
     }
 
-/*----------------FOR ANIMATING MOVEMENT OF CHARACTER LEFT AND RIGHT----------------------- */
+/*-------FOR ANIMATING MOVEMENT OF CHARACTER LEFT AND RIGHT-------- */
     this.moveDir = 0;
     if (this.keyHeld_WalkLeft) {
       nextX -= PLAYER_MOVEMENT_SPEED;
@@ -253,7 +253,7 @@ function heroClass() {
     //   document.getElementById("life").innerHTML = "Life: " + this.life;
     // }
 
-    /*****************CODE FOR REPLACING WORLD TILES WHEN WALKED INTO********************* */
+    /*****************CODE FOR REPLACING WORLD TILES WHEN WALKED INTO************************************** */
     if (this.keyHeld_Jump && walkIntoTileTypeTop == WORLD_EMPTY) {
       this.y = nextY;
     } else if (walkIntoTileTypeTop != WORLD_EMPTY) {
