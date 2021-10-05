@@ -141,6 +141,7 @@ function heroClass() {
     var nextX = this.x;
     var nextY = this.y;
 
+/*--------------------FOR ANIMATING FLIGHT OF CHARACTER-------------------*/
     if (this.keyHeld_Jump) {
       // beginLoadingImage(rocketBooster);
 
@@ -174,6 +175,8 @@ function heroClass() {
     if (this.keyHeld_ClimbDown) {
       // this.speed -= REVERSE_POWER;
     }
+
+/*----------------FOR ANIMATING MOVEMENT OF CHARACTER LEFT AND RIGHT----------------------- */
     this.moveDir = 0;
     if (this.keyHeld_WalkLeft) {
       nextX -= PLAYER_MOVEMENT_SPEED;
@@ -189,8 +192,10 @@ function heroClass() {
     }
     // this.x += Math.cos(this.ang) * this.speed;
     // this.y += Math.sin(this.ang) * this.speed;
-
     // heroTrackHandling(this);
+
+/*--------------FOR ANIMATING SLINGSHOT----------------*/
+
     this.fireSlingshot = 1; //for animating slingshot
     if (this.keyHeld_Slingshot && this.keyHeld_WalkLeft) {
       this.fireSlingshot = -1;
@@ -481,6 +486,10 @@ function heroClass() {
     }
     if (this.moveDir == 0) {
       this.frame = 0;
+    }
+
+    if (this.fireSlingshot == 0){
+      this.frame = 3;
     }
     /*
     canvasContext.drawImage(
