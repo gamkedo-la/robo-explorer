@@ -134,14 +134,14 @@ function heroClass() {
     document.getElementById("collected-crossbows").innerHTML = "1";
   };
 
-/**************************CODE FOR CHARACTER TO MOVE******************************************* */
+/**************************CODE FOR CHARACTER TO MOVE******************************************************/
   this.move = function () {
     // this.speed *= GROUNDSPEED_DECAY_MULT;
 
     var nextX = this.x;
     var nextY = this.y;
 
-/*--------------------FOR ANIMATING FLIGHT OF CHARACTER-------------------*/
+    /*-------------------------FOR ANIMATING FLIGHT OF CHARACTER-------------------*/
     if (this.keyHeld_Jump) {
       // beginLoadingImage(rocketBooster);
 
@@ -176,7 +176,7 @@ function heroClass() {
       // this.speed -= REVERSE_POWER;
     }
 
-/*-------FOR ANIMATING MOVEMENT OF CHARACTER LEFT AND RIGHT-------- */
+    /*-----------FOR ANIMATING MOVEMENT OF CHARACTER LEFT AND RIGHT-------- */
     this.moveDir = 0;
     if (this.keyHeld_WalkLeft) {
       nextX -= PLAYER_MOVEMENT_SPEED;
@@ -194,7 +194,7 @@ function heroClass() {
     // this.y += Math.sin(this.ang) * this.speed;
     // heroTrackHandling(this);
 
-/*--------------FOR ANIMATING SLINGSHOT----------------*/
+    /*--------------FOR ANIMATING SLINGSHOT----------------*/
 
     this.fireSlingshot = 1; //for animating slingshot
     if (this.keyHeld_Slingshot && this.keyHeld_WalkLeft) {
@@ -239,7 +239,7 @@ function heroClass() {
     var walkIntoTileIndexBottom = walkIntoTileTypes.walkIntoTileIndexBottom;
     var walkIntoTileIndexLeft = walkIntoTileTypes.walkIntoTileIndexLeft;
 
-    /*******************************CODE FOR ANGLED FLIGHT ***************************************************/
+    /*--------------CODE FOR ANGLED FLIGHT --------------*/
 
     // this.flyAng =0;
     var targetAng = 0;
@@ -253,7 +253,8 @@ function heroClass() {
     //   document.getElementById("life").innerHTML = "Life: " + this.life;
     // }
 
-    /*****************CODE FOR REPLACING WORLD TILES WHEN WALKED INTO************************************** */
+    /*--------------CODE FOR REPLACING WORLD TILES WHEN WALKED INTO--------------*/
+
     if (this.keyHeld_Jump && walkIntoTileTypeTop == WORLD_EMPTY) {
       this.y = nextY;
     } else if (walkIntoTileTypeTop != WORLD_EMPTY) {
@@ -362,6 +363,8 @@ function heroClass() {
       walkIntoTileIndexRight,
     };
   };
+
+  /********************CODE FOR REACTING TO THE TILE TYPE WHEN WALKING INTO************************************** */
 
   this.reactToTileType = function (walkIntoTileType, walkIntoTileIndex) {
     switch (walkIntoTileType) {
