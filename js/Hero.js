@@ -32,6 +32,7 @@ function heroClass() {
   this.items = 0;
   // this.life = 3;
   this.moveDir = 0;
+  this.fireSlingshot = 0;
 
   this.keyHeld_Climb = false;
   this.keyHeld_ClimbDown = false;
@@ -190,8 +191,9 @@ function heroClass() {
     // this.y += Math.sin(this.ang) * this.speed;
 
     // heroTrackHandling(this);
-
+    this.fireSlingshot = 1; //for animating slingshot
     if (this.keyHeld_Slingshot && this.keyHeld_WalkLeft) {
+      this.fireSlingshot = -1;
       this.keyHeld_Slingshot = false;
       var audio = new Audio("slingShot2.wav");
       audio.play();
@@ -203,6 +205,7 @@ function heroClass() {
     }
 
     if (this.keyHeld_Slingshot && this.keyHeld_WalkRight) {
+      this.fireSlingshot = 1;
       this.keyHeld_Slingshot = false;
       var audio = new Audio("slingShot2.wav");
       audio.play();
