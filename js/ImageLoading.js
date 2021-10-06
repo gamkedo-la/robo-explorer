@@ -5,6 +5,7 @@ var trapPic = document.createElement("img");
 var rockPic = document.createElement("img");
 // var waterPic = document.createElement("img");
 var cockroachEggPic = document.createElement("img");
+var bossPic = document.createElement("img");
 
 var trackPics = [];
 
@@ -47,6 +48,7 @@ function loadImages() {
     { varName: bombPic, theFile: "bomb-sprite.png"},
     { varName: rockPic, theFile: "rock.png"},
     { varName: cockroachEggPic, theFile: "cockroachSprite.png"},
+    { varName: bossPic, theFile: "bossCockroach.png"},
 
 
 
