@@ -37,18 +37,6 @@ function cockroach_eggClass() {
 
   this.move = function(){
 
-    let nextX = this.x + this.speedX; //calc this in just one place
-    let nextY = this.y; //no vert movement...yet
-    //used for collision
-    let nextTileIndex = getTileIndexAtPixelCoord(nextX, nextY);
-    let nextTileType = worldGrid[nextTileIndex];
-    if(nextTileType == WORLD_EMPTY){
-      this.x = nextX;
-      this.y = nextY; 
-    } else {
-      this.speedX = -this.speedX;
-      //no y behavior
-    }
   }
 
   this.draw = function(){
