@@ -215,6 +215,11 @@ function removeParticles() {
   }
 }
 
+// function addBossEnemy(){
+//   var tempBoss;  
+//   tempBoss =  new bossClass();
+// }
+
 function addParticles() {
   var tempParticle;
   tempParticle = new particleClass();
@@ -323,7 +328,7 @@ window.onload = function () {
   ghostReset();
   // secondParticle.x= 20;
   particleReset();
-  // bossEnemyReset();
+  //bossEnemyReset();
 };
 
 /****************************FUNCTION FOR IMAGELOADING**************************** */
@@ -358,7 +363,7 @@ function loadLevel(whichLevel) {
   blueHero.reset(heroPic, "Black Fire");
   rat.reset(); //TODO need 2 keep looping and instantiating
   cockroach_egg.reset();
-  bossEnemy.reset(bossPic,false);
+   bossEnemy.reset();
   
   trapList = [];
   var lookForAnotherTrap = true;

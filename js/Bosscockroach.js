@@ -1,12 +1,18 @@
-const BOSS_MOVEMENT_SPEED = 2.0;
+const BOSS_MOVEMENT_SPEED = 5.0;
 const BOSS_IMAGE_NAME = "boss";
 const BOSS_FRAMES = 0;
+
+var bossX = 75;
+var bossY = 75;
+// var this.speedX = 5;
+// var this.speedY = 7;
 
 function bossClass() {
   this.x = 75;
   this.y = 75;
 
   this.speedX = BOSS_MOVEMENT_SPEED;
+  this.speedY =  BOSS_MOVEMENT_SPEED;
 
   this.width = 160;
   this.height = 160;
@@ -20,11 +26,8 @@ function bossClass() {
   this.animationSpeed = 5;
   this.animationCounter = 0;
 
-  this.reset = function (whichImage,bossName) {
-    this.name = bossName;
-    this.mybossPic = whichImage;
-
-
+  this.reset = function () {
+    
     for (var eachRow = 0; eachRow < WORLD_ROWS; eachRow++) {
       for (var eachCol = 0; eachCol < WORLD_COLS; eachCol++) {
         var arrayIndex = rowColToArrayIndex(eachCol, eachRow);
@@ -40,8 +43,26 @@ function bossClass() {
   }
 
   this.move = function(){
-
-  
+      this.x += this.speedX;
+    if (this.x < 0 && this.speedX < 0.0) {
+      //left side
+      this.speedX *= -1;
+    }
+    if (this.x > canvas.width && this.speedX > 0.0) {
+      // right side
+      this.speedX *= -1;
+    }
+    this.y += this.speedY;
+    if (this.height < 0 && this.speedY < 0.0) {
+      //top edge
+      this.speedY *= -1;
+    }
+   
+    if (this.y > canvas.height) {
+      //bottom of the screen
+      this.speedY *= -1;
+      // ghostReset();
+    }
   }
 
   this.draw = function(){
