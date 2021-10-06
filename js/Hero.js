@@ -9,6 +9,7 @@ const JUMP_POWER = 15;
 const GRAVITY = 0.5;
 const AIR_RESISTANCE = 0.95;
 const START_PARTICLES = 2;
+const PLAYER_ANIM_FRAMES = 8;
 
 function heroClass() {
   // var sound = document.getElementById("heroSound");
@@ -177,7 +178,10 @@ function heroClass() {
     }
 
     /*-----------FOR ANIMATING MOVEMENT OF CHARACTER LEFT AND RIGHT-------- */
-    this.moveDir = 0;
+    if (this.fireSlingshot < 0){
+      this.moveDir = 0;
+    }
+    
     if (this.keyHeld_WalkLeft) {
       nextX -= PLAYER_MOVEMENT_SPEED;
       this.moveDir = -1;
@@ -196,9 +200,9 @@ function heroClass() {
 
     /*--------------FOR ANIMATING SLINGSHOT----------------*/
 
-    this.fireSlingshot = 1; //for animating slingshot
+   
     if (this.keyHeld_Slingshot && this.keyHeld_WalkLeft) {
-      this.fireSlingshot = -1;
+      this.fireSlingshot = 1;
       this.keyHeld_Slingshot = false;
       var audio = new Audio("slingShot2.wav");
       audio.play();
@@ -215,6 +219,14 @@ function heroClass() {
       var audio = new Audio("slingShot2.wav");
       audio.play();
       addSlingShotRight();
+    }
+
+    if (this.fireSlingshot > 0){
+      this.frame = this.fireSlingshot;
+      this.fireSlingshot++;
+      if(this.fireSlingshot > PLAYER_ANIM_FRAMES){
+        this.fireSlingshot = -1;
+      }
     }
 
     if (this.keyHeld_Bomb) {
@@ -486,15 +498,15 @@ function heroClass() {
 
   this.draw = function () {
     // drawBitmapCenteredWithRotation(this.myHeroPic, this.x, this.y, this.ang);
-    if (++this.frame >= 8) {
+    if (++this.frame >= PLAYER_ANIM_FRAMES) {
       this.frame = 0;
     }
     if (this.moveDir == 0) {
       this.frame = 0;
     }
-
-    if (this.fireSlingshot == 0){
-      this.frame = 3;
+    var animationRow = 0;
+    if (this.fireSlingshot > 0){
+      animationRow = 2;
     }
     /*
     canvasContext.drawImage(
@@ -513,7 +525,7 @@ function heroClass() {
       this.width,
       this.height,
       this.frame,
-      0,
+      animationRow,
       flipLeft,
       this.flyAng
     );
