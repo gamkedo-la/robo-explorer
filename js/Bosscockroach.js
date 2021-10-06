@@ -8,8 +8,8 @@ function bossClass() {
 
   this.speedX = BOSS_MOVEMENT_SPEED;
 
-  this.width = 40;
-  this.height = 50;
+  this.width = 160;
+  this.height = 160;
   this.frameX = 0;
   this.frameY = 0;
 
@@ -42,7 +42,7 @@ function bossClass() {
 
   this.draw = function(){
     
-    var bossFrameW = 40;
+    var bossFrameW = 160;
     canvasContext.drawImage(
       bossPic,
       this.frame * bossFrameW, 0, //top left corner of spritesheet frame
