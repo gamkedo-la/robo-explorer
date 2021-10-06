@@ -1,4 +1,4 @@
-const BOSS_MOVEMENT_SPEED = 5.0;
+const BOSS_MOVEMENT_SPEED = 20.0;
 const BOSS_IMAGE_NAME = "boss";
 const BOSS_FRAMES = 0;
 
@@ -14,7 +14,7 @@ function bossClass() {
   this.speedX = BOSS_MOVEMENT_SPEED;
   this.speedY =  BOSS_MOVEMENT_SPEED;
 
-  this.width = 160;
+  this.width = 100;
   this.height = 160;
   this.frameX = 0;
   this.frameY = 0;
