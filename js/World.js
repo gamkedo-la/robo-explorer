@@ -331,6 +331,11 @@ var sideQuest2 = [
                checkTileType == WORLD_TUNNEL_UP);
     }
 
+    function tileTypeCanBeMoveThrough(checkTileType){
+        return(checkTileType == WORLD_EMPTY ||
+            checkTileType == WORLD_WATER);
+    }
+
     function drawTracks() {
       var arrayIndex = 0;
       var drawTileX = 0;

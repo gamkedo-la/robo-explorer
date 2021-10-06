@@ -97,8 +97,8 @@ function checkForCheatKeys (keyCode) {
     case KEY_C: 
       blueHero.keysHeld = 999;
       break
-    case KEY_1:
-      loadLevel(levelOne);
+    case KEY_1: 
+      loadLevel(sideQuest2); //change to another level you need to go to for testing.
       break
     case KEY_2:
       loadLevel(levelTwo);
@@ -119,11 +119,12 @@ function checkForCheatKeys (keyCode) {
       loadLevel(levelSeven); 
       break
     case KEY_8:
-      loadLevel(levelEight); //Not yet defined
+      loadLevel(levelEight); 
       break
     case KEY_9:
-       loadLevel(levelNine); //Not yet defined
-      break    
+       loadLevel(levelNine);
+      break  
+       
                                                                          
       default:
         break;

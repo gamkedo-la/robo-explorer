@@ -6,7 +6,7 @@
 // const MIN_SPEED_TO_TURN = 0.5;
 const PLAYER_MOVEMENT_SPEED = 10.0;
 const JUMP_POWER = 15;
-const GRAVITY = 0.5;
+const GRAVITY = 10.5;
 const AIR_RESISTANCE = 0.95;
 const START_PARTICLES = 2;
 const PLAYER_ANIM_FRAMES = 8;
@@ -154,7 +154,13 @@ function heroClass() {
       // addSlingShot();
       // console.log("JUMP_POWER");
     } else {
-      nextY += GRAVITY + 10;
+      var tileIndexCenter = getTileIndexAtPixelCoord(this.x, this.y);
+        var tileTypeCenter = worldGrid[tileIndexCenter];
+      if(tileTypeCenter == WORLD_WATER) {
+        nextY += GRAVITY * 0.1; //slower gravity
+      }else{
+        nextY += GRAVITY;
+      }
       removeParticles();
       // removeSlingShot();
       // if (this.jumperSpeedY > this.JUMPER_HEIGHT) {
@@ -181,7 +187,7 @@ function heroClass() {
     if (this.fireSlingshot < 0){
       this.moveDir = 0;
     }
-    
+
     if (this.keyHeld_WalkLeft) {
       nextX -= PLAYER_MOVEMENT_SPEED;
       this.moveDir = -1;
@@ -267,28 +273,28 @@ function heroClass() {
 
     /*--------------CODE FOR REPLACING WORLD TILES WHEN WALKED INTO--------------*/
 
-    if (this.keyHeld_Jump && walkIntoTileTypeTop == WORLD_EMPTY) {
+    if (this.keyHeld_Jump && tileTypeCanBeMoveThrough(walkIntoTileTypeTop)) {
       this.y = nextY;
-    } else if (walkIntoTileTypeTop != WORLD_EMPTY) {
+    } else if (tileTypeCanBeMoveThrough(walkIntoTileTypeTop) == false) {
       this.y++;
     }
 
-    if (this.keyHeld_Jump == false && walkIntoTileTypeBottom == WORLD_EMPTY) {
+    if (this.keyHeld_Jump == false && tileTypeCanBeMoveThrough(walkIntoTileTypeBottom)) {
       this.y = nextY;
-    } else if (walkIntoTileTypeBottom != WORLD_EMPTY) {
+    } else if (tileTypeCanBeMoveThrough(walkIntoTileTypeBottom) == false) {
       // this.y--;//Makes character shake we will add a nicer fix.
       this.y = (1 + Math.floor(this.y / WORLD_H)) * WORLD_H - this.height / 2;
     }
 
-    if (this.keyHeld_WalkLeft && walkIntoTileTypeLeft == WORLD_EMPTY) {
+    if (this.keyHeld_WalkLeft && tileTypeCanBeMoveThrough(walkIntoTileTypeLeft)) {
       this.x = nextX;
-    } else if (walkIntoTileTypeLeft != WORLD_EMPTY) {
+    } else if (tileTypeCanBeMoveThrough(walkIntoTileTypeLeft) == false) {
       this.x++;
     }
 
-    if (this.keyHeld_WalkRight && walkIntoTileTypeRight == WORLD_EMPTY) {
+    if (this.keyHeld_WalkRight && tileTypeCanBeMoveThrough(walkIntoTileTypeRight)) {
       this.x = nextX;
-    } else if (walkIntoTileTypeRight != WORLD_EMPTY) {
+    } else if (tileTypeCanBeMoveThrough(walkIntoTileTypeRight) == false) {
       this.x--;
     }
 
@@ -381,6 +387,7 @@ function heroClass() {
   this.reactToTileType = function (walkIntoTileType, walkIntoTileIndex) {
     switch (walkIntoTileType) {
       case WORLD_EMPTY:
+      case WORLD_WATER:
         break;
       case WORLD_TUNNEL_RIGHT:
         loadLevel(levelTwo);
