@@ -155,7 +155,7 @@ function heroClass() {
       // console.log("JUMP_POWER");
     } else {
       var tileIndexCenter = getTileIndexAtPixelCoord(this.x, this.y);
-        var tileTypeCenter = worldGrid[tileIndexCenter];
+      var tileTypeCenter = worldGrid[tileIndexCenter];
       if(tileTypeCenter == WORLD_WATER) {
         nextY += GRAVITY * 0.1; //slower gravity
       }else{
@@ -193,7 +193,14 @@ function heroClass() {
       this.moveDir = -1;
       // switchCostume(costumeList[1]);
       // this.speed -= REVERSE_POWER;
+    }else {
+      var tileIndexCenter = getTileIndexAtPixelCoord(this.x, this.y);
+      var tileTypeCenter = worldGrid[tileIndexCenter];
+      if(tileTypeCenter == WORLD_WATER) {
+        nextX -= PLAYER_MOVEMENT_SPEED *0; //test moving to the left slower
+      }
     }
+
 
     if (this.keyHeld_WalkRight) {
       nextX += PLAYER_MOVEMENT_SPEED;
