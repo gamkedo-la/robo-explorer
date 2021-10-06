@@ -53,7 +53,7 @@ function bossClass() {
       this.speedX *= -1;
     }
     this.y += this.speedY;
-    if (this.height < 0 && this.speedY < 0.0) {
+    if (this.y < 0 && this.speedY < 0.0) {
       //top edge
       this.speedY *= -1;
     }
