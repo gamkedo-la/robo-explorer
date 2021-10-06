@@ -160,6 +160,8 @@ function particleReset() {
   particleList = [];
 }
 
+
+
 /**************************************FUNCTION FOR SLINGSHOT RESET************************************* */
 
 function slingShotReset() {
@@ -321,6 +323,7 @@ window.onload = function () {
   ghostReset();
   // secondParticle.x= 20;
   particleReset();
+  // bossEnemyReset();
 };
 
 /****************************FUNCTION FOR IMAGELOADING**************************** */
@@ -350,11 +353,12 @@ function loadLevel(whichLevel) {
   worldGrid = whichLevel.slice();
   particleReset();
   slingShotReset();
+ 
   // blueCar.reset(otherCarPic, "Machine Raider");
   blueHero.reset(heroPic, "Black Fire");
   rat.reset(); //TODO need 2 keep looping and instantiating
   cockroach_egg.reset();
-  bossEnemy.reset();
+  bossEnemy.reset(bossPic,false);
   
   trapList = [];
   var lookForAnotherTrap = true;

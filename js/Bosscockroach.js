@@ -12,6 +12,7 @@ function bossClass() {
   this.height = 160;
   this.frameX = 0;
   this.frameY = 0;
+  this.name ="untitled boss";
 
   //properties for sprite animation
   this.frame = 0;
@@ -19,7 +20,10 @@ function bossClass() {
   this.animationSpeed = 5;
   this.animationCounter = 0;
 
-  this.reset = function () {
+  this.reset = function (whichImage,bossName) {
+    this.name = bossName;
+    this.mybossPic = whichImage;
+
 
     for (var eachRow = 0; eachRow < WORLD_ROWS; eachRow++) {
       for (var eachCol = 0; eachCol < WORLD_COLS; eachCol++) {
