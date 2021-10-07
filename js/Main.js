@@ -338,8 +338,8 @@ function imageLoadingDoneSoStartGame() {
   var framesPersecond = 30;
   setInterval(updateAll, 1000 / framesPersecond);
   setupInput();
-  var audio = new Audio("Intro-BeepBox-Song.wav");
-  audio.play();
+  // var audio = new Audio("robo-explorer-intro-guitarRiff-v1.wav");
+  // audio.play();
   loadLevel(levelList[levelNow]);
   // worldGrid = levelOne;
   // blueCar.reset(otherCarPic, "Machine Raider");
