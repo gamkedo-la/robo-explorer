@@ -329,6 +329,7 @@ window.onload = function () {
   // secondParticle.x= 20;
   particleReset();
   //bossEnemyReset();
+  bossEnemy.reset();
 };
 
 /****************************FUNCTION FOR IMAGELOADING**************************** */

@@ -173,13 +173,17 @@ function heroClass() {
 
     // console.log("GRAVITY");
 
-    // if (this.keyHeld_Climb) {
-    //    // this.speed += DRIVE_POWER;
-    //    nextY -= PLAYER_MOVEMENT_SPEED+10;
-    // //   console.log("keyHeld_Climb");
+    if (this.keyHeld_Climb) {
+      var tileIndexCenter = getTileIndexAtPixelCoord(this.x, this.y);
+      var tileTypeCenter = worldGrid[tileIndexCenter];
+      if(tileTypeCenter == WORLD_WATER) {
+       nextY -= PLAYER_MOVEMENT_SPEED*0.2;
+      }
+    //  console.log("keyHeld_Climb");
 
-    //  }
+      }111
     if (this.keyHeld_ClimbDown) {
+      
       // this.speed -= REVERSE_POWER;
     }
 
