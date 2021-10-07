@@ -178,10 +178,12 @@ function heroClass() {
       var tileTypeCenter = worldGrid[tileIndexCenter];
       if(tileTypeCenter == WORLD_WATER) {
        nextY -= PLAYER_MOVEMENT_SPEED*0.2;
+      }else{
+        nextY -= PLAYER_MOVEMENT_SPEED*3;// need to limit jump power separate from flight
       }
     //  console.log("keyHeld_Climb");
 
-      }111
+      }
     if (this.keyHeld_ClimbDown) {
       
       // this.speed -= REVERSE_POWER;
