@@ -289,6 +289,7 @@ window.onload = function () {
   canvas = document.getElementById("gameCanvas");
   canvasContext = canvas.getContext("2d");
 
+  document.getElementById("bossAudio").pause();
   // var tempParticle = new particleClass();
   // tempParticle.x = 100;
   // tempParticle.y=100;
@@ -331,6 +332,11 @@ window.onload = function () {
   //bossEnemyReset();
   bossEnemy.reset();
 };
+
+/****************************FUNCTION FOR DELAY AUDIO LEVEL TEN**************************** */
+function delayAudio(){
+   document.getElementById("bossAudio").play();
+}
 
 /****************************FUNCTION FOR IMAGELOADING**************************** */
 
