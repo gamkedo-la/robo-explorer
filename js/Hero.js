@@ -433,6 +433,8 @@ function heroClass() {
         loadLevel(levelNine);
         break;
       case WORLD_TUNNEL_RIGHT_9:
+        var audio = new Audio("robo-explorer-level10-guitarRiff.wav");
+  audio.play();
         loadLevel(levelTen);
         break;
       case WORLD_SLINGSHOT:
