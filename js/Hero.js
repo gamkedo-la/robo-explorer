@@ -195,18 +195,18 @@ function heroClass() {
     }
 
     if (this.keyHeld_WalkLeft) {
-      nextX -= PLAYER_MOVEMENT_SPEED;
+      // nextX -= PLAYER_MOVEMENT_SPEED;
       this.moveDir = -1;
       // switchCostume(costumeList[1]);
       // this.speed -= REVERSE_POWER;
-    }else {
       var tileIndexCenter = getTileIndexAtPixelCoord(this.x, this.y);
       var tileTypeCenter = worldGrid[tileIndexCenter];
       if(tileTypeCenter == WORLD_WATER) {
-        nextX -= PLAYER_MOVEMENT_SPEED *0; //test moving to the left slower
+        nextX -= PLAYER_MOVEMENT_SPEED *0.2; //test moving to the left slower
+      }else{
+        nextX -= PLAYER_MOVEMENT_SPEED;// need to limit jump power separate from flight
       }
     }
-
 
     if (this.keyHeld_WalkRight) {
       nextX += PLAYER_MOVEMENT_SPEED;
