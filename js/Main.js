@@ -3,6 +3,7 @@ var blueHero = new heroClass();
 var rat = new ratClass();
 var cockroach_egg = new cockroach_eggClass();
 var bossEnemy = new bossClass();
+var boyCocoon = new boyCocoonClass();
 var trapList = [];
 var waterList = [];
 
@@ -331,6 +332,7 @@ window.onload = function () {
   particleReset();
   //bossEnemyReset();
   bossEnemy.reset();
+  boyCocoon.reset();
 };
 
 /****************************FUNCTION FOR DELAY AUDIO LEVEL TEN**************************** */
@@ -371,6 +373,7 @@ function loadLevel(whichLevel) {
   rat.reset(); //TODO need 2 keep looping and instantiating
   cockroach_egg.reset();
    bossEnemy.reset();
+   boyCocoon.reset();
   
   trapList = [];
   var lookForAnotherTrap = true;
@@ -409,6 +412,7 @@ function moveAll() {
   blueHero.move();
   rat.move();
   cockroach_egg.move();
+  boyCocoon.move();
   bossEnemy.move();
   
   for (var i=0; i < trapList.length; i++){
@@ -490,6 +494,7 @@ function drawAll() {
   blueHero.draw();
   rat.draw();
   cockroach_egg.draw();
+  boyCocoon.draw();
   bossEnemy.draw();
   for (var i=0; i < trapList.length; i++){
     trapList[i].draw();

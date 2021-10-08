@@ -6,7 +6,7 @@ var rockPic = document.createElement("img");
 // var waterPic = document.createElement("img");
 var cockroachEggPic = document.createElement("img");
 var bossPic = document.createElement("img");
-
+var boyCocoonPic=document.createElement("img");
 var trackPics = [];
 
 var picsToLoad = 0; //set automatically based on imageList in loadImages
@@ -49,7 +49,7 @@ function loadImages() {
     { varName: rockPic, theFile: "rock.png"},
     { varName: cockroachEggPic, theFile: "cockroachSprite.png"},
     { varName: bossPic, theFile: "bossCockroach.png"},
-
+    { varName: boyCocoonPic, theFile: "boyInCocoon.png" },
 
 
     { varName: trapPic, theFile: "spike-sprite3.png" },
@@ -86,7 +86,8 @@ function loadImages() {
     { trackType: WORLD_SEWER_PIPE, theFile: "sewerPipe.png" },
     { trackType: WORLD_SLIME_PIPE, theFile: "slimePipe.png" },
 
-    { trackType: WORLD_LOST_BOY, theFile: "boy-v1.png" },
+    // { trackType: WORLD_LOST_BOY, theFile: "boy-v1.png" },
+    { trackType: WORLD_LOST_BOY, theFile: "boyInCocoon.png" },
     // { trackType: WORLD_COCKROACH_EGG, theFile: "cockroachSprite.png"},
 
     { trackType: WORLD_WATER, theFile: "sewerWater.png" }
