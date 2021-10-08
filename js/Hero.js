@@ -202,16 +202,23 @@ function heroClass() {
       var tileIndexCenter = getTileIndexAtPixelCoord(this.x, this.y);
       var tileTypeCenter = worldGrid[tileIndexCenter];
       if(tileTypeCenter == WORLD_WATER) {
-        nextX -= PLAYER_MOVEMENT_SPEED *0.2; //test moving to the left slower
+        nextX -= PLAYER_MOVEMENT_SPEED *0.2; //made left movement slower in slime water
       }else{
-        nextX -= PLAYER_MOVEMENT_SPEED;// need to limit jump power separate from flight
+        nextX -= PLAYER_MOVEMENT_SPEED;// 
       }
     }
 
     if (this.keyHeld_WalkRight) {
-      nextX += PLAYER_MOVEMENT_SPEED;
+      // nextX += PLAYER_MOVEMENT_SPEED;
       this.moveDir = 1;
       // this.speed += DRIVE_POWER;
+      var tileIndexCenter = getTileIndexAtPixelCoord(this.x, this.y);
+      var tileTypeCenter = worldGrid[tileIndexCenter];
+      if(tileTypeCenter == WORLD_WATER) {
+        nextX += PLAYER_MOVEMENT_SPEED *0.2; //made right movement slower in slime water
+      }else{
+        nextX += PLAYER_MOVEMENT_SPEED;// 
+      }
     }
     // this.x += Math.cos(this.ang) * this.speed;
     // this.y += Math.sin(this.ang) * this.speed;
