@@ -135,6 +135,10 @@ function heroClass() {
     document.getElementById("collected-crossbows").innerHTML = "1";
   };
 
+  this.updateWoodenBowReadout = function () {
+    document.getElementById("woodenBow").innerHTML = "5. Wooden Bow";
+  };
+
  /**************************CODE FOR CHARACTER TO MOVE******************************************************/
   this.move = function () {
     // this.speed *= GROUNDSPEED_DECAY_MULT;
@@ -465,6 +469,10 @@ function heroClass() {
       case WORLD_CROSSBOW:
         worldGrid[walkIntoTileIndex] = WORLD_EMPTY;
         this.updateCrossbowReadout();
+        break;
+      case WORLD_WOODEN_BOW:
+        worldGrid[walkIntoTileIndex] = WORLD_EMPTY;
+        this.updateWoodenBowReadout();
         break;
       case WORLD_DOOR:
         if (this.keysHeld > 0) {
