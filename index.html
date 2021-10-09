@@ -25,11 +25,10 @@
             background-color: rgb(41, 44, 41);
             display: block;
             text-align: center;
-
             color: black;
             padding-top: 1%;
             border: 5px solid black;
-            position: relative;
+            position: relative; 
         }
 
         h1 {
@@ -56,20 +55,29 @@
       a:hover{
         color: red;
       }
-        #hash {
+        /* #hash {
             color: black;
             text-align: center;
 
-        }
+        } */
 
         #debugText {
             font-size: 15px;
-            position: absolute;
+            /* position: absolute; */
             top: 8%;
             left: 85%;
         }
 
+/**************************************************Items User Interface***********************/
+.black__interface{
+    background-color: black;
+    position: absolute;
+    top:10%;
+    left: 1%;
+    width: 15rem;
+    height: 15rem;
 
+}
 
         .items {
             font-size: 12px;
@@ -84,7 +92,7 @@
         #slingshot {
             font-size: 12px;
             position: absolute;
-            top: 10%;
+            top: 14%;
             left: 2%;
 
         }
@@ -124,6 +132,13 @@
         }
 
         #collected-crossbows{
+            font-size: 12px;
+            position: absolute;
+            top: 25%;
+            left: 5%;
+        }
+
+        #woodenBow{
             font-size: 12px;
             position: absolute;
             top: 25%;
@@ -241,12 +256,17 @@
             <source src="sidhayaAlabYouriff.wav" type="audio/wav">
         </audio> -->
         <!-- <p id="life" style="color:white;font-size:medium;">Life Span</p> -->
-        <p id="debugText" style="color:white;">Key count will be displayed here.</p>
-        <p class="items">Items Collected:</p>
-        <p id="slingshot"></p>
-        <p id="sword"></p>
-        <p id="arrow"></p>
-        <p id="spear"></p>
+       
+        <div class="black__interface">
+            <p id="debugText" style="color:white;">Key count will be displayed here.</p>     
+            <p class="items">Items Collected:</p>
+            <p id="slingshot"></p>
+            <p id="sword"></p>
+            <p id="arrow"></p>
+            <p id="spear"></p>
+            <p id="woodenBow"></p>
+            
+        </div>
         <div class="video-intro">
             <a href="video-intro1.html">BACK TO START</a>
         </div>
@@ -262,10 +282,13 @@
           </audio>  -->
 
     </div>
-    <div class="text">
-        <!--Added expressive speech textbox prototype
-    https://codepen.io/punkydrewster713/pen/zYKdywP-->
+    <!--
+        <div class="text">
+        Added expressive speech textbox prototype
+    https://codepen.io/punkydrewster713/pen/zYKdywP
     </div>
+    
+    -->
     
 
     <script src="js/GraphicsCommon.js"></script>
@@ -283,7 +306,7 @@
     <script src="js/Input.js"></script>
     <script src="js/Main.js"></script>
  
-    <script>
+    <!-- <script>
         var container = document.querySelector(".text");
         var speeds = {
             pause: 500,
@@ -339,7 +362,7 @@
             revealOneCharacter(characters);
         }, 600)
     </script>
-
+ -->
 
 </body>
 
