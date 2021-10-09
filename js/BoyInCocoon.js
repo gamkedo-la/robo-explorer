@@ -40,7 +40,7 @@ function boyCocoonClass() {
 
   this.draw = function(){
     
-    var boyCocoonFrameW = 100;
+    var boyCocoonFrameW = 80;
     canvasContext.drawImage(
         boyCocoonPic,
       this.frame * boyCocoonFrameW, 0, //top left corner of spritesheet frame
