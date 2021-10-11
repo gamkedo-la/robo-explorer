@@ -10,6 +10,7 @@ const GRAVITY = 10.5;
 const AIR_RESISTANCE = 0.95;
 const START_PARTICLES = 2;
 const PLAYER_ANIM_FRAMES = 8;
+const ROCKET_LIFE=10;
 
 function heroClass() {
   // var sound = document.getElementById("heroSound");
@@ -149,11 +150,18 @@ function heroClass() {
     /*-------------------------FOR ANIMATING FLIGHT OF CHARACTER-------------------*/
     if (this.keyHeld_Jump) {
       // beginLoadingImage(rocketBooster);
-
+      var rocketEnergy;
+      rocketEnergy = ROCKET_LIFE - 5;
+      if(ROCKET_LIFE !== 0){
       nextY -= JUMP_POWER;
+      
+       console.log(ROCKET_LIFE);
       for (var i = 0; i < START_PARTICLES; i++) {
         addParticles();
       }
+    }
+      
+      
       // addParticles();
       // addSlingShot();
       // console.log("JUMP_POWER");
