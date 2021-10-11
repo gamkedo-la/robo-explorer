@@ -85,6 +85,7 @@ function loadImages() {
     { trackType: WORLD_PIPE_TOP7, theFile: "world_pipe_top7.png" },
     { trackType: WORLD_SEWER_PIPE, theFile: "sewerPipe.png" },
     { trackType: WORLD_SLIME_PIPE, theFile: "slimePipe.png" },
+    { trackType: WORLD_PIPE_RIGHT_SIDEQUEST3, theFile: "world-pipe-right-sidequest3.png" },
 
     // { trackType: WORLD_LOST_BOY, theFile: "boy-v1.png" },
     { trackType: WORLD_LOST_BOY, theFile: "boyInCocoon.png" },
