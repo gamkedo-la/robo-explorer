@@ -413,6 +413,8 @@ function heroClass() {
       case WORLD_EMPTY:
       case WORLD_WATER:
         break;
+     /*-------------------------------WORLD PIPES------------------------------*/
+
       case WORLD_TUNNEL_RIGHT:
         loadLevel(levelTwo);
         break;
@@ -450,6 +452,8 @@ function heroClass() {
         delayAudio();
         loadLevel(levelTen);
         break;
+        
+      /*-------------------------------WORLD COLLECTIBLES------------------------------*/
       case WORLD_SLINGSHOT:
         worldGrid[walkIntoTileIndex] = WORLD_EMPTY;
         this.updateSlingshotReadout();
