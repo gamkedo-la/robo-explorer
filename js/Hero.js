@@ -413,7 +413,7 @@ function heroClass() {
       case WORLD_EMPTY:
       case WORLD_WATER:
         break;
-     /*-------------------------------WORLD PIPES------------------------------*/
+    /*-------------------------------WORLD PIPES------------------------------*/
 
       case WORLD_TUNNEL_RIGHT:
         loadLevel(levelTwo);
@@ -441,6 +441,9 @@ function heroClass() {
         break;
       case WORLD_PIPE_TOP7:
         loadLevel(levelEight);
+        break;
+      case WORLD_PIPE_RIGHT_SIDEQUEST3:
+        loadLevel(sideQuest3);
         break;
       case WORLD_TUNNEL_RIGHT_8:
         loadLevel(levelNine);
