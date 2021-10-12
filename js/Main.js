@@ -335,6 +335,13 @@ window.onload = function () {
   boyCocoon.reset();
 };
 
+
+
+function rocketLife(){
+  var rocketEnergy;
+  rocketEnergy = ROCKET_LIFE--;
+  //  rocketEnergy-1;
+}
 /****************************FUNCTION FOR DELAY AUDIO LEVEL TEN**************************** */
 function delayAudio(){
    document.getElementById("bossAudio").play();
