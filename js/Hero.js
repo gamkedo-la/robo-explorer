@@ -507,6 +507,11 @@ function heroClass() {
         worldGrid[walkIntoTileIndex] = WORLD_EMPTY;
         this.updateWoodenBowReadout();
         break;
+      
+      case WORLD_ROCKET_BATTERY:
+        worldGrid[walkIntoTileIndex] = WORLD_EMPTY;
+        // this.updateWoodenBowReadout();
+        break;
       case WORLD_DOOR:
         if (this.keysHeld > 0) {
           this.keysHeld--;
