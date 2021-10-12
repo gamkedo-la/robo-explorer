@@ -355,6 +355,7 @@ function imageLoadingDoneSoStartGame() {
   setupInput();
   var audio = new Audio("blues1-edited.wav");
   audio.play();
+  
   loadLevel(levelList[levelNow]);
   // worldGrid = levelOne;
   // blueCar.reset(otherCarPic, "Machine Raider");

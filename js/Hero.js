@@ -511,6 +511,13 @@ function heroClass() {
       case WORLD_ROCKET_BATTERY:
         worldGrid[walkIntoTileIndex] = WORLD_EMPTY;
         // this.updateWoodenBowReadout();
+          ROCKET_LIFE == 100
+          
+          
+        
+        // this.keyHeld_Jump = true;
+        // blueHero.rocketEnergy = ROCKET_LIFE == 100;
+        // this.keysHeld_Jump = true;
         break;
       case WORLD_DOOR:
         if (this.keysHeld > 0) {
@@ -524,10 +531,7 @@ function heroClass() {
         // this.keysHeld;
        
         this.keysHeld++;
-        // this.rocketEnergy = ROCKET_LIFE++;
-        // this.keyHeld_Jump = true;
-        // blueHero.rocketEnergy = ROCKET_LIFE == 100;
-        // this.keysHeld_Jump = true;
+       
         this.updateKeyReadout();
         var audio = new Audio("keyCollectionSound2.wav");
         audio.play();
