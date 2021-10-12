@@ -32,6 +32,7 @@ function heroClass() {
   this.name = "Untitled Explorer";
   this.keysHeld = 0;
   this.items = 0;
+  this.rocketEnergy=0;
   // this.life = 3;
   this.moveDir = 0;
   this.fireSlingshot = -1;
@@ -90,6 +91,7 @@ function heroClass() {
     this.name = heroName;
     this.myHeroPic = whichImage;
     this.keysHeld = 0;
+    this.rocketEnergy =0;
     // this.life = 3;
     this.updateKeyReadout();
     // this.updateItemsReadout();
@@ -151,10 +153,10 @@ function heroClass() {
     if (this.keyHeld_Jump) {
       // beginLoadingImage(rocketBooster);
     
+     
       
-      // 
       if(ROCKET_LIFE !==0){
-        ROCKET_LIFE--;
+       ROCKET_LIFE--;
        nextY -= JUMP_POWER;
        console.log(ROCKET_LIFE);
        for (var i = 0; i < START_PARTICLES; i++) {
@@ -184,7 +186,7 @@ function heroClass() {
 
      
        
-        removeParticles();
+        // removeParticles();
      
       
       // removeSlingShot();
@@ -515,10 +517,16 @@ function heroClass() {
       case WORLD_KEY:
         // console.log(this.name + " THIS IS THE KEY");
         // this.keysHeld;
+       
         this.keysHeld++;
+        // this.rocketEnergy = ROCKET_LIFE++;
+        // this.keyHeld_Jump = true;
+        // blueHero.rocketEnergy = ROCKET_LIFE == 100;
+        // this.keysHeld_Jump = true;
         this.updateKeyReadout();
         var audio = new Audio("keyCollectionSound2.wav");
         audio.play();
+        
         worldGrid[walkIntoTileIndex] = WORLD_EMPTY;
         break;
 
