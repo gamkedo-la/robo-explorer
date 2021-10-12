@@ -10,7 +10,7 @@ const GRAVITY = 10.5;
 const AIR_RESISTANCE = 0.95;
 const START_PARTICLES = 2;
 const PLAYER_ANIM_FRAMES = 8;
-var ROCKET_LIFE=10;
+var ROCKET_LIFE=100;
 
 function heroClass() {
   // var sound = document.getElementById("heroSound");
@@ -161,7 +161,10 @@ function heroClass() {
         addParticles();
        }
       }else{
+        this.keyHeld_Jump = false;// disable flight
+        nextY += GRAVITY *100;
         removeParticles();
+        
       }
       
       // rocketLife();
