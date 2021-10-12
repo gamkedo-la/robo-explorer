@@ -60,7 +60,7 @@ function keySet(keyEvent, setTo) {
   }
 
   if (keyEvent.keyCode == blueHero.controlKeyJump) {
-     rocketLife();
+    
     blueHero.keyHeld_Jump = setTo;
   }
 

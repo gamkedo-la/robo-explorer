@@ -151,16 +151,19 @@ function heroClass() {
     if (this.keyHeld_Jump) {
       // beginLoadingImage(rocketBooster);
     
-     
-      if(ROCKET_LIFE !== 0){
-       nextY -= JUMP_POWER;
       
+      // 
+      if(ROCKET_LIFE !==0){
+        ROCKET_LIFE--;
+       nextY -= JUMP_POWER;
        console.log(ROCKET_LIFE);
        for (var i = 0; i < START_PARTICLES; i++) {
         addParticles();
        }
-      
+      }else{
+        removeParticles();
       }
+      
       // rocketLife();
       
       
@@ -175,7 +178,12 @@ function heroClass() {
       }else{
         nextY += GRAVITY;
       }
-      removeParticles();
+
+     
+       
+        removeParticles();
+     
+      
       // removeSlingShot();
       // if (this.jumperSpeedY > this.JUMPER_HEIGHT) {
       //   this.jumperSpeedY = this.height;
