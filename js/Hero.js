@@ -37,6 +37,7 @@ function heroClass() {
   this.moveDir = 0;
   this.fireSlingshot = -1;
   this.swordSlash = 0;
+  this.swim =0;
 
   this.keyHeld_Climb = false;
   this.keyHeld_ClimbDown = false;
@@ -206,12 +207,15 @@ function heroClass() {
     // console.log("GRAVITY");
 
     if (this.keyHeld_Climb) {
+      this.swim = 1;
+      //  this.keyHeld_Climb = false;
       var tileIndexCenter = getTileIndexAtPixelCoord(this.x, this.y);
       var tileTypeCenter = worldGrid[tileIndexCenter];
       if(tileTypeCenter == WORLD_WATER) {
        nextY -= PLAYER_MOVEMENT_SPEED*0.2;
       }else{
         nextY -= PLAYER_MOVEMENT_SPEED*3;// need to limit jump power separate from flight
+        this.swim=0;
       }
     //  console.log("keyHeld_Climb");
 
@@ -616,6 +620,10 @@ function heroClass() {
     
     if(this.swordSlash > 0){
       animationRow =3;
+    }
+
+    if(this.swim > 0){
+      animationRow =4;
     }
     /*
     canvasContext.drawImage(
