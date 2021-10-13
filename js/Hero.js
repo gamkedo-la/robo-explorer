@@ -184,8 +184,11 @@ function heroClass() {
       var tileTypeCenter = worldGrid[tileIndexCenter];
       if(tileTypeCenter == WORLD_WATER) {
         nextY += GRAVITY * 0.1; //slower gravity
+        ROCKET_LIFE=0;
+        removeParticles();
       }else{
         nextY += GRAVITY;
+        ROCKET_LIFE=100;
       }
 
      
@@ -205,6 +208,7 @@ function heroClass() {
     // console.log("GRAVITY");
 
     if (this.keyHeld_Climb) {
+      this.regularJump = 1;
       this.swim = 1;
       //  this.keyHeld_Climb = false;
       var tileIndexCenter = getTileIndexAtPixelCoord(this.x, this.y);
@@ -214,6 +218,7 @@ function heroClass() {
       }else{
         nextY -= PLAYER_MOVEMENT_SPEED*3;// need to limit jump power separate from flight
         this.swim=0;
+      
         // this.regularJump=0;
       }
     //  console.log("keyHeld_Climb");
@@ -347,12 +352,11 @@ function heroClass() {
 
     /*--------------CODE FOR REPLACING WORLD TILES WHEN WALKED INTO--------------*/
     /*-------------KEY CLIMB W key------------------ */
-    if (this.keyHeld_Climb && tileTypeCanBeMoveThrough(walkIntoTileTypeTop)) {
+   /* if (this.keyHeld_Climb && tileTypeCanBeMoveThrough(walkIntoTileTypeTop)) {
       this.y = nextY;
     } else if (tileTypeCanBeMoveThrough(walkIntoTileTypeTop) == false) {
       this.y++;
-    }
-
+    }*/
 
     if (this.keyHeld_Jump && tileTypeCanBeMoveThrough(walkIntoTileTypeTop)) {
        this.y = nextY;
