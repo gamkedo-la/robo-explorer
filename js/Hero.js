@@ -38,6 +38,7 @@ function heroClass() {
   this.fireSlingshot = -1;
   this.swordSlash = 0;
   this.swim =0;
+  this.regularJump=0;
 
   this.keyHeld_Climb = false;
   this.keyHeld_ClimbDown = false;
@@ -158,9 +159,6 @@ function heroClass() {
     /*-------------------------FOR ANIMATING FLIGHT OF CHARACTER-------------------*/
     if (this.keyHeld_Jump) {
       // beginLoadingImage(rocketBooster);
-    
-     
-      
       if(ROCKET_LIFE !==0){
        ROCKET_LIFE--;
        nextY -= JUMP_POWER;
@@ -207,6 +205,12 @@ function heroClass() {
     // console.log("GRAVITY");
 
     if (this.keyHeld_Climb) {
+      
+      
+     
+    this.regularJump = 1;
+      
+
       this.swim = 1;
       //  this.keyHeld_Climb = false;
       var tileIndexCenter = getTileIndexAtPixelCoord(this.x, this.y);
@@ -216,10 +220,13 @@ function heroClass() {
       }else{
         nextY -= PLAYER_MOVEMENT_SPEED*3;// need to limit jump power separate from flight
         this.swim=0;
+        // this.regularJump=0;
       }
     //  console.log("keyHeld_Climb");
+       
+      
+    }
 
-      }
     if (this.keyHeld_ClimbDown) {
       
       // this.speed -= REVERSE_POWER;
@@ -233,7 +240,6 @@ function heroClass() {
     if(this.swordSlash = 0){
       animationRow=1;
     }
-
 
     if (this.keyHeld_WalkLeft) {
       // nextX -= PLAYER_MOVEMENT_SPEED;
@@ -267,7 +273,6 @@ function heroClass() {
 
     /*--------------FOR ANIMATING SLINGSHOT----------------*/
 
-   
     if (this.keyHeld_Slingshot && this.keyHeld_WalkLeft) {
       this.fireSlingshot = 1;
       this.keyHeld_Slingshot = false;
@@ -296,11 +301,14 @@ function heroClass() {
       }
     }
 
+    /*--------------FOR ANIMATING SWORD SLASH----------------*/
    
     if (this.keyHeld_Sword) {
       this.swordSlash = 1;
       this.keyHeld_Sword = false;
     }
+
+    /*--------------FOR ANIMATING BOMB----------------*/
 
     if (this.keyHeld_Bomb) {
       this.keyHeld_Bomb = false;
@@ -315,7 +323,6 @@ function heroClass() {
     
 
     var walkIntoTileTypes = this.getWalkIntoTileTypes(nextX, nextY);
-
     var walkIntoTileTypeTop = walkIntoTileTypes.walkIntoTileTypeTop;
     var walkIntoTileTypeRight = walkIntoTileTypes.walkIntoTileTypeRight;
     var walkIntoTileTypeBottom = walkIntoTileTypes.walkIntoTileTypeBottom;
@@ -341,11 +348,18 @@ function heroClass() {
     // }
 
     /*--------------CODE FOR REPLACING WORLD TILES WHEN WALKED INTO--------------*/
-
-    if (this.keyHeld_Jump && tileTypeCanBeMoveThrough(walkIntoTileTypeTop)) {
+    /*-------------KEY CLIMB W key------------------ */
+    if (this.keyHeld_Climb && tileTypeCanBeMoveThrough(walkIntoTileTypeTop)) {
       this.y = nextY;
     } else if (tileTypeCanBeMoveThrough(walkIntoTileTypeTop) == false) {
       this.y++;
+    }
+
+
+    if (this.keyHeld_Jump && tileTypeCanBeMoveThrough(walkIntoTileTypeTop)) {
+       this.y = nextY;
+    } else if (tileTypeCanBeMoveThrough(walkIntoTileTypeTop) == false) {
+       this.y++;
     }
 
     if (this.keyHeld_Jump == false && tileTypeCanBeMoveThrough(walkIntoTileTypeBottom)) {
@@ -367,6 +381,9 @@ function heroClass() {
       this.x--;
     }
 
+    
+    
+
     //Which Tile we are grabbing or opening.
     var walkIntoTileType = WORLD_EMPTY;
     var walkIntoTileIndex;
@@ -383,6 +400,12 @@ function heroClass() {
     }
     
     if (this.keyHeld_Jump) {
+      walkIntoTileType = walkIntoTileTypeTop;
+      walkIntoTileIndex = walkIntoTileIndexTop;
+      this.reactToTileType(walkIntoTileType, walkIntoTileIndex);
+    }
+
+    if (this.keyHeld_Climb){
       walkIntoTileType = walkIntoTileTypeTop;
       walkIntoTileIndex = walkIntoTileIndexTop;
       this.reactToTileType(walkIntoTileType, walkIntoTileIndex);
@@ -622,9 +645,16 @@ function heroClass() {
       animationRow =3;
     }
 
+   
+
     if(this.swim > 0){
       animationRow =4;
     }
+
+    if(this.regularJump > 0){
+      animationRow =5;
+    }
+    
     /*
     canvasContext.drawImage(
       heroPic,
