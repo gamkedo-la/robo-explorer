@@ -174,23 +174,20 @@ function heroClass() {
       }
       
       // rocketLife();
-      
-      
       // addParticles();
       // addSlingShot();
       // console.log("JUMP_POWER");
     } else {
       var tileIndexCenter = getTileIndexAtPixelCoord(this.x, this.y);
       var tileTypeCenter = worldGrid[tileIndexCenter];
+      
       if(tileTypeCenter == WORLD_WATER) {
         nextY += GRAVITY * 0.1; //slower gravity
-        ROCKET_LIFE=0;
-        removeParticles();
+        ROCKET_LIFE = 0;
       }else{
         nextY += GRAVITY;
-        ROCKET_LIFE=100;
       }
-
+      
      
        
         // removeParticles();
@@ -556,9 +553,10 @@ function heroClass() {
         break;
       
       case WORLD_ROCKET_BATTERY:
+        ROCKET_LIFE==100;
         worldGrid[walkIntoTileIndex] = WORLD_EMPTY;
         // this.updateWoodenBowReadout();
-          ROCKET_LIFE == 100
+          // ROCKET_LIFE == 100;
           
           
         
