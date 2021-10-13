@@ -205,12 +205,6 @@ function heroClass() {
     // console.log("GRAVITY");
 
     if (this.keyHeld_Climb) {
-      
-      
-     
-    this.regularJump = 1;
-      
-
       this.swim = 1;
       //  this.keyHeld_Climb = false;
       var tileIndexCenter = getTileIndexAtPixelCoord(this.x, this.y);
@@ -238,7 +232,11 @@ function heroClass() {
     }
 
     if(this.swordSlash = 0){
-      animationRow=1;
+      animationRow=3;
+    }
+
+    if(this.regularJump = 0){
+      animationRow=5;
     }
 
     if (this.keyHeld_WalkLeft) {
