@@ -353,8 +353,8 @@ function imageLoadingDoneSoStartGame() {
   var framesPersecond = 30;
   setInterval(updateAll, 1000 / framesPersecond);
   setupInput();
-  // var audio = new Audio("blues1-edited.wav");
-  // audio.play();
+  var audio = new Audio("blues1-edited.wav");
+  audio.play();
   
   loadLevel(levelList[levelNow]);
   // worldGrid = levelOne;

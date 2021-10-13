@@ -42,7 +42,7 @@ function loadImages() {
  
   var imageList = [
      //{ varName: heroPic, theFile: "rocketMan3.png"},
-    { varName: heroPic, theFile: "robo-explorer-walkcycle6.png"},
+    { varName: heroPic, theFile: "robo-explorer-walkcycle7.png"},
     // { varName: waterPic, theFile: "sewerWater.png" },
     { varName: ratPic, theFile: "rat-walk-cycle.png"},
     { varName: bombPic, theFile: "bomb-sprite.png"},
@@ -61,7 +61,7 @@ function loadImages() {
     { trackType: WORLD_LADDER, theFile: "track_ladder.png" },
     { trackType: WORLD_LADDER_CONNECTOR, theFile: "track_ladderConnector.png" },
     { trackType: WORLD_KEY, theFile: "key2.png" },
-    { trackType: WORLD_DOOR, theFile: "track_door.png" },
+    { trackType: WORLD_DOOR, theFile: "sewerBar2.png" },
     { trackType: WORLD_TUNNEL_UP, theFile: "world_lowerTunnel.png" },
     { trackType: WORLD_SWORD, theFile: "sword.png" },
     { trackType: WORLD_TRAP, theFile: "spike-sprite.png" },
