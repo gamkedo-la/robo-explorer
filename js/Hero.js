@@ -32,7 +32,7 @@ function heroClass() {
   this.name = "Untitled Explorer";
   this.keysHeld = 0;
   this.items = 0;
-  this.rocketEnergy=0;
+  this.rocketEnergy=ROCKET_LIFE;
   // this.life = 3;
   this.moveDir = 0;
   this.fireSlingshot = -1;
@@ -98,7 +98,7 @@ function heroClass() {
     this.name = heroName;
     this.myHeroPic = whichImage;
     this.keysHeld = 0;
-    this.rocketEnergy =0;
+    this.rocketEnergy = ROCKET_LIFE;
     // this.life = 3;
     this.updateKeyReadout();
     // this.updateItemsReadout();
@@ -123,6 +123,10 @@ function heroClass() {
   this.updateKeyReadout = function () {
     document.getElementById("debugText").innerHTML = "Keys: " + this.keysHeld;
   };
+
+  this.updateRocketEnergyReadout = function(){
+    document.getElementById("rocketEnergyText").innerHTML = "ENERGY: " + this.rocketEnergy;
+  }
 
   this.updateSlingshotReadout = function () {
     document.getElementById("slingshot").innerHTML = "1. Slingshot";
@@ -553,7 +557,13 @@ function heroClass() {
         break;
       
       case WORLD_ROCKET_BATTERY:
-        ROCKET_LIFE==100;
+        if(this.rocketEnergy == ROCKET_LIFE){
+          this.rocketEnergy+100;
+        }
+          
+        
+        
+        
         worldGrid[walkIntoTileIndex] = WORLD_EMPTY;
         // this.updateWoodenBowReadout();
           // ROCKET_LIFE == 100;

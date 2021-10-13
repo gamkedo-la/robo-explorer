@@ -5,13 +5,15 @@ const BOY_COCOON_FRAMES = 0;
 function boyCocoonClass() {
   this.x = 75;
   this.y = 75;
+  this.readyToRemove=false;
+  this.instance=1;
 
   this.speedX = BOY_COCOON_MOVEMENT_SPEED;
 
   this.width = 80;
   this.height = 80;
   this.frameY = 0;
-
+   
   //properties for sprite animation
   this.frame = 0;
   this.numberOfFrames = 4; //how many frames are in the spritesheet
@@ -34,12 +36,13 @@ function boyCocoonClass() {
     } // end foe for
   }
 
-  this.move = function(){
+  this.move = function(){ 
+   
 
   }
 
   this.draw = function(){
-    
+   
     var boyCocoonFrameW = 80;
     canvasContext.drawImage(
         boyCocoonPic,
