@@ -55,7 +55,7 @@ function loadImages() {
     { varName: trapPic, theFile: "spike-sprite3.png" },
     // {trackType: WORLD_UPPERROAD, theFile:"WORLD_EMPTY3.png"},
     { trackType: WORLD_EMPTY, theFile: "track_road2.png" },
-    { trackType: WORLD_WALL, theFile: "bricks4.png" },
+    { trackType: WORLD_WALL, theFile: "bricks5.png" },
     { trackType: WORLD_SLINGSHOT, theFile: "tirador.png" },
     { trackType: WORLD_ROCK, theFile: "rock.png" },
     { trackType: WORLD_LADDER, theFile: "track_ladder.png" },
