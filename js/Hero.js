@@ -36,7 +36,7 @@ function heroClass() {
   // this.life = 3;
   this.moveDir = 0;
   this.fireSlingshot = -1;
-  this.swordSlash = -1;
+  this.swordSlash = 0;
 
   this.keyHeld_Climb = false;
   this.keyHeld_ClimbDown = false;
@@ -226,8 +226,8 @@ function heroClass() {
       this.moveDir = 0; 
     }
 
-    if(this.swordSlash < 0){
-      this.moveDir=0;
+    if(this.swordSlash = 0){
+      animationRow=1;
     }
 
 
@@ -292,7 +292,8 @@ function heroClass() {
       }
     }
 
-    if (this.keyHeld_Sword && this.keyHeld_WalkRight) {
+   
+    if (this.keyHeld_Sword) {
       this.swordSlash = 1;
       this.keyHeld_Sword = false;
     }
@@ -612,7 +613,7 @@ function heroClass() {
     if (this.fireSlingshot > 0){
       animationRow = 2;
     }
-
+    
     if(this.swordSlash > 0){
       animationRow =3;
     }
