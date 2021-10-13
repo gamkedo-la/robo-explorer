@@ -11,6 +11,7 @@ const KEY_SPACEBAR = 32; //JUMP
 const KEY_R=82;//SlingshotBullet
 const KEY_B=66;//Bomb
 const KEY_C=67;//cheat key
+const KEY_E=69;//Sword
 
 const KEY_1 = 49; // keyboard 1
 const KEY_2 = 50; // keyboard 2
@@ -32,7 +33,7 @@ function setupInput() {
   document.addEventListener("keydown", keyPressed);
   document.addEventListener("keyup", keyReleased);
 
-  blueHero.setupInput(KEY_W, KEY_D, KEY_S, KEY_A, KEY_SPACEBAR,KEY_R,KEY_B);
+  blueHero.setupInput(KEY_W, KEY_D, KEY_S, KEY_A, KEY_SPACEBAR,KEY_R,KEY_B,KEY_E);
   //   blueCar.setupInput(KEY_UP_ARROW, KEY_RIGHT_ARROW, KEY_DOWN_ARROW, KEY_LEFT_ARROW);
 }
 
@@ -72,6 +73,9 @@ function keySet(keyEvent, setTo) {
     blueHero.keyHeld_Bomb = setTo;
   }
   
+  if (keyEvent.keyCode == blueHero.controlKeySword) {
+    blueHero.keyHeld_Sword = setTo;
+  }
 
   
 }

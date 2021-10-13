@@ -36,6 +36,7 @@ function heroClass() {
   // this.life = 3;
   this.moveDir = 0;
   this.fireSlingshot = -1;
+  this.swordSlash = -1;
 
   this.keyHeld_Climb = false;
   this.keyHeld_ClimbDown = false;
@@ -44,6 +45,7 @@ function heroClass() {
   this.keyHeld_Jump = false;
   this.keyHeld_Slingshot = false;
   this.keyHeld_Bomb = false;
+  this.keyHeld_Sword = false;
   // this.sound = false;
 
   this.controlKeyUp;
@@ -53,6 +55,7 @@ function heroClass() {
   this.controlKeyJump;
   this.controlKeySlingshot;
   this.controlKeyBomb;
+  this.controlKeySword;
   // this.playSound = function(){
   //   if(play == 0){
   //     play = 1;
@@ -76,7 +79,8 @@ function heroClass() {
     leftKey,
     jumpKey,
     slingshotKey,
-    bombKey
+    bombKey,
+    swordKey
   ) {
     this.controlKeyUp = upKey;
     this.controlKeyRight = rightKey;
@@ -85,6 +89,7 @@ function heroClass() {
     this.controlKeyJump = jumpKey;
     this.controlKeySlingshot = slingshotKey;
     this.controlKeyBomb = bombKey;
+    this.controlKeySword= swordKey;
   };
 
   this.reset = function (whichImage, heroName) {
@@ -221,6 +226,11 @@ function heroClass() {
       this.moveDir = 0; 
     }
 
+    if(this.swordSlash < 0){
+      this.moveDir=0;
+    }
+
+
     if (this.keyHeld_WalkLeft) {
       // nextX -= PLAYER_MOVEMENT_SPEED;
       this.moveDir = -1;
@@ -282,6 +292,11 @@ function heroClass() {
       }
     }
 
+    if (this.keyHeld_Sword && this.keyHeld_WalkRight) {
+      this.swordSlash = 1;
+      this.keyHeld_Sword = false;
+    }
+
     if (this.keyHeld_Bomb) {
       this.keyHeld_Bomb = false;
       //console.log("bomb");
@@ -291,6 +306,8 @@ function heroClass() {
       newBomb.y = this.y;
       bombList.push(newBomb);
     }
+
+    
 
     var walkIntoTileTypes = this.getWalkIntoTileTypes(nextX, nextY);
 
@@ -594,6 +611,10 @@ function heroClass() {
     var animationRow = 0;
     if (this.fireSlingshot > 0){
       animationRow = 2;
+    }
+
+    if(this.swordSlash > 0){
+      animationRow =3;
     }
     /*
     canvasContext.drawImage(

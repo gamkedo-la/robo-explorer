@@ -42,7 +42,7 @@ function loadImages() {
  
   var imageList = [
      //{ varName: heroPic, theFile: "rocketMan3.png"},
-    { varName: heroPic, theFile: "robo-explorer-walkcycle5.png"},
+    { varName: heroPic, theFile: "robo-explorer-walkcycle6.png"},
     // { varName: waterPic, theFile: "sewerWater.png" },
     { varName: ratPic, theFile: "rat-walk-cycle.png"},
     { varName: bombPic, theFile: "bomb-sprite.png"},
