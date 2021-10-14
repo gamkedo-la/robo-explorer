@@ -22,7 +22,7 @@ function bossClass() {
 
   //properties for sprite animation
   this.frame = 0;
-  this.numberOfFrames = 3; //how many frames are in the spritesheet
+  this.numberOfFrames = 2; //how many frames are in the spritesheet
   this.animationSpeed = 5;
   this.animationCounter = 0;
 
@@ -43,7 +43,7 @@ function bossClass() {
 
   this.move = function () {
     this.x += this.speedX;
-    if (this.x < 0 && this.speedX < 0.0) {
+    if (this.x < 200 && this.speedX < 0.0) {
       //left side
       this.speedX *= -1;
     }
