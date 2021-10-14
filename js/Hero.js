@@ -32,7 +32,7 @@ function heroClass() {
   this.name = "Untitled Explorer";
   this.keysHeld = 0;
   this.items = 0;
-  this.rocketEnergy=ROCKET_LIFE;
+  this.rocketEnergy=0;
   // this.life = 3;
   this.moveDir = 0;
   this.fireSlingshot = -1;
@@ -163,13 +163,22 @@ function heroClass() {
     /*-------------------------FOR ANIMATING FLIGHT OF CHARACTER-------------------*/
     if (this.keyHeld_Jump) {
       // beginLoadingImage(rocketBooster);
-      if(ROCKET_LIFE !==0){
+      /*if(ROCKET_LIFE !==0){
        ROCKET_LIFE--;
        nextY -= JUMP_POWER;
        console.log(ROCKET_LIFE);
        for (var i = 0; i < START_PARTICLES; i++) {
         addParticles();
+       }*/
+      
+      if(this.rocketEnergy !==0){
+      this.rocketEnergy--;
+      nextY -= JUMP_POWER;
+      console.log(this.rocketEnergy);
+       for (var i = 0; i < START_PARTICLES; i++) {
+        addParticles();
        }
+      
       }else{
         this.keyHeld_Jump = false;// disable flight
         nextY += GRAVITY *200;
@@ -211,6 +220,7 @@ function heroClass() {
     if (this.keyHeld_Climb) {
       this.regularJump = 1;
       this.swim = 1;
+      nextY += GRAVITY*0.5;
       //  this.keyHeld_Climb = false;
       var tileIndexCenter = getTileIndexAtPixelCoord(this.x, this.y);
       var tileTypeCenter = worldGrid[tileIndexCenter];
@@ -558,8 +568,9 @@ function heroClass() {
       
       case WORLD_ROCKET_BATTERY:
         if(this.rocketEnergy){
+          100+this.rocketEnergy;
           this.keyHeld_Jump=true;
-          this.rocketEnergy+100; 
+          console.log(this.rocketEnergy);
         }
         worldGrid[walkIntoTileIndex] = WORLD_EMPTY;
         // this.updateWoodenBowReadout();
