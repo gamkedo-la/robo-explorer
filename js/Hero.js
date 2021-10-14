@@ -172,7 +172,7 @@ function heroClass() {
        }
       }else{
         this.keyHeld_Jump = false;// disable flight
-        nextY += GRAVITY *100;
+        nextY += GRAVITY *200;
         removeParticles();
         
       }
@@ -557,19 +557,13 @@ function heroClass() {
         break;
       
       case WORLD_ROCKET_BATTERY:
-        if(this.rocketEnergy == ROCKET_LIFE){
-          this.rocketEnergy+100;
+        if(this.rocketEnergy){
+          this.keyHeld_Jump=true;
+          this.rocketEnergy+100; 
         }
-          
-        
-        
-        
         worldGrid[walkIntoTileIndex] = WORLD_EMPTY;
         // this.updateWoodenBowReadout();
-          // ROCKET_LIFE == 100;
-          
-          
-        
+        // ROCKET_LIFE == 100;
         // this.keyHeld_Jump = true;
         // blueHero.rocketEnergy = ROCKET_LIFE == 100;
         // this.keysHeld_Jump = true;
