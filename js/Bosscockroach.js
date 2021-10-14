@@ -14,7 +14,7 @@ function bossClass() {
   this.speedX = BOSS_MOVEMENT_SPEED;
   this.speedY = BOSS_MOVEMENT_SPEED;
 
-  this.width = 100;
+  this.width = 160;
   this.height = 160;
   this.frameX = 0;
   this.frameY = 0;
@@ -43,21 +43,23 @@ function bossClass() {
 
   this.move = function () {
     this.x += this.speedX;
-    if (this.x < 200 && this.speedX < 0.0) {
+    if (this.x < 200 && this.speedX < 0.0) {// left boundary
       //left side
       this.speedX *= -1;
+
     }
-    if (this.x > canvas.width && this.speedX > 0.0) {
+    if (this.x > canvas.width *1.3 && this.speedX > 0.0) {
       // right side
       this.speedX *= -1;
     }
-    this.y += this.speedY;
-    if (this.y < 0 && this.speedY < 0.0) {
+    // this.y += this.speedY;
+     this.y = 395;
+    if (this.y < 200 && this.speedY < 0.0) { // top boundary
       //top edge
       this.speedY *= -1;
     }
 
-    if (this.y > canvas.height) {
+    if (this.y > canvas.height  && this.speedY > 0.0) {
       //bottom of the screen
       this.speedY *= -1;
       // ghostReset();
