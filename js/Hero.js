@@ -171,20 +171,22 @@ function heroClass() {
         addParticles();
        }*/
       
-      if(this.rocketEnergy !==0){
-      this.rocketEnergy--;
+      if(ROCKET_LIFE !==0){
+      ROCKET_LIFE--;
       nextY -= JUMP_POWER;
-      console.log(this.rocketEnergy);
+      console.log(ROCKET_LIFE);
        for (var i = 0; i < START_PARTICLES; i++) {
         addParticles();
        }
       
       }else{
-        this.keyHeld_Jump = false;// disable flight
+         this.keyHeld_Jump = false;// disable flight
         nextY += GRAVITY *200;
         removeParticles();
-        
       }
+
+      
+      
       
       // rocketLife();
       // addParticles();
@@ -220,7 +222,7 @@ function heroClass() {
     if (this.keyHeld_Climb) {
       this.regularJump = 1;
       this.swim = 1;
-      nextY += GRAVITY*0.5;
+     
       //  this.keyHeld_Climb = false;
       var tileIndexCenter = getTileIndexAtPixelCoord(this.x, this.y);
       var tileTypeCenter = worldGrid[tileIndexCenter];
@@ -567,11 +569,14 @@ function heroClass() {
         break;
       
       case WORLD_ROCKET_BATTERY:
-        if(this.rocketEnergy){
-          100+this.rocketEnergy;
-          this.keyHeld_Jump=true;
+        if(ROCKET_LIFE == 0){
+          this.rocketEnergy;
+          this.keyHeld_Jump = true;
+          this.rocketEnergy = ROCKET_LIFE+50;
+          
           console.log(this.rocketEnergy);
         }
+       
         worldGrid[walkIntoTileIndex] = WORLD_EMPTY;
         // this.updateWoodenBowReadout();
         // ROCKET_LIFE == 100;

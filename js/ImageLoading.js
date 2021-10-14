@@ -49,7 +49,7 @@ function loadImages() {
     { varName: bombPic, theFile: "bomb-sprite.png"},
     { varName: rockPic, theFile: "rock.png"},
     { varName: cockroachEggPic, theFile: "cockroachSprite.png"},
-    { varName: bossPic, theFile: "bossCockroach.png"},
+    { varName: bossPic, theFile: "bossCockroachSprite.png"},
     { varName: boyCocoonPic, theFile: "boyInCocoon.png" },
 
 
