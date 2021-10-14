@@ -12,22 +12,21 @@ function bossClass() {
   this.y = 75;
 
   this.speedX = BOSS_MOVEMENT_SPEED;
-  this.speedY =  BOSS_MOVEMENT_SPEED;
+  this.speedY = BOSS_MOVEMENT_SPEED;
 
   this.width = 100;
   this.height = 160;
   this.frameX = 0;
   this.frameY = 0;
-  this.name ="untitled boss";
+  this.name = "untitled boss";
 
   //properties for sprite animation
   this.frame = 0;
-  this.numberOfFrames = 1; //how many frames are in the spritesheet
+  this.numberOfFrames = 3; //how many frames are in the spritesheet
   this.animationSpeed = 5;
   this.animationCounter = 0;
 
   this.reset = function () {
-    
     for (var eachRow = 0; eachRow < WORLD_ROWS; eachRow++) {
       for (var eachCol = 0; eachCol < WORLD_COLS; eachCol++) {
         var arrayIndex = rowColToArrayIndex(eachCol, eachRow);
@@ -40,10 +39,10 @@ function bossClass() {
         } //end of player start if
       } // end of col for
     } // end foe for
-  }
+  };
 
-  this.move = function(){
-      this.x += this.speedX;
+  this.move = function () {
+    this.x += this.speedX;
     if (this.x < 0 && this.speedX < 0.0) {
       //left side
       this.speedX *= -1;
@@ -57,36 +56,39 @@ function bossClass() {
       //top edge
       this.speedY *= -1;
     }
-   
+
     if (this.y > canvas.height) {
       //bottom of the screen
       this.speedY *= -1;
       // ghostReset();
     }
-  }
+  };
 
-  this.draw = function(){
-    
+  this.draw = function () {
     var bossFrameW = 160;
     canvasContext.drawImage(
       bossPic,
-      this.frame * bossFrameW, 0, //top left corner of spritesheet frame
-      bossFrameW, bossPic.height, //size of frame
-      this.x - bossPic.width / 2, this.y - bossPic.height / 2, //position on screen, centers image relative to self
-      bossFrameW, bossPic.height //size of image on screen
+      this.frame * bossFrameW,
+      0, //top left corner of spritesheet frame
+      bossFrameW,
+      bossPic.height, //size of frame
+      this.x - bossPic.width / 2,
+      this.y - bossPic.height / 2, //position on screen, centers image relative to self
+      bossFrameW,
+      bossPic.height //size of image on screen
     );
-  
+
     //SPRITE ANIMATION CODE
-/*
+
     this.animationCounter++;
-    if(this.animationCounter == this.animationSpeed){
+    if (this.animationCounter == this.animationSpeed) {
       this.frame++;
-      if(this.frame > this.numberOfFrames){
+      if (this.frame > this.numberOfFrames) {
         this.frame = 0;
-      } 
+      }
       this.animationCounter = 0;
-    }*/
-    // console.log(this.animationCounter);
-    // console.log(this.frame); //caught the problem...this is reaching beyond number of frames...
-  }
-};
+    }
+  };
+  // console.log(this.animationCounter);
+  // console.log(this.frame); //caught the problem...this is reaching beyond number of frames...
+}
