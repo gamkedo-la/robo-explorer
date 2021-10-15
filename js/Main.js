@@ -284,6 +284,21 @@ function addSlingShotLeft() {
 //   addParticles();
 // }
 
+/**********************************FUNCTION ADD SLINGSHOT BULLETS********************************** */
+function animateSword(){
+  if(blueHero.swordSlash = 0){
+    blueHero.keyHeld_Sword =false;
+    blueHero.swordSlash =0;
+    }else{
+
+     if (blueHero.keyHeld_Sword) {
+    
+    blueHero.swordSlash = 1;
+    blueHero.keyHeld_Sword = true;
+    }
+  }
+}
+
 /*************************************Windows Onload*****************************************/
 
 window.onload = function () {

@@ -12,6 +12,7 @@ const KEY_R=82;//SlingshotBullet
 const KEY_B=66;//Bomb
 const KEY_C=67;//cheat key
 const KEY_E=69;//Sword
+const LSHIFT_KEY =70;
 
 const KEY_1 = 49; // keyboard 1
 const KEY_2 = 50; // keyboard 2
@@ -23,6 +24,7 @@ const KEY_7 = 55; // keyboard 7
 const KEY_8 = 56; // keyboard 8
 const KEY_9 = 57; // keyboard 9
 
+
 // const KEY_E =
 
 var mouseX = 0;
@@ -33,7 +35,7 @@ function setupInput() {
   document.addEventListener("keydown", keyPressed);
   document.addEventListener("keyup", keyReleased);
 
-  blueHero.setupInput(KEY_W, KEY_D, KEY_S, KEY_A, KEY_SPACEBAR,KEY_R,KEY_B,KEY_E);
+  blueHero.setupInput(KEY_W, KEY_D, KEY_S, KEY_A, KEY_SPACEBAR,KEY_R,KEY_B,KEY_E,LSHIFT_KEY);
   //   blueCar.setupInput(KEY_UP_ARROW, KEY_RIGHT_ARROW, KEY_DOWN_ARROW, KEY_LEFT_ARROW);
 }
 
@@ -48,6 +50,7 @@ function updateMousePosition(mouseEvent) {
 function keySet(keyEvent, setTo) {
   if (keyEvent.keyCode == blueHero.controlKeyLeft) {
     blueHero.keyHeld_WalkLeft = setTo;
+    
   }
   if (keyEvent.keyCode == blueHero.controlKeyRight) {
     blueHero.keyHeld_WalkRight = setTo;
@@ -76,7 +79,11 @@ function keySet(keyEvent, setTo) {
   if (keyEvent.keyCode == blueHero.controlKeySword) {
     blueHero.keyHeld_Sword = setTo;
   }
-
+  if (keyEvent.keyCode == blueHero.controlKeyLshift) {
+    blueHero.keyHeld_LshiftKey = setTo;
+    console.log(keyHeld_LshiftKey);
+  }
+  
   
 }
 function keyPressed(evt) {

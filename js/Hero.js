@@ -48,6 +48,7 @@ function heroClass() {
   this.keyHeld_Slingshot = false;
   this.keyHeld_Bomb = false;
   this.keyHeld_Sword = false;
+  this.keyHeld_LshiftKey=false;
   // this.sound = false;
 
   this.controlKeyUp;
@@ -58,6 +59,7 @@ function heroClass() {
   this.controlKeySlingshot;
   this.controlKeyBomb;
   this.controlKeySword;
+  this.controlKeyLshift;
   // this.playSound = function(){
   //   if(play == 0){
   //     play = 1;
@@ -70,7 +72,7 @@ function heroClass() {
 
   //properties for sprite animation
   this.frame = 0;
-  this.numberOfFrames = 1; //how many frames are in the spritesheet
+  this.numberOfFrames = 8; //how many frames are in the spritesheet
   this.animationSpeed = 5;
   this.animationCounter = 0;
 
@@ -82,7 +84,8 @@ function heroClass() {
     jumpKey,
     slingshotKey,
     bombKey,
-    swordKey
+    swordKey,
+    lshiftKey
   ) {
     this.controlKeyUp = upKey;
     this.controlKeyRight = rightKey;
@@ -92,6 +95,7 @@ function heroClass() {
     this.controlKeySlingshot = slingshotKey;
     this.controlKeyBomb = bombKey;
     this.controlKeySword= swordKey;
+    this.controlKeyShif= lshiftKey;
   };
 
   this.reset = function (whichImage, heroName) {
@@ -249,9 +253,7 @@ function heroClass() {
       this.moveDir = 0; 
     }
 
-    if(this.swordSlash = 0){
-      animationRow=3;
-    }
+   
 
     if(this.regularJump = 0){
       animationRow=5;
@@ -319,11 +321,21 @@ function heroClass() {
 
     /*--------------FOR ANIMATING SWORD SLASH----------------*/
    
-    if (this.keyHeld_Sword) {
-      this.swordSlash = 1;
-      this.keyHeld_Sword = false;
-    }
+   /* if(this.swordSlash = 0){
+      this.keyHeld_Sword =false;
+      this.swordSlash =0;
+      }else{
 
+       if (this.keyHeld_Sword) {
+      
+      this.swordSlash = 1;
+      this.keyHeld_Sword = true;
+      }
+      }*/
+    
+      animateSword();
+    
+      
     /*--------------FOR ANIMATING BOMB----------------*/
 
     if (this.keyHeld_Bomb) {
@@ -650,6 +662,15 @@ function heroClass() {
 
   this.draw = function () {
     // drawBitmapCenteredWithRotation(this.myHeroPic, this.x, this.y, this.ang);
+    this.animationCounter++;
+    if (this.animationCounter == this.animationSpeed) {
+      this.frame++;
+      if (this.frame > this.numberOfFrames) {
+        this.frame = 0;
+      }
+      this.animationCounter = 0;
+    }
+    
     if (++this.frame >= PLAYER_ANIM_FRAMES) {
       this.frame = 0;
     }
@@ -664,8 +685,6 @@ function heroClass() {
     if(this.swordSlash > 0){
       animationRow =3;
     }
-
-   
 
     if(this.swim > 0){
       animationRow =4;
