@@ -248,7 +248,7 @@ var sideQuest3 = [
     1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1];
 
 var sideQuest4 = [
-    1,1,1,1,1,1,1,1,1,1,41,1,1,1,1,1,1,1,1,1,  
+    1,1,1,1,1,1,1,1,1,1,47,1,1,1,1,1,1,1,1,1,  
     1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,
     1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,  
     1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,
@@ -317,6 +317,7 @@ var sideQuest4 = [
         const WORLD_SEWER_TRAP_LOCK_BAR=44;
         const WORLD_SEWER_PIPE_WITH_BAR=45;
         const WORLD_TUNNEL_RIGHT_6=46;
+        const WORLD_PIPE_TOP_SIDEQUEST4=47;
 
 
         // const WORLD_RAT2=20;

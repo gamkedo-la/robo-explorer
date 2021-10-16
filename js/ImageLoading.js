@@ -94,6 +94,7 @@ function loadImages() {
     { trackType: WORLD_SLIME_PIPE, theFile: "slimePipe.png" },
     { trackType: WORLD_PIPE_RIGHT_SIDEQUEST3, theFile: "world-pipe-right-sidequest3.png" },
     { trackType: WORLD_PIPE_TOP_SIDEQUEST3, theFile: "world-pipe-top-sidequest3.png" },
+    { trackType: WORLD_PIPE_TOP_SIDEQUEST4, theFile: "world-pipe-top-sidequest4.png" },
     { trackType: WORLD_CURVE_PIPE, theFile: "curvePipes.png" },
     { trackType: WORLD_ROCKET_BATTERY, theFile: "rocketEnergy.png" },
 
