@@ -534,6 +534,9 @@ function heroClass() {
       case WORLD_TUNNEL_RIGHT_5:
         loadLevel(levelSix);
         break;
+      case WORLD_TUNNEL_RIGHT_6:
+        loadLevel(levelSix2);
+        break;
       case WORLD_PIPE_UP_SIDEQUEST1:
         loadLevel(sideQuest1);
         break;
