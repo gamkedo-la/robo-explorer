@@ -110,7 +110,7 @@ function checkForCheatKeys (keyCode) {
       blueHero.keysHeld = 999;
       break
     case KEY_1: 
-      loadLevel(sideQuest2); //change to another level you need to go to for testing.
+      loadLevel(sideQuest4); //change to another level you need to go to for testing.
       break
     case KEY_2:
       loadLevel(levelTwo);
