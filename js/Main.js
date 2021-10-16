@@ -480,8 +480,12 @@ function moveAll() {
 
   /*----------------------CAMERA VARIABLES-------------------------------- */
   camPanX = blueHero.x - canvas.width / 2;
+  if (camPanX < 0) camPanX = 0;
 
   camPanY = blueHero.y - canvas.height / 2;
+  if (camPanY > 0) camPanY = 0;
+  // if (camPanY < 0) camPanY = 0; // This works but will disable all vertical panning commented out for now as a WIP
+  
 }
 
 /*********************FUNCTION DRAWALL********************************************************/
