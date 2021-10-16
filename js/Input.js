@@ -12,7 +12,7 @@ const KEY_R=82;//SlingshotBullet
 const KEY_B=66;//Bomb
 const KEY_C=67;//cheat key
 const KEY_E=69;//Sword
-const LSHIFT_KEY =70;
+const LSHIFT_KEY =16;
 
 const KEY_1 = 49; // keyboard 1
 const KEY_2 = 50; // keyboard 2

@@ -357,12 +357,14 @@ var sideQuest3 = [
         return(checkTileType == WORLD_SLINGSHOT ||
                checkTileType == WORLD_KEY ||
                checkTileType == WORLD_DOOR ||
-               checkTileType == WORLD_TUNNEL_UP);
+               checkTileType == WORLD_TUNNEL_UP 
+               );
     }
 
     function tileTypeCanBeMoveThrough(checkTileType){
         return(checkTileType == WORLD_EMPTY ||
-            checkTileType == WORLD_WATER);
+            checkTileType == WORLD_WATER ||
+            checkTileType == WORLD_LADDER);
     }
 
     function drawTracks() {

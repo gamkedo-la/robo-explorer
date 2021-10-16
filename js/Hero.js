@@ -224,7 +224,16 @@ function heroClass() {
     // console.log("GRAVITY");
 
     if (this.keyHeld_Climb) {
-      this.regularJump = 1;
+      var tileIndexCenter = getTileIndexAtPixelCoord(this.x, this.y);
+      var tileTypeCenter = worldGrid[tileIndexCenter];
+     
+      if(tileTypeCenter == WORLD_LADDER) {
+        
+        //  nextY += PLAYER_MOVEMENT_SPEED*0.1;
+        
+         console.log(GRAVITY);
+      }
+      // this.regularJump = 1;
       this.swim = 1;
      
       //  this.keyHeld_Climb = false;
@@ -244,7 +253,7 @@ function heroClass() {
     }
 
     if (this.keyHeld_ClimbDown) {
-      
+     
       // this.speed -= REVERSE_POWER;
     }
 
