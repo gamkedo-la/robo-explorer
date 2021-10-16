@@ -550,7 +550,7 @@ function heroClass() {
         loadLevel(sideQuest3);
         break;
       case WORLD_PIPE_TOP_SIDEQUEST3:
-        loadLevel(levelEight);
+        loadLevel(levelEightTwo);
         break;
       case WORLD_TUNNEL_RIGHT_8:
         loadLevel(levelNine);
