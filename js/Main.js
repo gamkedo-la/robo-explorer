@@ -1,3 +1,5 @@
+
+const GRAVITY_PARTICLE_PER_CYCLE = 10;
 var canvas, canvasContext;
 var blueHero = new heroClass();
 var rat = new ratClass();
@@ -6,11 +8,9 @@ var bossEnemy = new bossClass();
 var boyCocoon = new boyCocoonClass();
 var trapList = [];
 var waterList = [];
-
 var CHEATS_ENABLED = true;
 
-/************************************************** */
-
+/************************GHOST VARIABLES***************************/
 var ghostX = 75;
 var ghostY = 75;
 var ghostSpeedX = 5;
@@ -24,7 +24,6 @@ var monsterSpeedY = 7;
 var camPanX = 0.0;
 var camPanY = 0.0;
 
-const GRAVITY_PARTICLE_PER_CYCLE = 10;
 
 /*******************************FUNCTION FOR GHOST MOVEMENT********************************** */
 function ghostReset() {
@@ -47,11 +46,6 @@ function ghostMove() {
     //top edge
     ghostSpeedY *= -1;
   }
-  // if (ghostY > canvas.height) { //bottom of the screen
-  //     ghostReset();
-
-  //     ghostSpeedY *= -1;
-  // }
   if (ghostY > canvas.height) {
     //bottom of the screen
     ghostSpeedY *= -1;
@@ -146,8 +140,6 @@ function slingShotClass() {
   };
 } // end of slingShot def
 
-// var oneParticle = new particleClass();
-// var secondParticle = new particleClass();
 var slingShotList = [];
 
 
@@ -172,42 +164,6 @@ function slingShotReset() {
 // function particleMove() {
 
 // }
-
-/**************************************BRICKS FOR CAMERA SPAN************************************* */
-function drawOnlyBricksOnScreen() {
-  // what are the top-left most col and row visible on canvas?
-  var cameraLeftMostCol = Math.floor(camPanX / WORLD_W);
-  var cameraTopMostRow = Math.floor(camPanY / WORLD_H);
-
-  // how many columns and rows of tiles fit on one screenful of area?
-  var colsThatFitOnScreen = Math.floor(canvas.width / WORLD_W);
-  var rowsThatFitOnScreen = Math.floor(canvas.height / WORLD_H);
-
-  // finding the rightmost and bottommost tiles to draw.
-  // the +1 and + 2 on each pushes the new tile popping in off visible area
-  // +2 for columns since WORLD_W doesn't divide evenly into canvas.width
-  var cameraRightMostCol = cameraLeftMostCol + colsThatFitOnScreen + 2;
-  var cameraBottomMostRow = cameraTopMostRow + rowsThatFitOnScreen + 1;
-
-  for (
-    var eachCol = cameraLeftMostCol;
-    eachCol < cameraRightMostCol;
-    eachCol++
-  ) {
-    for (
-      var eachRow = cameraTopMostRow;
-      eachRow < cameraBottomMostRow;
-      eachRow++
-    ) {
-      //  if( isBrickAtTileCoord(eachCol, eachRow) ) {
-      //    var brickLeftEdgeX = eachCol * WORLD_W;
-      //    var brickTopEdgeY = eachRow * WORLD_H;
-      //    colorRect(brickLeftEdgeX, brickTopEdgeY,
-      //             WORLD_W - WORLD_GAP, WORLD_H - WORLD_GAP, 'blue' );
-      //  } // end of isBrickAtTileCoord()
-    } // end of for eachRow
-  } // end of for eachCol
-} // end of drawBricks()
 
 /**********************************FUNCTION ADD PARTICLES********************************** */
 function removeParticles() {
@@ -242,13 +198,7 @@ function addParticles() {
   particleList.push(tempParticle);
 }
 
-// function keyPressed(evt){
-//   addParticles();
-// }
-
-/**********************************FUNCTION ADD SLINGSHOT BULLETS********************************** */
-
-
+/**********************************FUNCTION ADD SLINGSHOT BULLETS************************ */
 
 function addSlingShotRight() {
   var tempSlingShot;
@@ -284,7 +234,7 @@ function addSlingShotLeft() {
 //   addParticles();
 // }
 
-/**********************************FUNCTION ADD SLINGSHOT BULLETS********************************** */
+/**********************************FUNCTION ADD SLINGSHOT BULLETS*********************** */
 function animateSword(){
   if(blueHero.swordSlash = 0){
     blueHero.keyHeld_Sword =false;
@@ -299,39 +249,19 @@ function animateSword(){
   }
 }
 
-/*************************************Windows Onload*****************************************/
+/**WW*************WW*WWWWWW**WW****WW******WWWWWW**WW****WW**WW******WWWWWW*******WW******WWWWW*/
+/***WW*****W*****WW****WW****WWW***WW******WW**WW**WWW***WW**Ww******WW**WW*****WW**WW****WW***WW/
+/****WW***WWW***WW*****WW****WW*W**WW******WW**WW**WW*W**WW**WW******WW**WW****WW****WW***WW***WW/
+/*****WW*WW*WW*WW******WW****WW**W*WW******WW**WW**WW**W*WW**WW******WW**WW***WWWWWWWWWW**WW***WW/
+/******WWW***WWW*****WWWWWW**WW***WwW******WWWWWW**WW***WWW**WWWWWW**WWWWWW**WW********WW*WWWWW**/
+
 
 window.onload = function () {
   canvas = document.getElementById("gameCanvas");
   canvasContext = canvas.getContext("2d");
 
   document.getElementById("bossAudio").pause();
-  // var tempParticle = new particleClass();
-  // tempParticle.x = 100;
-  // tempParticle.y=100;
-  // particleList.push(tempParticle);
-
-  // tempParticle = new particleClass();
-  // tempParticle.x = 300;
-  // particleList.push(tempParticle);
-
-  /*var tempParticle;
-
-  for(var i=0; i<5000;i++){
-    tempParticle = new particleClass();
-    tempParticle.x = Math.random()*canvas.width;
-    tempParticle.y=Math.random()*canvas.height;
-    tempParticle.velX=5-Math.random()*10;
-    tempParticle.velY=5-Math.random()*10;
-    particleList.push(tempParticle);
   
-  }
- */
-
-  // for (var i = 0; i < 2; i++) {
-  //   addParticles();
-  // }
-
   for (var i = 0; i < 2; i++) {
     addSlingShotRight();
   }
@@ -351,18 +281,18 @@ window.onload = function () {
 };
 
 
-/*
-function rocketLife(){
-  var rocketEnergy;
-  rocketEnergy = ROCKET_LIFE--;
-  //  rocketEnergy-1;
-}*/
 /****************************FUNCTION FOR DELAY AUDIO LEVEL TEN**************************** */
 function delayAudio(){
    document.getElementById("bossAudio").play();
 }
 
 /****************************FUNCTION FOR IMAGELOADING**************************** */
+/*MMMMMM****M******MM***** ***MM*******MMMMMMM***MMMMMM**MM**************************MM*******MM**MM****MM**MMMMMM***************MMMMMM************************* */
+/***MM******MM*****MM*******MM**MM*****MM********MM******MM*******MMMMMM******MM*****MM*MM********MMMM**MM**MM*******************MM******MM***MM***MM*MMMM***MMMMM*************** */
+/***MM*****MM*M***M*MM*****MM****MM****MM**MMMMM*MMMM****MM*******MM**MM****MM**MM***MM***MM**MM**MM*MM*MM**MM**MM***************MMMMM***MM***MM***MMM***MM**MM************* */
+/***MM****MM***M*M***MM***MMMMMMMMMM***MM*****MM*MM******MM*******MM**MM***MMmmmmMM**MM*MM****MM**MM**MMMM**MM***MM**************MM******MM***MM***MM****MM**MM************* */
+/*MMMMMM*MM****M******MM*MM********MM**MMMMMMMMM*MMMMMM**MMMMMMMM*MMMMMM**MM******MM*MM*******MM**MM***NNM**MMMMMM***************MM******MMMMMMM***MM****MM**MMMMM****************** */
+
 
 function imageLoadingDoneSoStartGame() {
   var framesPersecond = 30;
@@ -370,14 +300,8 @@ function imageLoadingDoneSoStartGame() {
   setupInput();
   var audio = new Audio("blues1-edited.wav");
   audio.play();
-
-  
-  
-  
   loadLevel(levelList[levelNow]);
-  // worldGrid = levelOne;
-  // blueCar.reset(otherCarPic, "Machine Raider");
-  // blueHero.reset(heroPic, "Black Fire");
+  
 }
 
 /*********************FUNCTION FOR NEXT LEVEL****************************************** */
@@ -393,8 +317,6 @@ function loadLevel(whichLevel) {
   worldGrid = whichLevel.slice();
   particleReset();
   slingShotReset();
- 
-  // blueCar.reset(otherCarPic, "Machine Raider");
   blueHero.reset(heroPic, "Black Fire");
   rat.reset(); //TODO need 2 keep looping and instantiating
   cockroach_egg.reset();
@@ -422,18 +344,22 @@ function loadLevel(whichLevel) {
       waterList.push(newTrap);
     }
     lookForAnotherWater = waterHasTile;
-  }
-  //worldGrid[30] = 5;
-  //console.log(whichLevel[30]);
-}
+  }//lookFor another while loop
+}// end of function loadLevel
 
-/**********************FUNCTION FOR UPDATING moveAll and drawAll FUNCTION****************************** */
+/**********************FUNCTION FOR UPDATING moveAll and drawAll FUNCTION************/
 function updateAll() {
   moveAll();
   drawAll();
 }
 
-/**********************FUNCTION FOR UPDATING moveAll ****************************** */
+/****MM*****MM*********FUNCTION FOR UPDATING moveAll ****************************** */
+/****MM*****MM*****MMMMMM*MM*******MM*MMMMMMM*******MMMMMM************************* */
+/****MM*****MM*****MM**MM**MM*****MM**MM************MM******MM***MM**MM*MMMM**MMMMM*************** */
+/***MM*M***M*MM****MM**MM***MM***MM***MMMMM*********MMMMM***MM***MM**MMM**MM**MM************ */
+/**MM***M*M***MM***MM**MM****MM*MM****MM************MM******MM***MM**MM***MM**MM************ */
+/*MM*****M*****MM**MMMMMM*****MM******MMMMMMM*******MM******MMMMMMM**MM***MM**MMMMM****************** */
+
 function moveAll() {
   blueHero.move();
   rat.move();
@@ -478,7 +404,14 @@ function moveAll() {
   // oneParticle.move();
   // secondParticle.move();
 
-  /*----------------------CAMERA VARIABLES-------------------------------- */
+  /*--CCCC----------------CAMERA VARIABLES-------------------------------- */
+  /*--CC----------------------------------------------------------------- */
+  /*--CC--------cC--------------------cCCC-------------cC------------------ */
+  /*--CC-------cC-C-------cC-----C----cC----c-CCCC----cC-C----------------- */
+  /*--CC------cC---C-----cC-C---C-C---cCCC--cCC------cC---C--------------- */
+  /*--CC-----cCcccccC---cC---C-C---C--cC----cC------cCcccccC--------------- */
+  /*--CCCCC-cC-------C-cC-----C-----C-cCCC--cC-----cC-------C-------------- */
+
   camPanX = blueHero.x - canvas.width / 2;
   if (camPanX < 0) camPanX = 0;
 
@@ -488,23 +421,62 @@ function moveAll() {
   
 }
 
+
+/**************************************BRICKS FOR CAMERA SPAN************************************* */
+function drawOnlyBricksOnScreen() {
+  // what are the top-left most col and row visible on canvas?
+  var cameraLeftMostCol = Math.floor(camPanX / WORLD_W);
+  var cameraTopMostRow = Math.floor(camPanY / WORLD_H);
+
+  // how many columns and rows of tiles fit on one screenful of area?
+  var colsThatFitOnScreen = Math.floor(canvas.width / WORLD_W);
+  var rowsThatFitOnScreen = Math.floor(canvas.height / WORLD_H);
+
+  // finding the rightmost and bottommost tiles to draw.
+  // the +1 and + 2 on each pushes the new tile popping in off visible area
+  // +2 for columns since WORLD_W doesn't divide evenly into canvas.width
+  var cameraRightMostCol = cameraLeftMostCol + colsThatFitOnScreen + 2;
+  var cameraBottomMostRow = cameraTopMostRow + rowsThatFitOnScreen + 1;
+
+  for (
+    var eachCol = cameraLeftMostCol;
+    eachCol < cameraRightMostCol;
+    eachCol++
+  ) {
+    for (
+      var eachRow = cameraTopMostRow;
+      eachRow < cameraBottomMostRow;
+      eachRow++
+    ) {
+      
+    } // end of for eachRow
+  } // end of for eachCol
+} // end of drawBricks()
+
 /*********************FUNCTION DRAWALL********************************************************/
+/*DDDDD********************************************* ****************************** */
+/*DD***DD**DD*DDDD****DDDDD**DD***************DD*******MMMMMM************************* */
+/*DD***DD**DDD*******DD**DD***DD*****DD******DD********MM******MM***MM**MM*MMMM**MMMMM*************** */
+/*DD***DD**DD*******DDDDDDDD***DD***DD*DD***DD*********MMMMM***MM***MM**MMM**MM**MM************ */
+/*DD***DD**DD******DD******DD***DD*DD***DD*DD**********MM******MM***MM**MM***MM**MM************ */
+/*DDDDD****DD*****DD********DD***DD******DD************MM******MMMMMMM**MM***MM**MMMMM****************** */
+
+
 function drawAll() {
   colorRect(0, 0, canvas.width, canvas.height, "black");
   canvasContext.save(); // needed to undo this .translate() used for scroll
 
-  // this next line is like subtracting camPanX and camPanY from every
-  // canvasContext draw operation up until we call canvasContext.restore
-  // this way we can just draw them at their "actual" position coordinates
-  colorCircle(this.X, this.Y, 10, "white"); //draw ball
-  
- /* var worldMouseX = mouseX + camPanX; // Tile position under mouse used for debugging
+  /* var worldMouseX = mouseX + camPanX; // Tile position under mouse used for debugging
   var worldMouseY = mouseY + camPanY;
   var mouseIndex = getTileIndexAtPixelCoord(worldMouseX,worldMouseY);
   var mouseC = mouseIndex % WORLD_COLS;
   var mouseR = Math.floor(mouseIndex/WORLD_COLS);
   console.log(mouseC,mouseR);*/
-  
+
+  // this next line is like subtracting camPanX and camPanY from every
+  // canvasContext draw operation up until we call canvasContext.restore
+  // this way we can just draw them at their "actual" position coordinates
+  colorCircle(this.X, this.Y, 10, "white"); //draw ball
   canvasContext.translate(-camPanX, -camPanY);
 
   drawTracks();
@@ -537,8 +509,6 @@ function drawAll() {
   // particleCircle(this.x, this.y, 5, "yellow");
   // oneParticle.draw();
   // secondParticle.draw();
-
-
 
   ghostCircle(ghostX, ghostY, 18, "black");
   ghostCircle(ghostX, ghostY, 12, "red");
