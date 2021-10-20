@@ -47,7 +47,11 @@ function colorText(showWords, textX, textY, fillColor) {
 }
 
 
-/*************GHOST CODE*****************/
+/***GGGGGG**GG*****************GGGGG****************** CODE*****************/
+/***G*******GG************GGGGG**GG****************** CODE*****************/
+/***G**GGG**GGGGGG**GGGG**GG*****GGGG****************CODE*****************/
+/***GG**GG**GG***G**G**G****GG***GG****G************ CODE*****************/
+/***GGGGGG**GG***G**GGGG**GGGGG**GGGGGGG********************** CODE*****************/
 function ghostCircle(centerX, centerY, radius, fillColor) {
    canvasContext.fillStyle = fillColor;
    canvasContext.beginPath(); //hover functions 
