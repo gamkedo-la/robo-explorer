@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROBO EXPLORER</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Press Start 2P', cursive;
+            margin: 0;
+        }
+
+        .canvas {
+            height: 101vh;
+            background-color: rgb(41, 44, 41);
+            display: block;
+            text-align: center;
+            color: black;
+            padding-top: 1%;
+            border: 5px solid black;
+            position: relative; 
+        }
+
+        h1 {
+            color: #fff;
+            font-size: 1rem;
+        }
+
+        p {
+            color: #fff;
+            font-size: 3px;
+        }
+
+        .video-intro{
+            position: absolute;
+            top: 80%;
+            left:2%;
+        }
+        a{
+        text-align: center;
+        text-decoration: none;
+        color: #fff;
+
+      }
+      a:hover{
+        color: red;
+      }
+        /* #hash {
+            color: black;
+            text-align: center;
+
+        } */
+
+        #debugText {
+            font-size: 10px;
+            /* position: absolute; */
+            top: 8%;
+            left: 85%;
+        }
+
+        .rocketEnergy{
+            position: absolute;
+            top:8%;
+            left:80%;
+        }
+        #rocketEnergyText{
+            font-size: 15px;
+        }
+
+/**************************************************Items User Interface***********************/
+.black__interface{
+    background-color: black;
+    position: absolute;
+    top:10%;
+    left: 1%;
+    width: 15rem;
+    height: 15rem;
+
+}
+
+        .items {
+            font-size: 12px;
+            /* background-color:rgba(8, 196, 55, 0.959); */
+            border-radius: 2%;
+            /* padding: 1%; */
+            position: absolute;
+            top: 7%;
+            left: 2%;
+        }
+
+        #slingshot {
+            font-size: 12px;
+            position: absolute;
+            top: 14%;
+            left: 2%;
+
+        }
+
+        #sword {
+            font-size: 12px;
+            position: absolute;
+            top: 19%;
+            left: 2%;
+
+        }
+
+        #arrow {
+            font-size: 12px;
+
+            position: absolute;
+            top: 25%;
+            left: 2%;
+
+        }
+
+        #spear {
+            font-size: 12px;
+            position: absolute;
+            top: 31%;
+            left: 2%;
+        }
+
+
+        #crossbow {
+            height: "50px";
+            width: "50px";
+            position: absolute;
+            top: 37%;
+            left: 1%;
+            display: none;
+        }
+
+        #collected-crossbows{
+            font-size: 12px;
+            position: absolute;
+            top: 43%;
+            left: 5%;
+        }
+
+        #woodenBow{
+            font-size: 12px;
+            position: absolute;
+            top: 49%;
+            left: 5%;
+        }
+
+        /****************************************************************************/
+        /* .text{
+            background-color: white;
+            box-shadow:5px 5px 0px black;            
+            height: 100px;
+            width: 200px;
+            position: absolute;
+            top:80%;
+            left: 82%;
+        } */
+        .text span {
+            opacity: 0;
+        }
+
+        .text span.revealed {
+            opacity: 1;
+        }
+
+        .text span.blue {
+            color: #0d398b;
+        }
+
+        .text span.red {
+            color: #ff0000;
+        }
+
+
+        .text {
+            font-size: 1rem;
+            word-spacing: 0.2em;
+            margin: 0 auto;
+            padding: 1.5em;
+            border-bottom: solid #08131b;
+            position: relative;
+            line-height: 1.2em;
+        }
+
+        /* .corner {
+            position: absolute;
+            width: 5%;
+            right: 1vw;
+            bottom: 0;
+            transform: translateY(80%);
+        } */
+
+        /****************************Media Querry for 1024 Screens**************/
+        @media only screen and (max-width: 1024px) {
+            #debugText {
+                font-size: .5rem;
+                top: 10%;
+                left: 92%;
+            }
+
+            .items {
+                font-size: .5rem;
+                /* background-color:rgba(8, 196, 55, 0.959); */
+                top: 10%;
+                left: 1%;
+                width: 9%;
+                display: inline-block;
+            }
+
+            #slingshot {
+                font-size: .4rem;
+                top: 14%;
+                left: 1%;
+
+            }
+
+            #sword {
+                font-size: .4rem;
+                top: 16%;
+                left: 1%;
+
+            }
+
+            #arrow {
+                font-size: .4rem;
+                top: 18%;
+                left: 1%;
+
+            }
+
+            #spear {
+                font-size: .4rem;
+                top: 20%;
+                left: 1%;
+
+            }
+
+
+
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="canvas">
+        <h1>TERROFADIA TUNNELS</h1>
+
+        <canvas id="gameCanvas" width="800" height="600">
+            <!-- height="500" width="900"-->
+
+        </canvas>
+        <!-- <p id="hash">482c811da5d5b4bc6d497ffa98491e38</p>  -->
+        <!-- <audio  autoplay>
+            <source src="sidhayaAlabYouriff.wav" type="audio/wav">
+        </audio> -->
+        <!-- <p id="life" style="color:white;font-size:medium;">Life Span</p> -->
+       
+        <div class="black__interface">
+            <p id="debugText" style="color:white;">Key count will be displayed here.</p>     
+            <p class="items">Items Collected:</p>
+            <p id="slingshot"></p>
+            <p id="sword"></p>
+            <p id="arrow"></p>
+            <p id="spear"></p>
+            <p id="woodenBow"></p>
+           
+        </div>
+        <div class="rocketEnergy">
+
+        <p id="rocketEnergyText" style="color:white;">ROCKET ENERGY will be displayed here.</p> 
+        </div>
+        
+        <div class="video-intro">
+         
+            <a href="video-intro1.html">BACK TO START</a>
+        </div>
+        
+         <div class="img-container">
+            <p id="collected-crossbows"></p>
+            <img src="images/crossbow-transparent.png" id="crossbow" alt="crossbow" />
+        </div> 
+         <audio autoplay loop id="bossAudio">
+            
+            <source src="robo-explorer-level10-guitarRiff.wav" type="audio/wav">
+            Your browser does not support the audio element.
+          </audio>  -->
+
+    </div>
+    <!--
+        <div class="text">
+        Added expressive speech textbox prototype
+    https://codepen.io/punkydrewster713/pen/zYKdywP
+    </div>
+    
+    -->
+    
+
+    <script src="js/GraphicsCommon.js"></script>
+    <script src="js/ImageLoading.js"></script>
+    <script src="js/Hero.js"></script>
+    <script src="js/Bomb.js"></script>
+    <script src="js/Rat.js"></script>
+    <script src="js/BoyInCocoon.js"></script>
+    <script src="js/Bosscockroach.js"></script>
+    <script src="js/Trap.js"></script>
+    <script src="js/WaterSewer.js"></script>
+    <script src="js/Cockroach.js"></script>
+    <!-- <script src="js/Particle.js"></script> -->
+    <script src="js/World.js"></script>
+    <script src="js/WorldForest.js"></script>
+    <script src="js/UserInterface.js"></script>
+    <script src="js/Input.js"></script>
+    <script src="js/Main.js"></script>
+
+
+</body>
+
+</html>

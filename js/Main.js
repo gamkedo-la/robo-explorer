@@ -100,12 +100,16 @@ function particleClass() {
 var particleList = [];
 
 /**********************************SLINGSHOT BULLET CLASS********************************** */
+
 function slingShotClass() {
+  
   this.x = 75;
   this.y = 75;
   this.velX = 5;
   this.velY = 7;
   this.readyToRemove=false;
+  
+ 
 
   this.move = function () {
     this.x += this.velX;
@@ -122,6 +126,7 @@ function slingShotClass() {
     if (this.y > canvas.height) {
       this.readyToRemove= true;
     }
+    
   };
 
   this.draw = function () {
@@ -212,6 +217,8 @@ function addSlingShotRight() {
   tempSlingShot.velX = 15;
   tempSlingShot.velY = 0;
   slingShotList.push(tempSlingShot);
+
+  
 }
 
 
@@ -417,7 +424,7 @@ function moveAll() {
 
   camPanY = blueHero.y - canvas.height / 2;
   if (camPanY > 0) camPanY = 0;
-  // if (camPanY < 0) camPanY = 0; // This works but will disable all vertical panning commented out for now as a WIP
+  //if (camPanY < 0) camPanY = 0; // This works but will disable all vertical panning commented out for now as a WIP
   
 }
 

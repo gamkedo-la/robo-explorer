@@ -318,6 +318,8 @@ function heroClass() {
       var audio = new Audio("slingShot2.wav");
       audio.play();
       addSlingShotRight();
+      
+      
     }
 
     if (this.fireSlingshot > 0){
