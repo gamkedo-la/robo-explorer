@@ -26,19 +26,40 @@
           width: 100%;
           height: 500px;
           background-color: rgb(31, 24, 24);
-          
+          position: relative;
       }
-      #video-intro{
-          width:100vw;
-          height:500px;
-      }
+      
+/**************************GAME MENU CSS****************************************/      
+      .header__heading{
+        position:absolute;
+        top:50%;
+        left: 50%;
+        transform:translate(-50%,-50%);
+        /* background-color:red; */
      
-/**************************GAME START CSS****************************************/      
-      .gameStart{
+      }
+      .level-menu{
         margin: 0 auto;
         text-align:center;
-        margin-top: 2%;
+        position: absolute;
+        top:80%;
+        left:50%;
+        transform:translate(-50%,-50%);
+       
       }
+
+    
+
+      ul{
+        list-style-type: none;
+        
+      }
+
+      ul li{
+        display:block;
+       
+      }
+
       a{
         text-align: center;
         text-decoration: none;
@@ -46,22 +67,22 @@
 
       }
       a:hover{
-        color: rgb(20, 17, 17);
+        color: rgb(37, 117, 22);
       }
     </style>
   </head>
   <body>
     <header>
       <div class="header">
-         
+        <div class="header__heading">
+          <h1>ROBO-EXPLORER </h1>
+        </div>
         <div class="level-menu">
           <nav>
             <ul>
               <li><a href="story1.html">ROBO-EXPLORER TERROFADIA CITY STORY</a></li>
               <li><a href="index.html">TERROFADIA TUNNELS</a></li>
               <li><a href="worldForest.html">TERROFADIA TUNNELS</a></li>
-              
-              
               
             </ul>
             
