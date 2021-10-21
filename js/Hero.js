@@ -6,7 +6,7 @@
 // const MIN_SPEED_TO_TURN = 0.5;
 const PLAYER_MOVEMENT_SPEED = 10.0;
 const JUMP_POWER = 15;
-const GRAVITY = 10.5;
+var GRAVITY = 10.5;
 const AIR_RESISTANCE = 0.95;
 const START_PARTICLES = 2;
 const PLAYER_ANIM_FRAMES = 8;
@@ -230,7 +230,7 @@ function heroClass() {
     // console.log("GRAVITY");
 
 
-    /*--------------------FF---FOR ANIMATING CLIMB OF CHARACTER-------------------*/
+    /*-----------------------FOR ANIMATING CLIMB OF CHARACTER-------------------*/
     /*--CCCCCCC-----------CC-------------------------------------------------------------*/
     /*--CC-------CC-------------------------------CC------------*/
     /*--CC-------CC-------CC----------------------CC---------*/
@@ -242,8 +242,6 @@ function heroClass() {
       var tileIndexCenter = getTileIndexAtPixelCoord(this.x, this.y);
       var tileTypeCenter = worldGrid[tileIndexCenter];
      
-     
-
       // nextY += GRAVITY -10;
       
       this.swim = 1;
@@ -258,12 +256,13 @@ function heroClass() {
         this.swim=0; 
         
       }
-
+      
       if(tileTypeCenter !== WORLD_LADDER) {
         this.climb = 0;
+       
       }else{
-        this.climb=1;  
-      
+        this.climb=1;   
+        GRAVITY==0;
         
       }
       
@@ -278,6 +277,13 @@ function heroClass() {
     }
 
     /*-----------FOR ANIMATING MOVEMENT OF CHARACTER LEFT AND RIGHT-------- */
+    /*--WW-----WW------------------WW------------------------------------------------ */
+    /*--WW-----WW------------------WW----------WW------------------------------------- */
+    /*--WW-----WW--------WW--------WW----------WW--WW-------------------------------------- */
+    /*--WW--W--WW------WW--WW------WW----------WWWW------------------------------------------ */
+    /*--WW-W-W-WW----WWWWWWWWWW----WW----------WW--WW---------------------------------------- */
+    /*--WWW---WWW--WW----------WW--WWWWWWWWWW--WW----WW---------------------------------------------- */
+
     if (this.fireSlingshot < 0){
       this.moveDir = 0; 
     }
