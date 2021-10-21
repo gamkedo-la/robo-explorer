@@ -39,6 +39,7 @@ function heroClass() {
   this.swordSlash = 0;
   this.swim =0;
   this.regularJump=0;
+  this.climb=0;
 
   this.keyHeld_Climb = false;
   this.keyHeld_ClimbDown = false;
@@ -95,7 +96,7 @@ function heroClass() {
     this.controlKeySlingshot = slingshotKey;
     this.controlKeyBomb = bombKey;
     this.controlKeySword= swordKey;
-    this.controlKeyShif= lshiftKey;
+    this.controlKeyShift= lshiftKey;
   };
 
   this.reset = function (whichImage, heroName) {
@@ -241,12 +242,15 @@ function heroClass() {
     if (this.keyHeld_Climb) {
       var tileIndexCenter = getTileIndexAtPixelCoord(this.x, this.y);
       var tileTypeCenter = worldGrid[tileIndexCenter];
-     
+      this.climb = 1;
       if(tileTypeCenter == WORLD_LADDER) {
         
         //  nextY += PLAYER_MOVEMENT_SPEED*0.1;
-        
+         
+         nextY -= PLAYER_MOVEMENT_SPEED*0.2;
          console.log(GRAVITY);
+      }else{
+        this.climb=0;
       }
       // this.regularJump = 1;
       this.swim = 1;
@@ -727,6 +731,10 @@ function heroClass() {
 
     if(this.regularJump > 0){
       animationRow =5;
+    }
+
+    if(this.climb > 0){
+      animationRow = 7;
     }
     
     /*
