@@ -570,7 +570,10 @@ function heroClass() {
         delayAudio();
         loadLevel(levelTen);
         break;
-        
+      /*-------------------------------WORLD FOREST------------------------------*/
+       case WORLD_TREEVINES:
+          loadLevel(levelForestTwo);
+          break;
       /*-------------------------------WORLD COLLECTIBLES------------------------------*/
       case WORLD_SLINGSHOT:
         worldGrid[walkIntoTileIndex] = WORLD_EMPTY;

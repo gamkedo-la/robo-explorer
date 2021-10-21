@@ -64,6 +64,8 @@ function loadImages() {
     { trackType: WORLD_BRIDGEWOOD, theFile: "bridgeWood.png" },
     { trackType: WORLD_BRIDGEWOOD2_SOLID, theFile: "bridgeWood2.png" },
     { trackType: WORLD_BRIDGESTICKS2, theFile: "bridgeSticks2.png" },
+    { trackType: WORLD_TREEVINES, theFile: "treeVines.png" },
+    { trackType: WORLD_TREEVINESLEFT, theFile: "treeVinesLeft.png" },
     { trackType: WORLD_SLINGSHOT, theFile: "tirador.png" },
     //{ trackType: WORLD_ROCK, theFile: "rock.png" },
     // { trackType: WORLD_LADDER, theFile: "track_ladder.png" },
