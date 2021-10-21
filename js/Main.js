@@ -419,10 +419,14 @@ function moveAll() {
   /*--CC-----cCcccccC---cC---C-C---C--cC----cC------cCcccccC--------------- */
   /*--CCCCC-cC-------C-cC-----C-----C-cCCC--cC-----cC-------C-------------- */
 
+  // camPanX = blueHero.x - (canvas.width +700) / 2; //test the horizontal panning.
   camPanX = blueHero.x - canvas.width / 2;
+  
+  
+  // camPanX = blueHero.x - canvas.width/ 2;
   if (camPanX < 0) camPanX = 0;
 
-  camPanY = blueHero.y - canvas.height / 2;
+  camPanY = blueHero.y - canvas.height / 2 ;
   if (camPanY > 0) camPanY = 0;
   //if (camPanY < 0) camPanY = 0; // This works but will disable all vertical panning commented out for now as a WIP
   
