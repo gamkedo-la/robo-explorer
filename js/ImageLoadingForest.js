@@ -72,6 +72,7 @@ function loadImages() {
     { trackType: WORLD_TREELEAVES1, theFile: "treeLeaves1.png" },
     { trackType: WORLD_TREELEAVES2, theFile: "treeLeaves2.png" },
     { trackType: WORLD_TREELEAVES3, theFile: "treeLeaves3.png" },
+    { trackType: WORLD_TREELEAVES4, theFile: "treeLeaves4.png" },
     { trackType: WORLD_TREEVINESLEFT, theFile: "treeVinesLeft.png" },
     { trackType: WORLD_TREEVINESRIGHT, theFile: "treeVinesRight.png" },
     { trackType: WORLD_SLINGSHOT, theFile: "tirador.png" },
