@@ -40,6 +40,7 @@ function heroClass() {
   this.swim =0;
   this.regularJump=0;
   this.climb=0;
+  this.climbDown=0;
 
   this.keyHeld_Climb = false;
   this.keyHeld_ClimbDown = false;
@@ -74,7 +75,7 @@ function heroClass() {
   //properties for sprite animation
   this.frame = 0;
   this.numberOfFrames = 8; //how many frames are in the spritesheet
-  this.animationSpeed = 5;
+  this.animationSpeed = 10;
   this.animationCounter = 0;
 
   this.setupInput = function (
@@ -195,10 +196,7 @@ function heroClass() {
          this.keyHeld_Jump = false;// disable flight
         nextY += GRAVITY *200;
         removeParticles();
-      }
-
-      
-      
+      }      
       
       // rocketLife();
       // addParticles();
@@ -217,7 +215,7 @@ function heroClass() {
       
      
        
-        // removeParticles();
+     // removeParticles();
      
       
       // removeSlingShot();
@@ -240,39 +238,42 @@ function heroClass() {
     /*--CC-------CC-------CC-----CC--CC--CC--CC---CC----CC----------------*/
     /*--CCCCCCC--CCCCCCC--CC---CC------CC------CC-CCCCCCCC--------------*/
     if (this.keyHeld_Climb) {
+      
       var tileIndexCenter = getTileIndexAtPixelCoord(this.x, this.y);
       var tileTypeCenter = worldGrid[tileIndexCenter];
      
-      if(tileTypeCenter == WORLD_LADDER) {
-        this.climb = 1;
-        //  nextY += PLAYER_MOVEMENT_SPEED*0.1;
-         nextY -= PLAYER_MOVEMENT_SPEED*0.2;
-         //console.log(GRAVITY);
-      }else{
-        this.climb=0;
-       
-      }
-      // this.regularJump = 1;
-      this.swim = 1;
      
-      //  this.keyHeld_Climb = false;
+
+      // nextY += GRAVITY -10;
+      
+      this.swim = 1;
+      
       var tileIndexCenter = getTileIndexAtPixelCoord(this.x, this.y);
       var tileTypeCenter = worldGrid[tileIndexCenter];
       if(tileTypeCenter == WORLD_WATER) {
        nextY -= PLAYER_MOVEMENT_SPEED*0.2;
-      }else{
-        nextY -= PLAYER_MOVEMENT_SPEED*3;// need to limit jump power separate from flight
-        this.swim=0;
       
-        // this.regularJump=0;
+      }else{
+        nextY -= PLAYER_MOVEMENT_SPEED*1.8;// need to limit jump power separate from flight
+        this.swim=0; 
+        
       }
-    //  console.log("keyHeld_Climb");
-       
+
+      if(tileTypeCenter !== WORLD_LADDER) {
+        this.climb = 0;
+      }else{
+        this.climb=1;  
+      
+        
+      }
       
     }
-
+    
+    
     if (this.keyHeld_ClimbDown) {
-     
+        this.climbDown =0;
+       
+      
       // this.speed -= REVERSE_POWER;
     }
 
@@ -281,11 +282,6 @@ function heroClass() {
       this.moveDir = 0; 
     }
 
-   
-
-    if(this.regularJump = 0){
-      animationRow=5;
-    }
 
     if (this.keyHeld_WalkLeft) {
       // nextX -= PLAYER_MOVEMENT_SPEED;
@@ -325,10 +321,6 @@ function heroClass() {
       var audio = new Audio("slingShot2.wav");
       audio.play();
       addSlingShotLeft();
-
-      // console.log("");
-
-      // this.speed += DRIVE_POWER;
     }
 
     if (this.keyHeld_Slingshot && this.keyHeld_WalkRight) {
@@ -337,8 +329,6 @@ function heroClass() {
       var audio = new Audio("slingShot2.wav");
       audio.play();
       addSlingShotRight();
-      
-      
     }
 
     if (this.fireSlingshot > 0){
@@ -351,7 +341,7 @@ function heroClass() {
 
     /*--------------FOR ANIMATING SWORD SLASH----------------*/
    
-   /* if(this.swordSlash = 0){
+     /* if(this.swordSlash = 0){
       this.keyHeld_Sword =false;
       this.swordSlash =0;
       }else{

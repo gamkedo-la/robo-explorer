@@ -50,8 +50,8 @@ function updateMousePosition(mouseEvent) {
 function keySet(keyEvent, setTo) {
   if (keyEvent.keyCode == blueHero.controlKeyLeft) {
     blueHero.keyHeld_WalkLeft = setTo;
-    
   }
+
   if (keyEvent.keyCode == blueHero.controlKeyRight) {
     blueHero.keyHeld_WalkRight = setTo;
   }
@@ -59,12 +59,12 @@ function keySet(keyEvent, setTo) {
   if (keyEvent.keyCode == blueHero.controlKeyUp) {
     blueHero.keyHeld_Climb = setTo;
   }
+
   if (keyEvent.keyCode == blueHero.controlKeyDown) {
     blueHero.keyHeld_ClimbDown = setTo;
   }
 
   if (keyEvent.keyCode == blueHero.controlKeyJump) {
-    
     blueHero.keyHeld_Jump = setTo;
   }
 
@@ -79,6 +79,7 @@ function keySet(keyEvent, setTo) {
   if (keyEvent.keyCode == blueHero.controlKeySword) {
     blueHero.keyHeld_Sword = setTo;
   }
+
   if (keyEvent.keyCode == blueHero.controlKeyLshift) {
     blueHero.keyHeld_LshiftKey = setTo;
     console.log(keyHeld_LshiftKey);
