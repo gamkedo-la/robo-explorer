@@ -164,7 +164,14 @@ function heroClass() {
     var nextX = this.x;
     var nextY = this.y;
 
-    /*-------------------------FOR ANIMATING FLIGHT OF CHARACTER-------------------*/
+    /*--------------------FF---FOR ANIMATING FLIGHT OF CHARACTER-------------------*/
+    /*--FFFFFFF--FF-------FF------------------------------------------------------------------------*/
+    /*--FF-------FF------------FFFFFFF----FF-------FFFF-----------------------------------------------*/
+    /*--FFFF-----FF-------FF---FF---------FF-------FF------------------------------------------*/
+    /*--FFF------FF-------FF---FF---FFFF--FFFFFFF--FFFF---------------------------------------------*/
+    /*--FF-------FF-------FF---FF------F--FF---FF--FF-------------------------------------------*/
+    /*--FF-------FFFFFFF--FF---FFFFFFFFF--FF---FF--FFFFFFF--------------------------------------*/
+
     if (this.keyHeld_Jump) {
       // beginLoadingImage(rocketBooster);
       /*if(ROCKET_LIFE !==0){
@@ -223,6 +230,14 @@ function heroClass() {
 
     // console.log("GRAVITY");
 
+
+    /*--------------------FF---FOR ANIMATING CLIMB OF CHARACTER-------------------*/
+    /*--CCCCCCC-----------CC-------------------------------------------------------------*/
+    /*--CC-------CC-------------------------------CC------------*/
+    /*--CC-------CC-------CC----------------------CC---------*/
+    /*--CC-------CC-------CC-------CC------CC-----CCCCCCCC---------------*/
+    /*--CC-------CC-------CC-----CC--CC--CC--CC---CC----CC----------------*/
+    /*--CCCCCCC--CCCCCCC--CC---CC------CC------CC-CCCCCCCC--------------*/
     if (this.keyHeld_Climb) {
       var tileIndexCenter = getTileIndexAtPixelCoord(this.x, this.y);
       var tileTypeCenter = worldGrid[tileIndexCenter];
