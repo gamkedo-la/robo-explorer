@@ -242,15 +242,15 @@ function heroClass() {
     if (this.keyHeld_Climb) {
       var tileIndexCenter = getTileIndexAtPixelCoord(this.x, this.y);
       var tileTypeCenter = worldGrid[tileIndexCenter];
-      this.climb = 1;
+     
       if(tileTypeCenter == WORLD_LADDER) {
-        
+        this.climb = 1;
         //  nextY += PLAYER_MOVEMENT_SPEED*0.1;
-         
          nextY -= PLAYER_MOVEMENT_SPEED*0.2;
-         console.log(GRAVITY);
+         //console.log(GRAVITY);
       }else{
         this.climb=0;
+       
       }
       // this.regularJump = 1;
       this.swim = 1;
