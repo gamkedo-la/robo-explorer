@@ -76,7 +76,9 @@ function loadImages() {
     { trackType: WORLD_TREELEAVES4, theFile: "treeLeaves4.png" },
     { trackType: WORLD_TREEVINESLEFT, theFile: "treeVinesLeft.png" },
     { trackType: WORLD_TREEVINESRIGHT, theFile: "treeVinesRight.png" },
+    { trackType: WORLD_VINES, theFile: "vines.png" },
     { trackType: WORLD_WALL, theFile: "bricks6.png" },
+    
     { trackType: WORLD_SLINGSHOT, theFile: "tirador.png" },
     { trackType: WORLD_ROCK, theFile: "rock.png" },
     // { trackType: WORLD_LADDER, theFile: "track_ladder.png" },
