@@ -421,7 +421,7 @@ function moveAll() {
   /*--CC-----cCcccccC---cC---C-C---C--cC----cC------cCcccccC--------------- */
   /*--CCCCC-cC-------C-cC-----C-----C-cCCC--cC-----cC-------C-------------- */
 
-  // camPanX = blueHero.x - (canvas.width +700) / 2; //test the horizontal panning.
+  //camPanX = blueHero.x - (canvas.width +700) / 2; //test the horizontal panning.
   camPanX = blueHero.x - canvas.width / 2;
   
   
