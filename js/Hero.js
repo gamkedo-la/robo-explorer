@@ -32,7 +32,7 @@ function heroClass() {
   this.name = "Untitled Explorer";
   this.keysHeld = 0;
   this.items = 0;
-  this.rocketEnergy=0;
+  // this.rocketEnergy=0;
   // this.life = 3;
   this.moveDir = 0;
   this.fireSlingshot = -1;
