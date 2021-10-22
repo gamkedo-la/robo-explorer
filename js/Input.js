@@ -111,18 +111,31 @@ function checkForCheatKeys (keyCode) {
       blueHero.keysHeld = 999;
       break
     case KEY_1: 
-      loadLevel(sideQuest2); //change to another level you need to go to for testing.
+      levelList=levelListTunnels;
+      levelNow =0;
+      loadLevel(levelList[levelNow]); 
       break
     case KEY_2:
-      loadLevel(levelTwo);
+      levelList=levelListForest;
+      levelNow =0;
+      loadLevel(levelList[levelNow]); 
       break
     case KEY_3:
-      loadLevel(levelThree);
+      levelNow++;
+      if (levelNow >= levelList.length){
+        levelNow = leveList.length -1;
+      }
+      loadLevel(levelList[levelNow]); 
       break
     case KEY_4:
-      loadLevel(levelFour);
+      levelNow--;
+      if (levelNow < 0){
+        levelNow = 0;
+      }
+      loadLevel(levelList[levelNow]); 
       break
-    case KEY_5:
+    /*
+      case KEY_5:
       loadLevel(levelFive);
       break
     case KEY_6:
@@ -138,7 +151,7 @@ function checkForCheatKeys (keyCode) {
        loadLevel(levelNine);
       break  
        
-                                                                         
+      */                                                                   
       default:
         break;
     }

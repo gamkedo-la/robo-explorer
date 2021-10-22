@@ -264,7 +264,8 @@ var sideQuest4 = [
     1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,
     1,1,1,1,1,1,1,1,1,1,1,2,1,1,1,1,1,1,1,1];
 
-        var levelList = [levelOne,levelTwo,levelThree,levelFour, levelFive,levelSix,levelSeven,levelEight,levelEightTwo,levelNine,levelTen,sideQuest1,sideQuest2,sideQuest3];
+        var levelListTunnels = [levelOne,levelTwo,levelThree,levelFour, levelFive,levelSix,levelSeven,levelEight,levelEightTwo,levelNine,levelTen,sideQuest1,sideQuest2,sideQuest3];
+        var levelList = levelListTunnels;
         var levelNow = 0;
         // var sideQuest=0;
         // var sideQuestList = [sideQuest1,sideQuest2];
@@ -431,7 +432,16 @@ const WORLD_TREELEAVES4 =65;
     function tileTypeCanBeMoveThrough(checkTileType){
         return(checkTileType == WORLD_EMPTY ||
             checkTileType == WORLD_WATER ||
-            checkTileType == WORLD_LADDER);
+            checkTileType == WORLD_LADDER ||
+            checkTileType == WORLD_CLOUD1 ||
+            checkTileType == WORLD_BRIDGESTICKS ||
+            checkTileType == WORLD_BRIDGEWOOD ||
+            checkTileType == WORLD_BRIDGESTICKS2 ||
+            checkTileType == WORLD_TREEVINESLEFT ||
+            checkTileType == WORLD_TREEVINESRIGHT ||
+            checkTileType == WORLD_TREETRUNKSIDELEFT
+            
+            );
     }
 
     function drawTracks() {

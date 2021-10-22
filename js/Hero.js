@@ -10,7 +10,7 @@ var GRAVITY = 10.5;
 const AIR_RESISTANCE = 0.95;
 const START_PARTICLES = 2;
 const PLAYER_ANIM_FRAMES = 8;
-var ROCKET_LIFE=100;
+const ROCKET_LIFE=100;
 
 function heroClass() {
   // var sound = document.getElementById("heroSound");
@@ -18,7 +18,7 @@ function heroClass() {
 
   this.x = 75;
   this.y = 75;
-
+  this.rocketEnergy=ROCKET_LIFE;
   this.jumperOnGround = false;
   (this.jumperSpeedX = 0), (jumperSpeedY = 0);
   this.flyAng = 0;
@@ -184,10 +184,10 @@ function heroClass() {
         addParticles();
        }*/
       
-      if(ROCKET_LIFE !==0){
-      ROCKET_LIFE--;
+      if(this.rocketEnergy !==0){
+      this.rocketEnergy--;
       nextY -= JUMP_POWER;
-      console.log(ROCKET_LIFE);
+      console.log(this.rocketEnergy);
        for (var i = 0; i < START_PARTICLES; i++) {
         addParticles();
        }
@@ -287,7 +287,6 @@ function heroClass() {
     if (this.fireSlingshot < 0){
       this.moveDir = 0; 
     }
-
 
     if (this.keyHeld_WalkLeft) {
       // nextX -= PLAYER_MOVEMENT_SPEED;
@@ -617,10 +616,8 @@ function heroClass() {
       
       case WORLD_ROCKET_BATTERY:
         if(ROCKET_LIFE == 0){
-          this.rocketEnergy;
           this.keyHeld_Jump = true;
           this.rocketEnergy = ROCKET_LIFE+50;
-          
           console.log(this.rocketEnergy);
         }
        
