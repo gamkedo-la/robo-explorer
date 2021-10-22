@@ -11,7 +11,7 @@ var waterList = [];
 var CHEATS_ENABLED = true;
 var worldNow = 0;
 var worldList = [levelListTunnels,levelListForest];
-var worldSky = ["#bbbbbb","#fffc9f"];
+var worldSky = ["#6f6a6a","#fffc9f"];
 /************************GHOST VARIABLES***************************/
 var ghostX = 75;
 var ghostY = 75;
