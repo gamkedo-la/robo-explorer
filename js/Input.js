@@ -111,12 +111,14 @@ function checkForCheatKeys (keyCode) {
       blueHero.keysHeld = 999;
       break
     case KEY_1: 
-      levelList=levelListTunnels;
+      worldNow=0;
+      levelList=worldList[worldNow];
       levelNow =0;
       loadLevel(levelList[levelNow]); 
       break
     case KEY_2:
-      levelList=levelListForest;
+      worldNow=1;
+      levelList=worldList[worldNow];
       levelNow =0;
       loadLevel(levelList[levelNow]); 
       break

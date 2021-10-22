@@ -420,7 +420,7 @@ const WORLD_TREELEAVES4 =65;
     function rowColToArrayIndex(col, row) {
         return col + WORLD_COLS * row;
     }
-
+/*
     function tileTypeHasTransparency(checkTileType){
         return(checkTileType == WORLD_SLINGSHOT ||
                checkTileType == WORLD_KEY ||
@@ -428,6 +428,8 @@ const WORLD_TREELEAVES4 =65;
                checkTileType == WORLD_TUNNEL_UP 
                );
     }
+      
+*/
 
     function tileTypeCanBeMoveThrough(checkTileType){
         return(checkTileType == WORLD_EMPTY ||
@@ -453,15 +455,14 @@ const WORLD_TREELEAVES4 =65;
 		    
               var arrayIndex = rowColToArrayIndex(eachCol, eachRow); 
               var tileKindHere = worldGrid[arrayIndex];
-              var useImg = trackPics[tileKindHere];
+              if (tileKindHere != WORLD_EMPTY){
+                var useImg = trackPics[tileKindHere];
            
-
-           if( tileTypeHasTransparency(tileKindHere) ) {
-				canvasContext.drawImage(trackPics[WORLD_EMPTY],drawTileX,drawTileY);
-            }
-
-            canvasContext.drawImage(useImg,drawTileX,drawTileY);
-
+        //    if( tileTypeHasTransparency(tileKindHere) ) {
+		// 		canvasContext.drawImage(trackPics[WORLD_EMPTY],drawTileX,drawTileY);
+        //     }
+                canvasContext.drawImage(useImg,drawTileX,drawTileY);
+              }
               drawTileX += WORLD_W;
               arrayIndex++;
           } // end of for each col      

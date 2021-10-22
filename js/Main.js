@@ -9,7 +9,9 @@ var boyCocoon = new boyCocoonClass();
 var trapList = [];
 var waterList = [];
 var CHEATS_ENABLED = true;
-
+var worldNow = 0;
+var worldList = [levelListTunnels,levelListForest];
+var worldSky = ["#bbbbbb","#ddbb00"];
 /************************GHOST VARIABLES***************************/
 var ghostX = 75;
 var ghostY = 75;
@@ -474,7 +476,7 @@ function drawOnlyBricksOnScreen() {
 
 
 function drawAll() {
-  colorRect(0, 0, canvas.width, canvas.height, "black");
+  colorRect(0, 0, canvas.width, canvas.height, worldSky[worldNow]);
   canvasContext.save(); // needed to undo this .translate() used for scroll
 
   /* var worldMouseX = mouseX + camPanX; // Tile position under mouse used for debugging
