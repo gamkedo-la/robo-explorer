@@ -359,6 +359,7 @@ function loadLevel(whichLevel) {
 /**********************FUNCTION FOR UPDATING moveAll and drawAll FUNCTION************/
 function updateAll() {
   moveAll();
+  checkCollisionsAll();
   drawAll();
 }
 
@@ -430,8 +431,37 @@ function moveAll() {
 
   camPanY = blueHero.y - canvas.height / 2 ;
   if (camPanY > 0) camPanY = 0;
-  if (camPanY < 0) camPanY = 0; // This works but will disable all vertical panning commented out for now as a WIP
+  if (camPanY < 0) camPanY = 0;
   
+}
+
+function checkCollisionsAll() {
+  if (entity_v_entity(blueHero, rat)) {
+    console.log("Hero hit rat")
+  }
+  
+  if (entity_v_entity(blueHero, cockroach_egg)) {
+    console.log("Hero hit cockroach egg")
+  }
+  
+  if (entity_v_entity(blueHero, boyCocoon)) {
+    console.log("Hero hit boyCocoon")
+  }
+
+  if (entity_v_entity(blueHero, bossEnemy)) {
+    console.log("Hero hit boss enemy")
+  }
+}
+
+function entity_v_entity(entity1, entity2) {
+  if ((entity1.x > entity2.x - entity2.width / 2) &&
+  (entity1.x < entity2.x + entity2.width / 2) &&
+  (entity1.y > entity2.y - entity2.height / 2) &&
+  (entity1.y < entity2.y + entity2.height / 2)) {
+    return true
+  } else {
+    return false
+  }
 }
 
 
