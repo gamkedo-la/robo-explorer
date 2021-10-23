@@ -444,8 +444,8 @@ const WORLD_DAGGER = 68;
             checkTileType == WORLD_BRIDGESTICKS2 ||
             checkTileType == WORLD_TREEVINESLEFT ||
             checkTileType == WORLD_TREEVINESRIGHT ||
-            checkTileType == WORLD_TREETRUNKSIDELEFT ||
-            checkTileType == WORLD_VINES2 
+            checkTileType == WORLD_TREETRUNKSIDELEFT 
+          
             
             );
     }

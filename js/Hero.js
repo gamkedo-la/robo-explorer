@@ -594,9 +594,6 @@ function heroClass() {
        case WORLD_TREEVINES:
           loadLevel(levelForestTwo);
           break;
-          case WORLD_VINES2:
-            loadLevel(levelForestThree);
-            break;
       /*-------------------------------WORLD COLLECTIBLES------------------------------*/
       case WORLD_SLINGSHOT:
         worldGrid[walkIntoTileIndex] = WORLD_EMPTY;
@@ -644,39 +641,35 @@ function heroClass() {
           worldGrid[walkIntoTileIndex] = WORLD_EMPTY;
         }
         break;
+      
+      
+        case WORLD_DAGGER:
+          this.daggersHeld++;
+          this.updateDaggerReadout();
+          var audio = new Audio("keyCollectionSound2.wav");
+          audio.play();
+          worldGrid[walkIntoTileIndex] = WORLD_EMPTY;
+          break;
 
         case WORLD_VINES2:
           if (this.daggersHeld > 0) {
-            // this.keysHeld--;
+            this.daggersHeld--;
             this.updateDaggerReadout();
-            worldGrid[walkIntoTileIndex] = WORLD_EMPTY;
+            worldGrid[walkIntoTileIndex] = WORLD_EMPTY;  
+            loadLevel(levelForestThree);
+          
           }
-          break;
+        break;
       case WORLD_KEY:
         // console.log(this.name + " THIS IS THE KEY");
         // this.keysHeld;
-       
         this.keysHeld++;
-       
         this.updateKeyReadout();
         var audio = new Audio("keyCollectionSound2.wav");
         audio.play();
-        
         worldGrid[walkIntoTileIndex] = WORLD_EMPTY;
         break;
 
-      case WORLD_DAGGER:
-        // console.log(this.name + " THIS IS THE KEY");
-        // this.keysHeld;
-        
-        this.daggersHeld++;
-        
-        this.updateDaggerReadout();
-        var audio = new Audio("keyCollectionSound2.wav");
-        audio.play();
-        
-        worldGrid[walkIntoTileIndex] = WORLD_EMPTY;
-        break;
 
 
       // case WORLD_LADDER:
@@ -694,7 +687,6 @@ function heroClass() {
       case WORLD_RAT: //"kills" rat when player makes contact with rat
         // loadLevel(levelTwo);
         // nextX += PLAYER_MOVEMENT_SPEED + 10;
-
         worldGrid[walkIntoTileIndex] = WORLD_EMPTY;
         break;
       case WORLD_TRAP:
