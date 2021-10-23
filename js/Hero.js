@@ -31,6 +31,7 @@ function heroClass() {
   this.myHeroPic;
   this.name = "Untitled Explorer";
   this.keysHeld = 0;
+  this.daggersHeld=0;
   this.items = 0;
   // this.rocketEnergy=0;
   // this.life = 3;
@@ -104,6 +105,7 @@ function heroClass() {
     this.name = heroName;
     this.myHeroPic = whichImage;
     this.keysHeld = 0;
+    this.daggersHeld =0;
     this.rocketEnergy = ROCKET_LIFE;
     // this.life = 3;
     this.updateKeyReadout();
@@ -129,6 +131,10 @@ function heroClass() {
   this.updateKeyReadout = function () {
     document.getElementById("debugText").innerHTML = "Keys: " + this.keysHeld;
   };
+
+  this.updateDaggerReadout = function (){
+    document.getElementById("daggerText").innerHTML = "Daggers: " + this.daggersHeld;
+  }
 
   this.updateRocketEnergyReadout = function(){
     document.getElementById("rocketEnergyText").innerHTML = "ENERGY: " + this.rocketEnergy;
@@ -638,6 +644,14 @@ function heroClass() {
           worldGrid[walkIntoTileIndex] = WORLD_EMPTY;
         }
         break;
+
+        case WORLD_VINES2:
+          if (this.daggersHeld > 0) {
+            // this.keysHeld--;
+            this.updateDaggerReadout();
+            worldGrid[walkIntoTileIndex] = WORLD_EMPTY;
+          }
+          break;
       case WORLD_KEY:
         // console.log(this.name + " THIS IS THE KEY");
         // this.keysHeld;
@@ -650,6 +664,20 @@ function heroClass() {
         
         worldGrid[walkIntoTileIndex] = WORLD_EMPTY;
         break;
+
+      case WORLD_DAGGER:
+        // console.log(this.name + " THIS IS THE KEY");
+        // this.keysHeld;
+        
+        this.daggersHeld++;
+        
+        this.updateDaggerReadout();
+        var audio = new Audio("keyCollectionSound2.wav");
+        audio.play();
+        
+        worldGrid[walkIntoTileIndex] = WORLD_EMPTY;
+        break;
+
 
       // case WORLD_LADDER:
       //   if (this.keyHeld_Climb) {

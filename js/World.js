@@ -339,6 +339,7 @@ const WORLD_TREELEAVES3 =64;
 const WORLD_TREELEAVES4 =65;
 const WORLD_VINES =66;
 const WORLD_VINES2 =67;
+const WORLD_DAGGER = 68;
 
 
 
@@ -443,7 +444,8 @@ const WORLD_VINES2 =67;
             checkTileType == WORLD_BRIDGESTICKS2 ||
             checkTileType == WORLD_TREEVINESLEFT ||
             checkTileType == WORLD_TREEVINESRIGHT ||
-            checkTileType == WORLD_TREETRUNKSIDELEFT
+            checkTileType == WORLD_TREETRUNKSIDELEFT ||
+            checkTileType == WORLD_VINES2 
             
             );
     }
