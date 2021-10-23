@@ -588,6 +588,9 @@ function heroClass() {
        case WORLD_TREEVINES:
           loadLevel(levelForestTwo);
           break;
+          case WORLD_VINES2:
+            loadLevel(levelForestThree);
+            break;
       /*-------------------------------WORLD COLLECTIBLES------------------------------*/
       case WORLD_SLINGSHOT:
         worldGrid[walkIntoTileIndex] = WORLD_EMPTY;

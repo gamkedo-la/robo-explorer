@@ -338,6 +338,8 @@ const WORLD_TREELEAVES2 =63;
 const WORLD_TREELEAVES3 =64;
 const WORLD_TREELEAVES4 =65;
 const WORLD_VINES =66;
+const WORLD_VINES2 =67;
+
 
 
         // const WORLD_RAT2=20;
