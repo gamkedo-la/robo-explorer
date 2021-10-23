@@ -190,16 +190,16 @@ function heroClass() {
         addParticles();
        }*/
       
-      if(this.rocketEnergy !==0){
-      this.rocketEnergy--;
-      nextY -= JUMP_POWER;
-      console.log(this.rocketEnergy);
-       for (var i = 0; i < START_PARTICLES; i++) {
-        addParticles();
-       }
+      if(this.rocketEnergy !== 0){
+        this.rocketEnergy--;
+        nextY -= JUMP_POWER;
+        console.log(this.rocketEnergy);
+        for (var i = 0; i < START_PARTICLES; i++) {
+          addParticles();
+        }
       
       }else{
-         this.keyHeld_Jump = false;// disable flight
+        this.keyHeld_Jump = false;// disable flight
         nextY += GRAVITY *200;
         removeParticles();
       }      
@@ -209,16 +209,16 @@ function heroClass() {
       // addSlingShot();
       // console.log("JUMP_POWER");
     } else {
-      var tileIndexCenter = getTileIndexAtPixelCoord(this.x, this.y);
-      var tileTypeCenter = worldGrid[tileIndexCenter];
-      
-      if(tileTypeCenter == WORLD_WATER) {
-        nextY += GRAVITY * 0.1; //slower gravity
-        ROCKET_LIFE = 0;
-      }else{
-        nextY += GRAVITY;
-      }
-      
+        var tileIndexCenter = getTileIndexAtPixelCoord(this.x, this.y);
+        var tileTypeCenter = worldGrid[tileIndexCenter];
+        
+        if(tileTypeCenter == WORLD_WATER) {
+          nextY += GRAVITY * 0.1; //slower gravity
+          this.rocketEnergy = 0;
+        }else{
+          nextY += GRAVITY;
+        }
+        
      
        
      // removeParticles();
