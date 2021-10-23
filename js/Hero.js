@@ -621,10 +621,10 @@ function heroClass() {
         break;
       
       case WORLD_ROCKET_BATTERY:
-        if(ROCKET_LIFE == 0){
-          this.keyHeld_Jump = true;
-          this.rocketEnergy = ROCKET_LIFE+50;
-          console.log(this.rocketEnergy);
+        if(this.rocketEnergy == 0){
+          
+          this.rocketEnergy = ROCKET_LIFE;
+         
         }
        
         worldGrid[walkIntoTileIndex] = WORLD_EMPTY;
