@@ -91,6 +91,21 @@ function bossClass() {
       this.animationCounter = 0;
     }
   };
+
   // console.log(this.animationCounter);
   // console.log(this.frame); //caught the problem...this is reaching beyond number of frames...
+
+
+  /**COLLISSION WITH SLINGSHOT**************** */
+  /****************** */
+  /*********************************** */
+  /********************************** */
+  /****************** */
+
+
+
+
+
+
+
 }
