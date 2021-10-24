@@ -7,6 +7,7 @@ var rockPic = document.createElement("img");
 var cockroachEggPic = document.createElement("img");
 var bossPic = document.createElement("img");
 var boyCocoonPic=document.createElement("img");
+var smallWormPic=document.createElement("img");
 var trackPics = [];
 
 var picsToLoad = 0; //set automatically based on imageList in loadImages
@@ -51,6 +52,7 @@ function loadImages() {
     { varName: cockroachEggPic, theFile: "cockroachSprite.png"},
     { varName: bossPic, theFile: "bossCockroachSprite.png"},
     { varName: boyCocoonPic, theFile: "boyInCocoon.png" },
+    { varName: smallWormPic, theFile: "smallWorm.png" },
 
 
     { varName: trapPic, theFile: "spike-sprite3.png" },
@@ -113,7 +115,7 @@ function loadImages() {
     { trackType: WORLD_SKELETON_HEADS, theFile: "skeleton-heads.png" },
     { trackType: WORLD_PIPE_TOP7, theFile: "world_pipe_top7.png" },
     { trackType: WORLD_SEWER_PIPE, theFile: "sewerPipe.png" },
-    { trackType: WORLD_SMALLWORM, theFile: "smallWorm.png" },
+   
     { trackType: WORLD_SEWER_PIPE_WITH_BAR, theFile: "sewerPipeWithBars.png" },
     
     { trackType: WORLD_SEWER_TRAP_LOCK_BAR, theFile: "sewerTrapLockDoor2.png" },

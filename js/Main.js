@@ -6,6 +6,7 @@ var rat = new ratClass();
 var cockroach_egg = new cockroach_eggClass();
 var bossEnemy = new bossClass();
 var boyCocoon = new boyCocoonClass();
+var smallWorm = new smallWormClass();
 var trapList = [];
 var waterList = [];
 var CHEATS_ENABLED = true;
@@ -288,6 +289,7 @@ window.onload = function () {
   //bossEnemyReset();
   bossEnemy.reset();
   boyCocoon.reset();
+  smallWorm.reset();
 };
 
 
@@ -332,6 +334,7 @@ function loadLevel(whichLevel) {
   cockroach_egg.reset();
    bossEnemy.reset();
    boyCocoon.reset();
+   smallWorm.reset();
   
   trapList = [];
   var lookForAnotherTrap = true;
@@ -377,6 +380,7 @@ function moveAll() {
   cockroach_egg.move();
   boyCocoon.move();
   bossEnemy.move();
+  smallWorm.move();
   
   for (var i=0; i < trapList.length; i++){
     trapList[i].move();
@@ -550,6 +554,7 @@ function drawAll() {
   rat.draw();
   cockroach_egg.draw();
   boyCocoon.draw();
+  smallWorm.draw();
   bossEnemy.draw();
   for (var i=0; i < trapList.length; i++){
     trapList[i].draw();
