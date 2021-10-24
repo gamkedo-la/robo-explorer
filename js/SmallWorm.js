@@ -43,7 +43,7 @@ function smallWormClass() {
 
   this.draw = function(){
    
-    var smallWormFrameW = 80;
+    var smallWormFrameW = 50;
     canvasContext.drawImage(
         smallWormPic,
       this.frame * smallWormFrameW, 0, //top left corner of spritesheet frame
