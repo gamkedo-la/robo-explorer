@@ -283,7 +283,7 @@ window.onload = function () {
   colorText("LOADING IMAGES", canvas.width / 2, canvas.height / 2, "white");
   loadImages();
   ghostReset();
-  // secondParticle.x= 20;
+ // secondParticle.x= 20;
   particleReset();
   //bossEnemyReset();
   bossEnemy.reset();
