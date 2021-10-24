@@ -30,10 +30,10 @@ function drawBitmapCenteredWithAnimationFlip(useBitmap, atX, atY, frameW,frameH,
 }
 
 
-function colorRect(topLeftX, topLeftY, boxWidth, boxHeight, fillColor) {
-  canvasContext.fillStyle = fillColor;
-  canvasContext.fillRect(topLeftX, topLeftY, boxWidth, boxHeight);
-}
+ function colorRect(topLeftX, topLeftY, boxWidth, boxHeight, fillColor) {
+   canvasContext.fillStyle = fillColor;
+   canvasContext.fillRect(topLeftX, topLeftY, boxWidth, boxHeight);
+ }
 
 function colorCircle(centerX, centerY, radius, fillColor) {
     canvasContext.fillStyle = fillColor;

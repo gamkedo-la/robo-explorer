@@ -6,7 +6,7 @@
 // const MIN_SPEED_TO_TURN = 0.5;
 const PLAYER_MOVEMENT_SPEED = 10.0;
 const JUMP_POWER = 15;
-var GRAVITY = 10.5;
+const GRAVITY = 10.5;
 const AIR_RESISTANCE = 0.95;
 const START_PARTICLES = 2;
 const PLAYER_ANIM_FRAMES = 8;
@@ -20,6 +20,7 @@ function heroClass() {
   this.y = 75;
   this.rocketEnergy=ROCKET_LIFE;
   this.jumperOnGround = false;
+  this.gravity=GRAVITY;
   (this.jumperSpeedX = 0), (jumperSpeedY = 0);
   this.flyAng = 0;
   this.width = 40;
@@ -171,6 +172,8 @@ function heroClass() {
 
     var nextX = this.x;
     var nextY = this.y;
+  
+    
 
     /*--------------------FF---FOR ANIMATING FLIGHT OF CHARACTER-------------------*/
     /*--FFFFFFF--FF-------FF------------------------------------------------------------------------*/
@@ -216,11 +219,9 @@ function heroClass() {
           nextY += GRAVITY * 0.1; //slower gravity
           this.rocketEnergy = 0;
         }else{
-          nextY += GRAVITY;
+          nextY +=  this.gravity;
         }
-        
-     
-       
+           
      // removeParticles();
      
       
@@ -235,7 +236,6 @@ function heroClass() {
 
     // console.log("GRAVITY");
 
-
     /*-----------------------FOR ANIMATING CLIMB OF CHARACTER-------------------*/
     /*--CCCCCCC-----------CC-------------------------------------------------------------*/
     /*--CC-------CC-------------------------------CC------------*/
@@ -244,11 +244,17 @@ function heroClass() {
     /*--CC-------CC-------CC-----CC--CC--CC--CC---CC----CC----------------*/
     /*--CCCCCCC--CCCCCCC--CC---CC------CC------CC-CCCCCCCC--------------*/
     if (this.keyHeld_Climb) {
+
+      /*
+      https://stackoverflow.com/questions/21235011/make-a-character-jump-inside-canvas
+      if (keydown.up) {
+      limit = 10;
+      jumping = setInterval(Jump, 150);
+}
+      */
       
       var tileIndexCenter = getTileIndexAtPixelCoord(this.x, this.y);
       var tileTypeCenter = worldGrid[tileIndexCenter];
-     
-      // nextY += GRAVITY -10;
       
       this.swim = 1;
       
@@ -265,21 +271,22 @@ function heroClass() {
       
       if(tileTypeCenter !== WORLD_LADDER) {
         this.climb = 0;
+        // this.keyHeld_Climb = false;
        
       }else{
         this.climb=1;   
-        GRAVITY==0;
-        
+        // this.gravity = 3*.5 ;
+        // this.keyHeld_Climb = true;
       }
       
     }
-    
+  
     
     if (this.keyHeld_ClimbDown) {
-        this.climbDown =0;
-       
-      
-      // this.speed -= REVERSE_POWER;
+        this.climbDown =1;
+        nextY += this.gravity * 0.5;  
+    }else{
+       this.climbDown =0;
     }
 
     /*-----------FOR ANIMATING MOVEMENT OF CHARACTER LEFT AND RIGHT-------- */
@@ -414,6 +421,8 @@ function heroClass() {
       this.y++;
     }*/
 
+    
+    
     if (this.keyHeld_Jump && tileTypeCanBeMoveThrough(walkIntoTileTypeTop)) {
        this.y = nextY;
     } else if (tileTypeCanBeMoveThrough(walkIntoTileTypeTop) == false) {
@@ -423,7 +432,7 @@ function heroClass() {
     if (this.keyHeld_Jump == false && tileTypeCanBeMoveThrough(walkIntoTileTypeBottom)) {
       this.y = nextY;
     } else if (tileTypeCanBeMoveThrough(walkIntoTileTypeBottom) == false) {
-      // this.y--;//Makes character shake we will add a nicer fix.
+      //this.y--;//Makes character shake we will add a nicer fix.
       this.y = (1 + Math.floor(this.y / WORLD_H)) * WORLD_H - this.height / 2;
     }
 

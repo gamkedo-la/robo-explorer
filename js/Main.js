@@ -277,8 +277,9 @@ window.onload = function () {
 
   /*hook for dynamically adding a particle when pressing a key*/
   // document.addEventListener("keydown", keyPressed);
-
+  
   colorRect(0, 0, canvas.width, canvas.height, "black");
+  menuScreen(0, 0, canvas.width, canvas.height, "green");
   colorText("LOADING IMAGES", canvas.width / 2, canvas.height / 2, "white");
   loadImages();
   ghostReset();
@@ -434,6 +435,15 @@ function moveAll() {
   if (camPanY < 0) camPanY = 0;
   
 }
+
+
+  /*--CCCC----------------CAMERA VARIABLES-------------------------------- */
+  /*--CC-------------CC-----CC-----CC-----CCCCCC---CCCCC--CC------------------------------ */
+  /*--CC----CCCCCCC--CC-----CC-----------CC-------CC----------CCCCCCC--CC------CC---------- */
+  /*--CC----CC---CC--CC-----CC-----CC------CC------CC-----CC--CC---CC--CCCC----CC----- */
+  /*--CC----CC---CC--CC-----CC-----CC------CC------CC-----CC--CC---CC--CC--CC--CC */
+  /*--CC----CC---CC--CC-----CC-----CC----CC------CC-------CC--CC---CC--CC----CCCC--- */
+  /*--CCCCC-CCCCCCC--CCCCCC-CCCCCC-CC--CC------CC---------CC--CCCCCCC--CC------CC-- */
 
 function checkCollisionsAll() {
   if (entity_v_entity(blueHero, rat)) {
