@@ -1,4 +1,4 @@
-const SMALL_WORM_MOVEMENT_SPEED = 2.0;
+const SMALL_WORM_MOVEMENT_SPEED = 10.0;
 const SMALL_WORM_IMAGE_NAME = "small_worm";
 const SMALL_WORM_FRAMES = 0;
 
@@ -17,7 +17,7 @@ function smallWormClass() {
    
   //properties for sprite animation
   this.frame = 0;
-  this.numberOfFrames = 4; //how many frames are in the spritesheet
+  this.numberOfFrames = 3; //how many frames are in the spritesheet
   this.animationSpeed = 5;
   this.animationCounter = 0;
 
@@ -38,7 +38,7 @@ function smallWormClass() {
   }
 
   this.move = function(){ 
-    this.x += this.speedX;
+    
     this.x = 300;
     if (this.x < 0 && this.speedX < 0.0) {// left boundary
       //left side
@@ -53,16 +53,18 @@ function smallWormClass() {
     
     this.y += this.speedY;
    
-    if (this.y < 0 && this.speedY < 0.0) { // top boundary
-      //top edge
-      this.speedY *= -1;
-    }
-    if (this.y > canvas.height *1.3  && this.speedY > 0.0) {
+     if (this.y < 0 && this.speedY < 0.0) { // top boundary
+       //top edge
+       this.speedY *= -1;
+     }
+    if (this.y >= canvas.height - 53 ) {
       //bottom of the screen
       this.speedY *= -1;
+     
       // ghostReset();
     }
 
+    
   }
 
   this.draw = function(){
