@@ -8,6 +8,7 @@ var bossEnemy = new bossClass();
 var boyCocoon = new boyCocoonClass();
 var smallWorm = new smallWormClass();
 var trapList = [];
+var wormList = [];
 var waterList = [];
 var CHEATS_ENABLED = true;
 var worldNow = 0;
@@ -244,6 +245,17 @@ function addSlingShotLeft() {
 //   addParticles();
 // }
 
+/* WORK IN PROGRESS FUNCTION TO CREATE INSTANCE OF WORM 
+function addWorm(){
+  var tempWorm;
+  tempWorm = new smallWormClass();
+  tempWorm.x = blueHero.x;
+  tempWorm.y = blueHero.y;
+  smallWormList.push(tempWorm);
+
+}
+
+var smallWormList = [];*/
 /**********************************FUNCTION ADD SLINGSHOT BULLETS*********************** */
 function animateSword(){
   if(blueHero.swordSlash = 0){
@@ -276,6 +288,7 @@ window.onload = function () {
     addSlingShotRight();
   }
 
+  //addWorm(); WIP trying to create an instance of the smallWorm
   /*hook for dynamically adding a particle when pressing a key*/
   // document.addEventListener("keydown", keyPressed);
   
@@ -347,6 +360,17 @@ function loadLevel(whichLevel) {
     lookForAnotherTrap = trapHasTile;
   }
 
+  wormList = [];
+  var lookForAnotherWorm = true;
+  while(lookForAnotherWorm){
+    var newTrap = new trapClass();
+    var wormHasTile = newWorm.reset();
+    if (wormHasTile){
+      wormList.push(newWorm);
+    }
+    lookForAnotherWorm = wormHasTile;
+  }
+
 
   waterList = [];
   var lookForAnotherWater = true;
@@ -385,6 +409,11 @@ function moveAll() {
   for (var i=0; i < trapList.length; i++){
     trapList[i].move();
   }
+
+  for (var i=0; i < wormList.length; i++){
+    wormList[i].move();
+  }
+  
   
   for (var i=0; i < waterList.length; i++){
      waterList[i].move();
@@ -556,9 +585,14 @@ function drawAll() {
   boyCocoon.draw();
   smallWorm.draw();
   bossEnemy.draw();
+  
   for (var i=0; i < trapList.length; i++){
     trapList[i].draw();
   } 
+
+  for (var i=0; i < wormList.length; i++){
+    wormList[i].draw();
+  }
 
 
   for (var i=0; i < waterList.length; i++){
