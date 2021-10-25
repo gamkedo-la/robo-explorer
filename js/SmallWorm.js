@@ -37,7 +37,28 @@ function smallWormClass() {
   }
 
   this.move = function(){ 
-   
+    this.x += this.speedX;
+    if (this.x < 200 && this.speedX < 0.0) {// left boundary
+      //left side
+      this.speedX *= -1;
+
+    }
+    if (this.x > canvas.width *1.3 && this.speedX > 0.0) {
+      // right side
+      this.speedX *= -1;
+    }
+    // this.y += this.speedY;
+     this.y = 395;
+    if (this.y < 200 && this.speedY < 0.0) { // top boundary
+      //top edge
+      this.speedY *= -1;
+    }
+
+    if (this.y > canvas.height  && this.speedY > 0.0) {
+      //bottom of the screen
+      this.speedY *= -1;
+      // ghostReset();
+    }
 
   }
 
