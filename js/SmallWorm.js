@@ -77,7 +77,7 @@ function smallWormClass() {
     );
   
     //SPRITE ANIMATION CODE
- /*
+ 
     this.animationCounter++;
     if(this.animationCounter == this.animationSpeed){
       this.frame++;
@@ -86,6 +86,6 @@ function smallWormClass() {
       } 
       this.animationCounter = 0;
     }
-   */ 
+ 
   }
 };
