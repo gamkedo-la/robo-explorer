@@ -134,7 +134,7 @@ function heroClass() {
   };
 
   this.updateDaggerReadout = function (){
-    document.getElementById("daggerText").innerHTML = "Daggers: " + this.daggersHeld;
+    document.getElementById("daggerText").innerHTML = "Daggers life: " + this.daggersHeld;
   }
 
   this.updateRocketEnergyReadout = function(){
@@ -653,7 +653,7 @@ function heroClass() {
       
       
         case WORLD_DAGGER:
-          this.daggersHeld += 6;
+          this.daggersHeld += 5;
           this.updateDaggerReadout();
           var audio = new Audio("keyCollectionSound2.wav");
           audio.play();
@@ -666,6 +666,16 @@ function heroClass() {
             this.updateDaggerReadout();
             worldGrid[walkIntoTileIndex] = WORLD_EMPTY;  
             loadLevel(levelForestThree);
+          
+          }
+        break;
+
+        case WORLD_TREEBRANCH:
+          if (this.daggersHeld > 0) {
+            this.daggersHeld--;
+            this.updateDaggerReadout();
+            worldGrid[walkIntoTileIndex] = WORLD_EMPTY;  
+            
           
           }
         break;
