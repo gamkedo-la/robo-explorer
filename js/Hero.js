@@ -653,7 +653,7 @@ function heroClass() {
       
       
         case WORLD_DAGGER:
-          this.daggersHeld++;
+          this.daggersHeld += 6;
           this.updateDaggerReadout();
           var audio = new Audio("keyCollectionSound2.wav");
           audio.play();
