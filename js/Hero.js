@@ -669,14 +669,21 @@ function heroClass() {
           
           }
         break;
+        case WORLD_VINES3:
+          if (this.daggersHeld > 0) {
+            this.daggersHeld--;
+            this.updateDaggerReadout();
+            worldGrid[walkIntoTileIndex] = WORLD_EMPTY;  
+            loadLevel(levelForestFour);
+          
+          }
+        break;
 
         case WORLD_TREEBRANCH:
           if (this.daggersHeld > 0) {
             this.daggersHeld--;
             this.updateDaggerReadout();
             worldGrid[walkIntoTileIndex] = WORLD_EMPTY;  
-            
-          
           }
         break;
       case WORLD_KEY:
