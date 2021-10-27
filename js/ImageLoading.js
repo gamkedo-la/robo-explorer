@@ -8,6 +8,8 @@ var cockroachEggPic = document.createElement("img");
 var bossPic = document.createElement("img");
 var boyCocoonPic=document.createElement("img");
 var smallWormPic=document.createElement("img");
+var bossWormPic=document.createElement("img");
+
 var trackPics = [];
 
 var picsToLoad = 0; //set automatically based on imageList in loadImages
@@ -43,7 +45,7 @@ function loadImages() {
  
   var imageList = [
      //{ varName: heroPic, theFile: "rocketMan3.png"},
-     { varName: heroPic, theFile: "robo-explorer-walkcycle9.png"},
+     { varName: heroPic, theFile: "robo-explorer-walkcycle10.png"},
     //{ varName: heroPic, theFile: "animationCyleSprites.png"},
     // { varName: waterPic, theFile: "sewerWater.png" },
     { varName: ratPic, theFile: "rat-walk-cycle.png"},
@@ -53,6 +55,7 @@ function loadImages() {
     { varName: bossPic, theFile: "bossCockroachSprite.png"},
     { varName: boyCocoonPic, theFile: "boyInCocoon.png" },
     { varName: smallWormPic, theFile: "smallWorm.png" },
+    { varName: bossWormPic, theFile: "bigWorm.png" },
 
 
     { varName: trapPic, theFile: "spike-sprite3.png" },

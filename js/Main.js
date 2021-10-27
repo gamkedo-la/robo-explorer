@@ -7,6 +7,7 @@ var cockroach_egg = new cockroach_eggClass();
 var bossEnemy = new bossClass();
 var boyCocoon = new boyCocoonClass();
 var smallWorm = new smallWormClass();
+var finalBossWorm= new finalBossClass();
 var trapList = [];
 var wormList = [];
 var waterList = [];
@@ -348,6 +349,7 @@ function loadLevel(whichLevel) {
    bossEnemy.reset();
    boyCocoon.reset();
    smallWorm.reset();
+   finalBossWorm.reset();
   
   trapList = [];
   var lookForAnotherTrap = true;
@@ -405,6 +407,7 @@ function moveAll() {
   boyCocoon.move();
   bossEnemy.move();
   smallWorm.move();
+  finalBossWorm.move();
   
   for (var i=0; i < trapList.length; i++){
     trapList[i].move();
@@ -585,6 +588,7 @@ function drawAll() {
   boyCocoon.draw();
   smallWorm.draw();
   bossEnemy.draw();
+  finalBossWorm.draw();
   
   for (var i=0; i < trapList.length; i++){
     trapList[i].draw();
