@@ -122,24 +122,31 @@ function checkForCheatKeys (keyCode) {
       levelNow =0;
       loadLevel(levelList[levelNow]); 
       break
-    case KEY_3:
+    
+      case KEY_3:
+        worldNow=2;
+        levelList=worldList[worldNow];
+        levelNow =0;
+        loadLevel(levelList[levelNow]); 
+        break
+    case KEY_4:
       levelNow++;
       if (levelNow >= levelList.length){
         levelNow = leveList.length -1;
       }
       loadLevel(levelList[levelNow]); 
       break
-    case KEY_4:
+    case KEY_5:
       levelNow--;
       if (levelNow < 0){
         levelNow = 0;
       }
       loadLevel(levelList[levelNow]); 
       break
+    
+     
+      
     /*
-      case KEY_5:
-      loadLevel(levelFive);
-      break
     case KEY_6:
       loadLevel(levelSix);
       break

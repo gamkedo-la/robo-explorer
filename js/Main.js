@@ -13,8 +13,8 @@ var wormList = [];
 var waterList = [];
 var CHEATS_ENABLED = true;
 var worldNow = 0;
-var worldList = [levelListTunnels,levelListForest];
-var worldSky = ["#6f6a6a","#fffc9f"];
+var worldList = [levelListTunnels,levelListForest,levelListLaboratory];
+var worldSky = ["#6f6a6a","#fffc9f","#ffffff"];
 /************************GHOST VARIABLES***************************/
 var ghostX = 75;
 var ghostY = 75;
