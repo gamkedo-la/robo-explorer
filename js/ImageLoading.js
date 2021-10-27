@@ -62,8 +62,9 @@ function loadImages() {
     // {trackType: WORLD_UPPERROAD, theFile:"WORLD_EMPTY3.png"},
     { trackType: WORLD_EMPTY, theFile: "track_road2.png" },
     //{ trackType: WORLD_EMPTY, theFile: "sky3.png" },
-    { trackType: WORLD_WALL, theFile: "worldForest_ground1.png" },
-    { trackType: WORLD_WALL2, theFile: "worldForest_ground2.png" },
+    { trackType: WORLD_WALL, theFile: "bricks6.png" },
+    // { trackType: WORLD_FORESTGROUND1, theFile: "worldForest_ground1.png" },
+    { trackType: WORLD_FORESTGROUND1, theFile: "worldForest_ground2.png" },
     { trackType: WORLD_WALL3, theFile: "worldForest_ground3.png" },
     { trackType: WORLD_CLOUD1, theFile: "cloud1.png" },
     { trackType: WORLD_BRIDGESTICKS, theFile: "bridgeSticks.png" },
@@ -86,7 +87,7 @@ function loadImages() {
     { trackType: WORLD_VINES3, theFile: "vines3.png" },
     { trackType: WORLD_TREEBRANCH, theFile: "treeBranch.png" },
     { trackType: WORLD_DAGGER, theFile: "dagger.png" },
-    { trackType: WORLD_WALL, theFile: "bricks6.png" },
+   
     
     { trackType: WORLD_SLINGSHOT, theFile: "tirador.png" },
     { trackType: WORLD_ROCK, theFile: "rock.png" },

@@ -43,6 +43,7 @@ function heroClass() {
   this.regularJump=0;
   this.climb=0;
   this.climbDown=0;
+  this.crawl=0;
 
   this.keyHeld_Climb = false;
   this.keyHeld_ClimbDown = false;
@@ -319,13 +320,25 @@ function heroClass() {
       // nextX += PLAYER_MOVEMENT_SPEED;
       this.moveDir = 1;
       // this.speed += DRIVE_POWER;
-      var tileIndexCenter = getTileIndexAtPixelCoord(this.x, this.y);
+     
+       var tileIndexCenter = getTileIndexAtPixelCoord(this.x, this.y);
       var tileTypeCenter = worldGrid[tileIndexCenter];
       if(tileTypeCenter == WORLD_WATER) {
         nextX += PLAYER_MOVEMENT_SPEED *0.2; //made right movement slower in slime water
       }else{
         nextX += PLAYER_MOVEMENT_SPEED;// 
       }
+
+      if(tileTypeCenter !== WORLD_WALL3) {
+        this.crawl = 0; 
+      }else{
+        this.crawl=1;   
+      }
+
+
+      
+
+
     }
     // this.x += Math.cos(this.ang) * this.speed;
     // this.y += Math.sin(this.ang) * this.speed;
@@ -758,6 +771,12 @@ function heroClass() {
     if (this.moveDir == 0) {
       this.frame = 0;
     }
+
+    var animationRow =0;
+    if(this.crawl > 0){
+      animationRow=1;
+    }
+
     var animationRow = 0;
     if (this.fireSlingshot > 0){
       animationRow = 2;
