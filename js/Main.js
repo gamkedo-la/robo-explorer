@@ -28,7 +28,7 @@ var monsterSpeedY = 7;
 var camPanX = 0.0;
 var camPanY = 0.0;
 
-
+// Practice commit - will remove
 /*******************************FUNCTION FOR GHOST MOVEMENT********************************** */
 function ghostReset() {
   ghostX = canvas.width / 2;
