@@ -61,14 +61,14 @@ function ghostCircle(centerX, centerY, radius, fillColor) {
  }
 
 /*************Baby GHOST CODE*********** */
-
+/*
 function monsterCircle(centerX, centerY, radius, fillColor) {
   canvasContext.fillStyle = fillColor;
   canvasContext.beginPath(); //hover functions 
   canvasContext.arc(centerX, centerY, radius, 0, Math.PI * 2, true); // this will work because the Math.PI * 2 will never change  nor the other lines and this is just simplifying things for us.  
   canvasContext.fill();
 
-}
+}*/
 
 
 /****************Particle Code************/

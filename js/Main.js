@@ -2,6 +2,7 @@
 const GRAVITY_PARTICLE_PER_CYCLE = 10;
 var canvas, canvasContext;
 var blueHero = new heroClass();
+// var babyGhost = new babyGhostClass();
 var rat = new ratClass();
 var cockroach_egg = new cockroach_eggClass();
 var bossEnemy = new bossClass();
@@ -20,11 +21,6 @@ var ghostX = 75;
 var ghostY = 75;
 var ghostSpeedX = 5;
 var ghostSpeedY = 7;
-
-var monsterX = 75;
-var monsterY = 75;
-var monsterSpeedX = 5;
-var monsterSpeedY = 7;
 
 var camPanX = 0.0;
 var camPanY = 0.0;
@@ -344,6 +340,7 @@ function loadLevel(whichLevel) {
   particleReset();
   slingShotReset();
   blueHero.reset(heroPic, "Black Fire");
+  // babyGhost.reset();
   rat.reset(); //TODO need 2 keep looping and instantiating
   cockroach_egg.reset();
    bossEnemy.reset();
@@ -402,6 +399,7 @@ function updateAll() {
 
 function moveAll() {
   blueHero.move();
+  // babyGhost.move();
   rat.move();
   cockroach_egg.move();
   boyCocoon.move();
@@ -583,6 +581,7 @@ function drawAll() {
   }
 
   blueHero.draw();
+  // babyGhost.draw();
   rat.draw();
   cockroach_egg.draw();
   boyCocoon.draw();
@@ -611,10 +610,6 @@ function drawAll() {
   ghostCircle(ghostX + 2, ghostY, 5, "white");
   ghostCircle(ghostX, ghostY, 2, "black");
 
-  // monsterCircle(monsterX, monsterY, 20, 'green');
-  monsterCircle(monsterX, ghostY, 12, "green");
-  monsterCircle(monsterX - 1, ghostY, 5, "white");
-  monsterCircle(monsterX - 2, ghostY + 2, 2, "black");
 
   canvasContext.restore();
   drawOnlyBricksOnScreen();

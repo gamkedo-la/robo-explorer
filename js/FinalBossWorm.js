@@ -14,8 +14,8 @@ function finalBossClass() {
   this.speedX = FINALBOSS_MOVEMENT_SPEED;
   this.speedY = FINALBOSS_MOVEMENT_SPEED;
 
-  this.width = 160;
-  this.height = 160;
+  this.width = 200;
+  this.height = 200;
   this.frameX = 0;
   this.frameY = 0;
   this.name = "untitled boss";
