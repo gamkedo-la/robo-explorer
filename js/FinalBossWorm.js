@@ -14,7 +14,7 @@ function finalBossClass() {
   this.speedX = FINALBOSS_MOVEMENT_SPEED;
   this.speedY = FINALBOSS_MOVEMENT_SPEED;
  this.health; // setup inside the reset function
-  this.width = 200;
+  this.width = 300;
   this.height = 200;
   this.frameX = 0;
   this.frameY = 0;
@@ -75,7 +75,7 @@ function finalBossClass() {
     if (this.health <= 0){
       return; 
     }
-    var bossWormFrameW = 200;
+    var bossWormFrameW = 300;
     canvasContext.drawImage(
         bossWormPic,
       this.frame *bossWormFrameW,
