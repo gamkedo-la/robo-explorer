@@ -13,12 +13,14 @@ function bossClass() {
 
   this.speedX = BOSS_MOVEMENT_SPEED;
   this.speedY = BOSS_MOVEMENT_SPEED;
-
+  
+  this.health; // setup inside the reset function
   this.width = 160;
   this.height = 160;
   this.frameX = 0;
   this.frameY = 0;
   this.name = "untitled boss";
+  
 
   //properties for sprite animation
   this.frame = 0;
@@ -27,11 +29,13 @@ function bossClass() {
   this.animationCounter = 0;
 
   this.reset = function () {
+    this.health = 0;// Treat as dead if not in grid.
     for (var eachRow = 0; eachRow < WORLD_ROWS; eachRow++) {
       for (var eachCol = 0; eachCol < WORLD_COLS; eachCol++) {
         var arrayIndex = rowColToArrayIndex(eachCol, eachRow);
         if (worldGrid[arrayIndex] == WORLD_BOSS_COCKROACH) {
           worldGrid[arrayIndex] = WORLD_EMPTY;
+          this.health = 10; // found in grid bringing to life.
           // this.ang = -Math.PI / 2;
           this.x = eachCol * WORLD_W + WORLD_W / 2;
           this.y = eachRow * WORLD_H + WORLD_H / 2;
@@ -42,6 +46,9 @@ function bossClass() {
   };
 
   this.move = function () {
+    if (this.health <= 0){
+      return;
+    }
     this.x += this.speedX;
     if (this.x < 200 && this.speedX < 0.0) {// left boundary
       //left side
@@ -67,6 +74,9 @@ function bossClass() {
   };
 
   this.draw = function () {
+    if (this.health <= 0){
+      return; 
+    }
     var bossFrameW = 160;
     canvasContext.drawImage(
       bossPic,

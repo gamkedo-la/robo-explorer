@@ -173,9 +173,10 @@ function slingShotReset() {
 
 /**********************************FUNCTION ADD PARTICLES********************************** */
 function removeParticles() {
-  if (particleList.length > 0) {
+  /*if (particleList.length > 0) {
     particleList.splice(0, 1);
-  }
+  }*/
+  particleList.length = 0;
 }
 
 // function addBossEnemy(){
@@ -339,6 +340,7 @@ function loadLevel(whichLevel) {
   worldGrid = whichLevel.slice();
   particleReset();
   slingShotReset();
+  
   blueHero.reset(heroPic, "Black Fire");
   // babyGhost.reset();
   rat.reset(); //TODO need 2 keep looping and instantiating
