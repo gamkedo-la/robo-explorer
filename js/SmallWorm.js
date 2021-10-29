@@ -45,9 +45,9 @@ function smallWormClass() {
 
   this.move = function(){ 
     // this.ang += 0.02;
-    this.x = 300;
+    
     this.x += this.speedX;
-    if (this.x < 200 && this.speedX < 0.0) {// left boundary
+    if (this.x < 0 && this.speedX < 0.0) {// left boundary
       //left side
       this.speedX *= -1;
     }
@@ -58,7 +58,7 @@ function smallWormClass() {
     
     this.y += this.speedY;
    
-     if (this.y < 90 && this.speedY < 0.0) { // top boundary
+     if (this.y < 0 && this.speedY < 0.0) { // top boundary
        //top edge
        this.speedY *= -1;
      }
