@@ -197,7 +197,7 @@ function heroClass() {
       if(this.rocketEnergy !== 0){
         this.rocketEnergy--;
         nextY -= JUMP_POWER;
-        console.log(this.rocketEnergy);
+        //console.log(this.rocketEnergy);
         for (var i = 0; i < START_PARTICLES; i++) {
           addParticles();
         }
@@ -246,25 +246,19 @@ function heroClass() {
     /*--CCCCCCC--CCCCCCC--CC---CC------CC------CC-CCCCCCCC--------------*/
     if (this.keyHeld_Climb) {
 
-      /*
-      https://stackoverflow.com/questions/21235011/make-a-character-jump-inside-canvas
-      if (keydown.up) {
-      limit = 10;
-      jumping = setInterval(Jump, 150);
-}
-      */
+      
       
       var tileIndexCenter = getTileIndexAtPixelCoord(this.x, this.y);
       var tileTypeCenter = worldGrid[tileIndexCenter];
       
+      var tileIndexTop = getTileIndexAtPixelCoord(this.x, this.y - this.height / 2);
+      var tileTypeTop = worldGrid[tileIndexTop];
       this.swim = 1;
       
-      var tileIndexCenter = getTileIndexAtPixelCoord(this.x, this.y);
-      var tileTypeCenter = worldGrid[tileIndexCenter];
       if(tileTypeCenter == WORLD_WATER) {
        nextY -= PLAYER_MOVEMENT_SPEED*0.2;
       
-      }else{
+      }else if (tileTypeCanBeMoveThrough(tileTypeTop)){
         nextY -= PLAYER_MOVEMENT_SPEED*1.8;// need to limit jump power separate from flight
         this.swim=0; 
         
@@ -485,7 +479,7 @@ function heroClass() {
       this.reactToTileType(walkIntoTileType, walkIntoTileIndex);
     }
 
-    if (this.keyHeld_Climb){
+    if (this.keyHeld_Climb ){
       walkIntoTileType = walkIntoTileTypeTop;
       walkIntoTileIndex = walkIntoTileIndexTop;
       this.reactToTileType(walkIntoTileType, walkIntoTileIndex);
