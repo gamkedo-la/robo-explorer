@@ -264,7 +264,7 @@ var sideQuest4 = [
     1,42,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,42,1,
     1,1,1,1,1,1,1,1,1,1,1,2,1,1,1,1,1,1,1,1];
 
-        var levelListTunnels = [levelOne,levelTwo,levelThree,levelFour, levelFive,levelSix,levelSeven,levelEight,levelEightTwo,levelNine,levelTen,sideQuest1,sideQuest2,sideQuest3];
+        var levelListTunnels = [levelOne,levelTwo,levelThree,levelFour, levelFive,levelSix,levelSeven,levelEight,levelEightTwo,levelNine,levelTen,sideQuest1,sideQuest2,sideQuest3,sideQuest4];
         var levelList = levelListTunnels;
         var levelNow = 0;
         // var sideQuest=0;

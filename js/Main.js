@@ -345,7 +345,7 @@ function loadLevel(whichLevel) {
   cockroach_egg.reset();
    bossEnemy.reset();
    boyCocoon.reset();
-   smallWorm.reset();
+   //smallWorm.reset();
    finalBossWorm.reset();
   
   trapList = [];
@@ -362,8 +362,8 @@ function loadLevel(whichLevel) {
   wormList = [];
   var lookForAnotherWorm = true;
   while(lookForAnotherWorm){
-    var newTrap = new trapClass();
-    var wormHasTile = newWorm.reset();
+    var smallWorm = new smallWormClass();
+    var wormHasTile = smallWorm.reset();
     if (wormHasTile){
       wormList.push(newWorm);
     }

@@ -132,7 +132,7 @@ function checkForCheatKeys (keyCode) {
     case KEY_4:
       levelNow++;
       if (levelNow >= levelList.length){
-        levelNow = leveList.length -1;
+        levelNow = levelList.length -1;
       }
       loadLevel(levelList[levelNow]); 
       break
