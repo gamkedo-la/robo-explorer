@@ -405,6 +405,31 @@ function updateAll() {
 /***MM*M***M*MM****MM**MM***MM***MM***MMMMM*********MMMMM***MM***MM**MMM**MM**MM************ */
 /**MM***M*M***MM***MM**MM****MM*MM****MM************MM******MM***MM**MM***MM**MM************ */
 /*MM*****M*****MM**MMMMMM*****MM******MMMMMMM*******MM******MMMMMMM**MM***MM**MMMMM****************** */
+function rocketEnergyBar(){
+  //rocket energy =100
+  //if I press on space bar reduce energy bar
+  // if zero stop flight 
+  // if battery collected increase rocketEnergy +50
+  var i = 0;
+  if (i == 0) {
+    i = 1;
+    var elem = document.getElementById("myBar");
+    var width = 80;
+    var id = setInterval(frame, 20);
+    function frame() {
+      if (width >= 100) {
+        clearInterval(id);
+        i = 0;
+       
+      } else {
+        width--;
+        elem.style.width = width + "%";
+        elem.innerHTML = width + "%";
+      }
+    }
+  }
+}
+
 
 function moveAll() {
   blueHero.move();

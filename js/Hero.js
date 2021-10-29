@@ -194,6 +194,8 @@ function heroClass() {
         addParticles();
        }*/
       
+       rocketEnergyBar();
+      
       if(this.rocketEnergy !== 0){
         this.rocketEnergy--;
         nextY -= JUMP_POWER;
@@ -259,8 +261,9 @@ function heroClass() {
        nextY -= PLAYER_MOVEMENT_SPEED*0.2;
       
       }else if (tileTypeCanBeMoveThrough(tileTypeTop)){
-        nextY -= PLAYER_MOVEMENT_SPEED*1.8;// need to limit jump power separate from flight
         this.swim=0; 
+        nextY -= PLAYER_MOVEMENT_SPEED*1.8;// need to limit jump power separate from flight
+        
         
       }
       
