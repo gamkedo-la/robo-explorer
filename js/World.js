@@ -345,6 +345,7 @@ var sideQuest4 = [
         const WORLD_VINES3 =71;
         const WORLD_FINALBOSSWORM=72;
         const WORLD_LABORATORYENTRANCE=73;
+        const WORLD_LABORATORYINSIDE=74;
 
        
         // const WORLD_RAT2=20;
