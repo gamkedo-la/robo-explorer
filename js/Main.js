@@ -3,14 +3,12 @@ const GRAVITY_PARTICLE_PER_CYCLE = 10;
 var canvas, canvasContext;
 var blueHero = new heroClass();
 // var babyGhost = new babyGhostClass();
-var rat = new ratClass();
 var cockroach_egg = new cockroach_eggClass();
 var bossEnemy = new bossClass();
 var boyCocoon = new boyCocoonClass();
 
 var finalBossWorm= new finalBossClass();
-var trapList = [];
-var wormList = [];
+var enemyList = [];
 var waterList = [];
 var CHEATS_ENABLED = true;
 var worldNow = 0;
@@ -343,30 +341,40 @@ function loadLevel(whichLevel) {
 
   blueHero.reset(heroPic, "Black Fire");
   // babyGhost.reset();
-  rat.reset(); //TODO need 2 keep looping and instantiating
   cockroach_egg.reset();
    bossEnemy.reset();
    boyCocoon.reset();
    finalBossWorm.reset();
   
-  trapList = [];
+  enemyList = [];
+
   var lookForAnotherTrap = true;
   while(lookForAnotherTrap){
     var newTrap = new trapClass();
     var trapHasTile = newTrap.reset();
     if (trapHasTile){
-      trapList.push(newTrap);
+      enemyList.push(newTrap);
     }
     lookForAnotherTrap = trapHasTile;
   }
 
-  wormList = [];
+  var lookForAnotherRat = true;
+  while(lookForAnotherRat){
+    var newRat = new ratClass();
+    var ratHasTile = newRat.reset();
+    if (ratHasTile){
+      enemyList.push(newRat);
+    }
+    lookForAnotherRat = ratHasTile;
+  }
+
+ 
   var lookForAnotherWorm = true;
   while(lookForAnotherWorm){
     var newWorm = new smallWormClass();
     var wormHasTile = newWorm.reset();
     if (wormHasTile){
-      wormList.push(newWorm);
+      enemyList.push(newWorm);
     }
     lookForAnotherWorm = wormHasTile;
   }
@@ -401,19 +409,16 @@ function updateAll() {
 function moveAll() {
   blueHero.move();
   // babyGhost.move();
-  rat.move();
   cockroach_egg.move();
   boyCocoon.move();
   bossEnemy.move();
   finalBossWorm.move();
   
-  for (var i=0; i < trapList.length; i++){
-    trapList[i].move();
+  for (var i=0; i < enemyList.length; i++){
+    enemyList[i].move();
   }
 
-  for (var i=0; i < wormList.length; i++){
-    wormList[i].move();
-  }
+  
   
   
   for (var i=0; i < waterList.length; i++){
@@ -480,9 +485,9 @@ function moveAll() {
   /*--CCCCC-CCCCCCC--CCCCCC-CCCCCC-CC--CC------CC---------CC--CCCCCCC--CC------CC-- */
 
 function checkCollisionsAll() {
-  if (entity_v_entity(blueHero, rat)) {
+ /* if (entity_v_entity(blueHero, rat)) {
     console.log("Hero hit rat")
-  }
+  }*/
   
   if (entity_v_entity(blueHero, cockroach_egg)) {
     console.log("Hero hit cockroach egg")
@@ -582,20 +587,17 @@ function drawAll() {
 
   blueHero.draw();
   // babyGhost.draw();
-  rat.draw();
   cockroach_egg.draw();
   boyCocoon.draw();
  
   bossEnemy.draw();
   finalBossWorm.draw();
   
-  for (var i=0; i < trapList.length; i++){
-    trapList[i].draw();
+  for (var i=0; i < enemyList.length; i++){
+    enemyList[i].draw();
   } 
 
-  for (var i=0; i < wormList.length; i++){
-    wormList[i].draw();
-  }
+  
 
 
   for (var i=0; i < waterList.length; i++){

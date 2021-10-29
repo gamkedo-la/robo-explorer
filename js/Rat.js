@@ -29,10 +29,11 @@ function ratClass() {
           // this.ang = -Math.PI / 2;
           this.x = eachCol * WORLD_W + WORLD_W / 2;
           this.y = eachRow * WORLD_H + WORLD_H / 2;
-          return;
+          return true;
         } //end of player start if
       } // end of col for
     } // end foe for
+    return false;
   }
 
   this.move = function(){
