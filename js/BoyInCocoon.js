@@ -9,7 +9,7 @@ function boyCocoonClass() {
   this.instance=1;
 
   this.speedX = BOY_COCOON_MOVEMENT_SPEED;
-
+  this.health;// setup inside the reset function
   this.width = 80;
   this.height = 80;
   this.frameY = 0;
@@ -21,12 +21,13 @@ function boyCocoonClass() {
   this.animationCounter = 0;
 
   this.reset = function () {
-
+    this.health =0; //treat as dead if not in grid
     for (var eachRow = 0; eachRow < WORLD_ROWS; eachRow++) {
       for (var eachCol = 0; eachCol < WORLD_COLS; eachCol++) {
         var arrayIndex = rowColToArrayIndex(eachCol, eachRow);
         if (worldGrid[arrayIndex] == WORLD_BOY_COCOON) {
           worldGrid[arrayIndex] = WORLD_EMPTY;
+          this.health=10;// found in grid bringing to life.
           // this.ang = -Math.PI / 2;
           this.x = eachCol * WORLD_W + WORLD_W / 2;
           this.y = eachRow * WORLD_H + WORLD_H / 2;
@@ -42,7 +43,9 @@ function boyCocoonClass() {
   }
 
   this.draw = function(){
-   
+    if (this.health <=0){
+      return;
+    }
     var boyCocoonFrameW = 80;
     canvasContext.drawImage(
         boyCocoonPic,

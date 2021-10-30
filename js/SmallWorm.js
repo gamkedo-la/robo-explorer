@@ -1,6 +1,7 @@
 const SMALL_WORM_MOVEMENT_SPEED = 10.0;
 const SMALL_WORM_IMAGE_NAME = "small_worm";
 const SMALL_WORM_FRAMES = 0;
+const SMALL_WORM_BOUNDARY =53;
 
 function smallWormClass() {
   this.x = 75;
@@ -44,28 +45,28 @@ function smallWormClass() {
   
 
   this.move = function(){ 
-    // this.ang += 0.02;
+    
     
     this.x += this.speedX;
-    if (this.x < 0 && this.speedX < 0.0) {// left boundary
+    if (this.x < canvas.width *0.1 && this.speedX < 0.0) {// left boundary
       //left side
       this.speedX *= -1;
     }
-    if (this.x > canvas.width *1.3 && this.speedX > 0.0) {
+    if (this.x > canvas.width  *1.3 && this.speedX > 0.0) {
       // right side
       this.speedX *= -1;
     }
     
-    this.y += this.speedY;
+     this.y += this.speedY;
    
-     if (this.y < 0 && this.speedY < 0.0) { // top boundary
+     if (this.y < canvas.height -SMALL_WORM_BOUNDARY  && this.speedY < 0.0) { // top boundary
        //top edge
        this.speedY *= -1;
      }
-    if (this.y > canvas.height - 53 && this.speedY > 0.0 ) {
+    if (this.y > canvas.height - SMALL_WORM_BOUNDARY && this.speedY > 0.0 ) {
       //bottom of the screen
       this.speedY *= -1;
-      
+      this.ang += 0.02;  
       //this.speedX *= 5;
     }
 

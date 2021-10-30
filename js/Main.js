@@ -368,6 +368,7 @@ function loadLevel(whichLevel) {
     lookForAnotherRat = ratHasTile;
   }
 
+  
  
   var lookForAnotherWorm = true;
   while(lookForAnotherWorm){
