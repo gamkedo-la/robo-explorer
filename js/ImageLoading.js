@@ -62,7 +62,7 @@ function loadImages() {
     // {trackType: WORLD_UPPERROAD, theFile:"WORLD_EMPTY3.png"},
     { trackType: WORLD_EMPTY, theFile: "track_road2.png" },
     //{ trackType: WORLD_EMPTY, theFile: "sky3.png" },
-    { trackType: WORLD_WALL, theFile: "bricks6.png" },
+    { trackType: WORLD_WALL, theFile: "bricks7.png" },
     // { trackType: WORLD_FORESTGROUND1, theFile: "worldForest_ground1.png" },
     { trackType: WORLD_FORESTGROUND1, theFile: "worldForest_ground2.png" },
     { trackType: WORLD_WALL3, theFile: "worldForest_ground3.png" },
