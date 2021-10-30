@@ -422,7 +422,7 @@ function rocketEnergyBar(){
         i = 0;
        
       } else {
-        width--;
+        width = blueHero.rocketEnergy
         elem.style.width = width + "%";
         elem.innerHTML = width + "%";
       }
