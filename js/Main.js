@@ -6,6 +6,7 @@ var blueHero = new heroClass();
 var cockroach_egg = new cockroach_eggClass();
 var bossEnemy = new bossClass();
 var boyCocoon = new boyCocoonClass();
+var ratsInLevel = [];
 
 var finalBossWorm= new finalBossClass();
 var enemyList = [];
@@ -363,12 +364,14 @@ function loadLevel(whichLevel) {
     lookForAnotherTrap = trapHasTile;
   }
 
+  ratsInLevel = [];
   var lookForAnotherRat = true;
   while(lookForAnotherRat){
     var newRat = new ratClass();
     var ratHasTile = newRat.reset();
     if (ratHasTile){
       enemyList.push(newRat);
+      ratsInLevel.push(newRat); // testing rat collisions - Ryan A.
     }
     lookForAnotherRat = ratHasTile;
   }
@@ -516,9 +519,11 @@ function moveAll() {
   /*--CCCCC-CCCCCCC--CCCCCC-CCCCCC-CC--CC------CC---------CC--CCCCCCC--CC------CC-- */
 
 function checkCollisionsAll() {
- /* if (entity_v_entity(blueHero, rat)) {
-    console.log("Hero hit rat")
-  }*/
+  for(var rat of ratsInLevel){
+    if (entity_v_entity(blueHero, rat)) {
+      console.log("Hero hit rat")
+    }
+  }
   
   if (entity_v_entity(blueHero, cockroach_egg)) {
     console.log("Hero hit cockroach egg")
