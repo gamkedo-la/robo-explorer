@@ -49,7 +49,7 @@ function heroClass() {
   this.keyHeld_ClimbDown = false;
   this.keyHeld_WalkLeft = false;
   this.keyHeld_WalkRight = false;
-  this.keyHeld_Jump = false;
+  this.keyHeld_Fly = false;
   this.keyHeld_Slingshot = false;
   this.keyHeld_Bomb = false;
   this.keyHeld_Sword = false;
@@ -184,7 +184,7 @@ function heroClass() {
     /*--FF-------FF-------FF---FF------F--FF---FF--FF-------------------------------------------*/
     /*--FF-------FFFFFFF--FF---FFFFFFFFF--FF---FF--FFFFFFF--------------------------------------*/
 
-    if (this.keyHeld_Jump) {
+    if (this.keyHeld_Fly) {
       // beginLoadingImage(rocketBooster);
       /*if(ROCKET_LIFE !==0){
        ROCKET_LIFE--;
@@ -205,7 +205,7 @@ function heroClass() {
         }
 
       } else {
-        this.keyHeld_Jump = false;// disable flight
+        this.keyHeld_Fly = false;// disable flight
         nextY += GRAVITY * 200;
         removeParticles();
       }
@@ -232,7 +232,7 @@ function heroClass() {
       // if (this.jumperSpeedY > this.JUMPER_HEIGHT) {
       //   this.jumperSpeedY = this.height;
       // }
-      //   // if(this.keyHeld_Jump == false){
+      //   // if(this.keyHeld_Fly == false){
       //   GRAVITY == 2;
       // }
     }
@@ -248,14 +248,14 @@ function heroClass() {
     /*--CCCCCCC--CCCCCCC--CC---CC------CC------CC-CCCCCCCC--------------*/
     if (this.keyHeld_Climb) {
 
-
-
       var tileIndexCenter = getTileIndexAtPixelCoord(this.x, this.y);
       var tileTypeCenter = worldGrid[tileIndexCenter];
 
       var tileIndexTop = getTileIndexAtPixelCoord(this.x, this.y - this.height / 2);
       var tileTypeTop = worldGrid[tileIndexTop];
       this.swim = 1;
+
+      
     
       if (tileTypeCenter == WORLD_WATER) {
         nextY -= PLAYER_MOVEMENT_SPEED * 0.2;
@@ -273,7 +273,14 @@ function heroClass() {
         this.climb = 1;
         // this.gravity = 3*.5 ;
         // this.keyHeld_Climb = true;
+
+      } 
+
+      this.regularJump;
+      if (this.keyHeld_Climb != true){
+        this.regularJump = 0;
       }
+      
 
     }
 
@@ -431,13 +438,13 @@ function heroClass() {
 
 
 
-    if (this.keyHeld_Jump && tileTypeCanBeMoveThrough(walkIntoTileTypeTop)) {
+    if (this.keyHeld_Fly && tileTypeCanBeMoveThrough(walkIntoTileTypeTop)) {
       this.y = nextY;
     } else if (tileTypeCanBeMoveThrough(walkIntoTileTypeTop) == false) {
       this.y++;
     }
 
-    if (this.keyHeld_Jump == false && tileTypeCanBeMoveThrough(walkIntoTileTypeBottom)) {
+    if (this.keyHeld_Fly == false && tileTypeCanBeMoveThrough(walkIntoTileTypeBottom)) {
       this.y = nextY;
     } else if (tileTypeCanBeMoveThrough(walkIntoTileTypeBottom) == false) {
       //this.y--;//Makes character shake we will add a nicer fix.
@@ -474,7 +481,7 @@ function heroClass() {
       this.reactToTileType(walkIntoTileType, walkIntoTileIndex);
     }
 
-    if (this.keyHeld_Jump) {
+    if (this.keyHeld_Fly) {
       walkIntoTileType = walkIntoTileTypeTop;
       walkIntoTileIndex = walkIntoTileIndexTop;
       this.reactToTileType(walkIntoTileType, walkIntoTileIndex);
@@ -647,7 +654,7 @@ function heroClass() {
         worldGrid[walkIntoTileIndex] = WORLD_EMPTY;
         // this.updateWoodenBowReadout();
         // ROCKET_LIFE == 100;
-        // this.keyHeld_Jump = true;
+        // this.keyHeld_Fly = true;
         // blueHero.rocketEnergy = ROCKET_LIFE == 100;
         // this.keysHeld_Jump = true;
         break;

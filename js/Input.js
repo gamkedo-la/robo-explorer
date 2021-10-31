@@ -65,7 +65,7 @@ function keySet(keyEvent, setTo) {
   }
 
   if (keyEvent.keyCode == blueHero.controlKeyJump) {
-    blueHero.keyHeld_Jump = setTo;
+    blueHero.keyHeld_Fly = setTo;
   }
 
   if (keyEvent.keyCode == blueHero.controlKeySlingshot) {
