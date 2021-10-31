@@ -402,6 +402,9 @@ function loadLevel(whichLevel) {
 }// end of function loadLevel
 
 /**********************FUNCTION FOR UPDATING moveAll and drawAll FUNCTION************/
+
+
+
 function updateAll() {
   moveAll();
   checkCollisionsAll();
@@ -538,6 +541,13 @@ function checkCollisionsAll() {
   if (entity_v_entity(blueHero, bossEnemy)) {
     console.log("Hero hit boss enemy")
   }
+}
+
+function rocketPackError(){
+ 
+    var audio = new Audio("rocketPackError.mp3");
+    audio.play();
+ 
 }
 
 function entity_v_entity(entity1, entity2) {

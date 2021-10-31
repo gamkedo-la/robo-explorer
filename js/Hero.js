@@ -175,7 +175,7 @@ function heroClass() {
     var nextY = this.y;
 
 
-
+    
     /*--------------------FF---FOR ANIMATING FLIGHT OF CHARACTER-------------------*/
     /*--FFFFFFF--FF-------FF------------------------------------------------------------------------*/
     /*--FF-------FF------------FFFFFFF----FF-------FFFF-----------------------------------------------*/
@@ -256,15 +256,13 @@ function heroClass() {
       var tileIndexTop = getTileIndexAtPixelCoord(this.x, this.y - this.height / 2);
       var tileTypeTop = worldGrid[tileIndexTop];
       this.swim = 1;
-
+    
       if (tileTypeCenter == WORLD_WATER) {
         nextY -= PLAYER_MOVEMENT_SPEED * 0.2;
-
+       
       } else if (tileTypeCanBeMoveThrough(tileTypeTop)) {
         this.swim = 0;
         nextY -= PLAYER_MOVEMENT_SPEED * 1.8;// need to limit jump power separate from flight
-
-
       }
 
       if (tileTypeCenter !== WORLD_LADDER) {
