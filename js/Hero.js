@@ -239,6 +239,21 @@ function heroClass() {
 
     // console.log("GRAVITY");
 
+    /********JUMP CODE******************************* */
+    /*-----------------------FOR ANIMATING JUMP OF CHARACTER-------------------*/
+    /*--------JJ------------------------------------------------*/
+    /*--------JJ---------------------------JJJJJJ---------------------*/
+    /*--------JJ---JJ--JJ--JJ----------JJ--JJ--JJ---------------------------*/
+    /*--------JJ---JJ--JJ--JJJJ------JJJJ--JJJJJJ------------------------------*/
+    /*----JJ--JJ---JJ--JJ--JJ--JJ--JJ--JJ--JJ---------------------------------*/
+    /*----JJJJJJ---JJJJJJ--JJ----JJ----JJ--JJ---------------------------------*/
+    if (this.keyHeld_LshiftKey){
+      this.regularJump=1;
+      console.log(keyHeld_LshiftKey);
+      nextY -= PLAYER_MOVEMENT_SPEED * 1.8;
+    
+    }
+
     /*-----------------------FOR ANIMATING CLIMB OF CHARACTER-------------------*/
     /*--CCCCCCC-----------CC-------------------------------------------------------------*/
     /*--CC-------CC-------------------------------CC------------*/
@@ -276,10 +291,7 @@ function heroClass() {
 
       } 
 
-      this.regularJump;
-      if (this.keyHeld_Climb != true){
-        this.regularJump = 0;
-      }
+      
       
 
     }
@@ -488,6 +500,12 @@ function heroClass() {
     }
 
     if (this.keyHeld_Climb) {
+      walkIntoTileType = walkIntoTileTypeTop;
+      walkIntoTileIndex = walkIntoTileIndexTop;
+      this.reactToTileType(walkIntoTileType, walkIntoTileIndex);
+    }
+
+    if (this.keyHeld_LshiftKey) {
       walkIntoTileType = walkIntoTileTypeTop;
       walkIntoTileIndex = walkIntoTileIndexTop;
       this.reactToTileType(walkIntoTileType, walkIntoTileIndex);
