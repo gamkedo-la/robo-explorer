@@ -279,6 +279,7 @@ window.onload = function () {
   canvasContext = canvas.getContext("2d");
 
   document.getElementById("bossAudio").pause();
+  document.getElementById("finalBossAudio").pause();
   
   for (var i = 0; i < 2; i++) {
     addSlingShotRight();
@@ -305,6 +306,10 @@ window.onload = function () {
 /****************************FUNCTION FOR DELAY AUDIO LEVEL TEN**************************** */
 function delayAudio(){
    document.getElementById("bossAudio").play();
+}
+
+function finalBossAudio(){
+  document.getElementById("finalBossAudio").play();
 }
 
 /****************************FUNCTION FOR IMAGELOADING**************************** */

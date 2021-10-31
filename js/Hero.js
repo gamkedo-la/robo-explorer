@@ -684,6 +684,7 @@ function heroClass() {
           this.daggersHeld--;
           this.updateDaggerReadout();
           worldGrid[walkIntoTileIndex] = WORLD_EMPTY;
+          finalBossAudio();
           loadLevel(levelForestFour);
 
         }
