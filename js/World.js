@@ -443,6 +443,8 @@ var sideQuest4 = [
         return(checkTileType == WORLD_EMPTY ||
             checkTileType == WORLD_WATER ||
             checkTileType == WORLD_LADDER ||
+            checkTileType == WORLD_SKELETON || 
+            checkTileType == WORLD_SKELETON2 || 
             checkTileType == WORLD_CLOUD1 ||
             checkTileType == WORLD_BRIDGESTICKS ||
             checkTileType == WORLD_BRIDGEWOOD ||
