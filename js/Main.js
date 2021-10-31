@@ -521,6 +521,8 @@ function moveAll() {
 function checkCollisionsAll() {
   for(var rat of ratsInLevel){
     if (entity_v_entity(blueHero, rat)) {
+      var audio = new Audio("ratSound.mp3");
+      audio.play();
       console.log("Hero hit rat")
     }
   }
