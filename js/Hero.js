@@ -53,7 +53,7 @@ function heroClass() {
   this.keyHeld_Slingshot = false;
   this.keyHeld_Bomb = false;
   this.keyHeld_Sword = false;
-  this.keyHeld_LshiftKey = false;
+  this.keyHeld_LShiftKey = false;
   // this.sound = false;
 
   this.controlKeyUp;
@@ -86,7 +86,7 @@ function heroClass() {
     rightKey,
     downKey,
     leftKey,
-    jumpKey,
+    flyKey,
     slingshotKey,
     bombKey,
     swordKey,
@@ -96,11 +96,11 @@ function heroClass() {
     this.controlKeyRight = rightKey;
     this.controlKeyDown = downKey;
     this.controlKeyLeft = leftKey;
-    this.controlKeyJump = jumpKey;
+    this.controlKeyFly = flyKey;
     this.controlKeySlingshot = slingshotKey;
     this.controlKeyBomb = bombKey;
     this.controlKeySword = swordKey;
-    this.controlKeyShift = lshiftKey;
+    this.controlKeyLshift = lshiftKey;
   };
 
   this.reset = function (whichImage, heroName) {
@@ -185,17 +185,7 @@ function heroClass() {
     /*--FF-------FFFFFFF--FF---FFFFFFFFF--FF---FF--FFFFFFF--------------------------------------*/
 
     if (this.keyHeld_Fly) {
-      // beginLoadingImage(rocketBooster);
-      /*if(ROCKET_LIFE !==0){
-       ROCKET_LIFE--;
-       nextY -= JUMP_POWER;
-       console.log(ROCKET_LIFE);
-       for (var i = 0; i < START_PARTICLES; i++) {
-        addParticles();
-       }*/
-
       rocketEnergyBar();
-
       if (this.rocketEnergy !== 0) {
         this.rocketEnergy--;
         nextY -= JUMP_POWER;
@@ -247,11 +237,15 @@ function heroClass() {
     /*--------JJ---JJ--JJ--JJJJ------JJJJ--JJJJJJ------------------------------*/
     /*----JJ--JJ---JJ--JJ--JJ--JJ--JJ--JJ--JJ---------------------------------*/
     /*----JJJJJJ---JJJJJJ--JJ----JJ----JJ--JJ---------------------------------*/
-    if (this.keyHeld_LshiftKey){
-      this.regularJump=1;
-      console.log(keyHeld_LshiftKey);
+    if (this.keyHeld_LShiftKey){
+
+   
+      this.regularJump =1;
+      console.log(this.regularJump);
       nextY -= PLAYER_MOVEMENT_SPEED * 1.8;
     
+    }else{
+      this.regularJump=0;
     }
 
     /*-----------------------FOR ANIMATING CLIMB OF CHARACTER-------------------*/
@@ -281,14 +275,9 @@ function heroClass() {
       }
 
       if (tileTypeCenter !== WORLD_LADDER) {
-        this.climb = 0;
-        // this.keyHeld_Climb = false;
-
+        this.climb = 0;        
       } else {
         this.climb = 1;
-        // this.gravity = 3*.5 ;
-        // this.keyHeld_Climb = true;
-
       } 
 
       
@@ -505,7 +494,7 @@ function heroClass() {
       this.reactToTileType(walkIntoTileType, walkIntoTileIndex);
     }
 
-    if (this.keyHeld_LshiftKey) {
+    if (this.keyHeld_LSHIFTKEY) {
       walkIntoTileType = walkIntoTileTypeTop;
       walkIntoTileIndex = walkIntoTileIndexTop;
       this.reactToTileType(walkIntoTileType, walkIntoTileIndex);

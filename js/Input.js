@@ -64,7 +64,7 @@ function keySet(keyEvent, setTo) {
     blueHero.keyHeld_ClimbDown = setTo;
   }
 
-  if (keyEvent.keyCode == blueHero.controlKeyJump) {
+  if (keyEvent.keyCode == blueHero.controlKeyFly) {
     blueHero.keyHeld_Fly = setTo;
   }
 
@@ -81,8 +81,7 @@ function keySet(keyEvent, setTo) {
   }
 
   if (keyEvent.keyCode == blueHero.controlKeyLshift) {
-    blueHero.keyHeld_LshiftKey = setTo;
-    console.log(keyHeld_LshiftKey);
+    blueHero.keyHeld_LShiftKey = setTo;
   }
   
   
