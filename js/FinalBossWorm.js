@@ -14,16 +14,16 @@ function finalBossClass() {
   this.speedX = FINALBOSS_MOVEMENT_SPEED;
   this.speedY = FINALBOSS_MOVEMENT_SPEED;
  this.health; // setup inside the reset function
-  this.width = 300;
-  this.height = 200;
+  this.width = 160;
+  this.height = 160;
   this.frameX = 0;
   this.frameY = 0;
   this.name = "untitled boss";
 
   //properties for sprite animation
   this.frame = 0;
-  this.numberOfFrames = 2; //how many frames are in the spritesheet
-  this.animationSpeed = 5;
+  this.numberOfFrames = 3; //how many frames are in the spritesheet
+  this.animationSpeed = 8;
   this.animationCounter = 0;
 
   this.reset = function () {
@@ -48,17 +48,17 @@ function finalBossClass() {
       return; 
     }
     this.x += this.speedX;
-    if (this.x < 200 && this.speedX < 0.0) {// left boundary
+    if (this.x < 400 && this.speedX < 0.0) {// left boundary
       //left side
       this.speedX *= -1;
 
     }
-    if (this.x > canvas.width *1.3 && this.speedX > 0.0) {
+    if (this.x > canvas.width *1.6 && this.speedX > 0.0) {
       // right side
       this.speedX *= -1;
     }
     // this.y += this.speedY;
-     this.y = 395;
+     this.y = 489;
     if (this.y < 200 && this.speedY < 0.0) { // top boundary
       //top edge
       this.speedY *= -1;
@@ -75,10 +75,10 @@ function finalBossClass() {
     if (this.health <= 0){
       return; 
     }
-    var bossWormFrameW = 300;
+    var bossWormFrameW = 267;
     canvasContext.drawImage(
         bossWormPic,
-      this.frame *bossWormFrameW,
+      this.frame*bossWormFrameW,
       0, //top left corner of spritesheet frame
       bossWormFrameW,
       bossWormPic.height, //size of frame

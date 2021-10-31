@@ -238,8 +238,14 @@ function heroClass() {
     /*----JJ--JJ---JJ--JJ--JJ--JJ--JJ--JJ--JJ---------------------------------*/
     /*----JJJJJJ---JJJJJJ--JJ----JJ----JJ--JJ---------------------------------*/
     if (this.keyHeld_LShiftKey){
+      var tileIndexCenter = getTileIndexAtPixelCoord(this.x, this.y);
+      var tileTypeCenter = worldGrid[tileIndexCenter];
+      
+      var tileIndexTop = getTileIndexAtPixelCoord(this.x, this.y - this.height / 2);
+      var tileTypeTop = worldGrid[tileIndexTop];
 
-   
+      
+
       this.regularJump =1;
       console.log(this.regularJump);
       nextY -= PLAYER_MOVEMENT_SPEED * 1.8;
@@ -257,14 +263,12 @@ function heroClass() {
     /*--CCCCCCC--CCCCCCC--CC---CC------CC------CC-CCCCCCCC--------------*/
     if (this.keyHeld_Climb) {
 
-      var tileIndexCenter = getTileIndexAtPixelCoord(this.x, this.y);
-      var tileTypeCenter = worldGrid[tileIndexCenter];
+      // var tileIndexCenter = getTileIndexAtPixelCoord(this.x, this.y);
+      // var tileTypeCenter = worldGrid[tileIndexCenter];
 
       var tileIndexTop = getTileIndexAtPixelCoord(this.x, this.y - this.height / 2);
       var tileTypeTop = worldGrid[tileIndexTop];
-      this.swim = 1;
-
-      
+      this.swim = 1;     
     
       if (tileTypeCenter == WORLD_WATER) {
         nextY -= PLAYER_MOVEMENT_SPEED * 0.2;
@@ -279,10 +283,6 @@ function heroClass() {
       } else {
         this.climb = 1;
       } 
-
-      
-      
-
     }
 
 
@@ -322,7 +322,6 @@ function heroClass() {
     if (this.keyHeld_WalkRight) {
       // nextX += PLAYER_MOVEMENT_SPEED;
       this.moveDir = 1;
-      // this.speed += DRIVE_POWER;
 
       var tileIndexCenter = getTileIndexAtPixelCoord(this.x, this.y);
       var tileTypeCenter = worldGrid[tileIndexCenter];
@@ -437,8 +436,6 @@ function heroClass() {
        this.y++;
      }*/
 
-
-
     if (this.keyHeld_Fly && tileTypeCanBeMoveThrough(walkIntoTileTypeTop)) {
       this.y = nextY;
     } else if (tileTypeCanBeMoveThrough(walkIntoTileTypeTop) == false) {
@@ -463,9 +460,6 @@ function heroClass() {
     } else if (tileTypeCanBeMoveThrough(walkIntoTileTypeRight) == false) {
       this.x--;
     }
-
-
-
 
     //Which Tile we are grabbing or opening.
     var walkIntoTileType = WORLD_EMPTY;
