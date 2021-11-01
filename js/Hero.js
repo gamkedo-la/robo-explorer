@@ -78,7 +78,7 @@ function heroClass() {
   //properties for sprite animation
   this.frame = 0;
   this.numberOfFrames = 8; //how many frames are in the spritesheet
-  this.animationSpeed = 2;
+  this.animationSpeed = 0;
   this.animationCounter = 0;
 
   this.setupInput = function (
