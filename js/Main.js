@@ -24,6 +24,7 @@ var ghostSpeedY = 7;
 var camPanX = 0.0;
 var camPanY = 0.0;
 
+var GamePad = new GamepadSupport();
 
 /*******************************FUNCTION FOR GHOST MOVEMENT********************************** */
 function ghostReset() {
@@ -406,6 +407,7 @@ function loadLevel(whichLevel) {
 
 
 function updateAll() {
+  GamePad.update();
   moveAll();
   checkCollisionsAll();
   drawAll();
