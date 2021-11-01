@@ -251,9 +251,10 @@ function heroClass() {
       if (tileTypeCenter == WORLD_WATER) {
         nextY -= PLAYER_MOVEMENT_SPEED * 0.2;
        
-      } else if (tileTypeCanBeMoveThrough(tileTypeTop)) {
+      } else if (tileTypeCanBeMoveThrough(tileTypeTop) && tileTypeCenter !== WORLD_WATER) { //disables moving up when not in water
         this.swim = 0;
-        nextY -= PLAYER_MOVEMENT_SPEED * 1.8;// need to limit jump power separate from flight
+        nextY -= PLAYER_MOVEMENT_SPEED * 0.5;
+        //nextY -= PLAYER_MOVEMENT_SPEED * 1.8;// need to limit jump power separate from flight
       }
 
     }
@@ -296,11 +297,11 @@ function heroClass() {
     /*--CCCCCCC--CCCCCCC--CC---CC------CC------CC-CCCCCCCC--------------*/
     if (this.keyHeld_Climb) {
 
-      // var tileIndexCenter = getTileIndexAtPixelCoord(this.x, this.y);
-      // var tileTypeCenter = worldGrid[tileIndexCenter];
+       var tileIndexCenter = getTileIndexAtPixelCoord(this.x, this.y);
+      var tileTypeCenter = worldGrid[tileIndexCenter];
 
-      var tileIndexTop = getTileIndexAtPixelCoord(this.x, this.y - this.height / 2);
-      var tileTypeTop = worldGrid[tileIndexTop];
+      //var tileIndexTop = getTileIndexAtPixelCoord(this.x, this.y - this.height / 2);
+      //var tileTypeTop = worldGrid[tileIndexTop];
     /*
       this.swim = 1;     
     
@@ -310,25 +311,27 @@ function heroClass() {
       } else if (tileTypeCanBeMoveThrough(tileTypeTop)) {
         this.swim = 0;
         nextY -= PLAYER_MOVEMENT_SPEED * 1.8;// need to limit jump power separate from flight
-      }*/
+      }*/ 
+      
 
-      if (tileTypeCenter == WORLD_LADDER) {
+      if (tileTypeCenter !== WORLD_LADDER || tileTypeCenter == WORLD_WATER) {
         
-        this.climb = 1;      
-       
-      } else {
         this.climb = 0;  
-        nextY -= PLAYER_MOVEMENT_SPEED * 1.8;
+        nextY -= PLAYER_MOVEMENT_SPEED * 0.1; // disables moving up when not in ladder and when in water slime.
+      } else {
+        
+        this.climb = 1;        
+        nextY -= PLAYER_MOVEMENT_SPEED * 2;
       } 
     }
 
-
+/*
     if (this.keyHeld_ClimbDown) {
       this.climbDown = 1;
       nextY += this.gravity * 0.5;
     } else {
       this.climbDown = 0;
-    }
+    }*/
 
     /*-----------FOR ANIMATING MOVEMENT OF CHARACTER LEFT AND RIGHT-------- */
     /*--WW-----WW------------------WW------------------------------------------------ */
