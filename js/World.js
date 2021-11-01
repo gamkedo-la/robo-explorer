@@ -347,6 +347,7 @@ var sideQuest4 = [
         const WORLD_LABORATORYENTRANCE=73;
         const WORLD_LABORATORYINSIDE=74;
         const WORLD_FORESTGRASS=75;
+        const WORLD_FORESTGRASS2=76;
         // const WORLD_SMALLBRICK 
 
        
@@ -454,7 +455,8 @@ var sideQuest4 = [
             checkTileType == WORLD_TREEVINESLEFT ||
             checkTileType == WORLD_TREEVINESRIGHT ||
             checkTileType == WORLD_TREETRUNKSIDELEFT ||
-            checkTileType == WORLD_FORESTGRASS
+            checkTileType == WORLD_FORESTGRASS ||
+            checkTileType == WORLD_FORESTGRASS2
           
             
             );
