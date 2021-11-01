@@ -526,6 +526,9 @@ function checkCollisionsAll() {
     if (entity_v_entity(blueHero, rat)) {
       var audio = new Audio("ratSound2.mp3");
       audio.play();
+      if (blueHero.swordSlash > 0){
+        ratsInLevel.pop(rat);// testing how to remove 1 rat when touching bluehero with sword animation not yet working
+      }
       console.log("Hero hit rat")
     }
   }

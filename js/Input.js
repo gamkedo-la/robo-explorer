@@ -12,7 +12,8 @@ const KEY_R=82;//SlingshotBullet
 const KEY_B=66;//Bomb
 const KEY_C=67;//cheat key
 const KEY_E=69;//Sword
-const LSHIFT_KEY =16;
+const LSHIFT_KEY =16;//Jump with shadow
+const KEY_Q=81;//Swim up
 
 const KEY_1 = 49; // keyboard 1
 const KEY_2 = 50; // keyboard 2
@@ -35,7 +36,7 @@ function setupInput() {
   document.addEventListener("keydown", keyPressed);
   document.addEventListener("keyup", keyReleased);
 
-  blueHero.setupInput(KEY_W, KEY_D, KEY_S, KEY_A, KEY_SPACEBAR,KEY_R,KEY_B,KEY_E,LSHIFT_KEY);
+  blueHero.setupInput(KEY_W, KEY_D, KEY_S, KEY_A, KEY_SPACEBAR,KEY_R,KEY_B,KEY_E,LSHIFT_KEY,KEY_Q);
   //   blueCar.setupInput(KEY_UP_ARROW, KEY_RIGHT_ARROW, KEY_DOWN_ARROW, KEY_LEFT_ARROW);
 }
 
@@ -82,6 +83,11 @@ function keySet(keyEvent, setTo) {
 
   if (keyEvent.keyCode == blueHero.controlKeyLshift) {
     blueHero.keyHeld_LShiftKey = setTo;
+  }
+
+  
+  if (keyEvent.keyCode == blueHero.controlKeySwim) {
+    blueHero.keyHeld_Swim = setTo;
   }
   
   

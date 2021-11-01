@@ -54,6 +54,7 @@ function heroClass() {
   this.keyHeld_Bomb = false;
   this.keyHeld_Sword = false;
   this.keyHeld_LShiftKey = false;
+  this.keyHeld_Swim = false;
   // this.sound = false;
 
   this.controlKeyUp;
@@ -65,6 +66,7 @@ function heroClass() {
   this.controlKeyBomb;
   this.controlKeySword;
   this.controlKeyLshift;
+  this.controlKeySwim;
   // this.playSound = function(){
   //   if(play == 0){
   //     play = 1;
@@ -90,7 +92,8 @@ function heroClass() {
     slingshotKey,
     bombKey,
     swordKey,
-    lshiftKey
+    lshiftKey,
+    swimKey
   ) {
     this.controlKeyUp = upKey;
     this.controlKeyRight = rightKey;
@@ -101,6 +104,7 @@ function heroClass() {
     this.controlKeyBomb = bombKey;
     this.controlKeySword = swordKey;
     this.controlKeyLshift = lshiftKey;
+    this.controlKeySwim = swimKey;
   };
 
   this.reset = function (whichImage, heroName) {
@@ -229,6 +233,35 @@ function heroClass() {
 
     // console.log("GRAVITY");
 
+    /******************SWIM CODE************************ */
+    /*-----------------------FOR ANIMATING JUMP OF CHARACTER-------------------*/
+    /*--SSSSSS---------------------------SS------------*/
+    /*---SS--------------------------------------*/
+    /*-----SS----SS------------------Ss--SS--SSSS------SSSS----*/
+    /*-------SS----SS------SS------SS----SS--SS--SS--SS--SS------*/
+    /*------SS-------SS--Ss--SS--SS------SS--SS----SS----SS------*/
+    /*--SSSS-----------SS------SS--------SS--SS----------SS*/
+    
+
+    if (this.keyHeld_Swim){
+      var tileIndexTop = getTileIndexAtPixelCoord(this.x, this.y - this.height / 2);
+      var tileTypeTop = worldGrid[tileIndexTop];
+      this.swim = 1;     
+    
+      if (tileTypeCenter == WORLD_WATER) {
+        nextY -= PLAYER_MOVEMENT_SPEED * 0.2;
+       
+      } else if (tileTypeCanBeMoveThrough(tileTypeTop)) {
+        this.swim = 0;
+        nextY -= PLAYER_MOVEMENT_SPEED * 1.8;// need to limit jump power separate from flight
+      }
+
+    }
+
+
+
+
+
     /********JUMP CODE******************************* */
     /*-----------------------FOR ANIMATING JUMP OF CHARACTER-------------------*/
     /*--------JJ------------------------------------------------*/
@@ -268,6 +301,7 @@ function heroClass() {
 
       var tileIndexTop = getTileIndexAtPixelCoord(this.x, this.y - this.height / 2);
       var tileTypeTop = worldGrid[tileIndexTop];
+    /*
       this.swim = 1;     
     
       if (tileTypeCenter == WORLD_WATER) {
@@ -276,12 +310,15 @@ function heroClass() {
       } else if (tileTypeCanBeMoveThrough(tileTypeTop)) {
         this.swim = 0;
         nextY -= PLAYER_MOVEMENT_SPEED * 1.8;// need to limit jump power separate from flight
-      }
+      }*/
 
-      if (tileTypeCenter !== WORLD_LADDER) {
-        this.climb = 0;        
+      if (tileTypeCenter == WORLD_LADDER) {
+        
+        this.climb = 1;      
+       
       } else {
-        this.climb = 1;
+        this.climb = 0;  
+        nextY -= PLAYER_MOVEMENT_SPEED * 1.8;
       } 
     }
 
@@ -488,7 +525,14 @@ function heroClass() {
       this.reactToTileType(walkIntoTileType, walkIntoTileIndex);
     }
 
-    if (this.keyHeld_LSHIFTKEY) {
+    if (this.keyHeld_LShiftKey) {
+      walkIntoTileType = walkIntoTileTypeTop;
+      walkIntoTileIndex = walkIntoTileIndexTop;
+      this.reactToTileType(walkIntoTileType, walkIntoTileIndex);
+    }
+
+    
+    if (this.keyHeld_Swim) {
       walkIntoTileType = walkIntoTileTypeTop;
       walkIntoTileIndex = walkIntoTileIndexTop;
       this.reactToTileType(walkIntoTileType, walkIntoTileIndex);
