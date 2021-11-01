@@ -275,16 +275,13 @@ function heroClass() {
       var tileIndexCenter = getTileIndexAtPixelCoord(this.x, this.y);
       var tileTypeCenter = worldGrid[tileIndexCenter];
       
-      var tileIndexTop = getTileIndexAtPixelCoord(this.x, this.y - this.height / 2);
-      var tileTypeTop = worldGrid[tileIndexTop];
-
-      
-
+      // var tileIndexTop = getTileIndexAtPixelCoord(this.x, this.y - this.height / 2);
+      // var tileTypeTop = worldGrid[tileIndexTop];
       this.regularJump =1;
-      console.log(this.regularJump);
+      // console.log(this.regularJump);
       nextY -= PLAYER_MOVEMENT_SPEED * 1.8;
     
-    }else{
+    }else {
       this.regularJump=0;
     }
 
@@ -475,6 +472,7 @@ function heroClass() {
      } else if (tileTypeCanBeMoveThrough(walkIntoTileTypeTop) == false) {
        this.y++;
      }*/
+     
 
     if (this.keyHeld_Fly && tileTypeCanBeMoveThrough(walkIntoTileTypeTop)) {
       this.y = nextY;

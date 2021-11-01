@@ -346,7 +346,8 @@ var sideQuest4 = [
         const WORLD_FINALBOSSWORM=72;
         const WORLD_LABORATORYENTRANCE=73;
         const WORLD_LABORATORYINSIDE=74;
-        // const WORLD_SMALLBRICK = 75;
+        const WORLD_FORESTGRASS=75;
+        // const WORLD_SMALLBRICK 
 
        
         // const WORLD_RAT2=20;
@@ -452,7 +453,8 @@ var sideQuest4 = [
             checkTileType == WORLD_BRIDGESTICKS2 ||
             checkTileType == WORLD_TREEVINESLEFT ||
             checkTileType == WORLD_TREEVINESRIGHT ||
-            checkTileType == WORLD_TREETRUNKSIDELEFT 
+            checkTileType == WORLD_TREETRUNKSIDELEFT ||
+            checkTileType == WORLD_FORESTGRASS
           
             
             );
