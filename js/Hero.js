@@ -21,7 +21,8 @@ function heroClass() {
   this.rocketEnergy = ROCKET_LIFE;
   this.jumperOnGround = false;
   this.gravity = GRAVITY;
-  (this.jumperSpeedX = 0), (jumperSpeedY = 0);
+  this.jumperSpeedX = 0;
+  this.jumperSpeedY = 0;
   this.flyAng = 0;
   this.width = 40;
   this.height = 40;

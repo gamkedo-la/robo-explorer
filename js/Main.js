@@ -521,15 +521,25 @@ function moveAll() {
   /*--CC----CC---CC--CC-----CC-----CC----CC------CC-------CC--CC---CC--CC----CCCC--- */
   /*--CCCCC-CCCCCCC--CCCCCC-CCCCCC-CC--CC------CC---------CC--CCCCCCC--CC------CC-- */
 
-function checkCollisionsAll() {
+  function checkCollisionsAll() {
   for(var rat of ratsInLevel){
     if (entity_v_entity(blueHero, rat)) {
-      var audio = new Audio("ratSound2.mp3");
-      audio.play();
-      if (blueHero.swordSlash > 0){
-        ratsInLevel.pop(rat);// testing how to remove 1 rat when touching bluehero with sword animation not yet working
+
+      if (!rat.justGotHit) {
+        var audio = new Audio("ratSound2.mp3");
+        audio.play();
+        if (blueHero.swordSlash > 0){
+            ratsInLevel.pop(rat);// testing how to remove 1 rat when touching bluehero with sword animation not yet working
+        }
+        console.log("Hero hit rat")
       }
-      console.log("Hero hit rat")
+
+      // this helps us only trigger once per hit instead of 20x in a row
+      rat.justGotHit = true;
+
+    } else { // player did not collide with a rat this frame
+        //if (blueHero.hitRatPrevFrame) console.log("Hero no longer hitting rat")
+        rat.justGotHit = false;
     }
   }
   
