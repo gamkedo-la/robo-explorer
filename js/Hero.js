@@ -742,6 +742,15 @@ function heroClass() {
         }
         break;
 
+        case WORLD_LABDOOR:
+         
+           
+           
+            loadLevel(levelForestLaboratory);// need to write code to nly activate this when final Boss is killed.
+  
+         
+          break;
+
       case WORLD_TREEBRANCH:
         if (this.daggersHeld > 0) {
           this.daggersHeld--;
