@@ -101,7 +101,12 @@ function particleClass() {
 // var secondParticle = new particleClass();
 var particleList = [];
 
-/**********************************SLINGSHOT BULLET CLASS********************************** */
+/*********************SS*************SLINGSHOT BULLET CLASS********************************** */
+/*****SSSS****SS*********************SSSSSSSS***SSSS****SS********************SS**************************** */
+/****SS***SS**SS******SS***SS****SS**SS********SS*******SS**SS******SSSSSS****SS****************************** */
+/******SS*****SS******SS***SSSS**SS**SS***SsSS****SS****SSSS**SS****SS**SS**SSSSSS********************************** */
+/***SS****SS**SS******SS***SS**SSSS**SS****SS**SS***SS**SS******SS**SS**SS****SS***SS**************************** */
+/*****SSSSSS**SSSSSS**SS***SS****SS**SSSSSS****SSSSSS***SS******SS**SSSSSS****SSSSSS*********************************** */
 
 function slingShotClass() {
   
