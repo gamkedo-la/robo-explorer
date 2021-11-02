@@ -3,7 +3,7 @@ const BOSS_IMAGE_NAME = "boss";
 const BOSS_FRAMES = 0;
 const BOSS_ANIM_FRAMES=3;
 const BOSS_LEFT_WALL_BOUNDARY=200;
-
+const BOSS_RIGHT_WALL_BOUNDARY=1.3;
 var bossX = 75;
 var bossY = 75;
 // var this.speedX = 5;
@@ -59,7 +59,7 @@ function bossClass() {
       this.speedX *= -1;
 
     }
-    if (this.x > canvas.width *1.3 && this.speedX > 0.0) {
+    if (this.x > canvas.width * BOSS_RIGHT_WALL_BOUNDARY && this.speedX > 0.0) {
       // right side
       this.speedX *= -1;
       
