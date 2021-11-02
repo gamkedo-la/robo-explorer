@@ -64,9 +64,9 @@ function bossClass() {
       this.speedX *= -1;
       
     }
-    // this.y += this.speedY;
-     this.y = 395;
-    if (this.y < 200 && this.speedY < 0.0) { // top boundary
+    this.y += this.speedY;
+     //this.y = 395;
+    if (this.y < 0 && this.speedY < 0.0) { // top boundary
       //top edge
       this.speedY *= -1;
     }
