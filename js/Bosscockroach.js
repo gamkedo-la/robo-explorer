@@ -23,7 +23,7 @@ function bossClass() {
   
 
   //properties for sprite animation
-  this.frame = 0;
+  this.frame = 1; // this is set to 0 I just set this to test the animation frame 2nd row
   this.numberOfFrames = 2; //how many frames are in the spritesheet
   this.animationSpeed = 5;
   this.animationCounter = 0;

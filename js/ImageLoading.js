@@ -1,5 +1,6 @@
 var heroPic = document.createElement("img");
 var ratPic = document.createElement("img");
+var spiderPic = document.createElement("img");
 var bombPic = document.createElement("img");
 var trapPic = document.createElement("img");
 var rockPic = document.createElement("img");
@@ -49,6 +50,7 @@ function loadImages() {
     //{ varName: heroPic, theFile: "animationCyleSprites.png"},
     // { varName: waterPic, theFile: "sewerWater.png" },
     { varName: ratPic, theFile: "rat-walk-cycle.png"},
+    { varName: spiderPic, theFile: "spider.png"},
     { varName: bombPic, theFile: "bomb-sprite.png"},
     { varName: rockPic, theFile: "rock.png"},
     { varName: cockroachEggPic, theFile: "cockroachSprite.png"},
@@ -90,6 +92,7 @@ function loadImages() {
     { trackType: WORLD_FORESTGRASS2, theFile: "forestGrass2.png" },
     { trackType: WORLD_FORESTGRASS3, theFile: "forestGrass3.png" },
     { trackType: WORLD_MOUNTAIN, theFile: "mountain.png" },
+    
     
     { trackType: WORLD_TREEBRANCH, theFile: "treeBranch.png" },
     { trackType: WORLD_DAGGER, theFile: "dagger.png" },

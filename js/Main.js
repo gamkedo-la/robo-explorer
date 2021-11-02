@@ -7,6 +7,7 @@ var cockroach_egg = new cockroach_eggClass();
 var bossEnemy = new bossClass();
 var boyCocoon = new boyCocoonClass();
 var ratsInLevel = [];
+var spidersInLevel = [];
 
 var finalBossWorm= new finalBossClass();
 var enemyList = [];
@@ -375,6 +376,18 @@ function loadLevel(whichLevel) {
       ratsInLevel.push(newRat); // testing rat collisions - Ryan A.
     }
     lookForAnotherRat = ratHasTile;
+  }
+
+  spidersInLevel = [];
+  var lookForAnotherSpider = true;
+  while(lookForAnotherSpider){
+    var newSpider = new spiderClass();
+    var spiderHasTile = newSpider.reset();
+    if (spiderHasTile){
+      enemyList.push(newSpider);
+      //spidersInLevel.push(newSpider); // testing rat collisions - Ryan A.
+    }
+    lookForAnotherSpider = spiderHasTile;
   }
 
   
