@@ -54,7 +54,7 @@ function spiderClass() {
 
   this.draw = function(){
     
-    var spiderFrameW = 40;
+    var spiderFrameW = 50;
     canvasContext.drawImage(
       spiderPic,
       this.frame * spiderFrameW, 0, //top left corner of spritesheet frame
