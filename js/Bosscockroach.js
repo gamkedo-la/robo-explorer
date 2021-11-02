@@ -5,6 +5,9 @@ const BOSS_ANIM_FRAMES=3;
 const BOSS_LEFT_WALL_BOUNDARY=200;
 const BOSS_RIGHT_WALL_BOUNDARY=1.3;
 const BOSS_TOP_WALL_BOUNDARY=200;
+const BOSS_BOTTOM_WALL_BOUNDARY=0.9;
+
+
 var bossX = 75;
 var bossY = 75;
 // var this.speedX = 5;
@@ -72,7 +75,7 @@ function bossClass() {
       this.speedY *= -1;
     }
 
-    if (this.y > canvas.height  && this.speedY > 0.0) {
+    if (this.y > canvas.height * BOSS_BOTTOM_WALL_BOUNDARY  && this.speedY > 0.0) {
       //bottom of the screen
       this.speedY *= -1;
       // ghostReset();
