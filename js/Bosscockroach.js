@@ -1,6 +1,8 @@
 const BOSS_MOVEMENT_SPEED = 20.0;
 const BOSS_IMAGE_NAME = "boss";
 const BOSS_FRAMES = 0;
+const BOSS_ANIM_FRAMES=3;
+const BOSS_LEFT_WALL_BOUNDARY=200;
 
 var bossX = 75;
 var bossY = 75;
@@ -23,7 +25,8 @@ function bossClass() {
   
 
   //properties for sprite animation
-  this.frame = 1; // this is set to 0 I just set this to test the animation frame 2nd row
+  this.moveDir=0;
+  this.frame = 0; 
   this.numberOfFrames = 2; //how many frames are in the spritesheet
   this.animationSpeed = 5;
   this.animationCounter = 0;
@@ -46,11 +49,12 @@ function bossClass() {
   };
 
   this.move = function () {
+    
     if (this.health <= 0){
       return;
     }
     this.x += this.speedX;
-    if (this.x < 200 && this.speedX < 0.0) {// left boundary
+    if (this.x < BOSS_LEFT_WALL_BOUNDARY && this.speedX < 0.0) {// left boundary
       //left side
       this.speedX *= -1;
 
@@ -58,6 +62,7 @@ function bossClass() {
     if (this.x > canvas.width *1.3 && this.speedX > 0.0) {
       // right side
       this.speedX *= -1;
+      
     }
     // this.y += this.speedY;
      this.y = 395;
@@ -74,10 +79,12 @@ function bossClass() {
   };
 
   this.draw = function () {
+    
     if (this.health <= 0){
       return; 
     }
     var bossFrameW = 160;
+    
     canvasContext.drawImage(
       bossPic,
       this.frame * bossFrameW,
@@ -100,6 +107,27 @@ function bossClass() {
       }
       this.animationCounter = 0;
     }
+
+    /*
+    if (++this.frame >= BOSS_ANIM_FRAMES) {
+      this.frame = 0;
+    } */
+
+    /*
+    if (this.moveDir == 0) {
+      this.frame = 0;
+    }*/
+
+    /*
+    var animationRow = 0;
+    if (this.x < 0 ) {// left boundary
+      //left side
+      animationRow = 3;
+
+    }*/
+
+    /*var flipLeft = this.moveDir == -1;*/
+    
   };
 
   // console.log(this.animationCounter);

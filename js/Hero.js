@@ -827,6 +827,7 @@ function heroClass() {
     if (++this.frame >= PLAYER_ANIM_FRAMES) {
       this.frame = 0;
     }
+    
     if (this.moveDir == 0) {
       this.frame = 0;
     }
