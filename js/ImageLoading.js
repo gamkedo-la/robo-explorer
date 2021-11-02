@@ -90,10 +90,12 @@ function loadImages() {
     { trackType: WORLD_FORESTGRASS2, theFile: "forestGrass2.png" },
     { trackType: WORLD_FORESTGRASS3, theFile: "forestGrass3.png" },
     { trackType: WORLD_MOUNTAIN, theFile: "mountain.png" },
+    
     { trackType: WORLD_TREEBRANCH, theFile: "treeBranch.png" },
     { trackType: WORLD_DAGGER, theFile: "dagger.png" },
     { trackType: WORLD_LABORATORYENTRANCE, theFile: "laboratory.png" },
     { trackType: WORLD_LABORATORYINSIDE, theFile: "laboratoryInside.png" },
+    { trackType: WORLD_LABDOOR, theFile: "labDoor.png" },
    
     
     { trackType: WORLD_SLINGSHOT, theFile: "tirador.png" },

@@ -350,6 +350,7 @@ var sideQuest4 = [
         const WORLD_FORESTGRASS2=76;
         const WORLD_FORESTGRASS3 =77;
         const WORLD_MOUNTAIN =78;
+        const WORLD_LABDOOR =79;
         // const WORLD_SMALLBRICK 
 
        
