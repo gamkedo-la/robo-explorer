@@ -4,6 +4,7 @@ const BOSS_FRAMES = 0;
 const BOSS_ANIM_FRAMES=3;
 const BOSS_LEFT_WALL_BOUNDARY=200;
 const BOSS_RIGHT_WALL_BOUNDARY=1.3;
+const BOSS_TOP_WALL_BOUNDARY=200;
 var bossX = 75;
 var bossY = 75;
 // var this.speedX = 5;
@@ -66,7 +67,7 @@ function bossClass() {
     }
     this.y += this.speedY;
      //this.y = 395;
-    if (this.y < 0 && this.speedY < 0.0) { // top boundary
+    if (this.y < BOSS_TOP_WALL_BOUNDARY && this.speedY < 0.0) { // top boundary
       //top edge
       this.speedY *= -1;
     }
