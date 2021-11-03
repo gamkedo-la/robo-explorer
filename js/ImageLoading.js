@@ -68,7 +68,7 @@ function loadImages() {
     // { trackType: WORLD_SMALLBRICK, theFile: "smallBrick.png" },
     // { trackType: WORLD_FORESTGROUND1, theFile: "worldForest_ground1.png" },
     { trackType: WORLD_FORESTGROUND1, theFile: "worldForest_ground2.png" },
-    { trackType: WORLD_WALL3, theFile: "worldForest_ground3.png" },
+    { trackType: WORLD_WALL3, theFile: "worldForest_ground4.png" },
     { trackType: WORLD_CLOUD1, theFile: "cloud1.png" },
     { trackType: WORLD_BRIDGESTICKS, theFile: "bridgeSticks.png" },
     { trackType: WORLD_BRIDGEWOOD, theFile: "bridgeWood.png" },

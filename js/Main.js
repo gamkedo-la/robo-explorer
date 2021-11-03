@@ -558,7 +558,7 @@ function moveAll() {
       rat.justGotHit = true;
 
     } else { // player did not collide with a rat this frame
-        //if (blueHero.hitRatPrevFrame) console.log("Hero no longer hitting rat")
+        if (blueHero.hitRatPrevFrame) console.log("Hero no longer hitting rat")
         rat.justGotHit = false;
     }
   }
