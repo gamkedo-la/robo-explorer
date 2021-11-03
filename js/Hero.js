@@ -154,7 +154,8 @@ function heroClass() {
   };
 
   this.updateSwordReadout = function () {
-    document.getElementById("sword").innerHTML = "2. Sword";
+    // document.getElementById("sword").innerHTML = "2. Sword";
+    document.getElementById("sword").style.display = "block";
   };
 
   this.updateArrowReadout = function () {
