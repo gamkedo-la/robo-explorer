@@ -78,7 +78,7 @@
         }
 
 /**************************************************Items User Interface***********************/
-.black__interface{
+#black__interface{
     background-color: black;
     position: absolute;
     top:10%;
@@ -98,11 +98,12 @@
             left: 2%;
         }
 
-        #slingshot {
+        #slingShot {
             font-size: 12px;
             position: absolute;
-            top: 14%;
+            top: 16%;
             left: 2%;
+            display: none;
 
         }
 
@@ -135,7 +136,7 @@
             height: "50px";
             width: "50px";
             position: absolute;
-            top: 37%;
+            top: 30%;
             left: 1%;
             display: none;
         }
@@ -225,6 +226,14 @@
 
         /****************************Media Querry for 1024 Screens**************/
         @media only screen and (max-width: 1024px) {
+            #black__interface{
+                background-color: black;
+                 position: absolute;
+                top:50%;
+                left:50%;
+                transform: translate(-50%,-50%);
+                
+            }
             #debugText {
                 font-size: .5rem;
                 top: 10%;
@@ -240,7 +249,7 @@
                 display: inline-block;
             }
 
-            #slingshot {
+            #slingShot {
                 font-size: .4rem;
                 top: 14%;
                 left: 1%;
@@ -286,16 +295,23 @@
         </canvas>
      
        
-        <div class="black__interface">
+        <div id="black__interface">
             <p id="debugText" style="color:white;">Key count will be displayed here.</p>     
             <p class="items">Items Collected:</p>
-            <p id="slingshot"></p>
+            <div class="img-container">
+                <!-- <p id="slingshot"></p> -->
+                <img src="images/tirador.png" id="slingShot" alt="Slingshot" />
+            </div> 
+           
             <p id="sword"></p>
             <p id="arrow"></p>
             <p id="spear"></p>
             <p id="woodenBow"></p>
             <p id="daggerText" style="color:white;">Dagger count will be displayed here.</p>     
-           
+            <div class="img-container">
+                <p id="collected-crossbows"></p>
+                <img src="images/crossbow-transparent.png" id="crossbow" alt="crossbow" />
+            </div> 
         </div>
         <div class="rocketEnergy">
            <div id="myBar">100%</div>
@@ -307,10 +323,7 @@
             <a href="game-menu.html">BACK TO MENU</a>
         </div>
         
-         <div class="img-container">
-            <p id="collected-crossbows"></p>
-            <img src="images/crossbow-transparent.png" id="crossbow" alt="crossbow" />
-        </div> 
+        
          <audio autoplay loop id="bossAudio">
             
             <source src="robo-explorer-level10-guitarRiff.wav" type="audio/wav">

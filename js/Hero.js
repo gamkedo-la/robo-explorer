@@ -148,7 +148,9 @@ function heroClass() {
   }
 
   this.updateSlingshotReadout = function () {
-    document.getElementById("slingshot").innerHTML = "1. Slingshot";
+    // document.getElementById("slingshot").innerHTML = "1. Slingshot";
+    document.getElementById("slingShot").style.display = "block";
+    
   };
 
   this.updateSwordReadout = function () {
@@ -165,7 +167,7 @@ function heroClass() {
 
   this.updateCrossbowReadout = function () {
     document.getElementById("crossbow").style.display = "block";
-    document.getElementById("collected-crossbows").innerHTML = "1";
+    // document.getElementById("collected-crossbows").innerHTML = "1";
   };
 
   this.updateWoodenBowReadout = function () {

@@ -121,42 +121,44 @@ function checkForCheatKeys (keyCode) {
       levelList=worldList[worldNow];
       levelNow =0;
       loadLevel(levelList[levelNow]); 
-      break
+      break;
     case KEY_2:
       worldNow=1;
       levelList=worldList[worldNow];
       levelNow =0;
       loadLevel(levelList[levelNow]); 
-      break
+      break;
     
       case KEY_3:
         worldNow=2;
         levelList=worldList[worldNow];
         levelNow =0;
         loadLevel(levelList[levelNow]); 
-        break
+        break;
     case KEY_4:
       levelNow++;
       if (levelNow >= levelList.length){
         levelNow = levelList.length -1;
       }
       loadLevel(levelList[levelNow]); 
-      break
+      break;
     case KEY_5:
       levelNow--;
       if (levelNow < 0){
         levelNow = 0;
       }
       loadLevel(levelList[levelNow]); 
-      break
+      break;
     
      
       
-    /*
+    
     case KEY_6:
-      loadLevel(levelSix);
-      break
-    case KEY_7:
+      //loadLevel(levelSix);
+      hideItems();
+      break;
+    /*
+      case KEY_7:
       loadLevel(levelSeven); 
       break
     case KEY_8:
