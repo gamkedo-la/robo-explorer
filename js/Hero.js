@@ -159,7 +159,7 @@ function heroClass() {
   };
 
   this.updateArrowReadout = function () {
-    document.getElementById("arrow").innerHTML = "3. Arrow";
+    document.getElementById("arrow").style.display = "block";
   };
 
   this.updateSpearReadout = function () {
