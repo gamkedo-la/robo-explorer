@@ -353,6 +353,7 @@ var sideQuest4 = [
         const WORLD_LABDOOR =79;
         const WORLD_SPIDER =80;
         const WORLD_LABPIPE =81;
+        const WORLD_LABWALL =82;
         // const WORLD_SMALLBRICK 
 
        

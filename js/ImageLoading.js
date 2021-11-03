@@ -100,6 +100,8 @@ function loadImages() {
     { trackType: WORLD_LABORATORYINSIDE, theFile: "laboratoryInside.png" },
     { trackType: WORLD_LABDOOR, theFile: "labDoor.png" },
     { trackType: WORLD_LABPIPE, theFile: "labPipe.png" },
+    { trackType: WORLD_LABWALL, theFile: "labWall.png" },
+   
    
     
     { trackType: WORLD_SLINGSHOT, theFile: "tirador.png" },
