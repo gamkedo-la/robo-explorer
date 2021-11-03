@@ -422,7 +422,30 @@ function loadLevel(whichLevel) {
 
 /**********************FUNCTION FOR UPDATING moveAll and drawAll FUNCTION************/
 
+// ultra simple little level start intro
+var logoAlpha = 1;
+var logoFadeSpeed = 0.007;
+function fadeOutLogo() {
+    
+    if (logoAlpha<0) return; // quick exit
+    
+    let offsetY = -64;
 
+    if (performance.now() % 1000 > 500) { // flash
+        let txtX = Math.round(canvas.width/2);
+        let txtY = Math.round(canvas.height/2) + logoPic.height/2 + offsetY;
+        colorText("PLAYER ONE - GET READY!",txtX+2,txtY+2,"black","16px 'Press Start 2P'","center");
+        colorText("PLAYER ONE - GET READY!",txtX,txtY,"white","16px 'Press Start 2P'","center");
+    }
+    
+    // draw the logo
+    let logoX = Math.round(canvas.width/2-logoPic.width/2);
+    let logoY = Math.round(canvas.height/2-logoPic.height/2) + offsetY;
+    canvasContext.globalAlpha = logoAlpha;
+    canvasContext.drawImage(logoPic,logoX,logoY);
+    logoAlpha -= logoFadeSpeed; // slowly fade out
+    canvasContext.globalAlpha = 1; // reset
+}
 
 function updateAll() {
   GamePad.update();
@@ -637,6 +660,7 @@ function drawOnlyBricksOnScreen() {
 
 function drawAll() {
   colorRect(0, 0, canvas.width, canvas.height, worldSky[worldNow]);
+
   canvasContext.save(); // needed to undo this .translate() used for scroll
 
   /* var worldMouseX = mouseX + camPanX; // Tile position under mouse used for debugging
@@ -698,4 +722,7 @@ function drawAll() {
   drawOnlyBricksOnScreen();
 
   //Draw UI here
+  fadeOutLogo(); // "ready player one" intro
+
+
 }

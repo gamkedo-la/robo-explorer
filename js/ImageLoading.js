@@ -10,6 +10,7 @@ var bossPic = document.createElement("img");
 var boyCocoonPic=document.createElement("img");
 var smallWormPic=document.createElement("img");
 var bossWormPic=document.createElement("img");
+var logoPic=document.createElement("img");
 
 var trackPics = [];
 
@@ -58,6 +59,7 @@ function loadImages() {
     { varName: boyCocoonPic, theFile: "boyInCocoon.png" },
     { varName: smallWormPic, theFile: "smallWorm.png" },
     { varName: bossWormPic, theFile: "bigWorm3.png" },
+    { varName: logoPic, theFile: "RoboExplorerLogo.png" },
 
 
     { varName: trapPic, theFile: "spike-sprite3.png" },
