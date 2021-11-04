@@ -98,7 +98,7 @@ function loadImages() {
     
     { trackType: WORLD_TREEBRANCH, theFile: "treeBranch.png" },
     { trackType: WORLD_DAGGER, theFile: "dagger.png" },
-    { trackType: WORLD_LABORATORYENTRANCE, theFile: "laboratory.png" },
+    { trackType: WORLD_LABORATORYENTRANCE, theFile: "laboratory2.png" },
     { trackType: WORLD_LABORATORYINSIDE, theFile: "laboratoryInside.png" },
     { trackType: WORLD_LABDOOR, theFile: "labDoor.png" },
     { trackType: WORLD_LABPIPE, theFile: "labPipe.png" },
