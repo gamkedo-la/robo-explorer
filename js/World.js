@@ -355,6 +355,7 @@ var sideQuest4 = [
         const WORLD_LABPIPE =81;
         const WORLD_LABWALL =82;
         const WORLD_LABWALL2 =83;
+        const WORLD_FORESTROCK =84;
 
         // const WORLD_SMALLBRICK 
 
@@ -466,7 +467,9 @@ var sideQuest4 = [
             checkTileType == WORLD_FORESTGRASS ||
             checkTileType == WORLD_FORESTGRASS2 ||
             checkTileType == WORLD_FORESTGRASS3 ||
-            checkTileType == WORLD_MOUNTAIN
+            checkTileType == WORLD_MOUNTAIN ||
+            checkTileType == WORLD_FORESTROCK
+            
 
           
             

@@ -104,6 +104,7 @@ function loadImages() {
     { trackType: WORLD_LABPIPE, theFile: "labPipe.png" },
     { trackType: WORLD_LABWALL, theFile: "labWall.png" },
     { trackType: WORLD_LABWALL2, theFile: "labWall2.png" },
+    { trackType: WORLD_FORESTROCK, theFile: "rocks.png" },
    
    
     
