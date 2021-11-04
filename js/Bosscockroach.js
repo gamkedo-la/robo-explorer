@@ -1,11 +1,11 @@
-const BOSS_MOVEMENT_SPEED = 20.0;
+const BOSS_MOVEMENT_SPEED = 8.0; // frm 20.0 to 8.0 to reduce speed.
 const BOSS_IMAGE_NAME = "boss";
 const BOSS_FRAMES = 0;
 const BOSS_ANIM_FRAMES=3;
 const BOSS_LEFT_WALL_BOUNDARY=200;
 const BOSS_RIGHT_WALL_BOUNDARY=1.3;
-const BOSS_TOP_WALL_BOUNDARY=200;
-const BOSS_BOTTOM_WALL_BOUNDARY=0.9;
+const BOSS_TOP_WALL_BOUNDARY=100; // 200 to 100 to make enemy reach top tiles 
+const BOSS_BOTTOM_WALL_BOUNDARY=0.5; // 0.9 to 0.9 adjusted this to not make enemy go to the slime
 
 
 var bossX = 75;
@@ -25,14 +25,16 @@ function bossClass() {
   this.height = 160;
   this.frameX = 0;
   this.frameY = 0;
+  this.fire = 0;
   this.name = "untitled boss";
   
 
   //properties for sprite animation
   this.moveDir=0;
+  this.moveTop=0;
   this.frame = 0; 
   this.numberOfFrames = 2; //how many frames are in the spritesheet
-  this.animationSpeed = 5;
+  this.animationSpeed = 0;
   this.animationCounter = 0;
 
   this.reset = function () {
@@ -58,11 +60,16 @@ function bossClass() {
       return;
     }
     this.x += this.speedX;
+    this.fire=0;
     if (this.x < BOSS_LEFT_WALL_BOUNDARY && this.speedX < 0.0) {// left boundary
       //left side
+      this.fire=1;
       this.speedX *= -1;
 
+    }else{
+      this.fire=0;
     }
+
     if (this.x > canvas.width * BOSS_RIGHT_WALL_BOUNDARY && this.speedX > 0.0) {
       // right side
       this.speedX *= -1;
@@ -88,20 +95,21 @@ function bossClass() {
       return; 
     }
     var bossFrameW = 160;
-    
+    var bossFrameH = 160; // added this to hide second row of animation
     canvasContext.drawImage(
       bossPic,
       this.frame * bossFrameW,
       0, //top left corner of spritesheet frame
       bossFrameW,
-      bossPic.height, //size of frame
+      bossPic.height = bossFrameH, //size of frame (assigned the bossFrameH variable to hide second frame)
       this.x - bossPic.width / 2,
-      this.y - bossPic.height / 2, //position on screen, centers image relative to self
+      this.y - bossPic.height/ 2, //position on screen, centers image relative to self
       bossFrameW,
       bossPic.height //size of image on screen
     );
 
     //SPRITE ANIMATION CODE
+   
 
     this.animationCounter++;
     if (this.animationCounter == this.animationSpeed) {
@@ -112,26 +120,38 @@ function bossClass() {
       this.animationCounter = 0;
     }
 
-    /*
+    
     if (++this.frame >= BOSS_ANIM_FRAMES) {
       this.frame = 0;
-    } */
+    } 
+
+
 
     /*
     if (this.moveDir == 0) {
       this.frame = 0;
     }*/
 
-    /*
-    var animationRow = 0;
-    if (this.x < 0 ) {// left boundary
-      //left side
-      animationRow = 3;
-
-    }*/
-
-    /*var flipLeft = this.moveDir == -1;*/
     
+    var animationRow = 0;
+    if (this.fire > 0 ) {// left boundary
+      //left side
+      animationRow = 1;
+
+    }
+   
+    var flipLeft = this.moveDir == -1;
+    drawBitmapCenteredWithAnimationFlip(
+      bossPic,
+      this.x,
+      this.y,
+      this.width,
+      this.height,
+      this.frame,
+      animationRow =2,
+      flipLeft,
+      this.flyAng
+    );
   };
 
   // console.log(this.animationCounter);

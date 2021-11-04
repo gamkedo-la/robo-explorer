@@ -200,6 +200,8 @@ function heroClass() {
         //console.log(this.rocketEnergy);
         for (var i = 0; i < START_PARTICLES; i++) {
           addParticles();
+          // var audio = new Audio("rocketSound4.mp3");
+          // audio.play();
         }
 
       } else {
@@ -840,10 +842,11 @@ function heroClass() {
       animationRow = 1;
     }
 
-    var animationRow = 0;
+
     if (this.fireSlingshot > 0) {
       animationRow = 2;
     }
+
 
     if (this.swordSlash > 0) {
       animationRow = 3;
