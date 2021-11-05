@@ -571,12 +571,12 @@ function moveAll() {
       if (!rat.justGotHit) {
         var audio = new Audio("ratSound2.mp3");
         audio.play();
-        if (blueHero.swordSlash > 0){
-            ratsInLevel.pop(rat);// testing how to remove 1 rat when touching bluehero with sword animation not yet working
-        }
+       
         console.log("Hero hit rat")
       }
-
+      if (blueHero.swordSlash > 0){
+        ratsInLevel.pop(enemyList--);// testing how to remove 1 rat when touching bluehero with sword animation not yet working
+      }
       // this helps us only trigger once per hit instead of 20x in a row
       rat.justGotHit = true;
 

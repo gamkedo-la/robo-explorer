@@ -200,7 +200,7 @@ function heroClass() {
         //console.log(this.rocketEnergy);
         for (var i = 0; i < START_PARTICLES; i++) {
           addParticles();
-          var audio = new Audio("rocketSound4.mp3");
+          var audio = new Audio("rocketSound5.mp3");
           audio.play();
         }
 
