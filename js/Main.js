@@ -575,7 +575,10 @@ function moveAll() {
         console.log("Hero hit rat")
       }
       if (blueHero.swordSlash > 0){
-        ratsInLevel.pop(enemyList--);// testing how to remove 1 rat when touching bluehero with sword animation not yet working
+        enemyList.pop(enemyList);// testing how to remove 1 rat when touching bluehero with sword animation not yet working
+        audio.pause();
+        
+       
       }
       // this helps us only trigger once per hit instead of 20x in a row
       rat.justGotHit = true;
