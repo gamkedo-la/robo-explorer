@@ -81,14 +81,15 @@ function smallWormClass() {
     canvasContext.drawImage(
        smallWormPic ,
       this.frame * smallWormFrameW, 
+      
       0, //top left corner of spritesheet frame
+     
       smallWormFrameW = smallWormFrameW, 
       smallWormPic.height = smallWormFrameH, //size of frame
       this.x - smallWormPic.width / 2, 
       this.y - smallWormPic.height / 2, //position on screen, centers image relative to self
       smallWormFrameW, smallWormPic.height //size of image on screen
     );
-
 
 
   
