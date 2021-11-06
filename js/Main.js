@@ -571,14 +571,11 @@ function moveAll() {
       if (!rat.justGotHit) {
         var audio = new Audio("ratSound2.mp3");
         audio.play();
-       
         console.log("Hero hit rat")
       }
       if (blueHero.swordSlash > 0){
+        var enemyRat = new ratClass();
         enemyList.pop(enemyList);// testing how to remove 1 rat when touching bluehero with sword animation not yet working
-        audio.pause();
-        
-       
       }
       // this helps us only trigger once per hit instead of 20x in a row
       rat.justGotHit = true;
@@ -598,7 +595,16 @@ function moveAll() {
   }
 
   if (entity_v_entity(blueHero, bossEnemy)) {
-    console.log("Hero hit boss enemy")
+    /*  
+    if (!bossEnemy) {
+
+        console.log("Hero hit boss cockroach")
+      }
+      if (slingShot.swordSlash > 0){
+        bossEnemy.reset();// testing how to remove boss when hit with slingshot-not yet working
+        
+      }
+    console.log("Hero hit boss enemy")*/
   }
 }
 
@@ -610,8 +616,8 @@ function rocketPackError(){
 }
 
 function entity_v_entity(entity1, entity2) {
-  if ((entity1.x > entity2.x - entity2.width / 2) &&
-  (entity1.x < entity2.x + entity2.width / 2) &&
+  if ((entity1.x > entity2.x - entity2.width+0.01  / 2) &&
+  (entity1.x < entity2.x + entity2.width  / 2) &&
   (entity1.y > entity2.y - entity2.height / 2) &&
   (entity1.y < entity2.y + entity2.height / 2)) {
     return true
