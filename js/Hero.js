@@ -45,6 +45,7 @@ function heroClass() {
   this.climb = 0;
   this.climbDown = 0;
   this.crawl = 0;
+  this.onRechargableBattery = null;
 
   this.keyHeld_Climb = false;
   this.keyHeld_ClimbDown = false;
@@ -552,7 +553,10 @@ function heroClass() {
       this.reactToTileType(walkIntoTileType, walkIntoTileIndex);
     }
 
-    // this.reactToTileType(walkIntoTileType, walkIntoTileIndex);
+    if (this.onRechargableBattery && walkIntoTileIndex !== this.onRechargableBattery) {
+      worldGrid[this.onRechargableBattery] = WORLD_ROCKET_RECHARGABLE_BATTERY
+      this.onRechargableBattery = null
+    }
   };
 
   this.getWalkIntoTileTypes = function (nextX, nextY) {
@@ -697,11 +701,9 @@ function heroClass() {
         break;
 
       case WORLD_ROCKET_BATTERY:
-        if (this.rocketEnergy == 0) {
-
+        // if (this.rocketEnergy == 0) {
           this.rocketEnergy = ROCKET_LIFE;
-
-        }
+        // }
 
         worldGrid[walkIntoTileIndex] = WORLD_EMPTY;
         // this.updateWoodenBowReadout();
@@ -709,6 +711,11 @@ function heroClass() {
         // this.keyHeld_Fly = true;
         // blueHero.rocketEnergy = ROCKET_LIFE == 100;
         // this.keysHeld_Jump = true;
+        break;
+        case WORLD_ROCKET_RECHARGABLE_BATTERY:
+          this.rocketEnergy = ROCKET_LIFE;
+          worldGrid[walkIntoTileIndex] = WORLD_EMPTY;
+          this.onRechargableBattery = walkIntoTileIndex;
         break;
       case WORLD_DOOR:
         if (this.keysHeld > 0) {
