@@ -14,8 +14,8 @@ function smallWormClass() {
   this.speedY = SMALL_WORM_MOVEMENT_SPEED;
 
 
-  this.width = 50;
-  this.height = 50;
+  this.width = 200;
+  this.height = 100;
   this.frameY = 0;
    
   //properties for sprite animation
@@ -76,12 +76,16 @@ function smallWormClass() {
 
   this.draw = function(){
    
-    var smallWormFrameW = 50;
+    var smallWormFrameW = 100;
+    var smallWormFrameH = 50;// hide smallWorm row
     canvasContext.drawImage(
-       smallWormPic,
-      this.frame * smallWormFrameW, 0, //top left corner of spritesheet frame
-      smallWormFrameW, smallWormPic.height, //size of frame
-      this.x - smallWormPic.width / 2, this.y - smallWormPic.height / 2, //position on screen, centers image relative to self
+       smallWormPic ,
+      this.frame * smallWormFrameW, 
+      0, //top left corner of spritesheet frame
+      smallWormFrameW = smallWormFrameW, 
+      smallWormPic.height = smallWormFrameH, //size of frame
+      this.x - smallWormPic.width / 2, 
+      this.y - smallWormPic.height / 2, //position on screen, centers image relative to self
       smallWormFrameW, smallWormPic.height //size of image on screen
     );
 
