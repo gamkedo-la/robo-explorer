@@ -149,6 +149,7 @@ function loadImages() {
     { trackType: WORLD_PIPE_TOP_SIDEQUEST4, theFile: "world-pipe-top-sidequest4.png" },
     { trackType: WORLD_CURVE_PIPE, theFile: "curvePipes.png" },
     { trackType: WORLD_ROCKET_BATTERY, theFile: "rocketEnergy.png" },
+    { trackType: WORLD_ROCKET_RECHARGABLE_BATTERY, theFile: "rocketEnergy.png" },
 
 
 

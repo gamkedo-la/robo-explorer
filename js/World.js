@@ -14,7 +14,7 @@ var levelOne = [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
                 1,0,0,0,4,0,0,0,1,1,0,1,1,6,1,1,1,0,0,1,
                 1,0,0,0,4,0,0,0,1,1,0,0,1,0,0,1,1,0,0,1,
                 1,5,0,0,0,15,0,0,1,1,0,0,6,0,0,1,0,0,0,1,
-                1,0,1,0,1,1,0,0,6,6,0,0,1,0,5,1,0,32,15,1,  
+                1,42.5,1,0,1,1,0,0,6,6,0,0,1,0,5,1,0,32,15,1,  
                 1,1,1,7,1,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,
                 1,1,1,1,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
                 2,0,0,0,0,25,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
@@ -314,6 +314,7 @@ var sideQuest4 = [
         const WORLD_PIPE_RIGHT_SIDEQUEST3=40;
         const WORLD_PIPE_TOP_SIDEQUEST3=41;
         const WORLD_ROCKET_BATTERY=42;
+        const WORLD_ROCKET_RECHARGABLE_BATTERY=42.5;
         const WORLD_CURVE_PIPE=43;
         const WORLD_SEWER_TRAP_LOCK_BAR=44;
         const WORLD_SEWER_PIPE_WITH_BAR=45;
