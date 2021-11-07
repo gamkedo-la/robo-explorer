@@ -729,8 +729,7 @@ function heroClass() {
       case WORLD_DAGGER:
         this.daggersHeld += 5;
         this.updateDaggerReadout();
-        var audio = new Audio("keyCollectionSound2.wav");
-        audio.play();
+        keyCollectionSound();
         worldGrid[walkIntoTileIndex] = WORLD_EMPTY;
         break;
 
@@ -775,8 +774,6 @@ function heroClass() {
         // this.keysHeld;
         this.keysHeld++;
         this.updateKeyReadout();
-        /*var audio = new Audio("keyCollectionSound2.wav");
-        audio.play();*/
         keyCollectionSound();
         worldGrid[walkIntoTileIndex] = WORLD_EMPTY;
         break;
