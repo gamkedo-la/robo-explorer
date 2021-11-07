@@ -58,7 +58,7 @@ function loadImages() {
     { varName: bossPic, theFile: "bossCockroachSprite.png"},
     { varName: boyCocoonPic, theFile: "boyInCocoon.png" },
     { varName: smallWormPic, theFile: "smallWorm.png" },
-    { varName: bossWormPic, theFile: "bigWorm3.png" },
+    { varName: bossWormPic, theFile: "bigWorm4.png" },
     { varName: logoPic, theFile: "RoboExplorerLogo.png" },
 
 

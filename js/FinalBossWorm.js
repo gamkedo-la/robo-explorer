@@ -22,7 +22,7 @@ function finalBossClass() {
 
   //properties for sprite animation
   this.frame = 0;
-  this.numberOfFrames = 3; //how many frames are in the spritesheet
+  this.numberOfFrames = 5; //how many frames are in the spritesheet
   this.animationSpeed = 8;
   this.animationCounter = 0;
 
@@ -48,12 +48,12 @@ function finalBossClass() {
       return; 
     }
     this.x += this.speedX;
-    if (this.x < 400 && this.speedX < 0.0) {// left boundary
+    if (this.x < BOSS_LEFT_WALL_BOUNDARY + 600 && this.speedX < 0.0) {// left boundary
       //left side
       this.speedX *= -1;
 
     }
-    if (this.x > canvas.width *1.6 && this.speedX > 0.0) {
+    if (this.x > canvas.width *2 && this.speedX > 0.0) {
       // right side
       this.speedX *= -1;
     }
@@ -75,7 +75,7 @@ function finalBossClass() {
     if (this.health <= 0){
       return; 
     }
-    var bossWormFrameW = 267;
+    var bossWormFrameW = 294;
     canvasContext.drawImage(
         bossWormPic,
       this.frame*bossWormFrameW,
