@@ -94,7 +94,7 @@ function loadImages() {
     { trackType: WORLD_FORESTGRASS2, theFile: "forestGrass2.png" },
     { trackType: WORLD_FORESTGRASS3, theFile: "forestGrass3.png" },
     { trackType: WORLD_MOUNTAIN, theFile: "mountain.png" },
-    
+    { trackType:     WORLD_TREASURECHEST, theFile: "treasure.png" },
     
     { trackType: WORLD_TREEBRANCH, theFile: "treeBranch.png" },
     { trackType: WORLD_DAGGER, theFile: "dagger.png" },
