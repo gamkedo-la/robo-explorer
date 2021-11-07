@@ -20,7 +20,9 @@ function finalBossClass() {
   this.frameY = 0;
   this.name = "untitled boss";
 
+
   //properties for sprite animation
+  this.moveDir = 0;
   this.frame = 0;
   this.numberOfFrames = 5; //how many frames are in the spritesheet
   this.animationSpeed = 8;
@@ -51,6 +53,7 @@ function finalBossClass() {
     if (this.x < BOSS_LEFT_WALL_BOUNDARY + 600 && this.speedX < 0.0) {// left boundary
       //left side
       this.speedX *= -1;
+    //  this.moveDir = 1;
 
     }
     if (this.x > canvas.width *2 && this.speedX > 0.0) {
@@ -99,6 +102,22 @@ function finalBossClass() {
       this.animationCounter = 0;
     }
   };
+
+  var flipRight = this.moveDir == -1;
+  
+  /*
+
+  drawBitmapCenteredWithAnimationFlip(
+    bossWormPic,
+    this.x,
+    this.y,
+    this.width,
+    this.height,
+    this.frame,
+    animationRow =2,
+    flipRight,
+    this.flyAng
+  );*/
 
   // console.log(this.animationCounter);
   // console.log(this.frame); //caught the problem...this is reaching beyond number of frames...
