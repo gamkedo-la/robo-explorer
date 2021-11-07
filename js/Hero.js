@@ -775,8 +775,9 @@ function heroClass() {
         // this.keysHeld;
         this.keysHeld++;
         this.updateKeyReadout();
-        var audio = new Audio("keyCollectionSound2.wav");
-        audio.play();
+        /*var audio = new Audio("keyCollectionSound2.wav");
+        audio.play();*/
+        keyCollectionSound();
         worldGrid[walkIntoTileIndex] = WORLD_EMPTY;
         break;
 
