@@ -569,8 +569,7 @@ function moveAll() {
     if (entity_v_entity(blueHero, rat)) {
 
       if (!rat.justGotHit) {
-        var audio = new Audio("ratSound2.mp3");
-        audio.play();
+        ratCollisionSound();
         console.log("Hero hit rat")
       }
       if (blueHero.swordSlash > 0){
