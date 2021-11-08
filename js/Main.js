@@ -306,6 +306,7 @@ window.onload = function () {
   //bossEnemyReset();
   bossEnemy.reset();
   boyCocoon.reset();
+  document.getElementById("storyMenu").style.transform = "scale(0)";
  
 };
 

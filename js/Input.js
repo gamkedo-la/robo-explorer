@@ -157,10 +157,11 @@ function checkForCheatKeys (keyCode) {
       //loadLevel(levelSix);
       hideItems();
       break;
-    /*
+    
       case KEY_7:
-      loadLevel(levelSeven); 
-      break
+        hideStoryMenu();
+      break;
+      /*
     case KEY_8:
       loadLevel(levelEight); 
       break
