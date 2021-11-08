@@ -567,11 +567,8 @@ function moveAll() {
        if (entity_v_entity(blueHero, enemy)) {
         switch (enemy.myTileKind){
           case WORLD_RAT:
-            if (!enemy.justGotHit) {
-              ratCollisionSound();
-              
-            }
-            enemy.justGotHit = true;
+            ratCollisionSound();
+            enemy.readyToRemove = true;
             console.log('Bump rat');
             break;
           case WORLD_SPIDER:
@@ -590,7 +587,13 @@ function moveAll() {
         
        }
     }
-  
+  //backwards loop to remove elements ready for removal
+    for(var i = enemyList.length - 1;i >=0; i--){
+      if (enemyList[i].readyToRemove){
+        enemyList.splice(i,1);
+      }
+    }
+
   if (entity_v_entity(blueHero, cockroach_egg)) {
     console.log("Hero hit cockroach egg")
   }
