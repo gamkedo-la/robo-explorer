@@ -271,6 +271,11 @@ color: #fff;
     
 }
 
+#story{
+    color:#fff;
+    font-size: 13px;
+    position: center;
+}
 /****************************Media Querry for 1024 Screens**************/
 @media only screen and (max-width: 1024px) {
     #black__interface{
