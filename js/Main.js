@@ -307,7 +307,7 @@ window.onload = function () {
   bossEnemy.reset();
   boyCocoon.reset();
   document.getElementById("storyMenu").style.transform = "scale(0)";
-  typeWriter();
+  tunnelStory();
 };
 
 
