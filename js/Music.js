@@ -13,9 +13,8 @@ function ratCollisionSound(){
         audio.play();
        
 }
-
+/*
 function tunnelMusic(){
     var audio = new Audio("darkSong2.mp3");
         audio.play();
-    
-}
+}*/

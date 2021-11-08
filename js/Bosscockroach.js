@@ -2,8 +2,8 @@ const BOSS_MOVEMENT_SPEED = 8.0; // frm 20.0 to 8.0 to reduce speed.
 const BOSS_IMAGE_NAME = "boss";
 const BOSS_FRAMES = 0;
 const BOSS_ANIM_FRAMES=3;
-const BOSS_LEFT_WALL_BOUNDARY=200;
-const BOSS_RIGHT_WALL_BOUNDARY=1.3;
+const BOSS_LEFT_WALL_BOUNDARY=100;//200
+const BOSS_RIGHT_WALL_BOUNDARY=0.8; //1.3
 const BOSS_TOP_WALL_BOUNDARY=100; // 200 to 100 to make enemy reach top tiles 
 const BOSS_BOTTOM_WALL_BOUNDARY=0.5; // 0.9 to 0.9 adjusted this to not make enemy go to the slime
 const BOSS_HEALTH =10;
@@ -123,6 +123,7 @@ function bossClass() {
     var animationRow = 0;
     if (this.speedX > 0 ) {
       animationRow = 1;
+     
     }
    
     var flipLeft = this.moveDir == -1;

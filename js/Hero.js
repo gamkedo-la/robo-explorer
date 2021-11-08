@@ -669,6 +669,7 @@ function heroClass() {
 
         delayAudio();
         loadLevel(levelTen);
+       
         break;
       /*-------------------------------WORLD FOREST------------------------------*/
       case WORLD_TREEVINES:
