@@ -4,6 +4,7 @@ const SMALL_WORM_FRAMES = 0;
 const SMALL_WORM_BOUNDARY =53;
 
 function smallWormClass() {
+  this.myTileKind =WORLD_SMALLWORM;
   this.x = 75;
   this.y = 75;
   this.ang=0;
@@ -29,7 +30,7 @@ function smallWormClass() {
     for (var eachRow = 0; eachRow < WORLD_ROWS; eachRow++) {
       for (var eachCol = 0; eachCol < WORLD_COLS; eachCol++) {
         var arrayIndex = rowColToArrayIndex(eachCol, eachRow);
-        if (worldGrid[arrayIndex] == WORLD_SMALLWORM) {
+        if (worldGrid[arrayIndex] == this.myTileKind) {
           worldGrid[arrayIndex] = WORLD_EMPTY;
           // this.ang = -Math.PI / 2;
           this.x = eachCol * WORLD_W + WORLD_W / 2;

@@ -4,6 +4,7 @@ const TRAP_FRAMES = 0;
 const TRAP_DIM= 50; // DIM for dimension same width and height
 
 function trapClass() {
+  this.myTileKind = WORLD_TRAP;
   this.x = 75;
   this.y = 75;
 
@@ -25,7 +26,7 @@ function trapClass() {
     for (var eachRow = 0; eachRow < WORLD_ROWS; eachRow++) {
       for (var eachCol = 0; eachCol < WORLD_COLS; eachCol++) {
         var arrayIndex = rowColToArrayIndex(eachCol, eachRow);
-        if (worldGrid[arrayIndex] == WORLD_TRAP) {
+        if (worldGrid[arrayIndex] ==  this.myTileKind) {
           worldGrid[arrayIndex] = WORLD_EMPTY;
           // this.ang = -Math.PI / 2;
           this.x = eachCol * WORLD_W + WORLD_W / 2;

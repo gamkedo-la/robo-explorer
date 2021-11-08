@@ -6,7 +6,6 @@ var blueHero = new heroClass();
 var cockroach_egg = new cockroach_eggClass();
 var bossEnemy = new bossClass();
 var boyCocoon = new boyCocoonClass();
-var ratsInLevel = [];
 var spidersInLevel = [];
 
 var finalBossWorm= new finalBossClass();
@@ -371,14 +370,13 @@ function loadLevel(whichLevel) {
     lookForAnotherTrap = trapHasTile;
   }
 
-  ratsInLevel = [];
   var lookForAnotherRat = true;
   while(lookForAnotherRat){
     var newRat = new ratClass();
     var ratHasTile = newRat.reset();
     if (ratHasTile){
       enemyList.push(newRat);
-      ratsInLevel.push(newRat); // testing rat collisions - Ryan A.
+    
     }
     lookForAnotherRat = ratHasTile;
   }
@@ -565,25 +563,33 @@ function moveAll() {
   /*--CCCCC-CCCCCCC--CCCCCC-CCCCCC-CC--CC------CC---------CC--CCCCCCC--CC------CC-- */
 
   function checkCollisionsAll() {
-  for(var rat of ratsInLevel){
-    if (entity_v_entity(blueHero, rat)) {
-
-      if (!rat.justGotHit) {
-        ratCollisionSound();
-        console.log("Hero hit rat")
-      }
-      if (blueHero.swordSlash > 0){
-        var enemyRat = new ratClass();
-        enemyList.pop(enemyList);// testing how to remove 1 rat when touching bluehero with sword animation not yet working
-      }
-      // this helps us only trigger once per hit instead of 20x in a row
-      rat.justGotHit = true;
-
-    } else { // player did not collide with a rat this frame
-        if (blueHero.hitRatPrevFrame) console.log("Hero no longer hitting rat")
-        rat.justGotHit = false;
+    for (var enemy of enemyList){
+       if (entity_v_entity(blueHero, enemy)) {
+        switch (enemy.myTileKind){
+          case WORLD_RAT:
+            if (!enemy.justGotHit) {
+              ratCollisionSound();
+              
+            }
+            enemy.justGotHit = true;
+            console.log('Bump rat');
+            break;
+          case WORLD_SPIDER:
+            console.log('Bump spider');
+            break;
+          case WORLD_SMALLWORM:
+            console.log('Bump smallWorm');
+            break;
+          case WORLD_TRAP:
+            console.log('Bump trap');
+            break;
+          default:
+            console.log("unknown collision "+ enemy.myTileKind);
+            break;
+        } 
+        
+       }
     }
-  }
   
   if (entity_v_entity(blueHero, cockroach_egg)) {
     console.log("Hero hit cockroach egg")
