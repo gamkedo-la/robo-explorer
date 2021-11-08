@@ -161,10 +161,16 @@ function checkForCheatKeys (keyCode) {
       case KEY_7:
         hideStoryMenu();
       break;
-      /*
+      
     case KEY_8:
-      loadLevel(levelEight); 
-      break
+      
+      worldNow=3;
+      levelList=worldList[worldNow];
+      levelNow =0;
+      loadLevel(levelList[levelNow]); 
+      break;
+      
+      /*
     case KEY_9:
        loadLevel(levelNine);
       break  
