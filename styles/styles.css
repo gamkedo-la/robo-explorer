@@ -82,7 +82,7 @@ color: red;
 
 /**************************************************Items User Interface***********************/
 #black__interface{
-background-image:url('images/menu-items.png');
+background-image:url('../images/menu-items.png');
 background-size: auto;
 background-position: 100% 100%;
 margin-top: 2%;
