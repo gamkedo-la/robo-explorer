@@ -164,7 +164,7 @@ function heroClass() {
   };
 
   this.updateSpearReadout = function () {
-    document.getElementById("spear").innerHTML = "block";
+    document.getElementById("spear").style.display = "block";
   };
 
   this.updateCrossbowReadout = function () {

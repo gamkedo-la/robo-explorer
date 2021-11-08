@@ -128,7 +128,6 @@ box-shadow:-3px -1px rgba(1, 7, 10, 0.911);
 
 #arrow {
     font-size: 12px;
-
     position: absolute;
     top: 12%;
     left: 38%;
@@ -141,6 +140,7 @@ box-shadow:-3px -1px rgba(1, 7, 10, 0.911);
     position: absolute;
     top: 12%;
     left: 48%;
+    display:none;
 }
 
 
