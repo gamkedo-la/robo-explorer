@@ -25,7 +25,7 @@ function bossClass() {
   this.height = 160;
   this.frameX = 0;
   this.frameY = 0;
-  this.fire = 0;
+  
   this.name = "untitled boss";
   
 
@@ -60,14 +60,12 @@ function bossClass() {
       return;
     }
     this.x += this.speedX;
-    this.fire=0;
+   
     if (this.x < BOSS_LEFT_WALL_BOUNDARY && this.speedX < 0.0) {// left boundary
       //left side
-      this.fire=1;
+   
       this.speedX *= -1;
 
-    }else{
-      this.fire=0;
     }
 
     if (this.x > canvas.width * BOSS_RIGHT_WALL_BOUNDARY && this.speedX > 0.0) {
@@ -94,19 +92,8 @@ function bossClass() {
     if (this.health <= 0){
       return; 
     }
-    var bossFrameW = 160;
-    var bossFrameH = 160; // added this to hide second row of animation
-    canvasContext.drawImage(
-      bossPic,
-      this.frame * bossFrameW,
-      0, //top left corner of spritesheet frame
-      bossFrameW,
-      bossPic.height = bossFrameH, //size of frame (assigned the bossFrameH variable to hide second frame)
-      this.x - bossPic.width / 2,
-      this.y - bossPic.height/ 2, //position on screen, centers image relative to self
-      bossFrameW,
-      bossPic.height //size of image on screen
-    );
+   // added this to hide second row of animation
+    
 
     //SPRITE ANIMATION CODE
    
@@ -134,10 +121,8 @@ function bossClass() {
 
     
     var animationRow = 0;
-    if (this.fire > 0 ) {// left boundary
-      //left side
+    if (this.speedX > 0 ) {
       animationRow = 1;
-
     }
    
     var flipLeft = this.moveDir == -1;
@@ -148,7 +133,7 @@ function bossClass() {
       this.width,
       this.height,
       this.frame,
-      animationRow =2,
+      animationRow,
       flipLeft,
       this.flyAng
     );
