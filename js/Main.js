@@ -563,7 +563,8 @@ function moveAll() {
   /*--CCCCC-CCCCCCC--CCCCCC-CCCCCC-CC--CC------CC---------CC--CCCCCCC--CC------CC-- */
 
   function checkCollisionsAll() {
-    for (var enemy of enemyList){
+    //enemies bumping into player
+    for (var enemy of enemyList){ 
        if (entity_v_entity(blueHero, enemy)) {
         switch (enemy.myTileKind){
           case WORLD_RAT:
@@ -587,12 +588,7 @@ function moveAll() {
         
        }
     }
-  //backwards loop to remove elements ready for removal
-    for(var i = enemyList.length - 1;i >=0; i--){
-      if (enemyList[i].readyToRemove){
-        enemyList.splice(i,1);
-      }
-    }
+  
 
   if (entity_v_entity(blueHero, cockroach_egg)) {
     console.log("Hero hit cockroach egg")
@@ -601,13 +597,28 @@ function moveAll() {
   if (entity_v_entity(blueHero, boyCocoon)) {
     console.log("Hero hit boyCocoon")
   }
+  //slingShot collisions
   for (var shot of slingShotList){
+    for (var enemy of enemyList){
+      if(entity_v_entity(shot,enemy)){
+        enemy.readyToRemove=true;
+        shot.readyToRemove=true;
+      }
+    }
     if (bossEnemy.health > 0 && entity_v_entity(shot, bossEnemy )) {
       shot.readyToRemove = true;
       bossEnemy.health--;
       console.log('shot hit boss');
     }
   }
+
+  //backwards loop to remove elements ready for removal
+  for(var i = enemyList.length - 1;i >=0; i--){
+    if (enemyList[i].readyToRemove){
+      enemyList.splice(i,1);
+    }
+  }
+
   for(var i = slingShotList.length - 1;i >=0; i--){
     if (slingShotList[i].readyToRemove){
       slingShotList.splice(i,1);
