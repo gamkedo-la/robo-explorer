@@ -6,7 +6,7 @@ const BOSS_LEFT_WALL_BOUNDARY=200;
 const BOSS_RIGHT_WALL_BOUNDARY=1.3;
 const BOSS_TOP_WALL_BOUNDARY=100; // 200 to 100 to make enemy reach top tiles 
 const BOSS_BOTTOM_WALL_BOUNDARY=0.5; // 0.9 to 0.9 adjusted this to not make enemy go to the slime
-
+const BOSS_HEALTH =10;
 
 var bossX = 75;
 var bossY = 75;
@@ -44,7 +44,7 @@ function bossClass() {
         var arrayIndex = rowColToArrayIndex(eachCol, eachRow);
         if (worldGrid[arrayIndex] == WORLD_BOSS_COCKROACH) {
           worldGrid[arrayIndex] = WORLD_EMPTY;
-          this.health = 10; // found in grid bringing to life.
+          this.health = BOSS_HEALTH; // found in grid bringing to life.
           // this.ang = -Math.PI / 2;
           this.x = eachCol * WORLD_W + WORLD_W / 2;
           this.y = eachRow * WORLD_H + WORLD_H / 2;

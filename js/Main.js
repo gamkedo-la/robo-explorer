@@ -601,19 +601,20 @@ function moveAll() {
   if (entity_v_entity(blueHero, boyCocoon)) {
     console.log("Hero hit boyCocoon")
   }
-
-  if (entity_v_entity(blueHero, bossEnemy)) {
-    /*  
-    if (!bossEnemy) {
-
-        console.log("Hero hit boss cockroach")
-      }
-      if (slingShot.swordSlash > 0){
-        bossEnemy.reset();// testing how to remove boss when hit with slingshot-not yet working
-        
-      }
-    console.log("Hero hit boss enemy")*/
+  for (var shot of slingShotList){
+    if (bossEnemy.health > 0 && entity_v_entity(shot, bossEnemy )) {
+      shot.readyToRemove = true;
+      bossEnemy.health--;
+      console.log('shot hit boss');
+    }
   }
+  for(var i = slingShotList.length - 1;i >=0; i--){
+    if (slingShotList[i].readyToRemove){
+      slingShotList.splice(i,1);
+    }
+    
+  }
+ 
 }
 
 function rocketPackError(){
