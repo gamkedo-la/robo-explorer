@@ -570,8 +570,12 @@ function moveAll() {
        if (entity_v_entity(blueHero, enemy)) {
         switch (enemy.myTileKind){
           case WORLD_RAT:
-            ratCollisionSound();
-            enemy.readyToRemove = true;
+            if(blueHero.swordSlash == 1){
+              blueHero.keyHeld_Sword = true;
+              ratCollisionSound();
+              enemy.readyToRemove = true;   
+            }
+            
             console.log('Bump rat');
             break;
           case WORLD_SPIDER:
@@ -610,6 +614,7 @@ function moveAll() {
     if (bossEnemy.health > 0 && entity_v_entity(shot, bossEnemy )) {
       shot.readyToRemove = true;
       bossEnemy.health--;
+     
       console.log('shot hit boss');
     }
   }
