@@ -405,11 +405,10 @@ var sideQuest4 = [
     //             //   alert(whichCar.name + "Wins!");
     //             // console.log(whichCar.name + "WINS!");
     //             // loadLevel(levelList);
-    //             //  var audio = new Audio('esrom.wav')
-    //             // var audio = new Audio('blackfirewins.wav')
+    //             // playSoundUnlessAlreadyPlaying('esrom.wav')
+    //             // playSoundUnlessAlreadyPlaying('blackfirewins.wav')
                
-    //                 var audio = new Audio('esrom.wav')
-    //                 audio.play();
+    //                 playSoundUnlessAlreadyPlaying('esrom.wav')
                
                    
     //                    nextLevel();     

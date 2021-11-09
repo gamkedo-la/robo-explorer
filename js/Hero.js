@@ -201,8 +201,7 @@ function heroClass() {
         //console.log(this.rocketEnergy);
         for (var i = 0; i < START_PARTICLES; i++) {
           addParticles();
-          var audio = new Audio("rocketSound5.mp3");
-          audio.play();
+          playSoundUnlessAlreadyPlaying("rocketSound5.mp3");
         }
 
       } else {
@@ -403,8 +402,7 @@ function heroClass() {
     if (this.keyHeld_Slingshot && this.keyHeld_WalkRight) {
       this.fireSlingshot = 1;
       this.keyHeld_Slingshot = false;
-      var audio = new Audio("slingShot2.wav");
-      audio.play();
+      playSoundUnlessAlreadyPlaying("slingShot2.wav");
       addSlingShotRight();
     }
 
@@ -664,8 +662,7 @@ function heroClass() {
         loadLevel(levelNine);
         break;
       case WORLD_TUNNEL_RIGHT_9:
-        // var audio = new Audio("robo-explorer-level10-guitarRiff.wav");
-        // audio.play();
+        // playSoundUnlessAlreadyPlaying("robo-explorer-level10-guitarRiff.wav");
 
         delayAudio();
         loadLevel(levelTen);
