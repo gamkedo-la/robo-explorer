@@ -720,6 +720,7 @@ function heroClass() {
           this.keysHeld--;
           this.updateKeyReadout();
           worldGrid[walkIntoTileIndex] = WORLD_EMPTY;
+          playSoundUnlessAlreadyPlaying("door-open.mp3");
         }
         break;
 
