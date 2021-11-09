@@ -158,8 +158,8 @@ function loadImages() {
     { trackType: WORLD_LOST_BOY, theFile: "boyInCocoon.png" },
     // { trackType: WORLD_COCKROACH_EGG, theFile: "cockroachSprite.png"},
 
-    { trackType: WORLD_WATER, theFile: "sewerWater.png" }
-  
+    { trackType: WORLD_WATER, theFile: "sewerWater.png" },
+    { trackType: WORLD_STORY, theFile: "robo-explorer-story-image1.jpg" }
     
 
   ];

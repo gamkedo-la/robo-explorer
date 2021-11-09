@@ -358,7 +358,7 @@ var sideQuest4 = [
         const WORLD_LABWALL2 =83;
         const WORLD_FORESTROCK =84;
         const WORLD_TREASURECHEST =85;
-
+        const WORLD_STORY =86;
         // const WORLD_SMALLBRICK 
 
        

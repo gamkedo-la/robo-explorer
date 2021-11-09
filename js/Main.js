@@ -308,6 +308,7 @@ window.onload = function () {
   boyCocoon.reset();
   document.getElementById("storyMenu").style.transform = "scale(0)";
   tunnelStory();
+  typeOut();
 };
 
 
