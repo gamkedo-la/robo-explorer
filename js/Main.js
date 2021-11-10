@@ -614,7 +614,10 @@ function moveAll() {
     if (bossEnemy.health > 0 && entity_v_entity(shot, bossEnemy )) {
       shot.readyToRemove = true;
       bossEnemy.health--;
-     
+      if(bossEnemy.health == 0){
+        bossAudio.pause();
+       
+      } 
       console.log('shot hit boss');
     }
   }
