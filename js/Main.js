@@ -335,7 +335,6 @@ function imageLoadingDoneSoStartGame() {
   setupInput();
   playSoundUnlessAlreadyPlaying("blues1-edited.wav");
   loadLevel(levelList[levelNow]);
-  
 }
 
 /*********************FUNCTION FOR NEXT LEVEL****************************************** */
