@@ -616,7 +616,6 @@ function moveAll() {
       bossEnemy.health--;
       if(bossEnemy.health == 0){
         bossAudio.pause();
-       
       } 
       console.log('shot hit boss');
     }
