@@ -19,36 +19,25 @@
         <h1>TERROFADIA TUNNELS</h1>
 
         <canvas id="gameCanvas" width="800" height="600">
-            <!-- height="500" width="900"-->
-
         </canvas>
      
-        <!-- <div id="storyMenu">
-            <p id="story"></p>
-        </div> -->
         <div id="black__interface">
             <p id="debugText">Key count will be displayed here.</p>  
             <p class="items">Items Collected:</p>
             <div class="img-container">
-                <!-- <p id="slingshot"></p> -->
                 <img src="images/tirador.png" id="slingShot" alt="Slingshot" />
             </div> 
            
-            
             <div class="img-container">
-                <!-- <p id="sword"></p> -->
                 <img src="images/sword.png" id="sword" alt="Sword" />
             </div> 
             <div class="img-container">
-                <!-- <p id="arrow"></p> -->
                 <img src="images/world_arrow.png" id="arrow" alt="Arrow bullet" />
             </div> 
             <div class="img-container">
-                <!-- <p id="spear"></p> -->
                 <img src="images/spear.png" id="spear" alt="Spear Item" />
             </div> 
             <p id="woodenBow"></p>
-           
             <p id="daggerText" style="color:white;">Dagger count will be displayed here.</p>     
             <p id="controlKeys" style="color:white;">CONTROLS:</p>
             <ul class="controlKeys__lists">
@@ -61,8 +50,6 @@
                 <li class="controlKeys__Q" style="color:white;">Q: Swim </li>
                 <li class="controlKeys__shift" style="color:white;">SHIFT: Jump </li>
                 <li class="controlKeys__spacebar" style="color:white;">SPACEBAR: Fly </li>
-
-    
             </ul>
             
             <div class="img-container">
@@ -86,13 +73,6 @@
           </audio>    
 
     </div>
-    <!--
-        <div class="text">
-        Added expressive speech textbox prototype
-    https://codepen.io/punkydrewster713/pen/zYKdywP
-    </div>
-    
-    -->
     
     <script src="js/MenuScreen.js"></script>
     <script src="js/GraphicsCommon.js"></script>
@@ -119,64 +99,6 @@
     <script src="js/GamepadSupport.js"></script>
     <script src="js/Main.js"></script>
  
-    <!-- <script>
-        var container = document.querySelector(".text");
-        var speeds = {
-            pause: 500,
-            slow: 120,
-            normal: 70,
-            fast: 40
-        }
-
-
-        var textLines = [
-            { speed: speeds.slow, string: "The world is in chaos," },
-            { speed: speeds.pause, string: "", pause: true },
-            { speed: speeds.normal, string: "old technology has been lost." },
-            { speed: speeds.fast, string: "The people needs you", classes: ["blue"] },
-            { speed: speeds.normal, string: "To explore and find items for their survival!!" }
-        ];
-
-        var characters = [];
-        textLines.forEach((line, index) => {
-            if (index < textLines.length - 1) {
-                line.string += " "; //Add a space between lines
-            }
-
-            line.string.split("").forEach((character) => {
-                var span = document.createElement("span");
-                span.textContent = character;
-                container.appendChild(span);
-                characters.push({
-                    span: span,
-                    isSpace: character === " " && !line.pause,
-                    delayAfter: line.speed,
-                    classes: line.classes || []
-                });
-            });
-        });
-
-        function revealOneCharacter(list) {
-            var next = list.splice(0, 1)[0];
-            next.span.classList.add("revealed");
-            next.classes.forEach((c) => {
-                next.span.classList.add(c);
-            });
-            var delay = next.isSpace && !next.pause ? 0 : next.delayAfter;
-
-            if (list.length > 0) {
-                setTimeout(function () {
-                    revealOneCharacter(list);
-                }, delay);
-            }
-        }
-
-        setTimeout(() => {
-            revealOneCharacter(characters);
-        }, 600)
-    </script>
- -->
-
 </body>
 
 </html>
