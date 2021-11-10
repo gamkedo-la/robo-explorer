@@ -123,6 +123,7 @@ function checkForCheatKeys (keyCode) {
       loadLevel(levelList[levelNow]); 
       break;
     case KEY_2:
+      document.getElementById('gameHeading').innerHTML = 'TERROFADIA FOREST';
       worldNow=1;
       levelList=worldList[worldNow];
       levelNow =0;

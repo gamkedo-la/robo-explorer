@@ -408,16 +408,23 @@ function heroClass() {
 
     
     document.onmousedown = mouseClick;
-    
+     
     function mouseClick() {
-      
+      var bullet=10
+      bullet--;
      if(this.fireSlingshot = 1){
-          addSlingShotRight();
+          
+          
+            addSlingShotRight();
+            var audio = new Audio("slingShot2.wav");
+            audio.play();
+          
+          
      }
 
-     if(this.fireSlingshot = -1){
-       addSlingShotLeft();
-     }
+    //  if(this.fireSlingshot = -1){
+    //    addSlingShotLeft();
+    //  }
     }
 
    /*
