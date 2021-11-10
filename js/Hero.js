@@ -366,6 +366,7 @@ function heroClass() {
     if (this.keyHeld_WalkLeft) {
       // nextX -= PLAYER_MOVEMENT_SPEED;
       this.moveDir = -1;
+   
       // switchCostume(costumeList[1]);
       // this.speed -= REVERSE_POWER;
       var tileIndexCenter = getTileIndexAtPixelCoord(this.x, this.y);
@@ -380,7 +381,7 @@ function heroClass() {
     if (this.keyHeld_WalkRight) {
       // nextX += PLAYER_MOVEMENT_SPEED;
       this.moveDir = 1;
-
+       
       var tileIndexCenter = getTileIndexAtPixelCoord(this.x, this.y);
       var tileTypeCenter = worldGrid[tileIndexCenter];
       if (tileTypeCenter == WORLD_WATER) {
@@ -409,20 +410,41 @@ function heroClass() {
     
     document.onmousedown = mouseClick;
      //https://javascript.info/mouse-events-basics
-    function mouseClick() {
-      var bullet=10
-      bullet--;
-     if(this.fireSlingshot = 1){
-          
-          
+     //https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/button
+    function mouseClick(e) {
+      /*if (typeof e === 'object'){
+        switch (e.fireDirection){
+          case 0:
+           if(this.fireSlingshot = 1){
             addSlingShotRight();
-            var audio = new Audio("slingShot2.wav");
-            audio.play();
+           }
+          case 1:
+           if(this.fireSlingShot = -1){
+             addSlingShotLeft();
+           }
+           break;
+           default:
+  
+        }
+      }*/
+      
+      
+      if( this.fireSlingshot = 1){
           
-          
-     }
+        
+          addSlingShotRight();
+          var audio = new Audio("slingShot2.wav");
+          audio.play();
+       }
+
+       if (this.keyHeld_WalkLeft == true){
+          addSlingShotLeft();
+       }
+
 
     }
+
+    
 
    /*
     if (this.keyHeld_Slingshot && this.keyHeld_WalkLeft) {

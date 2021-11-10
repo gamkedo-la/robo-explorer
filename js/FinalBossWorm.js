@@ -1,6 +1,7 @@
 const FINALBOSS_MOVEMENT_SPEED = 20.0;
 const FINALBOSS_IMAGE_NAME = "boss";
 const FINALBOSS_FRAMES = 0;
+const FINAL_BOSS_HEALTH =10;
 
 var bossWormX = 75;
 var bossWormY = 75;
@@ -19,7 +20,7 @@ function finalBossClass() {
   this.frameX = 0;
   this.frameY = 0;
   this.name = "untitled boss";
-
+ 
 
   //properties for sprite animation
   this.moveDir = 0;
@@ -35,7 +36,7 @@ function finalBossClass() {
         var arrayIndex = rowColToArrayIndex(eachCol, eachRow);
         if (worldGrid[arrayIndex] == WORLD_FINALBOSSWORM) {
           worldGrid[arrayIndex] = WORLD_EMPTY;
-          this.health = 10; // found in grid bringing to life.
+          this.health = FINAL_BOSS_HEALTH; // found in grid bringing to life.
           // this.ang = -Math.PI / 2;
           this.x = eachCol * WORLD_W + WORLD_W / 2;
           this.y = eachRow * WORLD_H + WORLD_H / 2;

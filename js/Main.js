@@ -610,6 +610,7 @@ function moveAll() {
         shot.readyToRemove=true;
       }
     }
+
     if (bossEnemy.health > 0 && entity_v_entity(shot, bossEnemy )) {
       shot.readyToRemove = true;
       bossEnemy.health--;
@@ -618,6 +619,22 @@ function moveAll() {
       } 
       console.log('shot hit boss');
     }
+
+   
+  }
+
+  for (var shot of slingShotList){
+    for (var enemyFinal of enemyList){
+      if(entity_v_entity(shot,enemyFinal)){
+        enemyFinal.readyToRemove=true;
+        shot.readyToRemove=true;
+      }
+    }
+    if (finalBossWorm.health > 0 && entity_v_entity(shot, finalBossWorm)){
+      shot.readyToRemove = true;
+      finalBossWorm.health--;
+    }
+    console.log('shot hit final boss');
   }
 
   //backwards loop to remove elements ready for removal
