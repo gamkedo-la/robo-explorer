@@ -406,6 +406,17 @@ function heroClass() {
 
     /*--------------FOR ANIMATING SLINGSHOT----------------*/
 
+    
+    document.onmousedown = mouseClick;
+
+    function mouseClick(event) {
+     if(this.fireSlingshot = 1){
+      addSlingShotRight();
+     }
+      
+    }
+
+   /*
     if (this.keyHeld_Slingshot && this.keyHeld_WalkLeft) {
       this.fireSlingshot = 1;
       this.keyHeld_Slingshot = false;
@@ -427,7 +438,7 @@ function heroClass() {
       if (this.fireSlingshot >= PLAYER_ANIM_FRAMES) {
         this.fireSlingshot = -1;
       }
-    }
+    }*/
 
     /*--------------FOR ANIMATING SWORD SLASH----------------*/
 

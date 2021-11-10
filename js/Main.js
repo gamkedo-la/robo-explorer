@@ -107,6 +107,12 @@ var particleList = [];
 /***SS****SS**SS******SS***SS**SSSS**SS****SS**SS***SS**SS******SS**SS**SS****SS***SS**************************** */
 /*****SSSSSS**SSSSSS**SS***SS****SS**SSSSSS****SSSSSS***SS******SS**SSSSSS****SSSSSS*********************************** */
 
+document.onmousedown = mouseClick;
+
+function mouseClick(event) {
+  
+}
+
 function slingShotClass() {
   
   this.x = 75;
