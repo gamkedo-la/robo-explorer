@@ -408,12 +408,16 @@ function heroClass() {
 
     
     document.onmousedown = mouseClick;
-
-    function mouseClick(event) {
-     if(this.fireSlingshot = 1){
-      addSlingShotRight();
-     }
+    
+    function mouseClick() {
       
+     if(this.fireSlingshot = 1){
+          addSlingShotRight();
+     }
+
+     if(this.fireSlingshot = -1){
+       addSlingShotLeft();
+     }
     }
 
    /*
@@ -430,7 +434,7 @@ function heroClass() {
       this.keyHeld_Slingshot = false;
       playSoundUnlessAlreadyPlaying("slingShot2.wav");
       addSlingShotRight();
-    }
+    }*/
 
     if (this.fireSlingshot > 0) {
       this.frame = this.fireSlingshot;
@@ -438,7 +442,7 @@ function heroClass() {
       if (this.fireSlingshot >= PLAYER_ANIM_FRAMES) {
         this.fireSlingshot = -1;
       }
-    }*/
+    }
 
     /*--------------FOR ANIMATING SWORD SLASH----------------*/
 
