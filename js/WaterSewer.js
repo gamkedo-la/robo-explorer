@@ -1,3 +1,4 @@
+/*
 // const WATER_MOVEMENT_SPEED = 2.0;
 const WATER_IMAGE_NAME = "water";
 const WATER_FRAMES = 0;
@@ -69,4 +70,4 @@ function waterClass() {
       );
     };
   
-};
+};*/

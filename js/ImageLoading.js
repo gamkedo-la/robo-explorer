@@ -60,8 +60,6 @@ function loadImages() {
     { varName: smallWormPic, theFile: "smallWorm.png" },
     { varName: bossWormPic, theFile: "bigWorm4.png" },
     { varName: logoPic, theFile: "RoboExplorerLogo.png" },
-
-
     { varName: trapPic, theFile: "spike-sprite3.png" },
     // {trackType: WORLD_UPPERROAD, theFile:"WORLD_EMPTY3.png"},
     { trackType: WORLD_EMPTY, theFile: "track_road2.png" },

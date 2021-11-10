@@ -10,7 +10,7 @@ function hideItems() {
     document.getElementById("black__interface").style.display = "block";
   }
 }
-
+/*
 function hideStoryMenu() {
   var state = document.getElementById("storyMenu").style.display;
   if (state == "block") {
@@ -21,7 +21,7 @@ function hideStoryMenu() {
     document.getElementById("storyMenu").style.transform =
       "translate(-50%,-50%)";
   }
-}
+}*/
 
 
 /***************STORY MENU TERROFADIA TUNNEL**************************** */

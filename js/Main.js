@@ -306,9 +306,9 @@ window.onload = function () {
   //bossEnemyReset();
   bossEnemy.reset();
   boyCocoon.reset();
-  document.getElementById("storyMenu").style.transform = "scale(0)";
-  tunnelStory();
-  typeOut();
+  // document.getElementById("storyMenu").style.transform = "scale(0)";
+  // tunnelStory();
+  // typeOut();
 };
 
 
