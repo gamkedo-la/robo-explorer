@@ -333,8 +333,7 @@ function imageLoadingDoneSoStartGame() {
   var framesPersecond = 30;
   setInterval(updateAll, 1000 / framesPersecond);
   setupInput();
-  var audio = new Audio("blues1-edited.wav");
-  audio.play();
+  playSoundUnlessAlreadyPlaying("blues1-edited.wav");
   loadLevel(levelList[levelNow]);
   
 }
@@ -586,6 +585,7 @@ function moveAll() {
             break;
           case WORLD_TRAP:
             console.log('Bump trap');
+            playSoundUnlessAlreadyPlaying("trap_sound.mp3");
             break;
           default:
             console.log("unknown collision "+ enemy.myTileKind);

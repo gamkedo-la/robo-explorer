@@ -1,20 +1,23 @@
+// this only makes a new audio and downloads the sound ONCE for better perf
+// (using a pool) and only plays it IF it's not already playing for no overlaps
+function playSoundUnlessAlreadyPlaying(mp3) {
+    if (!window.MP3s) window.MP3s = []; // create a pool of reusable audios
+    if (!window.MP3s[mp3]) window.MP3s[mp3] = new Audio(mp3); // download once
+    if (!window.MP3s[mp3].playing) window.MP3s[mp3].play(); // no spam please
+}
+
 function keyCollectionSound(){
-    var audio = new Audio("keyCollectionSound2.wav");
-        audio.play(); 
+    playSoundUnlessAlreadyPlaying("keyCollectionSound2.wav");
 }
 
 /*
 function finalBossMusic(){
-
 }*/
 
 function ratCollisionSound(){
-    var audio = new Audio("ratSound2.mp3");
-        audio.play();
-       
+    playSoundUnlessAlreadyPlaying("ratSound2.mp3");
 }
 /*
 function tunnelMusic(){
-    var audio = new Audio("darkSong2.mp3");
-        audio.play();
+    playSoundUnlessAlreadyPlaying("darkSong2.mp3");
 }*/

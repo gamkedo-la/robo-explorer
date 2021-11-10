@@ -6,6 +6,7 @@
 // const MIN_SPEED_TO_TURN = 0.5;
 const PLAYER_MOVEMENT_SPEED = 10.0;
 const JUMP_POWER = 15;
+const MAX_JUMP_LENGTH = 12; // how many frames of upward vel
 const GRAVITY = 10.5;
 const AIR_RESISTANCE = 0.95;
 const START_PARTICLES = 2;
@@ -201,8 +202,7 @@ function heroClass() {
         //console.log(this.rocketEnergy);
         for (var i = 0; i < START_PARTICLES; i++) {
           addParticles();
-          var audio = new Audio("rocketSound5.mp3");
-          audio.play();
+          playSoundUnlessAlreadyPlaying("rocketSound5.mp3");
         }
 
       } else {
@@ -279,15 +279,29 @@ function heroClass() {
     /*----JJ--JJ---JJ--JJ--JJ--JJ--JJ--JJ--JJ---------------------------------*/
     /*----JJJJJJ---JJJJJJ--JJ----JJ----JJ--JJ---------------------------------*/
     if (this.keyHeld_LShiftKey){
+
+      // FIXME: this should only allow jumping
+      // when we are standing on the floor
       var tileIndexCenter = getTileIndexAtPixelCoord(this.x, this.y);
       var tileTypeCenter = worldGrid[tileIndexCenter];
-      
       // var tileIndexTop = getTileIndexAtPixelCoord(this.x, this.y - this.height / 2);
       // var tileTypeTop = worldGrid[tileIndexTop];
-      this.regularJump =1;
-      // console.log(this.regularJump);
-      nextY -= PLAYER_MOVEMENT_SPEED * 1.8;
-    
+      
+      if (!this.regularJump) { // was not holding down jump key last frame
+        this.jumpFramesLeft = MAX_JUMP_LENGTH;
+        console.log(this.regularJump);
+        this.regularJump = 1;
+        playSoundUnlessAlreadyPlaying("regularJump.mp3");
+      } else {
+          // ignore shift being down until let back up
+          /// so we can't jump in the air forever
+      }
+
+      if (this.jumpFramesLeft) { // is current jump ongoing?
+        this.jumpFramesLeft--; // so we stop jumping soon
+        nextY -= PLAYER_MOVEMENT_SPEED * 1.8; // then keep going up
+      }
+
     }else {
       this.regularJump=0;
     }
@@ -403,8 +417,7 @@ function heroClass() {
     if (this.keyHeld_Slingshot && this.keyHeld_WalkRight) {
       this.fireSlingshot = 1;
       this.keyHeld_Slingshot = false;
-      var audio = new Audio("slingShot2.wav");
-      audio.play();
+      playSoundUnlessAlreadyPlaying("slingShot2.wav");
       addSlingShotRight();
     }
 
@@ -664,8 +677,7 @@ function heroClass() {
         loadLevel(levelNine);
         break;
       case WORLD_TUNNEL_RIGHT_9:
-        // var audio = new Audio("robo-explorer-level10-guitarRiff.wav");
-        // audio.play();
+        // playSoundUnlessAlreadyPlaying("robo-explorer-level10-guitarRiff.wav");
 
         delayAudio();
         loadLevel(levelTen);
@@ -717,12 +729,14 @@ function heroClass() {
           this.rocketEnergy = ROCKET_LIFE;
           worldGrid[walkIntoTileIndex] = WORLD_EMPTY;
           this.onRechargableBattery = walkIntoTileIndex;
+          playSoundUnlessAlreadyPlaying("fuel-refill.mp3");
         break;
       case WORLD_DOOR:
         if (this.keysHeld > 0) {
           this.keysHeld--;
           this.updateKeyReadout();
           worldGrid[walkIntoTileIndex] = WORLD_EMPTY;
+          playSoundUnlessAlreadyPlaying("door-open.mp3");
         }
         break;
 
