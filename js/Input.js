@@ -131,6 +131,7 @@ function checkForCheatKeys (keyCode) {
       break;
     
       case KEY_3:
+        document.getElementById('gameHeading').innerHTML = 'DR. AMBERVARD FOREST LABORATORY';
         worldNow=2;
         levelList=worldList[worldNow];
         levelNow =0;

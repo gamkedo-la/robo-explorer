@@ -408,7 +408,7 @@ function heroClass() {
 
     
     document.onmousedown = mouseClick;
-     
+     //https://javascript.info/mouse-events-basics
     function mouseClick() {
       var bullet=10
       bullet--;
@@ -422,9 +422,6 @@ function heroClass() {
           
      }
 
-    //  if(this.fireSlingshot = -1){
-    //    addSlingShotLeft();
-    //  }
     }
 
    /*
