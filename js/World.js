@@ -360,6 +360,8 @@ var sideQuest4 = [
         const WORLD_TREASURECHEST =85;
         const WORLD_STORY =86;
         const WORLD_STORYBOY =87;
+        const WORLD_BLACKTILES =88;
+        const WORLD_EXITDOOR =89;
         // const WORLD_SMALLBRICK 
 
        
@@ -470,7 +472,9 @@ var sideQuest4 = [
             checkTileType == WORLD_FORESTGRASS2 ||
             checkTileType == WORLD_FORESTGRASS3 ||
             checkTileType == WORLD_MOUNTAIN ||
-            checkTileType == WORLD_FORESTROCK
+            checkTileType == WORLD_FORESTROCK ||
+            checkTileType == WORLD_EXITDOOR
+           
             
 
           

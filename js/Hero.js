@@ -810,14 +810,21 @@ function heroClass() {
         break;
 
         case WORLD_LABDOOR:
-         
+   
            
-           
+
             loadLevel(levelForestLaboratory);// need to write code to nly activate this when final Boss is killed.
   
          
           break;
-
+        
+        case WORLD_EXITDOOR:
+          worldNow=1;
+          document.getElementById('gameHeading').innerHTML = 'TERROFADIA FOREST';
+          levelList=worldList[worldNow];
+          levelNow =0;
+          loadLevel(levelList[levelNow]);
+          break;
       case WORLD_TREEBRANCH:
         if (this.daggersHeld > 0) {
           this.daggersHeld--;

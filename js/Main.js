@@ -618,6 +618,7 @@ function moveAll() {
         bossAudio.pause();
        //Load story of boy being saved by Robo-explorer.
         worldNow=4;
+        document.getElementById('gameHeading').innerHTML = 'TERROFADIA TUNNELS';
         levelList=worldList[worldNow];
         levelNow =0;
         loadLevel(levelList[levelNow]);
