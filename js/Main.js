@@ -616,7 +616,7 @@ function moveAll() {
       bossEnemy.health--;
       if(bossEnemy.health == 0){
         bossAudio.pause();
-       
+       //Load story of boy being saved by Robo-explorer.
         worldNow=4;
         levelList=worldList[worldNow];
         levelNow =0;
