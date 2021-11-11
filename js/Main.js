@@ -13,7 +13,7 @@ var enemyList = [];
 var waterList = [];
 var CHEATS_ENABLED = true;
 var worldNow = 0;
-var worldList = [levelListTunnels,levelListForest,levelListLaboratory,storyMenu];
+var worldList = [levelListTunnels,levelListForest,levelListLaboratory,storyMenu,storyBoy];
 var worldSky = ["#6f6a6a","#fffc9f","#ffffff","#000000"];//#6f6a6a
 /************************GHOST VARIABLES***************************/
 var ghostX = 75;
@@ -617,7 +617,7 @@ function moveAll() {
       if(bossEnemy.health == 0){
         bossAudio.pause();
        
-        worldNow=1;
+        worldNow=4;
         levelList=worldList[worldNow];
         levelNow =0;
         loadLevel(levelList[levelNow]);
@@ -771,11 +771,12 @@ function drawAll() {
   // oneParticle.draw();
   // secondParticle.draw();
 
+  /*
   ghostCircle(ghostX, ghostY, 18, "black");
   ghostCircle(ghostX, ghostY, 12, "red");
   ghostCircle(ghostX + 2, ghostY, 5, "white");
   ghostCircle(ghostX, ghostY, 2, "black");
-
+*/
 
   canvasContext.restore();
   drawOnlyBricksOnScreen();
