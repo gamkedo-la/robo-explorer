@@ -616,6 +616,11 @@ function moveAll() {
       bossEnemy.health--;
       if(bossEnemy.health == 0){
         bossAudio.pause();
+       
+        worldNow=1;
+        levelList=worldList[worldNow];
+        levelNow =0;
+        loadLevel(levelList[levelNow]);
       } 
       console.log('shot hit boss');
     }

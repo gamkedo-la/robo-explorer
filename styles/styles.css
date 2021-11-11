@@ -22,7 +22,7 @@ body {
 }
 
 #gameCanvas{
-    margin-top: 2%;
+    margin-top: .5%;
     border-style:solid;
     border-width: 5%;
     border-color: rgba(97, 14, 14, 0.829);
@@ -63,7 +63,7 @@ color: red;
 #debugText {
     font-size: 1rem;
     position: absolute; 
-    top: 50%;
+    top: 40%;
     left: 25%;
     
     color:rgb(236, 205, 26);
@@ -85,7 +85,7 @@ color: red;
 background-image:url('../images/menu-items.png');
 background-size: auto;
 background-position: 100% 100%;
-margin-top: 2%;
+margin-top: .8%;
 /* background-color: black; */
 position: absolute;
 top:7.5%;
@@ -163,22 +163,23 @@ box-shadow:-3px -1px rgba(1, 7, 10, 0.911);
 #daggerText{
     font-size: 12px;
     position: absolute;
-    top: 60%;
-    left:5%;
+    top: 50%;
+    left:15%;
+    color: rgb(35, 15, 209);
 }
 
 #controlKeys{
     font-size: 12px;
     position: absolute;
-    top: 70%;
-    left:5%;
+    top: 65%;
+    left:25%;
 }
 
 .controlKeys__lists{
     font-size: 10px;
     position: absolute;
-    top: 75%;
-    left:5%;
+    top: 70%;
+    left:12%;
     text-align: justify;
 }
 
