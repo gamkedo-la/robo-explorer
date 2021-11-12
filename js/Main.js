@@ -311,6 +311,7 @@ window.onload = function () {
   // typeOut();
   document.getElementById("finalBossAudio").pause();
   document.getElementById("labAlarm").pause();
+  document.getElementById("progression").pause();
 };
 
 
@@ -623,6 +624,7 @@ function moveAll() {
         document.getElementById('gameHeading').innerHTML = 'TERROFADIA TUNNELS';
         levelList=worldList[worldNow];
         levelNow =0;
+        document.getElementById("progression").play();
         loadLevel(levelList[levelNow]);
       } 
       console.log('shot hit boss');
