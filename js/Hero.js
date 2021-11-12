@@ -16,7 +16,7 @@ const ROCKET_LIFE = 100;
 function heroClass() {
   // var sound = document.getElementById("heroSound");
   // var play = 0;
-
+  this.health;
   this.x = 75;
   this.y = 75;
   this.rocketEnergy = ROCKET_LIFE;
@@ -111,6 +111,7 @@ function heroClass() {
   };
 
   this.reset = function (whichImage, heroName) {
+    this.health = 0; 
     this.name = heroName;
     this.myHeroPic = whichImage;
     this.keysHeld = 0;
@@ -128,6 +129,7 @@ function heroClass() {
         if (worldGrid[arrayIndex] == WORLD_PLAYERSTART) {
           worldGrid[arrayIndex] = WORLD_EMPTY;
           // this.ang = -Math.PI / 2;
+          this.health =10;
           this.x = eachCol * WORLD_W + WORLD_W / 2;
           this.y = eachRow * WORLD_H + WORLD_H / 2;
           return;
@@ -180,6 +182,9 @@ function heroClass() {
   /**************************CODE FOR CHARACTER TO MOVE******************************************************/
   this.move = function () {
     // this.speed *= GROUNDSPEED_DECAY_MULT;
+    if (this.health <= 0){
+      return; 
+    }
 
     var nextX = this.x;
     var nextY = this.y;
@@ -888,6 +893,9 @@ function heroClass() {
   /********************CODE FOR DRAW FUNCTION********************************************************************** */
 
   this.draw = function () {
+    if (this.health <= 0){
+      return; 
+    }
     // drawBitmapCenteredWithRotation(this.myHeroPic, this.x, this.y, this.ang);
     this.animationCounter++;
     if (this.animationCounter == this.animationSpeed) {

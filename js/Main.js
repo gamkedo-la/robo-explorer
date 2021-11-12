@@ -576,6 +576,11 @@ function moveAll() {
               ratCollisionSound();
               enemy.readyToRemove = true;   
             }
+            /** HERO DIES TOMORROW */
+            if (blueHero.health > 0) {
+              blueHero.health--;
+              console.log('blueHero health' + blueHero.health);
+            }
             
             console.log('Bump rat');
             break;
