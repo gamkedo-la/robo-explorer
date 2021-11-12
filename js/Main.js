@@ -310,6 +310,7 @@ window.onload = function () {
   // tunnelStory();
   // typeOut();
   document.getElementById("finalBossAudio").pause();
+  document.getElementById("labAlarm").pause();
 };
 
 
