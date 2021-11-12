@@ -312,6 +312,7 @@ window.onload = function () {
   document.getElementById("finalBossAudio").pause();
   document.getElementById("labAlarm").pause();
   document.getElementById("progression").pause();
+  document.getElementById("gameOverSound").pause();
 };
 
 
@@ -580,6 +581,9 @@ function moveAll() {
             if (blueHero.health > 0) {
               blueHero.health--;
               console.log('blueHero health' + blueHero.health);
+            }
+            if (blueHero.health <= 0){
+              document.getElementById("gameOverSound").play();
             }
             
             console.log('Bump rat');
