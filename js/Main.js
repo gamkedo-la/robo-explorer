@@ -309,6 +309,7 @@ window.onload = function () {
   // document.getElementById("storyMenu").style.transform = "scale(0)";
   // tunnelStory();
   // typeOut();
+  document.getElementById("finalBossAudio").pause();
 };
 
 
