@@ -823,6 +823,7 @@ function heroClass() {
           document.getElementById('gameHeading').innerHTML = 'TERROFADIA FOREST';
           levelList=worldList[worldNow];
           levelNow =0;
+          document.getElementById("progression").pause();
           loadLevel(levelList[levelNow]);
           break;
       case WORLD_TREEBRANCH:
