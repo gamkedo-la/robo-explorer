@@ -583,7 +583,9 @@ function moveAll() {
               console.log('blueHero health' + blueHero.health);
             }
             if (blueHero.health <= 0){
+              document.getElementById("gameOver").style.display = "block";
               document.getElementById("gameOverSound").play();
+              
             }
             
             console.log('Bump rat');
