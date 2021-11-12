@@ -21,7 +21,3 @@ function ratCollisionSound(){
 function tunnelMusic(){
     playSoundUnlessAlreadyPlaying("darkSong2.mp3");
 }*/
-
-function finalBossBackgroundSound(){
-    document.getElementById("finalBossAudio").pause();
-}
