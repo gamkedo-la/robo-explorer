@@ -811,7 +811,7 @@ function heroClass() {
 
         case WORLD_LABDOOR:
    
-           
+          document.getElementById("finalBossAudio").pause();
 
             loadLevel(levelForestLaboratory);// need to write code to nly activate this when final Boss is killed.
   
