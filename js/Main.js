@@ -590,6 +590,7 @@ function moveAll() {
             
             console.log('Bump rat');
             break;
+          
           case WORLD_SPIDER:
             console.log('Bump spider');
             break;
@@ -614,6 +615,17 @@ function moveAll() {
   }
   
   if (entity_v_entity(blueHero, boyCocoon)) {
+    
+   
+     if (blueHero.swordSlash == 1) {
+      //Load story of boy being saved by Robo-explorer.
+            worldNow=4;
+            document.getElementById('gameHeading').innerHTML = 'TERROFADIA TUNNELS';
+            levelList=worldList[worldNow];
+            levelNow =0;
+            document.getElementById("progression").play();
+            loadLevel(levelList[levelNow]);
+        }
     console.log("Hero hit boyCocoon")
   }
   //slingShot collisions
@@ -631,15 +643,16 @@ function moveAll() {
       if(bossEnemy.health == 0){
         bossAudio.pause();
        //Load story of boy being saved by Robo-explorer.
-        worldNow=4;
+       /* worldNow=4;
         document.getElementById('gameHeading').innerHTML = 'TERROFADIA TUNNELS';
         levelList=worldList[worldNow];
         levelNow =0;
         document.getElementById("progression").play();
-        loadLevel(levelList[levelNow]);
+        loadLevel(levelList[levelNow]);*/
       } 
       console.log('shot hit boss');
     }
+
 
    
   }

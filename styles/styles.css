@@ -183,6 +183,12 @@ box-shadow:-3px -1px rgba(1, 7, 10, 0.911);
     top: 70%;
     left:12%;
     text-align: justify;
+    list-style-type:none;
+    line-height: 1rem;
+    border: 1px solid black;
+    display:inline-block;
+    background-color: green;
+    padding: 2px;
 }
 
 #woodenBow{
