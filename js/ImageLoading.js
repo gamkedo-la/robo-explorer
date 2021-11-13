@@ -160,6 +160,7 @@ function loadImages() {
     { trackType: WORLD_STORY, theFile: "robo-explorer-story-image1.png" },
     { trackType: WORLD_STORYBOY, theFile: "BossCockroachStory5.png" },
     { trackType: WORLD_BLACKTILES, theFile: "black.png" },
+    { trackType: WORLD_DRAMBERVARD, theFile: "drambervard.png" },
     { trackType: WORLD_EXITDOOR, theFile: "exitDoor.png" }
     
 
