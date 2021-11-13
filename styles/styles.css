@@ -366,6 +366,10 @@ color: #fff;
     left:50%;
     transform: translate(-50%,-50%);
     display: none;
+    animation-name: gameOver;
+    animation-timing-function: ease-in-out;
+    animation-duration:4s;
+
 }
 
 
@@ -373,6 +377,22 @@ color: #fff;
 .gameOver__heading{
     font-size: 5rem;
     color: red;
+    text-shadow:0 0 .5rem #fff;
     text-align: center;
     
 }
+
+@keyframes gameOver{
+    0%{
+        scale:0%;
+        top:10%;
+        left:20%;
+    }
+  
+    100%{
+        scale:100%;
+    }
+}
+
+
+
