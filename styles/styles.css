@@ -111,8 +111,8 @@ box-shadow:-3px -1px rgba(1, 7, 10, 0.911);
 #slingShot {
     font-size: 12px;
     position: absolute;
-    top: 13%;
-    left: 6%;
+    top: 16%;
+    left: 10%;
     display: none;
     height: 6%;
 
@@ -121,9 +121,10 @@ box-shadow:-3px -1px rgba(1, 7, 10, 0.911);
 #sword {
     font-size: 12px;
     position: absolute;
-    top: 12%;
-    left: 18%;
+    top: 16%;
+    left: 30%;
     display: none;
+    height: 5%;
 
 }
 
