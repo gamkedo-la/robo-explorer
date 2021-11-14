@@ -161,6 +161,7 @@ function loadImages() {
     { trackType: WORLD_STORYBOY, theFile: "BossCockroachStory5.png" },
     { trackType: WORLD_BLACKTILES, theFile: "black.png" },
     { trackType: WORLD_DRAMBERVARD, theFile: "drambervard.png" },
+    { trackType: WORLD_ENDING, theFile: "endingRobo-explorer.png" },
     { trackType: WORLD_EXITDOOR, theFile: "exitDoor.png" }
     
 

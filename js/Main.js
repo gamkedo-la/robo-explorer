@@ -13,7 +13,7 @@ var enemyList = [];
 var waterList = [];
 var CHEATS_ENABLED = true;
 var worldNow = 0;
-var worldList = [levelListTunnels,levelListForest,levelListLaboratory,storyMenu,storyBoy];
+var worldList = [levelListTunnels,levelListForest,levelListLaboratory,storyMenu,storyBoy,storyEnding];
 var worldSky = ["#6f6a6a","#fffc9f","#ffffff","#000000"];//#6f6a6a
 /************************GHOST VARIABLES***************************/
 var ghostX = 75;
@@ -619,6 +619,7 @@ function moveAll() {
    
      if (blueHero.swordSlash == 1) {
       //Load story of boy being saved by Robo-explorer.
+            //worldNow=5;//test ending story
             worldNow=4;
             document.getElementById('gameHeading').innerHTML = 'TERROFADIA TUNNELS';
             levelList=worldList[worldNow];
