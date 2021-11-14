@@ -217,6 +217,11 @@ box-shadow:-3px -1px rgba(1, 7, 10, 0.911);
     border-radius: 5%;
 }
 
+.controlKeys__lists--item:hover{
+    transform: translate(0%, -5%);
+    
+}
+
 
 .rocketEnergy{
    
