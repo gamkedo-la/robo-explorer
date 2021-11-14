@@ -142,11 +142,19 @@ box-shadow:-3px -1px rgba(1, 7, 10, 0.911);
     font-size: 12px;
     position: absolute;
     top: 16%;
-    left: 70%;
+    left: 76%;
     display:none;
     height: 5%;
 }
 
+#crossbow{
+    font-size: 12px;
+    position: absolute;
+    top: 23%;
+    left: 10%;
+    display:none;
+    height: 5%;
+}
 
 #woodenBow{
     font-size: 12px;
@@ -157,21 +165,7 @@ box-shadow:-3px -1px rgba(1, 7, 10, 0.911);
 }
 
 
-#crossbow {
-    height: "50px";
-    width: "50px";
-    position: absolute;
-    top: 30%;
-    left: 1%;
-    display: none;
-}
 
-#collected-crossbows{
-    font-size: 12px;
-    position: absolute;
-    top: 43%;
-    left: 5%;
-}
 
 #daggerText{
     font-size: 12px;
