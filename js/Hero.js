@@ -180,6 +180,13 @@ function heroClass() {
     // document.getElementById("collected-crossbows").innerHTML = "1";
   };
 
+  
+  this.updateTreasureChestReadout = function () {
+    document.getElementById("treasure").style.display = "block";
+    // document.getElementById("collected-crossbows").innerHTML = "1";
+  };
+
+
 
   /**************************CODE FOR CHARACTER TO MOVE******************************************************/
   this.move = function () {
@@ -759,6 +766,10 @@ function heroClass() {
       case WORLD_WOODEN_BOW:
         worldGrid[walkIntoTileIndex] = WORLD_EMPTY;
         this.updateWoodenBowReadout();
+        break;
+      case WORLD_TREASURECHEST:
+        worldGrid[walkIntoTileIndex] = WORLD_EMPTY;
+        this.updateTreasureChestReadout();
         break;
 
       case WORLD_ROCKET_BATTERY:
