@@ -170,14 +170,16 @@ function heroClass() {
     document.getElementById("spear").style.display = "block";
   };
 
+  
+  this.updateWoodenBowReadout = function () {
+    document.getElementById("woodenBow").style.display = "block";
+  };
+
   this.updateCrossbowReadout = function () {
     document.getElementById("crossbow").style.display = "block";
     // document.getElementById("collected-crossbows").innerHTML = "1";
   };
 
-  this.updateWoodenBowReadout = function () {
-    document.getElementById("woodenBow").innerHTML = "5. Wooden Bow";
-  };
 
   /**************************CODE FOR CHARACTER TO MOVE******************************************************/
   this.move = function () {
