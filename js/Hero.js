@@ -182,7 +182,7 @@ function heroClass() {
 
   
   this.updateTreasureChestReadout = function () {
-    document.getElementById("treasure").style.display = "block";
+    document.getElementById("treasureChest").style.display = "block";
     // document.getElementById("collected-crossbows").innerHTML = "1";
   };
 

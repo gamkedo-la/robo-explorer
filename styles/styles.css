@@ -166,6 +166,17 @@ box-shadow:-3px -1px rgba(1, 7, 10, 0.911);
 }
 
 
+#treasureChest{
+    font-size: 12px;
+    position: absolute;
+    top: 22.5%;
+    left: 55%;
+    height: 4.8%;
+    display:none;
+}
+
+
+
 
 
 #daggerText{
