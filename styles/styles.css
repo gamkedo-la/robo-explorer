@@ -203,15 +203,18 @@ box-shadow:-3px -1px rgba(1, 7, 10, 0.911);
 .controlKeys__lists{
     font-size: 10px;
     position: absolute;
-    top: 70%;
-    left:12%;
+    top: 58%;
+    left:7%;
     text-align: justify;
     list-style-type:none;
     line-height: 1rem;
     border: 1px solid black;
+    text-align: center;
+    box-shadow: 0 0 .2rem rgb(226, 176, 10);
     display:inline-block;
-    background-color: green;
-    padding: 2px;
+    background-color: rgb(122, 7, 7);
+    padding: 5% 1%;
+    border-radius: 5%;
 }
 
 
