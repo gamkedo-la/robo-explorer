@@ -159,8 +159,9 @@ box-shadow:-3px -1px rgba(1, 7, 10, 0.911);
 #woodenBow{
     font-size: 12px;
     position: absolute;
-    top: 49%;
-    left: 5%;
+    top: 23%;
+    left: 33%;
+    height: 4%;
     display:none;
 }
 
