@@ -210,7 +210,8 @@ box-shadow:-3px -1px rgba(1, 7, 10, 0.911);
     line-height: 1rem;
     border: 1px solid black;
     text-align: center;
-    box-shadow: 0 0 .2rem rgb(226, 176, 10);
+    box-shadow: 0 0 .2rem rgb(226, 176, 10),0 0 .5rem rgb(235, 220, 171);
+    
     display:inline-block;
     background-color: rgb(122, 7, 7);
     padding: 5% 1%;
