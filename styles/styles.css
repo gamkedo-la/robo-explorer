@@ -263,7 +263,7 @@ transform: translate(-50%,-50%);
 
 .rocketEnergy{
    
-    border-radius: 17%;
+    border-radius: 0% 20% 20% 0%;
     position: absolute;
     /* top: 50%;
     left:50%;
@@ -277,8 +277,9 @@ transform: translate(-50%,-50%);
     top: .4%;
     left:43%;
     width: 10%;
-    font-size: 5px;
     height:4.5%;
+    font-size: 5px;
+    
     margin: auto;
 }
 
@@ -287,14 +288,16 @@ width: 100%;
 height: 15px;
 background-color: rgb(211, 191, 11);
 padding: .5rem 0;
-border-radius: 20%;
+border-radius: 0% 20% 20% 0%;
 color: #fff;
+font-size: 8px;
 }
 
 #rocketEnergyText{
+    padding-top:.5px;
     font-size: 7px;
     color:#fff;
-    }
+}
 
 
 @media only screen and (max-width: 1024px) {
@@ -323,44 +326,74 @@ color: #fff;
         padding: .4rem 0;
         border-radius: 0% 20% 20% 0%;
         color: #fff;
-        }
-    
-    
-        .health{
-            position: absolute;
-            top: 60%;
-            left:10%;
-            width: 85%;
-           font-size: 5px;
-            margin: auto;
-            border-radius: 15%;
-            position: absolute;
-            margin: auto;
-            background-color:rgb(119, 8, 8);
-            /*box-shadow: 0px 0px rgba(255, 255, 255, 0.835);*/
-            border-color: black;
-            border-style: solid;
-            border-width: .2rem;
-            font-size: 8px;
-        }
-    
         
-        #health_character{
-            border-radius: 15%;
-            text-align:center;
-            padding-top:1%;
-            background-color: rgb(211, 191, 11);
-            width: 90%;
-            height: 25px;
-            color: #fff;
-            font-size: 8px;
         }
     
-        #playerHealth{
-            font-size: 8px;
-        }
-
 }
+
+
+
+.health{
+    border-radius: 0% 20% 20% 0%;
+    position: absolute;
+    margin: auto;
+    background-color:rgb(119, 8, 8);
+    /*box-shadow: 0px 0px rgba(255, 255, 255, 0.835);*/
+    border-color: black;
+    border-style: solid;
+    border-width: .2rem;
+    top: .3%;
+    left:55%;
+    width: 10%;
+    font-size: 6px;
+        
+    
+}
+
+#health_character{
+    border-radius: 0% 20% 20% 0%;
+    text-align:center;
+    padding: .4rem 0;
+    background-color: rgb(211, 191, 11);
+    color: #fff;
+    width: 100%;
+    height: 15px;
+}
+
+#playerHealth{
+    font-size: 8px;
+}
+
+@media only screen and (max-width: 1024px) {
+    .health{
+        position: relative;
+        font-size: 5px;
+        margin: auto;
+        border-radius: 15%;
+        position: absolute;
+        margin: auto;
+        border-color: black;
+        border-style: solid;
+        border-width: .2rem;
+        border-radius: 0% 20% 20% 0%;
+        font-size: 8px;
+    }
+
+    
+    #health_character{
+        border-radius: 0% 20% 20% 0%;
+        text-align:center;
+        background-color: rgb(211, 191, 11);
+        color: #fff;
+        font-size: 8px;
+       
+    }
+
+    #playerHealth{
+        font-size: 6px;
+    }
+}
+
 /******************************************************CONTROL LIST ITEMS MEDIA QUERY*********************/
 
 #controlKeys{
@@ -442,34 +475,6 @@ color: #fff;
  left:81%;
  width: 18%;
 }*/
-.health{
-    border-radius: 15%;
-    position: absolute;
-    top: 60%;
-    left:50%;
-    width: 50%;
-    margin: auto;
-    background-color:rgb(119, 8, 8);
-    /*box-shadow: 0px 0px rgba(255, 255, 255, 0.835);*/
-    border-color: black;
-    border-style: solid;
-    border-width: .2rem;
-    left:10%;
-    width: 85%;
-    
-}
-
-#health_character{
-    border-radius: 15%;
-        text-align:center;
-        padding-top:2%;
-        background-color: rgb(211, 191, 11);
-        width: 90%;
-        height: 30px;
-        color: #fff;
-        font-size: 8px;
-}
-
 
 /****************************************************************************/
 /* .text{

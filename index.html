@@ -7,66 +7,72 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/styles.css">
-   
+
 </head>
 <body>
     <div class="canvas">
         <h1 id="gameHeading">TERROFADIA TUNNELS</h1>
         <div class="rocketEnergy">
             <div id="myBar">100%</div>
-         <p id="rocketEnergyText" >ROCKET ENERGY</p> 
+         <p id="rocketEnergyText" >ROCKET ENERGY</p>
          </div>
+         <div class="health">
+            <div id="health_character">
+                 100%
+            </div>
+            <p id="playerHealth" >PLAYER HEALTH</p> 
+        </div>
         <canvas id="gameCanvas" width="800" height="600">
         </canvas>
 
         <div id="black__interface">
             <!-- <div class="rocketEnergy">
                 <div id="myBar">100%</div>
-             <p id="rocketEnergyText" >ROCKET ENERGY</p> 
+             <p id="rocketEnergyText" >ROCKET ENERGY</p>
              </div> -->
-             <div class="health">
+             <!-- <div class="health">
                  <div id="health_character">
                       100%
                  </div>
-                 <p id="playerHealth" >PLAYER HEALTH</p> 
-             </div>
+                 <p id="playerHealth" >PLAYER HEALTH</p>
+             </div> -->
             <p class="items">Items Collected:</p>
             <div class="img-container">
                 <img src="images/tirador.png" id="slingShot" alt="Slingshot" />
-            </div> 
-           
+            </div>
+
             <div class="img-container">
                 <img src="images/sword.png" id="sword" alt="Sword" />
-            </div> 
+            </div>
             <div class="img-container">
                 <img src="images/world_arrow.png" id="arrow" alt="Arrow bullet" />
-            </div> 
+            </div>
             <div class="img-container">
                 <img src="images/spear.png" id="spear" alt="Spear Item" />
-            </div> 
-            
+            </div>
+
             <div class="img-container">
                 <!-- <p id="collected-crossbows"></p> -->
                 <img src="images/crossbow-transparent.png" id="crossbow" alt="crossbow" />
-            </div> 
+            </div>
             <div class="img-container">
                 <img src="images/bow.png" id="woodenBow" alt="Wooden Bow Item" />
-            </div> 
+            </div>
             <div class="img-container">
                 <img src="images/treasure.png" id="treasureChest" alt="Treasure chest" />
-            </div> 
-           
+            </div>
+
             <div class="img-container">
-                <p id="keyText">keyTest</p>     
+                <p id="keyText">keyTest</p>
                 <img src="images/dagger.png" id="dagger" alt="Dagger" />
-            </div> 
-            
+            </div>
+
             <div class="img-container">
-                <p id="daggerText" style="color:white;"></p>     
+                <p id="daggerText" style="color:white;"></p>
                 <img src="images/dagger.png" id="dagger" alt="Dagger" />
-            </div> 
-            
-            
+            </div>
+
+
             <!-- <p id="controlKeys" style="color:white;">CONTROLS:</p> -->
             <ul class="controlKeys__lists">
                 <li class="controlKeys__lists--item" style="color:white;">#8: READ STORY</li>
@@ -79,26 +85,26 @@
                 <li class="controlKeys__lists--item" style="color:white;">SHIFT: Jump </li>
                 <li class="controlKeys__lists--item" style="color:white;">SPACEBAR: Fly </li>
             </ul>
-            
-           
+
+
         </div>
-<!-- 
+<!--
         <div class="rocketEnergy">
            <div id="myBar">100%</div>
-        <p id="rocketEnergyText" >ROCKET ENERGY</p> 
+        <p id="rocketEnergyText" >ROCKET ENERGY</p>
         </div>
         <div class="health">
             <div id="health_character">
                  100%
             </div>
-            <p id="playerHealth" >PLAYER HEALTH</p> 
+            <p id="playerHealth" >PLAYER HEALTH</p>
         </div> -->
 
-        
+
          <audio autoplay loop id="bossAudio">
             <source src="darkSong2.mp3" type="audio/wav">
             Your browser does not support the audio element.
-          </audio>  
+          </audio>
           <audio autoplay loop id="finalBossAudio">
             <source src="scaryMusic.wav" type="audio/wav">
             Your browser does not support the audio element.
@@ -106,22 +112,22 @@
           <audio autoplay loop id="labAlarm">
             <source src="labAlarm.mp3" type="audio/wav">
             Your browser does not support the audio element.
-          </audio>   
+          </audio>
           <audio autoplay loop id="progression">
             <source src="narration1v2.mp3" type="audio/wav">
             Your browser does not support the audio element.
-          </audio>    
+          </audio>
           <audio autoplay loop id="gameOverSound">
             <source src="gameOver1.wav" type="audio/wav">
             Your browser does not support the audio element.
-          </audio> 
+          </audio>
           <div id="gameOver">
               <h2 class="gameOver__heading">
                   GAME OVER
               </h2>
-          </div> 
+          </div>
     </div>
-    
+
     <script src="js/MenuScreen.js"></script>
     <script src="js/GraphicsCommon.js"></script>
     <script src="js/ImageLoading.js"></script>
@@ -129,7 +135,7 @@
     <script src="js/BabyGhost.js"></script>
     <script src="js/Bomb.js"></script>
     <script src="js/Rat.js"></script>
-    <script src="js/Spider.js"></script> 
+    <script src="js/Spider.js"></script>
     <script src="js/BoyInCocoon.js"></script>
     <script src="js/SmallWorm.js"></script>
     <script src="js/Bosscockroach.js"></script>
@@ -140,13 +146,13 @@
     <script src="js/Cockroach.js"></script>
     <!-- <script src="js/Particle.js"></script> -->
     <script src="js/World.js"></script>
-    <script src="js/WorldForest.js"></script> 
-    <script src="js/WorldLaboratory.js"></script> 
+    <script src="js/WorldForest.js"></script>
+    <script src="js/WorldLaboratory.js"></script>
     <script src="js/UserInterface.js"></script>
     <script src="js/Input.js"></script>
     <script src="js/GamepadSupport.js"></script>
     <script src="js/Main.js"></script>
- 
+
 </body>
 
 </html>

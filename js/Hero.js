@@ -827,7 +827,7 @@ function heroClass() {
 
       case WORLD_MEMORY:
          worldNow=5;//test ending story
-         document.getElementById('gameHeading').innerHTML = 'TERROFADIA FOREST';
+         document.getElementById('gameHeading').innerHTML = 'THE END';
          levelList=worldList[worldNow];
          levelNow =0;
          document.getElementById("progression").play();
