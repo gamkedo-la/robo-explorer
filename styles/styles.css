@@ -36,8 +36,9 @@ h1 {
 }
 
 #gameHeading{
+    color: rgb(250, 245, 245);
     text-shadow: 0 .1rem 1rem rgba(255, 0, 0, 0.678), 
-    0 .1rem .1rem rgb(221, 219, 131);
+    0 .1rem .1rem rgb(214, 212, 66);
 }
 
 p {

@@ -34,6 +34,7 @@ var mouseY = 0;
 
 function setupInput() {
   canvas.addEventListener("mousemove", updateMousePosition);
+  canvas.addEventListener("mousedown", mouseClick);
   document.addEventListener("keydown", keyPressed);
   document.addEventListener("keyup", keyReleased);
 
@@ -46,6 +47,19 @@ function updateMousePosition(mouseEvent) {
   var root = document.documentElement;
   mouseX = mouseEvent.clientX - rect.left - root.scrollLeft;
   mouseY = mouseEvent.clientY - rect.top - root.scrollTop;
+}
+
+function mouseClick(evt) {
+  blueHero.fireSlingshot = 1;
+  if (blueHero.x < mouseX) {
+    addSlingShotRight();
+  }else{
+    addSlingShotLeft();
+  }
+  var audio = new Audio("slingShot2.wav");
+  audio.play();
+     
+  
 }
 
 /*****************KEY PRESSED CODE********************* */

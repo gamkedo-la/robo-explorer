@@ -422,42 +422,7 @@ function heroClass() {
     /*--------------FOR ANIMATING SLINGSHOT----------------*/
 
     
-    document.onmousedown = mouseClick;
-     //https://javascript.info/mouse-events-basics
-     //https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/button
-    function mouseClick(e) {
-      /*if (typeof e === 'object'){
-        switch (e.fireDirection){
-          case 0:
-           if(this.fireSlingshot = 1){
-            addSlingShotRight();
-           }
-          case 1:
-           if(this.fireSlingShot = -1){
-             addSlingShotLeft();
-           }
-           break;
-           default:
-  
-        }
-      }*/
-      
-      
-      if( this.fireSlingshot = 1){
-          
-        
-          addSlingShotRight();
-          var audio = new Audio("slingShot2.wav");
-          audio.play();
-       }
-
-       if (this.keyHeld_WalkLeft == true){
-          addSlingShotLeft();
-       }
-
-
-    }
-
+   
     
 
    /*
