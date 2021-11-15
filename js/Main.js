@@ -26,6 +26,8 @@ var camPanY = 0.0;
 
 var GamePad = new GamepadSupport();
 
+// New member, Pratice commit, Will Remove.
+
 /*******************************FUNCTION FOR GHOST MOVEMENT********************************** */
 function ghostReset() {
   ghostX = canvas.width / 2;
