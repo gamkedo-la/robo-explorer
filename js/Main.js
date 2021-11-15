@@ -653,10 +653,11 @@ function heroHealthBar(){
       //Load story of boy being saved by Robo-explorer.
             //worldNow=5;//test ending story
             worldNow=4;
-            document.getElementById('gameHeading').innerHTML = 'TERROFADIA TUNNELS';
+            document.getElementById('gameHeading').innerHTML = 'DR. AMBERVARD LAB';
             levelList=worldList[worldNow];
             levelNow =0;
             document.getElementById("progression").play();
+            document.getElementById("health__bossCockroach").style.display = "none";
             loadLevel(levelList[levelNow]);
         }
     console.log("Hero hit boyCocoon")
