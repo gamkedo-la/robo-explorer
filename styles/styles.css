@@ -241,6 +241,93 @@ transform: translate(-50%,-50%);
     color: rgb(35, 15, 209);
 }
 
+/******************************************************ROCKET ENERGY AND HEALTH MEDIA QUERY*********************/
+
+
+.rocketEnergy{
+   
+    border-radius: 15%;
+    position: absolute;
+    /* top: 50%;
+    left:50%;
+    width: 50%;
+    margin: auto; */
+    background-color:rgb(119, 8, 8);
+    /*box-shadow: 0px 0px rgba(255, 255, 255, 0.835);*/
+    border-color: black;
+    border-style: solid;
+    border-width: .2rem;
+    top: 50%;
+    left:10%;
+    width: 85%;
+    font-size: 5px;
+    margin: auto;
+}
+
+#myBar {
+width: 100%;
+height: 20px;
+background-color: rgb(211, 191, 11);
+padding: .5rem 0;
+border-radius: 20%;
+color: #fff;
+}
+
+@media only screen and (max-width: 1024px) {
+
+    .rocketEnergy{
+        position: absolute;
+        top: 50%;
+        left:10%;
+        width: 85%;
+        font-size: 5px;
+        margin: auto;
+        
+        
+        }
+    
+        #rocketEnergyText{
+        font-size: 8px;
+        color:#fff;
+        }
+    
+        .health{
+            position: absolute;
+            top: 60%;
+            left:10%;
+            width: 85%;
+           font-size: 5px;
+            margin: auto;
+            border-radius: 15%;
+            position: absolute;
+            margin: auto;
+            background-color:rgb(119, 8, 8);
+            /*box-shadow: 0px 0px rgba(255, 255, 255, 0.835);*/
+            border-color: black;
+            border-style: solid;
+            border-width: .2rem;
+            font-size: 8px;
+        }
+    
+        
+        #health_character{
+            border-radius: 15%;
+            text-align:center;
+            padding-top:2%;
+            background-color: rgb(211, 191, 11);
+            width: 90%;
+            height: 30px;
+            color: #fff;
+            font-size: 8px;
+        }
+    
+        #playerHealth{
+            font-size: 8px;
+        }
+
+}
+/******************************************************CONTROL LIST ITEMS MEDIA QUERY*********************/
+
 #controlKeys{
     font-size: 12px;
     position: absolute;
@@ -272,34 +359,37 @@ transform: translate(-50%,-50%);
 }
 
 
-.rocketEnergy{
-   
-    border-radius: 15%;
-    position: absolute;
-    /* top: 50%;
-    left:50%;
-    width: 50%;
-    margin: auto; */
-    background-color:rgb(119, 8, 8);
-    /*box-shadow: 0px 0px rgba(255, 255, 255, 0.835);*/
-    border-color: black;
-    border-style: solid;
-    border-width: .2rem;
-    top: 50%;
-    left:10%;
-    width: 85%;
-    font-size: 5px;
-    margin: auto;
+@media only screen and (max-width: 1024px) {
+
+    .items {
+        font-size: .5rem;
+        top: 10%;
+        left: 1%;
+        width: 100%;
+        display: inline-block;
+    }
+
+    
+    .controlKeys__lists{
+        font-size: 7px;
+        position: absolute;
+        top: 75%;
+        left:20%;
+        text-align: justify;
+        list-style-type:none;
+        line-height: .5rem;
+        border: 1px solid black;
+        text-align: center;
+        box-shadow: 0 0 .2rem rgb(226, 176, 10),0 0 .5rem rgb(235, 220, 171);
+        
+        display:inline-block;
+        background-color: rgb(122, 7, 7);
+        padding: 5% 1%;
+        border-radius: 5%;
+    }   
 }
 
-#myBar {
-width: 100%;
-height: 20px;
-background-color: rgb(211, 191, 11);
-padding: .5rem 0;
-border-radius: 20%;
-color: #fff;
-}
+
 /***********************HEALTH CHARACTER DIV*********************************/
 /***********************HEALTH CHARACTER DIV*********************************/
 /***********************HEALTH CHARACTER DIV*********************************/
@@ -419,32 +509,6 @@ color: #fff;
    
     
 
-    .items {
-        font-size: .5rem;
-        top: 10%;
-        left: 1%;
-        width: 100%;
-        display: inline-block;
-    }
-
-    
-    .controlKeys__lists{
-        font-size: 7px;
-        position: absolute;
-        top: 75%;
-        left:20%;
-        text-align: justify;
-        list-style-type:none;
-        line-height: .5rem;
-        border: 1px solid black;
-        text-align: center;
-        box-shadow: 0 0 .2rem rgb(226, 176, 10),0 0 .5rem rgb(235, 220, 171);
-        
-        display:inline-block;
-        background-color: rgb(122, 7, 7);
-        padding: 5% 1%;
-        border-radius: 5%;
-    }   
 
     #slingShot {
         font-size: .4rem;
@@ -474,55 +538,6 @@ color: #fff;
 
     }
 
-    .rocketEnergy{
-    position: absolute;
-    top: 50%;
-    left:10%;
-    width: 85%;
-    font-size: 5px;
-    margin: auto;
-    
-    
-    }
-
-    #rocketEnergyText{
-    font-size: 8px;
-    color:#fff;
-    }
-
-    .health{
-        position: absolute;
-        top: 60%;
-        left:10%;
-        width: 85%;
-       font-size: 5px;
-        margin: auto;
-        border-radius: 15%;
-        position: absolute;
-        margin: auto;
-        background-color:rgb(119, 8, 8);
-        /*box-shadow: 0px 0px rgba(255, 255, 255, 0.835);*/
-        border-color: black;
-        border-style: solid;
-        border-width: .2rem;
-        font-size: 8px;
-    }
-
-    
-    #health_character{
-        border-radius: 15%;
-        text-align:center;
-        padding-top:2%;
-        background-color: rgb(211, 191, 11);
-        width: 90%;
-        height: 30px;
-        color: #fff;
-        font-size: 8px;
-    }
-
-    #playerHealth{
-        font-size: 8px;
-    }
  
 }
 
