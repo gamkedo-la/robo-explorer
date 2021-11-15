@@ -859,16 +859,15 @@ function heroClass() {
         keyCollectionSound();
         worldGrid[walkIntoTileIndex] = WORLD_EMPTY;
         break;
-/*
+
       case WORLD_MEMORY:
          worldNow=5;//test ending story
-         
          document.getElementById('gameHeading').innerHTML = 'TERROFADIA FOREST';
          levelList=worldList[worldNow];
          levelNow =0;
          document.getElementById("progression").play();
          loadLevel(levelList[levelNow]);
-         break;*/
+         break;
 
 
 
