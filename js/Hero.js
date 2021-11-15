@@ -144,7 +144,7 @@ function heroClass() {
   };
 
   this.updateDaggerReadout = function () {
-    document.getElementById("daggerText").innerHTML = "life: " + this.daggersHeld;
+    document.getElementById("daggerText").innerHTML = ": " + this.daggersHeld;
   }
 
   this.updateRocketEnergyReadout = function () {

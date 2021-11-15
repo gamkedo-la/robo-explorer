@@ -179,7 +179,7 @@ box-shadow:-3px -1px rgba(1, 7, 10, 0.911);
 #dagger{
     position: absolute;
     top: 45%;
-    left:50%;
+    left:45%;
     transform:translate(-50%,-50%);
 }
 
@@ -187,8 +187,8 @@ box-shadow:-3px -1px rgba(1, 7, 10, 0.911);
 #daggerText{
     font-size: 12px;
     position: absolute;
-    top: 50%;
-    left:30%;
+    top: 45%;
+    left:55%;
    text-align: center;
     color: rgb(35, 15, 209);
 }
