@@ -94,12 +94,20 @@ background-position: 100% 100%;
 margin-top: .8%;
 /* background-color: black; */
 position: absolute;
-top:7.5%;
-left: 1%;
-width: 15rem;
-height: 35rem;
+/* top:7.5%;
+left: 1%; */
+/* width: 14rem; */
+height: 35rem; 
 border-radius: 2.5%;
 box-shadow:-3px -1px rgba(1, 7, 10, 0.911);
+
+background-color: black;
+position: absolute;
+top:45%;
+left:90.5%;
+width: 18%;
+transform: translate(-50%,-50%);
+
 
 }
 
@@ -218,8 +226,8 @@ box-shadow:-3px -1px rgba(1, 7, 10, 0.911);
 .controlKeys__lists{
     font-size: 7px;
     position: absolute;
-    top: 58%;
-    left:7%;
+    top: 68%;
+    left:25%;
     text-align: justify;
     list-style-type:none;
     line-height: 1rem;
@@ -243,20 +251,25 @@ box-shadow:-3px -1px rgba(1, 7, 10, 0.911);
    
     border-radius: 15%;
     position: absolute;
-    top: 50%;
+    /* top: 50%;
     left:50%;
     width: 50%;
-    margin: auto;
+    margin: auto; */
     background-color:rgb(119, 8, 8);
     /*box-shadow: 0px 0px rgba(255, 255, 255, 0.835);*/
     border-color: black;
     border-style: solid;
     border-width: .2rem;
+    top: 50%;
+    left:10%;
+    width: 85%;
+    font-size: 5px;
+    margin: auto;
 }
 
 #myBar {
 width: 100%;
-height: 30px;
+height: 20px;
 background-color: rgb(211, 191, 11);
 padding: .5rem 0;
 border-radius: 20%;
@@ -282,7 +295,7 @@ color: #fff;
 .health{
     border-radius: 15%;
     position: absolute;
-    top: 50%;
+    top: 60%;
     left:50%;
     width: 50%;
     margin: auto;
@@ -291,17 +304,20 @@ color: #fff;
     border-color: black;
     border-style: solid;
     border-width: .2rem;
+    left:10%;
+    width: 85%;
     
 }
 
 #health_character{
-   border-radius:40% 0% 0% 40%;
-   text-align:center;
-   padding-top:2%;
-   background-color: rgb(211, 191, 11);
-   width: 90%;
-   height: 30px;
-   color: #fff;
+    border-radius: 15%;
+        text-align:center;
+        padding-top:2%;
+        background-color: rgb(211, 191, 11);
+        width: 90%;
+        height: 30px;
+        color: #fff;
+        font-size: 8px;
 }
 
 
@@ -458,6 +474,7 @@ color: #fff;
     width: 85%;
     font-size: 5px;
     margin: auto;
+    
     
     }
 
