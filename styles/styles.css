@@ -267,7 +267,7 @@ color: #fff;
 /***********************HEALTH CHARACTER DIV*********************************/
 /***********************HEALTH CHARACTER DIV*********************************/
 /***********************HEALTH CHARACTER DIV*********************************/
-
+/*
 .health{
     border-radius:40% 0% 0% 40%;
     border-color: black;
@@ -278,6 +278,20 @@ color: #fff;
  top: 25%;
  left:81%;
  width: 18%;
+}*/
+.health{
+    border-radius: 15%;
+    position: absolute;
+    top: 50%;
+    left:50%;
+    width: 50%;
+    margin: auto;
+    background-color:rgb(119, 8, 8);
+    /*box-shadow: 0px 0px rgba(255, 255, 255, 0.835);*/
+    border-color: black;
+    border-style: solid;
+    border-width: .2rem;
+    
 }
 
 #health_character{
@@ -364,7 +378,7 @@ color: #fff;
     #black__interface{
         background-color: black;
         position: absolute;
-        top:47%;
+        top:45%;
         left:89%;
         width: 20%;
         transform: translate(-50%,-50%);
@@ -392,21 +406,21 @@ color: #fff;
 
     
     .controlKeys__lists{
-    font-size: 7px;
-    position: absolute;
-    top: 75%;
-    left:20%;
-    text-align: justify;
-    list-style-type:none;
-    line-height: .5rem;
-    border: 1px solid black;
-    text-align: center;
-    box-shadow: 0 0 .2rem rgb(226, 176, 10),0 0 .5rem rgb(235, 220, 171);
-    
-    display:inline-block;
-    background-color: rgb(122, 7, 7);
-    padding: 5% 1%;
-    border-radius: 5%;
+        font-size: 7px;
+        position: absolute;
+        top: 75%;
+        left:20%;
+        text-align: justify;
+        list-style-type:none;
+        line-height: .5rem;
+        border: 1px solid black;
+        text-align: center;
+        box-shadow: 0 0 .2rem rgb(226, 176, 10),0 0 .5rem rgb(235, 220, 171);
+        
+        display:inline-block;
+        background-color: rgb(122, 7, 7);
+        padding: 5% 1%;
+        border-radius: 5%;
     }   
 
     #slingShot {
@@ -442,7 +456,7 @@ color: #fff;
     top: 50%;
     left:10%;
     width: 85%;
-   font-size: 5px;
+    font-size: 5px;
     margin: auto;
     
     }
@@ -451,6 +465,41 @@ color: #fff;
     font-size: 8px;
     color:#fff;
     }
+
+    .health{
+        position: absolute;
+        top: 60%;
+        left:10%;
+        width: 85%;
+       font-size: 5px;
+        margin: auto;
+        border-radius: 15%;
+        position: absolute;
+        margin: auto;
+        background-color:rgb(119, 8, 8);
+        /*box-shadow: 0px 0px rgba(255, 255, 255, 0.835);*/
+        border-color: black;
+        border-style: solid;
+        border-width: .2rem;
+        font-size: 8px;
+    }
+
+    
+    #health_character{
+        border-radius: 15%;
+        text-align:center;
+        padding-top:2%;
+        background-color: rgb(211, 191, 11);
+        width: 90%;
+        height: 30px;
+        color: #fff;
+        font-size: 8px;
+    }
+
+    #playerHealth{
+        font-size: 8px;
+    }
+ 
 }
 
 /*@media only screen and (max-width: 1340px) {
