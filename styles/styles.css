@@ -233,15 +233,33 @@ transform: translate(-50%,-50%);
     display:none;
 }
 
+/******************************************************KEY TEXT MEDIA QUERY*********************/
+#key{
+    position: absolute;
+    width: 20%;
+    height: 8%;
+    top: 34.1%;
+    left:5%;
+    background-color: #097054;
+    border: 2px solid black;
+    border-radius: 20%;
+}
+
+
 #keyText {
     position: absolute;
     font-size: .7rem;
     top: 38%;
-    left: 28%;
+    left: 36%;
     transform: translate(-50%,-50%);
     color: #fff;
+    background-color: rgba(167, 156, 7, 0.822);
+    border: 2px solid black;
+    border-radius: 20%;
+    width: 20%;
+    height: 5%;
+    padding: 5px 0;
 }
-/******************************************************KEY TEXT MEDIA QUERY*********************/
 
 @media only screen and (max-width: 1024px) {
   
@@ -258,16 +276,15 @@ transform: translate(-50%,-50%);
 
 }
 
-
-
 #dagger{
     position: absolute;
     top: 38%;
     left:65%;
     transform:translate(-50%,-50%);
-    background-color: rgba(128, 128, 128, 0.349);
+    background-color: #097054;
     border: 2px solid black;
     border-radius: 20%;
+    width: 20%;
 }
 
 
@@ -284,6 +301,37 @@ transform: translate(-50%,-50%);
     left:78%;
     text-align: center;
     color: rgb(35, 15, 209);
+}
+
+
+@media only screen and (max-width: 1024px) {
+    
+
+    #dagger{
+        position: absolute;
+        top: 40%;
+        left:65%;
+       
+        height: 9%;
+       
+    }
+
+
+    #daggerText{
+        background-color: rgba(167, 156, 7, 0.822);
+        border: 2px solid black;
+        border-radius: 20%;
+        width: 18%;
+        height: 7%;
+        padding: 5px 0;
+        font-size: 12px;
+        position: absolute;
+        top: 36.5%;
+        left:80%;
+        text-align: center;
+        color: rgb(35, 15, 209);
+    }
+
 }
 
 /******************************************************ROCKET ENERGY AND HEALTH MEDIA QUERY*********************/

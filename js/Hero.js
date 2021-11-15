@@ -140,7 +140,7 @@ function heroClass() {
   }; // end of heroReset function
 
   this.updateKeyReadout = function () {
-    document.getElementById("keyText").innerHTML = "Keys: " + this.keysHeld;
+    document.getElementById("keyText").innerHTML = " " + this.keysHeld;
   };
 
   this.updateDaggerReadout = function () {
