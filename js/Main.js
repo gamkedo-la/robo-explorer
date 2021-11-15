@@ -488,6 +488,8 @@ function rocketEnergyBar(){
 }
 
 
+
+
 function moveAll() {
   blueHero.move();
   // babyGhost.move();
@@ -566,6 +568,31 @@ function moveAll() {
   /*--CC----CC---CC--CC-----CC-----CC----CC------CC-------CC--CC---CC--CC----CCCC--- */
   /*--CCCCC-CCCCCCC--CCCCCC-CCCCCC-CC--CC------CC---------CC--CCCCCCC--CC------CC-- */
 
+  
+function heroHealthBar(){
+  //if hero collides with enemyList health-- will reduce Player health energy bar
+  // if zero display gameOver message
+  // if health collected increase armor by 10. 
+  var i = 0;
+  if (i == 0) {
+    i = 1;
+    var elem = document.getElementById("health_character");
+    var width = 80;
+    var id = setInterval(frame, 20);
+    function frame() {
+      if (width >= 10) {
+        clearInterval(id);
+        i = 0;
+       
+      } else {
+        width = blueHero.health
+        elem.style.width = width + "%";
+        elem.innerHTML = width + "%";
+      }
+    }
+  }
+}
+
   function checkCollisionsAll() {
     //enemies bumping into player
     for (var enemy of enemyList){ 
@@ -585,8 +612,13 @@ function moveAll() {
             if (blueHero.health <= 0){
               document.getElementById("gameOver").style.display = "block";
               document.getElementById("gameOverSound").play();
-              
+                
             }
+
+            if (blueHero.health <= 0){
+              heroHealthBar();// test to reduce hero health bar.
+            }
+            
             
             console.log('Bump rat');
             break;
@@ -641,6 +673,7 @@ function moveAll() {
     if (bossEnemy.health > 0 && entity_v_entity(shot, bossEnemy )) {
       shot.readyToRemove = true;
       bossEnemy.health--;
+      document.getElementById("health__bossCockroach").style.display = "block";
       if(bossEnemy.health == 0){
         bossAudio.pause();
        //Load story of boy being saved by Robo-explorer.
