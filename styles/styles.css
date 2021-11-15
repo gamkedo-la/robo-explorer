@@ -226,11 +226,11 @@ transform: translate(-50%,-50%);
 .controlKeys__lists{
     font-size: 7px;
     position: absolute;
-    top: 68%;
+    top: 75%;
     left:25%;
     text-align: justify;
     list-style-type:none;
-    line-height: 1rem;
+    line-height: .7rem;
     border: 1px solid black;
     text-align: center;
     box-shadow: 0 0 .2rem rgb(226, 176, 10),0 0 .5rem rgb(235, 220, 171);
