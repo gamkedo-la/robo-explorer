@@ -364,6 +364,7 @@ var sideQuest4 = [
         const WORLD_EXITDOOR =89;
         const WORLD_DRAMBERVARD =90;
         const WORLD_ENDING=91;
+        const WORLD_MEMORY=92;
         // const WORLD_SMALLBRICK 
 
        
@@ -476,7 +477,8 @@ var sideQuest4 = [
             checkTileType == WORLD_MOUNTAIN ||
             checkTileType == WORLD_FORESTROCK ||
             checkTileType == WORLD_EXITDOOR ||
-            checkTileType == WORLD_DRAMBERVARD
+            checkTileType == WORLD_DRAMBERVARD ||
+            checkTileType == WORLD_MEMORY
            
             
 
