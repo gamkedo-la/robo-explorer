@@ -14,8 +14,8 @@ function finalBossClass() {
 
   this.speedX = FINALBOSS_MOVEMENT_SPEED;
   this.speedY = FINALBOSS_MOVEMENT_SPEED;
- this.health; // setup inside the reset function
-  this.width = 160;
+  this.health; // setup inside the reset function
+  this.width = 294;
   this.height = 160;
   this.frameX = 0;
   this.frameY = 0;
@@ -51,7 +51,7 @@ function finalBossClass() {
       return; 
     }
     this.x += this.speedX;
-    if (this.x < BOSS_LEFT_WALL_BOUNDARY + 600 && this.speedX < 0.0) {// left boundary
+    if (this.x < BOSS_LEFT_WALL_BOUNDARY && this.speedX < 0.0) {// left boundary
       //left side
       this.speedX *= -1;
     //  this.moveDir = 1;
@@ -79,14 +79,14 @@ function finalBossClass() {
     if (this.health <= 0){
       return; 
     }
-    var bossWormFrameW = 294;
+    var bossWormFrameW = this.width;
     canvasContext.drawImage(
         bossWormPic,
       this.frame*bossWormFrameW,
       0, //top left corner of spritesheet frame
       bossWormFrameW,
       bossWormPic.height, //size of frame
-      this.x - bossWormPic.width / 2,
+      this.x - bossWormFrameW / 2,
       this.y - bossWormPic.height / 2, //position on screen, centers image relative to self
       bossWormFrameW,
       bossWormPic.height //size of image on screen
