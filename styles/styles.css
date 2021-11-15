@@ -216,7 +216,7 @@ box-shadow:-3px -1px rgba(1, 7, 10, 0.911);
 }
 
 .controlKeys__lists{
-    font-size: 10px;
+    font-size: 7px;
     position: absolute;
     top: 58%;
     left:7%;
@@ -243,9 +243,9 @@ box-shadow:-3px -1px rgba(1, 7, 10, 0.911);
    
     border-radius: 15%;
     position: absolute;
-    top: 10%;
-    left:81%;
-    width: 18%;
+    top: 50%;
+    left:50%;
+    width: 50%;
     margin: auto;
     background-color:rgb(119, 8, 8);
     /*box-shadow: 0px 0px rgba(255, 255, 255, 0.835);*/
@@ -364,26 +364,50 @@ color: #fff;
     #black__interface{
         background-color: black;
         position: absolute;
-        top:50%;
-        left:50%;
+        top:47%;
+        left:89%;
+        width: 20%;
         transform: translate(-50%,-50%);
      
     }
     #keyText {
+        
         font-size: .7rem;
-        top: 55%;
+        top: 38%;
         left: 50%;
         transform: translate(-50%,-50%);
         color: #fff;
+
+       
     }
+    
 
     .items {
         font-size: .5rem;
         top: 10%;
         left: 1%;
         width: 100%;
-        display: innline-block;
+        display: inline-block;
     }
+
+    
+    .controlKeys__lists{
+    font-size: 7px;
+    position: absolute;
+    top: 75%;
+    left:20%;
+    text-align: justify;
+    list-style-type:none;
+    line-height: .5rem;
+    border: 1px solid black;
+    text-align: center;
+    box-shadow: 0 0 .2rem rgb(226, 176, 10),0 0 .5rem rgb(235, 220, 171);
+    
+    display:inline-block;
+    background-color: rgb(122, 7, 7);
+    padding: 5% 1%;
+    border-radius: 5%;
+    }   
 
     #slingShot {
         font-size: .4rem;
@@ -415,15 +439,16 @@ color: #fff;
 
     .rocketEnergy{
     position: absolute;
-    top: 3%;
-    left:85%;
-    width: 15%;
+    top: 50%;
+    left:10%;
+    width: 85%;
+   font-size: 5px;
     margin: auto;
     
     }
 
     #rocketEnergyText{
-    font-size: 10px;
+    font-size: 8px;
     color:#fff;
     }
 }
