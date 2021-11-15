@@ -38,7 +38,7 @@ h1 {
 #gameHeading{
     color: rgb(250, 245, 245);
     text-shadow: 0 .1rem 1rem rgba(255, 0, 0, 0.678), 
-    0 .1rem .1rem rgb(214, 212, 66);
+    0 .1rem .1rem rgb(241, 237, 7);
     text-align: left;
     position: relative;
     left: 20%;
@@ -49,9 +49,9 @@ h1 {
 @media only screen and (max-width: 1024px) {
     
     #gameHeading{
-        color: rgb(250, 245, 245);
+        color: rgb(239, 223, 240);
         text-shadow: 0 .1rem 1rem rgba(255, 0, 0, 0.678), 
-        0 .1rem .1rem rgb(214, 212, 66);
+        0 .1rem .1rem rgb(241, 237, 7);
         text-align: left;
         position: relative;
         left: 10%;
