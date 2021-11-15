@@ -4,6 +4,7 @@ function playSoundUnlessAlreadyPlaying(mp3) {
     if (!window.MP3s) window.MP3s = []; // create a pool of reusable audios
     if (!window.MP3s[mp3]) window.MP3s[mp3] = new Audio(mp3); // download once
     if (!window.MP3s[mp3].playing) window.MP3s[mp3].play(); // no spam please
+    if (blueHero.health <= 0) window.MP3s[mp3].pause();//stop when hero dies.
 }
 
 function keyCollectionSound(){

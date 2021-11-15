@@ -632,6 +632,15 @@ function heroHealthBar(){
           case WORLD_TRAP:
             console.log('Bump trap');
             playSoundUnlessAlreadyPlaying("trap_sound.mp3");
+            if (blueHero.health > 0) {
+              blueHero.health--;
+              console.log('blueHero health' + blueHero.health);
+            }
+            if (blueHero.health <= 0){
+              document.getElementById("gameOver").style.display = "block";
+              document.getElementById("gameOverSound").play();
+              
+            }
             break;
           default:
             console.log("unknown collision "+ enemy.myTileKind);
