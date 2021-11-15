@@ -175,6 +175,15 @@ box-shadow:-3px -1px rgba(1, 7, 10, 0.911);
     display:none;
 }
 
+#keyText {
+    position: absolute;
+    font-size: .7rem;
+    top: 38%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: #fff;
+}
+
 
 #dagger{
     position: absolute;
