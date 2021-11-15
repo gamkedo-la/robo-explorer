@@ -128,6 +128,7 @@ transform: translate(-50%,-50%);
 
 }
 
+
 .items {
     font-size: .5rem;
     /* background-color:rgba(8, 196, 55, 0.959); */
@@ -137,6 +138,32 @@ transform: translate(-50%,-50%);
     top: 7.5%;
     left: 24.5%;
     
+    
+}
+
+
+@media only screen and (max-width: 1024px) {
+    #black__interface{
+        background-image:url('../images/menu-items.png');
+        background-size: 101%;
+        background-position: 10% 25% ;
+        background-repeat:no-repeat;
+        position: absolute;
+        top:45%;
+        left:89%;
+        width: 20%;
+        transform: translate(-50%,-50%);
+        height: 28rem; 
+     
+    }
+
+    
+    .items {
+        padding: 0;
+        position:fixed;
+        
+        left: 24.5%;
+    }
 }
 
 #slingShot {
@@ -217,15 +244,7 @@ transform: translate(-50%,-50%);
 /******************************************************KEY TEXT MEDIA QUERY*********************/
 
 @media only screen and (max-width: 1024px) {
-    #black__interface{
-        background-color: black;
-        position: absolute;
-        top:45%;
-        left:89%;
-        width: 20%;
-        transform: translate(-50%,-50%);
-     
-    }
+  
     #keyText {
         
         font-size: .7rem;
@@ -246,15 +265,24 @@ transform: translate(-50%,-50%);
     top: 38%;
     left:65%;
     transform:translate(-50%,-50%);
+    background-color: rgba(128, 128, 128, 0.349);
+    border: 2px solid black;
+    border-radius: 20%;
 }
 
 
 #daggerText{
+    background-color: rgba(167, 156, 7, 0.822);
+    border: 2px solid black;
+    border-radius: 20%;
+    width: 20%;
+    height: 5%;
+    padding: 5px 0;
     font-size: 12px;
     position: absolute;
-    top: 37%;
-    left:75%;
-   text-align: center;
+    top: 35.5%;
+    left:78%;
+    text-align: center;
     color: rgb(35, 15, 209);
 }
 
