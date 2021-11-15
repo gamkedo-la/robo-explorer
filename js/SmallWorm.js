@@ -16,8 +16,8 @@ function smallWormClass() {
   this.speedY = SMALL_WORM_MOVEMENT_SPEED;
 
   this.health =10;
-  this.width = 200;
-  this.height = 100;
+  this.width = 50;
+  this.height = 50;
   this.frameY = 0;
    
   //properties for sprite animation
