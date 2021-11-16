@@ -830,7 +830,8 @@ function heroClass() {
          document.getElementById('gameHeading').innerHTML = 'THE END';
          levelList=worldList[worldNow];
          levelNow =0;
-         document.getElementById("progression").play();
+         document.getElementById("labAlarm").pause();
+         //document.getElementById("progression").play();
          loadLevel(levelList[levelNow]);
          break;
 
