@@ -604,6 +604,11 @@ function heroHealthBar(){
               ratCollisionSound();
               enemy.readyToRemove = true;   
             }
+            
+            var newBomb = new bombClass();
+            if( newBomb.life == 1){
+              enemy.readyToRemove = true;   
+            }
             /** HERO DIES TOMORROW */
             if (blueHero.health > 0) {
               blueHero.health--;
@@ -625,8 +630,26 @@ function heroHealthBar(){
           
           case WORLD_SPIDER:
             console.log('Bump spider');
+            if (blueHero.health > 0) {
+              blueHero.health--;
+              console.log('blueHero health' + blueHero.health);
+            }
+            if (blueHero.health <= 0){
+              document.getElementById("gameOver").style.display = "block";
+              document.getElementById("gameOverSound").play();
+                
+            }
             break;
           case WORLD_SMALLWORM:
+            if (blueHero.health > 0) {
+              blueHero.health--;
+              console.log('blueHero health' + blueHero.health);
+            }
+            if (blueHero.health <= 0){
+              document.getElementById("gameOver").style.display = "block";
+              document.getElementById("gameOverSound").play();
+                
+            }
             console.log('Bump smallWorm');
             break;
           case WORLD_TRAP:
