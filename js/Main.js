@@ -720,6 +720,21 @@ function checkCollisionsAll() {
   /**--bb----bb---bb---bb-------bb-------bb------------------------------------------------ */
   /**--bbbbbbbb---bbbbbbb----bbb------bbbb-------------------------------------------------------- */
 
+  if (bossEnemy.health > 0 && entity_v_entity(blueHero, bossEnemy)) {
+    /** HERO DIES TOMORROW */
+    if (blueHero.health > 0) {
+     blueHero.health--;
+     console.log("blueHero health" + blueHero.health);
+   }
+   if (blueHero.health <= 0) {
+     document.getElementById("gameOver").style.display = "block";
+     document.getElementById("gameOverSound").play();
+   }
+   console.log("Hero hit boss Cockroach");
+ }
+
+
+
   if (finalBossWorm.health > 0 && entity_v_entity(blueHero, finalBossWorm)) {
      /** HERO DIES TOMORROW */
      if (blueHero.health > 0) {
