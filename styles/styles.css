@@ -82,7 +82,7 @@ color: red;
     text-align: center;
 
 } */
-
+/*
 #debugText {
     font-size: 1rem;
     position: absolute; 
@@ -90,7 +90,7 @@ color: red;
     left: 25%;
     
     color:rgb(236, 205, 26);
-}
+}*/
 /* 
 .rocketEnergy{
     position: absolute;
@@ -233,14 +233,14 @@ transform: translate(-50%,-50%);
     display:none;
 }
 
-/*****ITEMS*************************************************************************************/
-/******************************************************************************************/
-/******************************************************************************************/
-/******************************************************************************************/
-/******************************************************************************************/
-/******************************************************************************************/
-/******************************************************************************************/
-/******************************************************************************************/
+/***IIIIII*****IIIIIIIIIIII*****IIIIIIII****II*************II***IIIIIII*******************************************************/
+/*****II************II**********II**********IIII*********IIII***II*****************************************/
+/*****II************II**********II**********II**II*****II**II*****II***************************************/
+/*****II************II**********II**********II***II**II****II*******II*************************************/
+/*****II************II**********IIIIII******II*****II******II*******II***************************************/
+/*****II************II**********II**********II*************II******II**********************************/
+/*****II************II**********II**********II*************II*****II**********************************/
+/***IIIIII**********II**********IIIIIIII****II*************II**IIII**********************************************/
 
 
 @media only screen and (max-width: 1024px) {
@@ -322,7 +322,7 @@ transform: translate(-50%,-50%);
     position: absolute;
     font-size: .7rem;
     top: 38%;
-    left: 36%;
+    left: 38.5%;
     transform: translate(-50%,-50%);
     color: #fff;
     background-color: rgba(167, 156, 7, 0.822);
@@ -598,22 +598,22 @@ font-size: 8px;
 }
 
 .controlKeys__lists{
-    font-size: 7px;
-    position: absolute;
-    top: 75%;
-    left:25%;
-    text-align: justify;
-    list-style-type:none;
-    line-height: .7rem;
-    border: 1px solid black;
-    text-align: center;
-    box-shadow: 0 0 .2rem rgb(226, 176, 10),0 0 .5rem rgb(235, 220, 171);
-    
-    display:inline-block;
-    background-color: rgb(122, 7, 7);
-    padding: 5% 1%;
-    border-radius: 5%;
-}
+    font-size: 8px;
+        position: absolute;
+        top: 50%;
+        left:18%;
+        text-align: justify;
+        list-style-type:none;
+        line-height: 1rem;
+        border: 1px solid black;
+        text-align: center;
+        box-shadow: 0 0 .2rem rgb(226, 176, 10),0 0 .5rem rgb(235, 220, 171);
+        display:inline-block;
+        background-color: rgb(122, 7, 7);
+        padding: 6% 2%;
+        border-radius: 5%;
+        height: 35%;
+    }   
 
 .controlKeys__lists--item:hover{
     transform: translate(0%, -5%);
@@ -622,15 +622,6 @@ font-size: 8px;
 
 
 @media only screen and (max-width: 1024px) {
-/* 
-    .items {
-        font-size: .5rem;
-        top: 10%;
-        left: 1%;
-        width: 100%;
-        display: inline-block;
-    } */
-
     
     .controlKeys__lists{
         font-size: 8px;
