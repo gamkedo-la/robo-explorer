@@ -1,4 +1,3 @@
-
 const GRAVITY_PARTICLE_PER_CYCLE = 10;
 var canvas, canvasContext;
 var blueHero = new heroClass();
@@ -8,13 +7,20 @@ var bossEnemy = new bossClass();
 var boyCocoon = new boyCocoonClass();
 var spidersInLevel = [];
 
-var finalBossWorm= new finalBossClass();
+var finalBossWorm = new finalBossClass();
 var enemyList = [];
 var waterList = [];
 var CHEATS_ENABLED = true;
 var worldNow = 0;
-var worldList = [levelListTunnels,levelListForest,levelListLaboratory,storyMenu,storyBoy,storyEnding];
-var worldSky = ["#6f6a6a","#fffc9f","#ffffff","#000000"];//#6f6a6a
+var worldList = [
+  levelListTunnels,
+  levelListForest,
+  levelListLaboratory,
+  storyMenu,
+  storyBoy,
+  storyEnding,
+];
+var worldSky = ["#6f6a6a", "#fffc9f", "#ffffff", "#000000"]; //#6f6a6a
 /************************GHOST VARIABLES***************************/
 var ghostX = 75;
 var ghostY = 75;
@@ -61,13 +67,13 @@ function particleClass() {
   this.velX = 5;
   this.velY = 7;
   this.myColor;
-  this.readyToRemove=false;
+  this.readyToRemove = false;
   // this.life=15+Math.random()*20;
-  this.life=1+Math.random()*2;
+  this.life = 1 + Math.random() * 2;
 
   this.move = function () {
-    if(this.life-- < 0){
-      this.readyToRemove=true;
+    if (this.life-- < 0) {
+      this.readyToRemove = true;
     }
     this.velY += GRAVITY_PARTICLE_PER_CYCLE;
     this.x += this.velX;
@@ -83,17 +89,15 @@ function particleClass() {
     }
     if (this.y > canvas.height) {
       this.y -= this.velY;
-       this.velY *= -0.3;//Dampen Velocity
+      this.velY *= -0.3; //Dampen Velocity
       // this.velY *= -1;
     }
   };
 
   this.draw = function () {
     // particleCircle(this.x, this.y, 2, "yellow");
-    particleCircle(this.x, this.y, 2,  this.myColor);
-   
+    particleCircle(this.x, this.y, 2, this.myColor);
   };
-
 } // end of particleClass def
 
 // var oneParticle = new particleClass();
@@ -108,37 +112,34 @@ var particleList = [];
 /*****SSSSSS**SSSSSS**SS***SS****SS**SSSSSS****SSSSSS***SS******SS**SSSSSS****SSSSSS*********************************** */
 
 function slingShotClass() {
-  
   this.x = 75;
   this.y = 75;
   this.velX = 5;
   this.velY = 7;
-  this.readyToRemove=false;
-  
- 
+  this.readyToRemove = false;
 
   this.move = function () {
     this.x += this.velX;
     this.y += this.velY;
     if (this.x < 0) {
-      this.readyToRemove= true;
+      this.readyToRemove = true;
     }
-    if (this.x > canvas.width*1.2) { // reason why slingshot is not reaching right wall
-      this.readyToRemove= true;
+    if (this.x > canvas.width * 1.2) {
+      // reason why slingshot is not reaching right wall
+      this.readyToRemove = true;
     }
     if (this.y < 0) {
-      this.readyToRemove= true;
+      this.readyToRemove = true;
     }
     if (this.y > canvas.height) {
-      this.readyToRemove= true;
+      this.readyToRemove = true;
     }
-    
   };
 
   this.draw = function () {
-     slingShotCircle(this.x, this.y, 5, "blue");
-     
-   /* const ROCK_HEIGHT = 2;
+    slingShotCircle(this.x, this.y, 5, "blue");
+
+    /* const ROCK_HEIGHT = 2;
     const ROCK_WIDTH =2;
     canvasContext.drawImage(
       rockPic,
@@ -147,24 +148,19 @@ function slingShotClass() {
       this.y - blueHero.height / 2, //position on screen, centers image relative to self
       rockPic.height //size of image on screen
     );*/
-    
   };
 } // end of slingShot def
 
 var slingShotList = [];
 
-
 /**********************************BOMB LIST ARRAY********************************** */
 
 var bombList = [];
-
 
 /**************************************FUNCTION FOR PARTICLE RESET************************************* */
 function particleReset() {
   particleList = [];
 }
-
-
 
 /**************************************FUNCTION FOR SLINGSHOT RESET************************************* */
 
@@ -185,7 +181,7 @@ function removeParticles() {
 }
 
 // function addBossEnemy(){
-//   var tempBoss;  
+//   var tempBoss;
 //   tempBoss =  new bossClass();
 // }
 
@@ -199,13 +195,11 @@ function addParticles() {
   tempParticle.velX = 6 - Math.random() * 10;
   tempParticle.velY = 10 - Math.random() * 10;
 
-  if(Math.random() < 0.3){
+  if (Math.random() < 0.3) {
     tempParticle.myColor = "red";
-  }else{
-    
+  } else {
     tempParticle.myColor = "yellow";
   }
-  
 
   particleList.push(tempParticle);
 }
@@ -224,12 +218,7 @@ function addSlingShotRight() {
   tempSlingShot.velX = 15;
   tempSlingShot.velY = 0;
   slingShotList.push(tempSlingShot);
-
-  
 }
-
-
-
 
 function addSlingShotLeft() {
   var tempSlingShot;
@@ -260,16 +249,14 @@ function addWorm(){
 
 var smallWormList = [];*/
 /**********************************FUNCTION ADD SLINGSHOT BULLETS*********************** */
-function animateSword(){
-  if(blueHero.swordSlash = 0){
-    blueHero.keyHeld_Sword =false;
-    blueHero.swordSlash =0;
-    }else{
-
-     if (blueHero.keyHeld_Sword) {
-    
-    blueHero.swordSlash = 1;
-    blueHero.keyHeld_Sword = true;
+function animateSword() {
+  if ((blueHero.swordSlash = 0)) {
+    blueHero.keyHeld_Sword = false;
+    blueHero.swordSlash = 0;
+  } else {
+    if (blueHero.keyHeld_Sword) {
+      blueHero.swordSlash = 1;
+      blueHero.keyHeld_Sword = true;
     }
   }
 }
@@ -280,14 +267,13 @@ function animateSword(){
 /*****WW*WW*WW*WW******WW****WW**W*WW******WW**WW**WW**W*WW**WW******WW**WW***WWWWWWWWWW**WW***WW/
 /******WWW***WWW*****WWWWWW**WW***WwW******WWWWWW**WW***WWW**WWWWWW**WWWWWW**WW********WW*WWWWW**/
 
-
 window.onload = function () {
   canvas = document.getElementById("gameCanvas");
   canvasContext = canvas.getContext("2d");
 
   document.getElementById("bossAudio").pause();
   document.getElementById("finalBossAudio").pause();
-  
+
   for (var i = 0; i < 2; i++) {
     addSlingShotRight();
   }
@@ -295,13 +281,13 @@ window.onload = function () {
   //addWorm(); WIP trying to create an instance of the smallWorm
   /*hook for dynamically adding a particle when pressing a key*/
   // document.addEventListener("keydown", keyPressed);
-  
+
   colorRect(0, 0, canvas.width, canvas.height, "black");
   menuScreen(0, 0, canvas.width, canvas.height, "green");
   colorText("LOADING IMAGES", canvas.width / 2, canvas.height / 2, "white");
   loadImages();
   ghostReset();
- // secondParticle.x= 20;
+  // secondParticle.x= 20;
   particleReset();
   //bossEnemyReset();
   bossEnemy.reset();
@@ -315,13 +301,12 @@ window.onload = function () {
   document.getElementById("gameOverSound").pause();
 };
 
-
 /****************************FUNCTION FOR DELAY AUDIO LEVEL TEN**************************** */
-function delayAudio(){
-   document.getElementById("bossAudio").play();
+function delayAudio() {
+  document.getElementById("bossAudio").play();
 }
 
-function finalBossAudio(){
+function finalBossAudio() {
   document.getElementById("finalBossAudio").play();
 }
 
@@ -331,7 +316,6 @@ function finalBossAudio(){
 /***MM*****MM*M***M*MM*****MM****MM****MM**MMMMM*MMMM****MM*******MM**MM****MM**MM***MM***MM**MM**MM*MM*MM**MM**MM***************MMMMM***MM***MM***MMM***MM**MM************* */
 /***MM****MM***M*M***MM***MMMMMMMMMM***MM*****MM*MM******MM*******MM**MM***MMmmmmMM**MM*MM****MM**MM**MMMM**MM***MM**************MM******MM***MM***MM****MM**MM************* */
 /*MMMMMM*MM****M******MM*MM********MM**MMMMMMMMM*MMMMMM**MMMMMMMM*MMMMMM**MM******MM*MM*******MM**MM***NNM**MMMMMM***************MM******MMMMMMM***MM****MM**MMMMM****************** */
-
 
 function imageLoadingDoneSoStartGame() {
   var framesPersecond = 30;
@@ -358,69 +342,65 @@ function loadLevel(whichLevel) {
   blueHero.reset(heroPic, "Black Fire");
   // babyGhost.reset();
   cockroach_egg.reset();
-   bossEnemy.reset();
-   boyCocoon.reset();
-   finalBossWorm.reset();
-  
+  bossEnemy.reset();
+  boyCocoon.reset();
+  finalBossWorm.reset();
+
   enemyList = [];
 
   var lookForAnotherTrap = true;
-  while(lookForAnotherTrap){
+  while (lookForAnotherTrap) {
     var newTrap = new trapClass();
     var trapHasTile = newTrap.reset();
-    if (trapHasTile){
+    if (trapHasTile) {
       enemyList.push(newTrap);
     }
     lookForAnotherTrap = trapHasTile;
   }
 
   var lookForAnotherRat = true;
-  while(lookForAnotherRat){
+  while (lookForAnotherRat) {
     var newRat = new ratClass();
     var ratHasTile = newRat.reset();
-    if (ratHasTile){
+    if (ratHasTile) {
       enemyList.push(newRat);
-    
     }
     lookForAnotherRat = ratHasTile;
   }
 
   spidersInLevel = [];
   var lookForAnotherSpider = true;
-  while(lookForAnotherSpider){
+  while (lookForAnotherSpider) {
     var newSpider = new spiderClass();
     var spiderHasTile = newSpider.reset();
-    if (spiderHasTile){
+    if (spiderHasTile) {
       enemyList.push(newSpider);
       //spidersInLevel.push(newSpider); // testing rat collisions - Ryan A.
     }
     lookForAnotherSpider = spiderHasTile;
   }
 
-  
- 
   var lookForAnotherWorm = true;
-  while(lookForAnotherWorm){
+  while (lookForAnotherWorm) {
     var newWorm = new smallWormClass();
     var wormHasTile = newWorm.reset();
-    if (wormHasTile){
+    if (wormHasTile) {
       enemyList.push(newWorm);
     }
     lookForAnotherWorm = wormHasTile;
   }
 
-
   waterList = [];
   var lookForAnotherWater = true;
-  while(lookForAnotherWater){
+  while (lookForAnotherWater) {
     var newWater = new trapClass();
     var waterHasTile = newWater.reset();
-    if (waterHasTile){
+    if (waterHasTile) {
       waterList.push(newTrap);
     }
     lookForAnotherWater = waterHasTile;
-  }//lookFor another while loop
-}// end of function loadLevel
+  } //lookFor another while loop
+} // end of function loadLevel
 
 /**********************FUNCTION FOR UPDATING moveAll and drawAll FUNCTION************/
 
@@ -428,25 +408,39 @@ function loadLevel(whichLevel) {
 var logoAlpha = 1;
 var logoFadeSpeed = 0.007;
 function fadeOutLogo() {
-    
-    if (logoAlpha<0) return; // quick exit
-    
-    let offsetY = -64;
+  if (logoAlpha < 0) return; // quick exit
 
-    if (performance.now() % 1000 > 500) { // flash
-        let txtX = Math.round(canvas.width/2);
-        let txtY = Math.round(canvas.height/2) + logoPic.height/2 + offsetY;
-        colorText("PLAYER ONE - GET READY!",txtX+2,txtY+2,"black","16px 'Press Start 2P'","center");
-        colorText("PLAYER ONE - GET READY!",txtX,txtY,"white","16px 'Press Start 2P'","center");
-    }
-    
-    // draw the logo
-    let logoX = Math.round(canvas.width/2-logoPic.width/2);
-    let logoY = Math.round(canvas.height/2-logoPic.height/2) + offsetY;
-    canvasContext.globalAlpha = logoAlpha;
-    canvasContext.drawImage(logoPic,logoX,logoY);
-    logoAlpha -= logoFadeSpeed; // slowly fade out
-    canvasContext.globalAlpha = 1; // reset
+  let offsetY = -64;
+
+  if (performance.now() % 1000 > 500) {
+    // flash
+    let txtX = Math.round(canvas.width / 2);
+    let txtY = Math.round(canvas.height / 2) + logoPic.height / 2 + offsetY;
+    colorText(
+      "PLAYER ONE - GET READY!",
+      txtX + 2,
+      txtY + 2,
+      "black",
+      "16px 'Press Start 2P'",
+      "center"
+    );
+    colorText(
+      "PLAYER ONE - GET READY!",
+      txtX,
+      txtY,
+      "white",
+      "16px 'Press Start 2P'",
+      "center"
+    );
+  }
+
+  // draw the logo
+  let logoX = Math.round(canvas.width / 2 - logoPic.width / 2);
+  let logoY = Math.round(canvas.height / 2 - logoPic.height / 2) + offsetY;
+  canvasContext.globalAlpha = logoAlpha;
+  canvasContext.drawImage(logoPic, logoX, logoY);
+  logoAlpha -= logoFadeSpeed; // slowly fade out
+  canvasContext.globalAlpha = 1; // reset
 }
 
 function updateAll() {
@@ -462,10 +456,10 @@ function updateAll() {
 /***MM*M***M*MM****MM**MM***MM***MM***MMMMM*********MMMMM***MM***MM**MMM**MM**MM************ */
 /**MM***M*M***MM***MM**MM****MM*MM****MM************MM******MM***MM**MM***MM**MM************ */
 /*MM*****M*****MM**MMMMMM*****MM******MMMMMMM*******MM******MMMMMMM**MM***MM**MMMMM****************** */
-function rocketEnergyBar(){
+function rocketEnergyBar() {
   //rocket energy =100
   //if I press on space bar reduce energy bar
-  // if zero stop flight 
+  // if zero stop flight
   // if battery collected increase rocketEnergy +50
   var i = 0;
   if (i == 0) {
@@ -477,18 +471,14 @@ function rocketEnergyBar(){
       if (width >= 100) {
         clearInterval(id);
         i = 0;
-       
       } else {
-        width = blueHero.rocketEnergy
+        width = blueHero.rocketEnergy;
         elem.style.width = width + "%";
         elem.innerHTML = width + "%";
       }
     }
   }
 }
-
-
-
 
 function moveAll() {
   blueHero.move();
@@ -497,38 +487,34 @@ function moveAll() {
   boyCocoon.move();
   bossEnemy.move();
   finalBossWorm.move();
-  
-  for (var i=0; i < enemyList.length; i++){
+
+  for (var i = 0; i < enemyList.length; i++) {
     enemyList[i].move();
   }
 
-  
-  
-  
-  for (var i=0; i < waterList.length; i++){
-     waterList[i].move();
-   }
-
+  for (var i = 0; i < waterList.length; i++) {
+    waterList[i].move();
+  }
 
   ghostMove();
   for (var i = 0; i < particleList.length; i++) {
     particleList[i].move();
-    if(particleList[i].readyToRemove){
-      particleList.splice(i,1);
+    if (particleList[i].readyToRemove) {
+      particleList.splice(i, 1);
     }
   }
 
-  for (var i = slingShotList.length-1; i >= 0; i--) {
+  for (var i = slingShotList.length - 1; i >= 0; i--) {
     slingShotList[i].move();
-    if(slingShotList[i].readyToRemove){
-      slingShotList.splice(i,1);
+    if (slingShotList[i].readyToRemove) {
+      slingShotList.splice(i, 1);
     }
   }
 
-  for (var i = bombList.length-1; i >= 0; i--) {
+  for (var i = bombList.length - 1; i >= 0; i--) {
     bombList[i].move();
-    if(bombList[i].readyToRemove){
-      bombList.splice(i,1);
+    if (bombList[i].readyToRemove) {
+      bombList.splice(i, 1);
     }
   }
   //Just illustration-- not going to keep this.
@@ -546,33 +532,29 @@ function moveAll() {
   /*--CC-----cCcccccC---cC---C-C---C--cC----cC------cCcccccC--------------- */
   /*--CCCCC-cC-------C-cC-----C-----C-cCCC--cC-----cC-------C-------------- */
 
-  camPanX = blueHero.x - (canvas.width +700) / 2; //test the horizontal panning.
+  camPanX = blueHero.x - (canvas.width + 700) / 2; //test the horizontal panning.
   //camPanX = blueHero.x - canvas.width / 2;
-  
-  
+
   // camPanX = blueHero.x - canvas.width/ 2;
   if (camPanX < 0) camPanX = 0;
 
-  camPanY = blueHero.y - canvas.height / 2 ;
+  camPanY = blueHero.y - canvas.height / 2;
   if (camPanY > 0) camPanY = 0;
   if (camPanY < 0) camPanY = 0;
-  
 }
 
+/*--CCCC----------------CAMERA VARIABLES-------------------------------- */
+/*--CC-------------CC-----CC-----CC-----CCCCCC---CCCCC--CC------------------------------ */
+/*--CC----CCCCCCC--CC-----CC-----------CC-------CC----------CCCCCCC--CC------CC---------- */
+/*--CC----CC---CC--CC-----CC-----CC------CC------CC-----CC--CC---CC--CCCC----CC----- */
+/*--CC----CC---CC--CC-----CC-----CC------CC------CC-----CC--CC---CC--CC--CC--CC */
+/*--CC----CC---CC--CC-----CC-----CC----CC------CC-------CC--CC---CC--CC----CCCC--- */
+/*--CCCCC-CCCCCCC--CCCCCC-CCCCCC-CC--CC------CC---------CC--CCCCCCC--CC------CC-- */
 
-  /*--CCCC----------------CAMERA VARIABLES-------------------------------- */
-  /*--CC-------------CC-----CC-----CC-----CCCCCC---CCCCC--CC------------------------------ */
-  /*--CC----CCCCCCC--CC-----CC-----------CC-------CC----------CCCCCCC--CC------CC---------- */
-  /*--CC----CC---CC--CC-----CC-----CC------CC------CC-----CC--CC---CC--CCCC----CC----- */
-  /*--CC----CC---CC--CC-----CC-----CC------CC------CC-----CC--CC---CC--CC--CC--CC */
-  /*--CC----CC---CC--CC-----CC-----CC----CC------CC-------CC--CC---CC--CC----CCCC--- */
-  /*--CCCCC-CCCCCCC--CCCCCC-CCCCCC-CC--CC------CC---------CC--CCCCCCC--CC------CC-- */
-
-  
-function heroHealthBar(){
+function heroHealthBar() {
   //if hero collides with enemyList health-- will reduce Player health energy bar
   // if zero display gameOver message
-  // if health collected increase armor by 10. 
+  // if health collected increase armor by 10.
   var i = 0;
   if (i == 0) {
     i = 1;
@@ -583,9 +565,8 @@ function heroHealthBar(){
       if (width >= 10) {
         clearInterval(id);
         i = 0;
-       
       } else {
-        width = blueHero.health
+        width = blueHero.health;
         elem.style.width = width + "%";
         elem.innerHTML = width + "%";
       }
@@ -593,175 +574,185 @@ function heroHealthBar(){
   }
 }
 
-  function checkCollisionsAll() {
-    //enemies bumping into player
-    for (var enemy of enemyList){ 
-       if (entity_v_entity(blueHero, enemy)) {
-        switch (enemy.myTileKind){
-          case WORLD_RAT:
-            if(blueHero.swordSlash == 1){
-              blueHero.keyHeld_Sword = true;
-              ratCollisionSound();
-              enemy.readyToRemove = true;   
-            }
-            
-            var newBomb = new bombClass();
-            if( newBomb.life == 1){
-              enemy.readyToRemove = true;   
-            }
-            /** HERO DIES TOMORROW */
-            if (blueHero.health > 0) {
-              blueHero.health--;
-              console.log('blueHero health' + blueHero.health);
-            }
-            if (blueHero.health <= 0){
-              document.getElementById("gameOver").style.display = "block";
-              document.getElementById("gameOverSound").play();
-                
-            }
+function checkCollisionsAll() {
+  //enemies bumping into player
+  for (var enemy of enemyList) {
+    if (entity_v_entity(blueHero, enemy)) {
+      switch (enemy.myTileKind) {
+        case WORLD_RAT:
+          if (blueHero.swordSlash == 1) {
+            blueHero.keyHeld_Sword = true;
+            ratCollisionSound();
+            enemy.readyToRemove = true;
+          }
 
-            if (blueHero.health <= 0){
-              heroHealthBar();// test to reduce hero health bar.
-            }
-            
-            
-            console.log('Bump rat');
-            break;
-          
-          case WORLD_SPIDER:
-            console.log('Bump spider');
-            if (blueHero.health > 0) {
-              blueHero.health--;
-              console.log('blueHero health' + blueHero.health);
-            }
-            if (blueHero.health <= 0){
-              document.getElementById("gameOver").style.display = "block";
-              document.getElementById("gameOverSound").play();
-                
-            }
-            break;
-          case WORLD_SMALLWORM:
-            if (blueHero.health > 0) {
-              blueHero.health--;
-              console.log('blueHero health' + blueHero.health);
-            }
-            if (blueHero.health <= 0){
-              document.getElementById("gameOver").style.display = "block";
-              document.getElementById("gameOverSound").play();
-                
-            }
-            console.log('Bump smallWorm');
-            break;
-          case WORLD_TRAP:
-            console.log('Bump trap');
-            playSoundUnlessAlreadyPlaying("trap_sound.mp3");
-            if (blueHero.health > 0) {
-              blueHero.health--;
-              console.log('blueHero health' + blueHero.health);
-            }
-            if (blueHero.health <= 0){
-              document.getElementById("gameOver").style.display = "block";
-              document.getElementById("gameOverSound").play();
-              
-            }
-            break;
-          default:
-            console.log("unknown collision "+ enemy.myTileKind);
-            break;
-        } 
-        
-       }
+          var newBomb = new bombClass();
+          if (newBomb.life == 1) {
+            enemy.readyToRemove = true;
+          }
+          /** HERO DIES TOMORROW */
+          if (blueHero.health > 0) {
+            blueHero.health--;
+            console.log("blueHero health" + blueHero.health);
+          }
+          if (blueHero.health <= 0) {
+            document.getElementById("gameOver").style.display = "block";
+            document.getElementById("gameOverSound").play();
+          }
+
+          if (blueHero.health <= 0) {
+            heroHealthBar(); // test to reduce hero health bar.
+          }
+
+          console.log("Bump rat");
+          break;
+
+        case WORLD_SPIDER:
+          console.log("Bump spider");
+          if (blueHero.health > 0) {
+            blueHero.health--;
+            console.log("blueHero health" + blueHero.health);
+          }
+          if (blueHero.health <= 0) {
+            document.getElementById("gameOver").style.display = "block";
+            document.getElementById("gameOverSound").play();
+          }
+          break;
+        case WORLD_SMALLWORM:
+          if (blueHero.health > 0) {
+            blueHero.health--;
+            console.log("blueHero health" + blueHero.health);
+          }
+          if (blueHero.health <= 0) {
+            document.getElementById("gameOver").style.display = "block";
+            document.getElementById("gameOverSound").play();
+          }
+          console.log("Bump smallWorm");
+          break;
+        case WORLD_TRAP:
+          console.log("Bump trap");
+          playSoundUnlessAlreadyPlaying("trap_sound.mp3");
+          if (blueHero.health > 0) {
+            blueHero.health--;
+            console.log("blueHero health" + blueHero.health);
+          }
+          if (blueHero.health <= 0) {
+            document.getElementById("gameOver").style.display = "block";
+            document.getElementById("gameOverSound").play();
+          }
+          break;
+        default:
+          console.log("unknown collision " + enemy.myTileKind);
+          break;
+      }
     }
-  
+  }
 
-  if (entity_v_entity(blueHero, cockroach_egg)) {
-    console.log("Hero hit cockroach egg")
-  }
-  
+
   if (entity_v_entity(blueHero, boyCocoon)) {
-    
-   
-     if (blueHero.swordSlash == 1) {
+    if (blueHero.swordSlash == 1) {
       //Load story of boy being saved by Robo-explorer.
-            //worldNow=5;//test ending story
-            worldNow=4;
-            document.getElementById('gameHeading').innerHTML = 'DR. AMBERVARD LAB';
-            levelList=worldList[worldNow];
-            levelNow =0;
-            document.getElementById("progression").play();
-            document.getElementById("health__bossCockroach").style.display = "none";
-            loadLevel(levelList[levelNow]);
-        }
-    console.log("Hero hit boyCocoon")
+      //worldNow=5;//test ending story
+      worldNow = 4;
+      document.getElementById("gameHeading").innerHTML = "DR. AMBERVARD LAB";
+      levelList = worldList[worldNow];
+      levelNow = 0;
+      document.getElementById("progression").play();
+      document.getElementById("health__bossCockroach").style.display = "none";
+      loadLevel(levelList[levelNow]);
+      console.log("Hero hit boyCocoon");
+    }
+   
   }
+
+
   //slingShot collisions
-  for (var shot of slingShotList){
-    for (var enemy of enemyList){
-      if(entity_v_entity(shot,enemy)){
-        enemy.readyToRemove=true;
-        shot.readyToRemove=true;
+  for (var shot of slingShotList) {
+    for (var enemy of enemyList) {
+      if (entity_v_entity(shot, enemy)) {
+        enemy.readyToRemove = true;
+        shot.readyToRemove = true;
       }
     }
 
-    if (bossEnemy.health > 0 && entity_v_entity(shot, bossEnemy )) {
+    if (bossEnemy.health > 0 && entity_v_entity(shot, bossEnemy)) {
       shot.readyToRemove = true;
       bossEnemy.health--;
       document.getElementById("health__bossCockroach").style.display = "block";
-      if(bossEnemy.health == 0){
+      if (bossEnemy.health == 0) {
         bossAudio.pause();
-       //Load story of boy being saved by Robo-explorer.
-       /* worldNow=4;
-        document.getElementById('gameHeading').innerHTML = 'TERROFADIA TUNNELS';
-        levelList=worldList[worldNow];
-        levelNow =0;
-        document.getElementById("progression").play();
-        loadLevel(levelList[levelNow]);*/
-      } 
-      console.log('shot hit boss');
+        //Load story of boy being saved by Robo-explorer.
+        /* worldNow=4;
+          document.getElementById('gameHeading').innerHTML = 'TERROFADIA TUNNELS';
+          levelList=worldList[worldNow];
+          levelNow =0;
+          document.getElementById("progression").play();
+          loadLevel(levelList[levelNow]);*/
+      }
+      console.log("shot hit boss");
     }
 
-    if (finalBossWorm.health > 0 && entity_v_entity(shot, finalBossWorm)){
+    if (finalBossWorm.health > 0 && entity_v_entity(shot, finalBossWorm)) {
       shot.readyToRemove = true;
       finalBossWorm.health--;
-      console.log('shot hit final boss');
+      console.log("shot hit final boss");
     }
-   
   }
 
   //backwards loop to remove elements ready for removal
-  for(var i = enemyList.length - 1;i >=0; i--){
-    if (enemyList[i].readyToRemove){
-      enemyList.splice(i,1);
+  for (var i = enemyList.length - 1; i >= 0; i--) {
+    if (enemyList[i].readyToRemove) {
+      enemyList.splice(i, 1);
     }
   }
 
-  for(var i = slingShotList.length - 1;i >=0; i--){
-    if (slingShotList[i].readyToRemove){
-      slingShotList.splice(i,1);
+  for (var i = slingShotList.length - 1; i >= 0; i--) {
+    if (slingShotList[i].readyToRemove) {
+      slingShotList.splice(i, 1);
     }
-    
   }
- 
+
+
+  /**--bbbbbb-----bbbbbb---bbbbbbb----bbbbbbb------------------------------------------------------------ */
+  /**--bb----bb---bb---bb---bb---------bb--------------------------------------------------- */
+  /**--bb----bb---bb---bb-----bb---------bb--------------------------------------------- */
+  /**--bbbbbb-----bb---bb-------bb---------bb------------------------------------------------- */
+  /**--bb----bb---bb---bb-------bb-------bb------------------------------------------------ */
+  /**--bbbbbbbb---bbbbbbb----bbb------bbbb-------------------------------------------------------- */
+
+  if (finalBossWorm.health > 0 && entity_v_entity(blueHero, finalBossWorm)) {
+     /** HERO DIES TOMORROW */
+     if (blueHero.health > 0) {
+      blueHero.health--;
+      console.log("blueHero health" + blueHero.health);
+    }
+    if (blueHero.health <= 0) {
+      document.getElementById("gameOver").style.display = "block";
+      document.getElementById("gameOverSound").play();
+    }
+    console.log("Hero hit final bossWorm");
+  }
+
+
 }
 
-function rocketPackError(){
- 
-    var audio = new Audio("rocketPackError.mp3");
-    audio.play();
- 
+function rocketPackError() {
+  var audio = new Audio("rocketPackError.mp3");
+  audio.play();
 }
 
 function entity_v_entity(entity1, entity2) {
-  if ((entity1.x > entity2.x - entity2.width+0.01  / 2) &&
-  (entity1.x < entity2.x + entity2.width  / 2) &&
-  (entity1.y > entity2.y - entity2.height / 2) &&
-  (entity1.y < entity2.y + entity2.height / 2)) {
-    return true
+  if (
+    entity1.x > entity2.x - entity2.width  / 2 &&
+    entity1.x < entity2.x + entity2.width / 2 &&
+    entity1.y > entity2.y - entity2.height / 2 &&
+    entity1.y < entity2.y + entity2.height / 2
+  ) {
+    return true;
   } else {
-    return false
+    return false;
   }
 }
-
 
 /**************************************BRICKS FOR CAMERA SPAN************************************* */
 function drawOnlyBricksOnScreen() {
@@ -788,9 +779,7 @@ function drawOnlyBricksOnScreen() {
       var eachRow = cameraTopMostRow;
       eachRow < cameraBottomMostRow;
       eachRow++
-    ) {
-      
-    } // end of for eachRow
+    ) {} // end of for eachRow
   } // end of for eachCol
 } // end of drawBricks()
 
@@ -801,7 +790,6 @@ function drawOnlyBricksOnScreen() {
 /*DD***DD**DD*******DDDDDDDD***DD***DD*DD***DD*********MMMMM***MM***MM**MMM**MM**MM************ */
 /*DD***DD**DD******DD******DD***DD*DD***DD*DD**********MM******MM***MM**MM***MM**MM************ */
 /*DDDDD****DD*****DD********DD***DD******DD************MM******MMMMMMM**MM***MM**MMMMM****************** */
-
 
 function drawAll() {
   colorRect(0, 0, canvas.width, canvas.height, worldSky[worldNow]);
@@ -839,18 +827,15 @@ function drawAll() {
   // babyGhost.draw();
   cockroach_egg.draw();
   boyCocoon.draw();
- 
+
   bossEnemy.draw();
   finalBossWorm.draw();
-  
-  for (var i=0; i < enemyList.length; i++){
+
+  for (var i = 0; i < enemyList.length; i++) {
     enemyList[i].draw();
-  } 
+  }
 
-  
-
-
-  for (var i=0; i < waterList.length; i++){
+  for (var i = 0; i < waterList.length; i++) {
     waterList[i].draw();
   }
   // particleCircle(this.x, this.y, 5, "yellow");
@@ -869,6 +854,4 @@ function drawAll() {
 
   //Draw UI here
   fadeOutLogo(); // "ready player one" intro
-
-
 }
