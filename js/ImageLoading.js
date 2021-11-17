@@ -158,7 +158,7 @@ function loadImages() {
 
     { trackType: WORLD_WATER, theFile: "sewerWater.png" },
     { trackType: WORLD_STORY, theFile: "robo-explorer-story-image1.png" },
-    { trackType: WORLD_STORYBOY, theFile: "BossCockroachStory5.png" },
+    { trackType: WORLD_STORYBOY, theFile: "BossCockroachStory7.png" },
     { trackType: WORLD_BLACKTILES, theFile: "black.png" },
     { trackType: WORLD_DRAMBERVARD, theFile: "drambervard.png" },
     { trackType: WORLD_ENDING, theFile: "endingRobo-explorer.png" },
