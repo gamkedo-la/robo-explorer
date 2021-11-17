@@ -72,11 +72,11 @@ function ratClass() {
     this.animationCounter++;
     if(this.animationCounter == this.animationSpeed){
       this.frame++;
-      if(this.direction == 1) {
+      if(this.direction == 1) { //left facing
         if(this.frame > this.numberOfFrames){
           this.frame = 0;
         } 
-      } else if(this.direction == -1){
+      } else if(this.direction == -1){ //right facing
         if(this.frame > this.numberOfFrames * 2){
           this.frame = 0;
         } 
