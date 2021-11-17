@@ -5,7 +5,7 @@ var bombPic = document.createElement("img");
 var trapPic = document.createElement("img");
 var rockPic = document.createElement("img");
 // var waterPic = document.createElement("img");
-var cockroachEggPic = document.createElement("img");
+//var cockroachEggPic = document.createElement("img");
 var bossPic = document.createElement("img");
 var boyCocoonPic=document.createElement("img");
 var smallWormPic=document.createElement("img");
@@ -54,7 +54,7 @@ function loadImages() {
     { varName: spiderPic, theFile: "spider.png"},
     { varName: bombPic, theFile: "bomb-sprite.png"},
     { varName: rockPic, theFile: "rock.png"},
-    { varName: cockroachEggPic, theFile: "cockroachSprite.png"},
+    //{ varName: cockroachEggPic, theFile: "cockroachSprite.png"},
     { varName: bossPic, theFile: "bossCockroachSprite.png"},
     { varName: boyCocoonPic, theFile: "boyInCocoon.png" },
     { varName: smallWormPic, theFile: "smallWorm.png" },

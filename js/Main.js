@@ -2,7 +2,7 @@ const GRAVITY_PARTICLE_PER_CYCLE = 10;
 var canvas, canvasContext;
 var blueHero = new heroClass();
 // var babyGhost = new babyGhostClass();
-var cockroach_egg = new cockroach_eggClass();
+//var cockroach_egg = new cockroach_eggClass();
 var bossEnemy = new bossClass();
 var boyCocoon = new boyCocoonClass();
 var spidersInLevel = [];
@@ -341,7 +341,7 @@ function loadLevel(whichLevel) {
 
   blueHero.reset(heroPic, "Black Fire");
   // babyGhost.reset();
-  cockroach_egg.reset();
+  //cockroach_egg.reset();
   bossEnemy.reset();
   boyCocoon.reset();
   finalBossWorm.reset();
@@ -483,7 +483,7 @@ function rocketEnergyBar() {
 function moveAll() {
   blueHero.move();
   // babyGhost.move();
-  cockroach_egg.move();
+  //cockroach_egg.move();
   boyCocoon.move();
   bossEnemy.move();
   finalBossWorm.move();
@@ -840,7 +840,7 @@ function drawAll() {
 
   blueHero.draw();
   // babyGhost.draw();
-  cockroach_egg.draw();
+  //cockroach_egg.draw();
   boyCocoon.draw();
 
   bossEnemy.draw();
