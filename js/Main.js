@@ -609,6 +609,11 @@ function checkCollisionsAll() {
 
         case WORLD_SPIDER:
           console.log("Bump spider");
+          if (blueHero.swordSlash == 1) {
+            blueHero.keyHeld_Sword = true;
+           
+            enemy.readyToRemove = true;
+          }
           if (blueHero.health > 0) {
             blueHero.health--;
             console.log("blueHero health" + blueHero.health);
