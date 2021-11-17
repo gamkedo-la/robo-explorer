@@ -831,6 +831,9 @@ function heroClass() {
          levelList=worldList[worldNow];
          levelNow =0;
          document.getElementById("labAlarm").pause();
+         document.getElementById("black__interface").style.display= 'none';
+         document.getElementById("rocketEnergy").style.display= 'none';
+         document.getElementById("health").style.display= 'none';
          //document.getElementById("progression").play();
          loadLevel(levelList[levelNow]);
          break;
