@@ -365,6 +365,7 @@ var sideQuest4 = [
         const WORLD_DRAMBERVARD =90;
         const WORLD_ENDING=91;
         const WORLD_MEMORY=92;
+        const WORLD_TRANSPARENT=93;
         // const WORLD_SMALLBRICK 
 
        
