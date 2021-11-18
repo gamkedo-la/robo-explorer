@@ -60,15 +60,23 @@ function ratClass() {
     
     var ratFrameW = 40;
     var ratFrameSize = 40;
-    canvasContext.drawImage(
-      ratPic,
-      this.frame * ratFrameW, 0, //top left corner of spritesheet frame
-      ratFrameSize, ratFrameSize, //size of frame
-      this.x - ratFrameW / 2, this.y - ratFrameSize / 2, //position on screen, centers image relative to self
-      ratFrameSize, ratFrameSize //size of image on screen
-    );
-
-    console.log(ratPic.height);
+    if(this.direction == 1){
+      canvasContext.drawImage(
+        ratPic,
+        this.frame * ratFrameW, 40, //top left corner of spritesheet frame
+        ratFrameSize, ratFrameSize, //size of frame
+        this.x - ratFrameW / 2, this.y - ratFrameSize / 2, //position on screen, centers image relative to self
+        ratFrameSize, ratFrameSize //size of image on screen
+      );
+    } else if(this.direction == -1){
+      canvasContext.drawImage(
+        ratPic,
+        this.frame * ratFrameW, 0, //top left corner of spritesheet frame
+        ratFrameSize, ratFrameSize, //size of frame
+        this.x - ratFrameW / 2, this.y - ratFrameSize / 2, //position on screen, centers image relative to self
+        ratFrameSize, ratFrameSize //size of image on screen
+      );
+    }
   
     //SPRITE ANIMATION CODE
 
