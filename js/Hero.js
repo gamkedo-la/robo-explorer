@@ -146,10 +146,16 @@ function heroClass() {
   this.updateDaggerReadout = function () {
     document.getElementById("daggerText").innerHTML = "  " + this.daggersHeld;
   }
-
+/*
   this.updateRocketEnergyReadout = function () {
     document.getElementById("rocketEnergyText").innerHTML = "ENERGY: " + this.rocketEnergy;
   }
+
+  this.updateHeroHealthReadout = function(){
+    document.getElementById("playerHealth").innerHTML = "HEALTH: " + this.health;
+  }*/
+
+
 
   this.updateSlingshotReadout = function () {
     // document.getElementById("slingshot").innerHTML = "1. Slingshot";
@@ -748,7 +754,6 @@ function heroClass() {
         // if (this.rocketEnergy == 0) {
           this.rocketEnergy = ROCKET_LIFE;
         // }
-
         worldGrid[walkIntoTileIndex] = WORLD_EMPTY;
         // this.updateWoodenBowReadout();
         // ROCKET_LIFE == 100;

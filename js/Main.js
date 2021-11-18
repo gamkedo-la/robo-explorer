@@ -469,7 +469,7 @@ function rocketEnergyBar() {
     var id = setInterval(frame, 20);
     function frame() {
       if (width >= 100) {
-        clearInterval(id);
+       clearInterval(id);
         i = 0;
       } else {
         width = blueHero.rocketEnergy;
@@ -555,23 +555,17 @@ function heroHealthBar() {
   //if hero collides with enemyList health-- will reduce Player health energy bar
   // if zero display gameOver message
   // if health collected increase armor by 10.
-  var i = 0;
-  if (i == 0) {
-    i = 1;
-    var elem = document.getElementById("health_character");
-    var width = 80;
-    var id = setInterval(frame, 20);
-    function frame() {
-      if (width >= 10) {
-        clearInterval(id);
-        i = 0;
-      } else {
-        width = blueHero.health;
-        elem.style.width = width + "%";
-        elem.innerHTML = width + "%";
-      }
+  blueHero.health--;
+  var health = blueHero.health;
+    
+    document.getElementById("health__character").innerHTML = health;
+    if(blueHero.health == 0){
+      document.getElementById("health__character").innerHTML = "0";
     }
-  }
+    
+    
+    
+  
 }
 
 function checkCollisionsAll() {
@@ -591,8 +585,13 @@ function checkCollisionsAll() {
             enemy.readyToRemove = true;
           }
           /** HERO DIES TOMORROW */
+          if(blueHero.health !== 0){
+           
+            heroHealthBar();
+          }
           if (blueHero.health > 0) {
             blueHero.health--;
+         
             console.log("blueHero health" + blueHero.health);
           }
           if (blueHero.health <= 0) {
