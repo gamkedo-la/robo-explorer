@@ -555,17 +555,14 @@ function heroHealthBar() {
   //if hero collides with enemyList health-- will reduce Player health energy bar
   // if zero display gameOver message
   // if health collected increase armor by 10.
+  //https://stackoverflow.com/questions/20089473/how-to-output-a-javascript-variable-into-an-html-div
   blueHero.health--;
   var health = blueHero.health;
-    
-    document.getElementById("health__character").innerHTML = health;
+  
+  document.getElementById("health__character").innerHTML = health;
     if(blueHero.health == 0){
       document.getElementById("health__character").innerHTML = "0";
     }
-    
-    
-    
-  
 }
 
 function checkCollisionsAll() {
@@ -586,7 +583,6 @@ function checkCollisionsAll() {
           }
           /** HERO DIES TOMORROW */
           if(blueHero.health !== 0){
-           
             heroHealthBar();
           }
           if (blueHero.health > 0) {
