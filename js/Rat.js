@@ -16,6 +16,7 @@ function ratClass() {
 
   //properties for sprite animation
   this.frame = 0;
+  this.direction = 1; //left is 1, right is -1
   this.numberOfFrames = 3; //how many frames are in the spritesheet
   this.animationSpeed = 5;
   this.animationCounter = 0;
@@ -49,6 +50,8 @@ function ratClass() {
       this.y = nextY; 
     } else {
       this.speedX = -this.speedX;
+      this.direction = -this.direction //reverses direction based on if the rat hits a wall
+      //console.log(this.direction);
       //no y behavior
     }
   }
@@ -69,9 +72,16 @@ function ratClass() {
     this.animationCounter++;
     if(this.animationCounter == this.animationSpeed){
       this.frame++;
-      if(this.frame > this.numberOfFrames){
-        this.frame = 0;
-      } 
+      if(this.direction == 1) { //left facing
+        if(this.frame > this.numberOfFrames){
+          this.frame = 0;
+        } 
+      } else if(this.direction == -1){ //right facing
+        if(this.frame > this.numberOfFrames * 2){
+          this.frame = 0;
+        } 
+      }
+      
       this.animationCounter = 0;
     }
     // console.log(this.animationCounter);
