@@ -25,3 +25,8 @@ function tunnelMusic(){
 function uiToggle(){
     playSoundUnlessAlreadyPlaying("uiToggle2.mp3")
 }
+
+
+function itemCollection(){
+    playSoundUnlessAlreadyPlaying("itemCollection.mp3")
+}

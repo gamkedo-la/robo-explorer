@@ -711,30 +711,37 @@ function heroClass() {
       case WORLD_SLINGSHOT:
         worldGrid[walkIntoTileIndex] = WORLD_EMPTY;
         this.updateSlingshotReadout();
+        itemCollection();
         break;
       case WORLD_SWORD:
         worldGrid[walkIntoTileIndex] = WORLD_EMPTY;
         this.updateSwordReadout();
+        itemCollection();
         break;
       case WORLD_ARROW:
         worldGrid[walkIntoTileIndex] = WORLD_EMPTY;
         this.updateArrowReadout();
+        itemCollection();
         break;
       case WORLD_SPEAR:
         worldGrid[walkIntoTileIndex] = WORLD_EMPTY;
         this.updateSpearReadout();
+        itemCollection();
         break;
       case WORLD_CROSSBOW:
         worldGrid[walkIntoTileIndex] = WORLD_EMPTY;
         this.updateCrossbowReadout();
+        itemCollection();
         break;
       case WORLD_WOODEN_BOW:
         worldGrid[walkIntoTileIndex] = WORLD_EMPTY;
         this.updateWoodenBowReadout();
+        itemCollection();
         break;
       case WORLD_TREASURECHEST:
         worldGrid[walkIntoTileIndex] = WORLD_EMPTY;
         this.updateTreasureChestReadout();
+        itemCollection();
         break;
 
       case WORLD_ROCKET_BATTERY:
