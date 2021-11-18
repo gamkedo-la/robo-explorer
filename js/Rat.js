@@ -59,28 +59,33 @@ function ratClass() {
   this.draw = function(){
     
     var ratFrameW = 40;
+    var ratFrameSize = 40;
     canvasContext.drawImage(
       ratPic,
       this.frame * ratFrameW, 0, //top left corner of spritesheet frame
-      ratFrameW, ratPic.height, //size of frame
-      this.x - ratFrameW / 2, this.y - ratPic.height / 2, //position on screen, centers image relative to self
-      ratFrameW, ratPic.height //size of image on screen
+      ratFrameSize, ratFrameSize, //size of frame
+      this.x - ratFrameW / 2, this.y - ratFrameSize / 2, //position on screen, centers image relative to self
+      ratFrameSize, ratFrameSize //size of image on screen
     );
+
+    console.log(ratPic.height);
   
     //SPRITE ANIMATION CODE
 
     this.animationCounter++;
     if(this.animationCounter == this.animationSpeed){
       this.frame++;
-      if(this.direction == 1) { //left facing
-        if(this.frame > this.numberOfFrames){
-          this.frame = 0;
-        } 
+      if(this.frame > this.numberOfFrames){
+        this.frame = 0;
+      } 
+      /*
+      
       } else if(this.direction == -1){ //right facing
         if(this.frame > this.numberOfFrames * 2){
           this.frame = 0;
         } 
       }
+      */
       
       this.animationCounter = 0;
     }
