@@ -242,6 +242,7 @@ function heroClass() {
       if (tileTypeCenter == WORLD_WATER) {
         nextY += GRAVITY * 0.1; //slower gravity
         this.rocketEnergy = 0;
+        rocketError();
       } else {
         nextY += this.gravity;
       }
@@ -353,7 +354,7 @@ function heroClass() {
       
 
       if (tileTypeCenter !== WORLD_LADDER || tileTypeCenter == WORLD_WATER) {
-        rocketError();
+       
         this.climb = 0;  
         nextY -= PLAYER_MOVEMENT_SPEED * 0.1; // disables moving up when not in ladder and when in water slime.
       } else {
