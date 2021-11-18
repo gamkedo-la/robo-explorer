@@ -968,5 +968,8 @@ function heroClass() {
       flipLeft,
       this.flyAng
     );
+
+    // Restore the following line to show the Hero's "collision box"
+    // colorRect(this.x - this.width / 2, this.y - this.width / 2, this.width, this.height, 'blue')
   };
 }
