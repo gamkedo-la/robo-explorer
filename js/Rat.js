@@ -63,7 +63,7 @@ function ratClass() {
       ratPic,
       this.frame * ratFrameW, 0, //top left corner of spritesheet frame
       ratFrameW, ratPic.height, //size of frame
-      this.x - ratPic.width / 2, this.y - ratPic.height / 2, //position on screen, centers image relative to self
+      this.x - ratFrameW / 2, this.y - ratPic.height / 2, //position on screen, centers image relative to self
       ratFrameW, ratPic.height //size of image on screen
     );
   
@@ -86,5 +86,8 @@ function ratClass() {
     }
     // console.log(this.animationCounter);
     // console.log(this.frame); //caught the problem...this is reaching beyond number of frames...
+
+    // Restore the following line to show the rat's "collision box"
+    // colorRect(this.x - this.width / 2, this.y - this.width / 2, this.width, this.height, 'red')
   }
 };
