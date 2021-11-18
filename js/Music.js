@@ -34,3 +34,7 @@ function itemCollection(){
 function armorDamaged(){
     playSoundUnlessAlreadyPlaying("armorDamaged.mp3");
 }
+
+function endingSong(){
+    playSoundUnlessAlreadyPlaying("endingSong2.mp3");
+}

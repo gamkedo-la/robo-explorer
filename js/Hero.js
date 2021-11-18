@@ -840,6 +840,7 @@ function heroClass() {
       case WORLD_MEMORY:
          worldNow=5;//test ending story
          document.getElementById('gameHeading').innerHTML = 'THE END';
+         endingSong();
          levelList=worldList[worldNow];
          levelNow =0;
          document.getElementById("labAlarm").pause();
