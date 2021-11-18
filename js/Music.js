@@ -32,9 +32,13 @@ function itemCollection(){
 }
 
 function armorDamaged(){
-    playSoundUnlessAlreadyPlaying("armorDamaged.mp3");
+    playSoundUnlessAlreadyPlaying("armorDamaged3.mp3");
 }
 
 function endingSong(){
     playSoundUnlessAlreadyPlaying("endingSong2.mp3");
+}
+
+function rocketError(){
+    playSoundUnlessAlreadyPlaying("rocketPackError2.mp3");
 }

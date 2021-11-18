@@ -353,7 +353,7 @@ function heroClass() {
       
 
       if (tileTypeCenter !== WORLD_LADDER || tileTypeCenter == WORLD_WATER) {
-        
+        rocketError();
         this.climb = 0;  
         nextY -= PLAYER_MOVEMENT_SPEED * 0.1; // disables moving up when not in ladder and when in water slime.
       } else {
@@ -392,6 +392,7 @@ function heroClass() {
       var tileIndexCenter = getTileIndexAtPixelCoord(this.x, this.y);
       var tileTypeCenter = worldGrid[tileIndexCenter];
       if (tileTypeCenter == WORLD_WATER) {
+       
         nextX -= PLAYER_MOVEMENT_SPEED * 0.2; //made left movement slower in slime water
       } else {
         nextX -= PLAYER_MOVEMENT_SPEED;// 
