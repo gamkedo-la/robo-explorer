@@ -559,7 +559,7 @@ function heroHealthBar() {
   blueHero.health--;
   var health = blueHero.health;
   
-  document.getElementById("health__character").innerHTML = health;
+  document.getElementById("health__character").innerHTML = health + "%";
     if(blueHero.health == 0){
       document.getElementById("health__character").innerHTML = "0";
     }
@@ -582,7 +582,7 @@ function checkCollisionsAll() {
             enemy.readyToRemove = true;
           }
           /** HERO DIES TOMORROW */
-          if(blueHero.health !== 0){
+          if(blueHero.health !== -1){
             heroHealthBar();
           }
           if (blueHero.health > 0) {
@@ -632,6 +632,9 @@ function checkCollisionsAll() {
         case WORLD_TRAP:
           console.log("Bump trap");
           playSoundUnlessAlreadyPlaying("trap_sound.mp3");
+          if(blueHero.health !== 0){
+            heroHealthBar();
+          }
           if (blueHero.health > 0) {
             blueHero.health--;
             console.log("blueHero health" + blueHero.health);
