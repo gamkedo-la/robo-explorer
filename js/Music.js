@@ -23,10 +23,14 @@ function tunnelMusic(){
     playSoundUnlessAlreadyPlaying("darkSong2.mp3");
 }*/
 function uiToggle(){
-    playSoundUnlessAlreadyPlaying("uiToggle2.mp3")
+    playSoundUnlessAlreadyPlaying("uiToggle2.mp3");
 }
 
 
 function itemCollection(){
-    playSoundUnlessAlreadyPlaying("itemCollection.mp3")
+    playSoundUnlessAlreadyPlaying("itemCollection.mp3");
+}
+
+function armorDamaged(){
+    playSoundUnlessAlreadyPlaying("armorDamaged.mp3");
 }

@@ -555,14 +555,19 @@ function heroHealthBar() {
   //if hero collides with enemyList health-- will reduce Player health energy bar
   // if zero display gameOver message
   // if health collected increase armor by 10.
-  //https://stackoverflow.com/questions/20089473/how-to-output-a-javascript-variable-into-an-html-div
-  blueHero.health--;
-  var health = blueHero.health;
   
+  blueHero.health--;
+  if(blueHero.health !== 0){
+  var health = blueHero.health;
   document.getElementById("health__character").innerHTML = health + "%";
+  armorDamaged();
+  //document.getElementById("health__character").style.width = width + "%";
+        
+  }
+ /*
     if(blueHero.health == 0){
-      document.getElementById("health__character").innerHTML = "0";
-    }
+      document.getElementById("health__character").innerHTML = health;
+    }*/
 }
 
 function checkCollisionsAll() {
@@ -582,7 +587,7 @@ function checkCollisionsAll() {
             enemy.readyToRemove = true;
           }
           /** HERO DIES TOMORROW */
-          if(blueHero.health !== -1){
+          if(blueHero.health !== 0){
             heroHealthBar();
           }
           if (blueHero.health > 0) {
@@ -594,15 +599,18 @@ function checkCollisionsAll() {
             document.getElementById("gameOver").style.display = "block";
             document.getElementById("gameOverSound").play();
           }
-
+          /*
           if (blueHero.health <= 0) {
             heroHealthBar(); // test to reduce hero health bar.
-          }
+          }*/
 
           console.log("Bump rat");
           break;
 
         case WORLD_SPIDER:
+          if(blueHero.health !== 0){
+            heroHealthBar();
+          }
           console.log("Bump spider");
           if (blueHero.swordSlash == 1) {
             blueHero.keyHeld_Sword = true;
@@ -619,6 +627,9 @@ function checkCollisionsAll() {
           }
           break;
         case WORLD_SMALLWORM:
+          if(blueHero.health !== 0){
+            heroHealthBar();
+          }
           if (blueHero.health > 0) {
             blueHero.health--;
             console.log("blueHero health" + blueHero.health);
@@ -682,6 +693,9 @@ function checkCollisionsAll() {
       shot.readyToRemove = true;
       bossEnemy.health--;
       document.getElementById("health__bossCockroach").style.display = "block";
+      if(blueHero.health !== 0){
+        heroHealthBar();
+      }
       if (bossEnemy.health == 0) {
         bossAudio.pause();
         //Load story of boy being saved by Robo-explorer.
@@ -698,6 +712,9 @@ function checkCollisionsAll() {
     if (finalBossWorm.health > 0 && entity_v_entity(shot, finalBossWorm)) {
       shot.readyToRemove = true;
       finalBossWorm.health--;
+      if(blueHero.health !== 0){
+        heroHealthBar();
+      }
       console.log("shot hit final boss");
     }
   }
