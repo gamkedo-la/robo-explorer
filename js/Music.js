@@ -22,3 +22,6 @@ function ratCollisionSound(){
 function tunnelMusic(){
     playSoundUnlessAlreadyPlaying("darkSong2.mp3");
 }*/
+function uiToggle(){
+    playSoundUnlessAlreadyPlaying("uiToggle2.mp3")
+}
