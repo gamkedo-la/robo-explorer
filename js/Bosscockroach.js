@@ -6,7 +6,7 @@ const BOSS_LEFT_WALL_BOUNDARY=100;//200
 const BOSS_RIGHT_WALL_BOUNDARY=0.8; //1.3
 const BOSS_TOP_WALL_BOUNDARY=100; // 200 to 100 to make enemy reach top tiles 
 const BOSS_BOTTOM_WALL_BOUNDARY=0.5; // 0.9 to 0.9 adjusted this to not make enemy go to the slime
-const BOSS_HEALTH =10;
+const BOSS_HEALTH =100;
 
 var bossX = 75;
 var bossY = 75;

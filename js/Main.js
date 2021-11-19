@@ -566,10 +566,22 @@ function heroHealthBar() {
   //document.getElementById("health__character").style.width = width + "%";
         
   }
+
  /*
     if(blueHero.health == 0){
       document.getElementById("health__character").innerHTML = health;
     }*/
+}
+
+
+
+function bossCockroachHealth(){
+  bossEnemy.health--;
+  if(bossEnemy.health !== 0){
+    var health = bossEnemy.health;
+    document.getElementById("enemyHealth").innerHTML = health + "%";
+          
+    }
 }
 /*
 function explode(){
@@ -704,6 +716,7 @@ function checkCollisionsAll() {
     if (bossEnemy.health > 0 && entity_v_entity(shot, bossEnemy)) {
       shot.readyToRemove = true;
       bossEnemy.health--;
+      bossCockroachHealth()
       document.getElementById("health__bossCockroach").style.display = "block";
       if(blueHero.health !== 0){
         heroHealthBar();
