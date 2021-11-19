@@ -299,6 +299,7 @@ window.onload = function () {
   document.getElementById("labAlarm").pause();
   document.getElementById("progression").pause();
   document.getElementById("gameOverSound").pause();
+ 
 };
 
 /****************************FUNCTION FOR DELAY AUDIO LEVEL TEN**************************** */

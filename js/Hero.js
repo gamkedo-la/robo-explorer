@@ -12,6 +12,7 @@ const AIR_RESISTANCE = 0.95;
 const START_PARTICLES = 2;
 const PLAYER_ANIM_FRAMES = 8;
 const ROCKET_LIFE = 100;
+const HERO_HEALTH = 100;
 
 function heroClass() {
   // var sound = document.getElementById("heroSound");
@@ -130,7 +131,7 @@ function heroClass() {
         if (worldGrid[arrayIndex] == WORLD_PLAYERSTART) {
           worldGrid[arrayIndex] = WORLD_EMPTY;
           // this.ang = -Math.PI / 2;
-          this.health =100;
+          this.health = HERO_HEALTH;
           this.x = eachCol * WORLD_W + WORLD_W / 2;
           this.y = eachRow * WORLD_H + WORLD_H / 2;
           return;
