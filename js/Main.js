@@ -605,7 +605,7 @@ function checkCollisionsAll() {
           if (blueHero.health <= 0) {
             document.getElementById("gameOver").style.display = "block";
             document.getElementById("gameOverSound").play();
-            blueHero.explode = 1;
+            blueHero.explode == 1;
           }
          
           /*
@@ -662,6 +662,7 @@ function checkCollisionsAll() {
           if (blueHero.health <= 0) {
             document.getElementById("gameOver").style.display = "block";
             document.getElementById("gameOverSound").play();
+            blueHero.explode = 1;
           }
           break;
         default:
