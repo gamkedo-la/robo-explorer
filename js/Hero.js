@@ -47,6 +47,7 @@ function heroClass() {
   this.climbDown = 0;
   this.crawl = 0;
   this.onRechargableBattery = null;
+  this.explode=0;
 
   this.keyHeld_Climb = false;
   this.keyHeld_ClimbDown = false;
@@ -841,7 +842,9 @@ function heroClass() {
 
       case WORLD_MEMORY:
          worldNow=5;//test ending story
-         document.getElementById('gameHeading').innerHTML = 'THE END';
+        //  document.getElementById('gameHeading').innerHTML = 'THE END';
+        document.getElementById('gameHeading').style.display = 'none';
+        document.getElementById("gameEnding").style.display = "block";
          endingSong();
          levelList=worldList[worldNow];
          levelNow =0;
@@ -943,9 +946,16 @@ function heroClass() {
       animationRow = 5;
     }
 
+    
+    if (this.explode > 0 ){
+    
+      animationRow = 6; // character exploding
+    }
+
     if (this.climb > 0) {
       animationRow = 7;
     }
+
 
     /*
     canvasContext.drawImage(

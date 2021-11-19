@@ -763,6 +763,8 @@ font-size: 8px;
     
 }
 
+
+
 @keyframes gameOver{
     0%{
         scale:0%;
@@ -772,6 +774,46 @@ font-size: 8px;
   
     100%{
         scale:100%;
+    }
+}
+
+
+#gameEnding{
+    background-color: rgba(255, 0, 0, 0.377);
+    border-radius: 2%;
+    position: absolute;
+    top:70%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    display: none;
+     width: 100%;
+    animation-name: gameEnding;
+    animation-timing-function: ease-in-out;
+    animation-duration:4s;
+
+}
+
+
+.gameEnding__heading{
+    font-size: 5rem;
+    color: rgb(240, 232, 232);
+    text-shadow:0 0 .5rem #fff;
+    text-align: center;
+    text-shadow: 0 .1rem 1rem rgb(5, 2, 2), 
+    0 0 1rem rgb(2, 1, 10);
+
+}
+
+@keyframes gameEnding{
+    0%{
+        scale:0%;
+        top:10%;
+        left:5%;
+    }
+  
+    100%{
+        scale:100%;
+       
     }
 }
 

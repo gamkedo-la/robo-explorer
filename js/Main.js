@@ -569,6 +569,13 @@ function heroHealthBar() {
       document.getElementById("health__character").innerHTML = health;
     }*/
 }
+/*
+function explode(){
+  if (blueHero.health <= 0) {
+    blueHero.explode++;
+  }
+  
+}*/
 
 function checkCollisionsAll() {
   //enemies bumping into player
@@ -598,7 +605,9 @@ function checkCollisionsAll() {
           if (blueHero.health <= 0) {
             document.getElementById("gameOver").style.display = "block";
             document.getElementById("gameOverSound").play();
+            blueHero.explode = 1;
           }
+         
           /*
           if (blueHero.health <= 0) {
             heroHealthBar(); // test to reduce hero health bar.
