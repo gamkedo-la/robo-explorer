@@ -256,6 +256,7 @@ function animateSword() {
   } else {
     if (blueHero.keyHeld_Sword) {
       blueHero.swordSlash = 1;
+      sword();
       blueHero.keyHeld_Sword = true;
     }
   }

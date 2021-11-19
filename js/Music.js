@@ -42,3 +42,8 @@ function endingSong(){
 function rocketError(){
     playSoundUnlessAlreadyPlaying("rocketPackError2.mp3");
 }
+
+
+function sword(){
+    playSoundUnlessAlreadyPlaying("sword.mp3");
+}
