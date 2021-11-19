@@ -441,6 +441,8 @@ function fadeOutLogo() {
   canvasContext.drawImage(logoPic, logoX, logoY);
   logoAlpha -= logoFadeSpeed; // slowly fade out
   canvasContext.globalAlpha = 1; // reset
+
+  colorText("C key to show credits", canvas.width / 2, canvas.height-10, "white");
 }
 
 function updateAll() {
@@ -837,6 +839,10 @@ function drawOnlyBricksOnScreen() {
 /*DDDDD****DD*****DD********DD***DD******DD************MM******MMMMMMM**MM***MM**MMMMM****************** */
 
 function drawAll() {
+  if(showCredits) {
+    drawCredits();
+    return;
+  }
   colorRect(0, 0, canvas.width, canvas.height, worldSky[worldNow]);
 
   canvasContext.save(); // needed to undo this .translate() used for scroll

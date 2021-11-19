@@ -64,6 +64,10 @@ function mouseClick(evt) {
 
 /*****************KEY PRESSED CODE********************* */
 function keySet(keyEvent, setTo) {
+  if(keyEvent.keyCode == KEY_C && setTo == false) {
+    showCredits = !showCredits;
+  }
+
   if (keyEvent.keyCode == blueHero.controlKeyLeft) {
     blueHero.keyHeld_WalkLeft = setTo;
   }
@@ -127,9 +131,6 @@ function keyReleased(evt) {
 
 function checkForCheatKeys (keyCode) {
   switch (keyCode) {
-    case KEY_C: 
-      blueHero.keysHeld = 999;
-      break
     case KEY_1: 
       worldNow=0;
       levelList=worldList[worldNow];
