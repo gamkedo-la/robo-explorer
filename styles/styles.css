@@ -430,6 +430,7 @@ transform: translate(-50%,-50%);
     width: 50%;
     margin: auto; */
     background-color:rgb(119, 8, 8);
+    box-shadow: 0 0 .2rem red;
     /*box-shadow: 0px 0px rgba(255, 255, 255, 0.835);*/
     border-color: black;
     border-style: solid;
@@ -437,7 +438,8 @@ transform: translate(-50%,-50%);
     top: .4%;
     left:43%;
     width: 10%;
-    height:4.5%;
+    /* height:4.5%; */
+    height: 3.8%;
     font-size: 5px;
     
     margin: auto;
@@ -445,9 +447,9 @@ transform: translate(-50%,-50%);
 
 #myBar {
 width: 100%;
-height: 15px;
+height: 100%;
 background-color: rgb(211, 191, 11);
-padding: .5rem 0;
+padding: .4rem 0;
 border-radius: 0% 20% 20% 0%;
 color: #fff;
 font-size: 8px;
@@ -466,25 +468,26 @@ font-size: 8px;
         position: absolute;
         top: .3%;
         left:42%;
-        width: 10%;
-        font-size: 5px;
+        width: 8%;
+        /* font-size: 4px; */
         margin: auto;
-        height:4%;
-        border-radius: 0% 0% 20% 0%;
+        height:3%;
+        border-radius: 0% 20% 20% 0%;
+        box-shadow: 0 0 .2rem red;
         }
     
         #rocketEnergyText{
-        font-size: 6px;
+        font-size: 5px;
         color:#fff;
         }
 
             
         #myBar {
         width: 100%;
-        height: 14px;
+        height: 100%;
         background-color: rgb(211, 191, 11);
-        padding: .4rem 0;
-        border-radius: 0% 0% 20% 0%;
+        padding: .2rem 0;
+        border-radius: 0% 20% 20% 0%;
         color: #fff;
         
         }
@@ -493,28 +496,44 @@ font-size: 8px;
 
 
 
+
 .health{
-    border-radius: 0% 0% 20% 0%;
+    /* border-radius: 0% 0% 20% 0%; */
+    border-radius:2%;
     position: absolute;
     margin: auto;
     background-color:rgb(119, 8, 8);
+    box-shadow: 0 0 .2rem red;
     /*box-shadow: 0px 0px rgba(255, 255, 255, 0.835);*/
     border-color: black;
     border-style: solid;
     border-width: .2rem;
-    top: .3%;
-    left:55%;
-    width: 10%;
+    top: .7%;
+    left:59%;
+    width: 5%;
     font-size: 6px;
-        
+}
+
+
+.armorImg{
+    position:absolute;
+    top: .5%;
+    left:55%;
+    width: 5%;
     
 }
 
+.armorImg__img{
+    width: 40%;
+    height: 40%;
+}
+
 #health__character{
-    border-radius: 0% 0% 20% 0%;
+    /* border-radius: 0% 0% 20% 0%; */
+    border-radius:2%;
     text-align:center;
-    padding: .4rem 0;
-    background-color: rgb(211, 191, 11);
+    padding: .3rem 0;
+    background-image: linear-gradient( to top right,rgba(0, 89, 255, 0.746), rgb(211, 191, 11));
     color: #fff;
     width: 100%;
     height: 15px;
@@ -560,27 +579,46 @@ font-size: 8px;
 }
 
 @media only screen and (max-width: 1024px) {
+
+        
+    .armorImg{
+        position:absolute;
+        top: .5%;
+        left:50%;
+        width: 5%;
+        
+    }
+
+    .armorImg__img{
+        width: 40%;
+        height: 40%;
+    }
+
     .health{
+        top: .4%;
+        left:53.8%;
+        border-radius:3%;
         position: relative;
-        font-size: 5px;
+        /* font-size: 5px; */
         margin: auto;
         border-radius: 15%;
         position: absolute;
         margin: auto;
+        box-shadow: 0 0 .2rem red;
         border-color: black;
         border-style: solid;
         border-width: .2rem;
-        border-radius: 0% 0% 20% 0%;
-        font-size: 8px;
+        /* border-radius: 0% 0% 20% 0%; */
+       
     }
 
     
     #health__character{
-        border-radius: 0% 0% 20% 0%;
+        /* border-radius: 0% 0% 20% 0%; */
         text-align:center;
         background-color: rgb(211, 191, 11);
         color: #fff;
-        font-size: 8px;
+        font-size: .4rem;
        
     }
 
@@ -613,7 +651,7 @@ font-size: 8px;
         background-color: rgb(122, 7, 7);
         padding: 6% 2%;
         border-radius: 5%;
-        height: 35%;
+        height: 38%;
     }   
 
 .controlKeys__lists--item:hover{
@@ -639,7 +677,7 @@ font-size: 8px;
         background-color: rgb(122, 7, 7);
         padding: 6% 1%;
         border-radius: 5%;
-        height: 45%;
+        height: 47%;
     }   
 }
 
