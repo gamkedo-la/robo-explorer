@@ -730,6 +730,7 @@ function heroClass() {
       /*-------------------------------WORLD FOREST------------------------------*/
       case WORLD_TREEVINES:
         loadLevel(levelForestTwo);
+        levelForestSound();
         break;
       /*-------------------------------WORLD COLLECTIBLES------------------------------*/
       case WORLD_SLINGSHOT:
@@ -808,6 +809,7 @@ function heroClass() {
           this.updateDaggerReadout();
           worldGrid[walkIntoTileIndex] = WORLD_EMPTY;
           loadLevel(levelForestThree);
+          levelForestSound();
 
         }
         break;
@@ -818,6 +820,7 @@ function heroClass() {
           worldGrid[walkIntoTileIndex] = WORLD_EMPTY;
           finalBossAudio();
           loadLevel(levelForestFour);
+          
 
         }
         break;
@@ -837,6 +840,7 @@ function heroClass() {
           levelList=worldList[worldNow];
           levelNow =0;
           document.getElementById("progression").pause();
+          levelForestSound();
           loadLevel(levelList[levelNow]);
           break;
       case WORLD_TREEBRANCH:

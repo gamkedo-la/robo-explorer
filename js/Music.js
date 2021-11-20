@@ -68,3 +68,9 @@ function levelSound(){
     playSoundUnlessAlreadyPlaying("levelSound5.mp3");
 
 }
+
+
+function levelForestSound(){
+    playSoundUnlessAlreadyPlaying("levelForestSound.mp3");
+
+}
