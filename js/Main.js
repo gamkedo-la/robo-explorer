@@ -720,6 +720,7 @@ function checkCollisionsAll() {
       bossEnemy.health--;
       bossCockroachHealth()
       document.getElementById("health__bossCockroach").style.display = "block";
+      document.getElementById("boss1").style.display = "block";
       if(blueHero.health !== 0){
         heroHealthBar();
       }
