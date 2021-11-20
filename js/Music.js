@@ -57,3 +57,8 @@ function spider(){
 function bossCockRoachSound(){
     playSoundUnlessAlreadyPlaying("bossCockroachSound.mp3");
 }
+
+
+function finalBossWormSound(){
+    playSoundUnlessAlreadyPlaying("wormSound.mp3");
+}

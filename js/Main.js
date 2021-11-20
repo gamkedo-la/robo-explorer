@@ -780,7 +780,9 @@ function checkCollisionsAll() {
 
     if (finalBossWorm.health > 0 && entity_v_entity(shot, finalBossWorm)) {
       shot.readyToRemove = true;
+      finalBossWormSound();
       finalBossWorm.health--;
+      
       bossWormHealth();
       document.getElementById("health__bossWorm").style.display = "block";
       document.getElementById("boss2").style.display = "block";
