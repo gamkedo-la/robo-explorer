@@ -657,6 +657,7 @@ function checkCollisionsAll() {
           console.log("Bump spider");
           if (blueHero.swordSlash == 1) {
             blueHero.keyHeld_Sword = true;
+            spider();
            
             enemy.readyToRemove = true;
           }

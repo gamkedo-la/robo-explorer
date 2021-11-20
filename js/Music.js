@@ -47,3 +47,8 @@ function rocketError(){
 function sword(){
     playSoundUnlessAlreadyPlaying("sword.mp3");
 }
+
+
+function spider(){
+    playSoundUnlessAlreadyPlaying("spiderSound.mp3");
+}
