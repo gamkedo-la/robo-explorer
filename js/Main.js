@@ -603,6 +603,12 @@ function explode(){
   
 }*/
 
+function gameOver(){
+  document.getElementById("health").style.display = "none";
+  document.getElementById("gameOver").style.display = "block";
+  document.getElementById("gameOverSound").play();
+}
+
 function checkCollisionsAll() {
   //enemies bumping into player
   for (var enemy of enemyList) {
@@ -629,9 +635,10 @@ function checkCollisionsAll() {
             console.log("blueHero health" + blueHero.health);
           }
           if (blueHero.health <= 0) {
-            document.getElementById("gameOver").style.display = "block";
-            document.getElementById("gameOverSound").play();
-            blueHero.explode == 1;
+            // document.getElementById("gameOver").style.display = "block";
+            // document.getElementById("gameOverSound").play();
+            // blueHero.explode == 1;
+            gameOver();
           }
          
           /*
@@ -657,8 +664,9 @@ function checkCollisionsAll() {
             console.log("blueHero health" + blueHero.health);
           }
           if (blueHero.health <= 0) {
-            document.getElementById("gameOver").style.display = "block";
-            document.getElementById("gameOverSound").play();
+            // document.getElementById("gameOver").style.display = "block";
+            // document.getElementById("gameOverSound").play();
+            gameOver();
           }
           break;
         case WORLD_SMALLWORM:
@@ -670,8 +678,10 @@ function checkCollisionsAll() {
             console.log("blueHero health" + blueHero.health);
           }
           if (blueHero.health <= 0) {
-            document.getElementById("gameOver").style.display = "block";
-            document.getElementById("gameOverSound").play();
+            gameOver();
+            // document.getElementById("health").style.display = "none";
+            // document.getElementById("gameOver").style.display = "block";
+            // document.getElementById("gameOverSound").play();
           }
           console.log("Bump smallWorm");
           break;
@@ -686,9 +696,10 @@ function checkCollisionsAll() {
             console.log("blueHero health" + blueHero.health);
           }
           if (blueHero.health <= 0) {
-            document.getElementById("gameOver").style.display = "block";
-            document.getElementById("gameOverSound").play();
-            blueHero.explode = 1;
+            gameOver();
+            // document.getElementById("gameOver").style.display = "block";
+            // document.getElementById("gameOverSound").play();
+            // blueHero.explode = 1;
           }
           break;
         default:
@@ -738,13 +749,6 @@ function checkCollisionsAll() {
         document.getElementById("health__bossCockroach").style.display = "none";
         document.getElementById("boss1").style.display = "none";
         bossAudio.pause();
-        //Load story of boy being saved by Robo-explorer.
-        /* worldNow=4;
-          document.getElementById('gameHeading').innerHTML = 'TERROFADIA TUNNELS';
-          levelList=worldList[worldNow];
-          levelNow =0;
-          document.getElementById("progression").play();
-          loadLevel(levelList[levelNow]);*/
       }
       console.log("shot hit boss");
     }
@@ -795,9 +799,13 @@ function checkCollisionsAll() {
      blueHero.health--;
      console.log("blueHero health" + blueHero.health);
    }
+   if(blueHero.health !== 0){
+    heroHealthBar();
+  }
    if (blueHero.health <= 0) {
-     document.getElementById("gameOver").style.display = "block";
-     document.getElementById("gameOverSound").play();
+    gameOver();
+    //  document.getElementById("gameOver").style.display = "block";
+    //  document.getElementById("gameOverSound").play();
    }
    console.log("Hero hit boss Cockroach");
  }
@@ -810,9 +818,13 @@ function checkCollisionsAll() {
       blueHero.health--;
       console.log("blueHero health" + blueHero.health);
     }
+    if(blueHero.health !== 0){
+      heroHealthBar();
+    }
     if (blueHero.health <= 0) {
-      document.getElementById("gameOver").style.display = "block";
-      document.getElementById("gameOverSound").play();
+      gameOver();
+      // document.getElementById("gameOver").style.display = "block";
+      // document.getElementById("gameOverSound").play();
     }
     console.log("Hero hit final bossWorm");
   }
