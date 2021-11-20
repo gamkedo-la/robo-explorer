@@ -1,6 +1,7 @@
 const GRAVITY_PARTICLE_PER_CYCLE = 10;
 var canvas, canvasContext;
 var blueHero = new heroClass();
+
 // var babyGhost = new babyGhostClass();
 //var cockroach_egg = new cockroach_eggClass();
 var bossEnemy = new bossClass();
@@ -611,6 +612,30 @@ function gameOver(){
 }
 
 function checkCollisionsAll() {
+
+  //enemies bumping into bomb
+  for (var enemy of enemyList){
+    var newBomb = new bombClass();
+    if(entity_v_entity(newBomb,enemy)){
+      switch(enemy.myTileKind){
+        case WORLD_RAT:
+          if(newBomb.life-- < 0){
+            enemy.readyToRemove = true;
+            console.log("bomb hits rat");
+          
+          }
+          break;
+            
+        case WORLD_SPIDER:
+          if (bombList.length > 0) {
+            enemy.readyToRemove = true;
+          }
+          break;
+          default:
+          break;
+      }
+    }
+  }
   //enemies bumping into player
   for (var enemy of enemyList) {
     if (entity_v_entity(blueHero, enemy)) {
@@ -621,12 +646,9 @@ function checkCollisionsAll() {
             ratCollisionSound();
             enemy.readyToRemove = true;
           }
+          
+          
 
-          var newBomb = new bombClass();
-          if (newBomb.life == 1) {
-            enemy.readyToRemove = true;
-          }
-          /** HERO DIES TOMORROW */
           if(blueHero.health !== 0){
             heroHealthBar();
           }
