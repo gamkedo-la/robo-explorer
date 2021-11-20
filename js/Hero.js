@@ -194,6 +194,12 @@ function heroClass() {
     // document.getElementById("collected-crossbows").innerHTML = "1";
   };
 
+  
+  this.updateKaliSticksReadout = function () {
+    document.getElementById("kaliSticks").style.display = "block";
+    // document.getElementById("collected-crossbows").innerHTML = "1";
+  };
+
 
 
   /**************************CODE FOR CHARACTER TO MOVE******************************************************/
@@ -718,13 +724,14 @@ function heroClass() {
         break;
       case WORLD_TUNNEL_RIGHT_8:
         loadLevel(levelNine);
-        levelSound();
+       
         break;
       case WORLD_TUNNEL_RIGHT_9:
         // playSoundUnlessAlreadyPlaying("robo-explorer-level10-guitarRiff.wav");
 
         delayAudio();
         loadLevel(levelTen);
+        
        
         break;
       /*-------------------------------WORLD FOREST------------------------------*/
@@ -768,6 +775,12 @@ function heroClass() {
         this.updateTreasureChestReadout();
         itemCollection();
         break;
+      case WORLD_KALISTICKS:
+        worldGrid[walkIntoTileIndex] = WORLD_EMPTY;
+        this.updateKaliSticksReadout();
+        itemCollection();
+        break;
+        
 
       case WORLD_ROCKET_BATTERY:
         // if (this.rocketEnergy == 0) {

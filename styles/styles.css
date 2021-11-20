@@ -234,6 +234,15 @@ transform: translate(-50%,-50%);
     display:none;
 }
 
+#kaliSticks{
+    font-size: 12px;
+    position: absolute;
+    top: 22.5%;
+    left: 76%;
+    height: 4.8%;
+    display:none;
+}
+
 /***IIIIII*****IIIIIIIIIIII*****IIIIIIII****II*************II***IIIIIII*******************************************************/
 /*****II************II**********II**********IIII*********IIII***II*****************************************/
 /*****II************II**********II**********II**II*****II**II*****II***************************************/
