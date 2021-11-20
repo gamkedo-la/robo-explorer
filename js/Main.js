@@ -725,6 +725,8 @@ function checkCollisionsAll() {
         heroHealthBar();
       }
       if (bossEnemy.health == 0) {
+        document.getElementById("health__bossCockroach").style.display = "none";
+        document.getElementById("boss1").style.display = "none";
         bossAudio.pause();
         //Load story of boy being saved by Robo-explorer.
         /* worldNow=4;
