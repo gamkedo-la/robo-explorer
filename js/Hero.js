@@ -666,45 +666,59 @@ function heroClass() {
 
       case WORLD_TUNNEL_RIGHT:
         loadLevel(levelTwo);
+        levelSound();
         break;
       case WORLD_TUNNEL_UP:
         loadLevel(levelThree);
+        levelSound();
         break;
       case WORLD_TUNNEL_RIGHT_3:
         loadLevel(levelFour);
+        levelSound();
         break;
       case WORLD_TUNNEL_RIGHT_4:
         loadLevel(levelFive);
+        levelSound();
         break;
       case WORLD_TUNNEL_RIGHT_5:
         loadLevel(levelSix);
+        levelSound();
         break;
       case WORLD_TUNNEL_RIGHT_6:
         loadLevel(levelSix2);
+        levelSound();
         break;
       case WORLD_PIPE_UP_SIDEQUEST1:
         loadLevel(sideQuest1);
+        levelSound();
         break;
       case WORLD_PIPE_BOTTOM:
         loadLevel(levelSeven);
+        levelSound();
         break;
       case WORLD_PIPE_BOTTOM_SIDEQUEST2:
         loadLevel(sideQuest2);
+        levelSound();
         break;
       case WORLD_PIPE_TOP7:
         loadLevel(levelEight);
+        levelSound();
         break;
       case WORLD_PIPE_RIGHT_SIDEQUEST3:
         loadLevel(sideQuest3);
+        levelSound();
         break;
       case WORLD_PIPE_TOP_SIDEQUEST3:
         loadLevel(sideQuest4);
+        levelSound();
         break;
       case WORLD_PIPE_TOP_SIDEQUEST4:
         loadLevel(levelEightTwo);
+        levelSound();
         break;
       case WORLD_TUNNEL_RIGHT_8:
         loadLevel(levelNine);
+        levelSound();
         break;
       case WORLD_TUNNEL_RIGHT_9:
         // playSoundUnlessAlreadyPlaying("robo-explorer-level10-guitarRiff.wav");

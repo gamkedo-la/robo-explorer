@@ -62,3 +62,9 @@ function bossCockRoachSound(){
 function finalBossWormSound(){
     playSoundUnlessAlreadyPlaying("wormSound.mp3");
 }
+
+
+function levelSound(){
+    playSoundUnlessAlreadyPlaying("levelSound5.mp3");
+
+}
