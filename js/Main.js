@@ -607,6 +607,7 @@ function gameOver(){
   document.getElementById("health").style.display = "none";
   document.getElementById("gameOver").style.display = "block";
   document.getElementById("gameOverSound").play();
+  document.getElementById("armor").style.display="none";
 }
 
 function checkCollisionsAll() {
