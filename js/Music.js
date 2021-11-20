@@ -52,3 +52,8 @@ function sword(){
 function spider(){
     playSoundUnlessAlreadyPlaying("spiderSound.mp3");
 }
+
+
+function bossCockRoachSound(){
+    playSoundUnlessAlreadyPlaying("bossCockroachSound.mp3");
+}

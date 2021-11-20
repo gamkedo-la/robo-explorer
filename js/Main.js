@@ -740,6 +740,7 @@ function checkCollisionsAll() {
 
     if (bossEnemy.health > 0 && entity_v_entity(shot, bossEnemy)) {
       shot.readyToRemove = true;
+      bossCockRoachSound()
       bossEnemy.health--;
       bossCockroachHealth()
       document.getElementById("health__bossCockroach").style.display = "block";
