@@ -36,7 +36,7 @@ function armorDamaged(){
 }
 
 function endingSong(){
-    playSoundUnlessAlreadyPlaying("endingSong2.mp3");
+    playSoundUnlessAlreadyPlaying("endingSong3.mp3");
 }
 
 function rocketError(){
