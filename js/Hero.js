@@ -853,6 +853,8 @@ function heroClass() {
          document.getElementById("black__interface").style.display= 'none';
          document.getElementById("rocketEnergy").style.display= 'none';
          document.getElementById("health").style.display= 'none';
+         document.getElementById("armor").style.display= 'none';
+         
          //document.getElementById("progression").play();
          loadLevel(levelList[levelNow]);
          break;
