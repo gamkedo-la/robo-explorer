@@ -585,6 +585,16 @@ function bossCockroachHealth(){
           
     }
 }
+
+
+function bossWormHealth(){
+  finalBossWorm.health--;
+  if(finalBossWorm.health !== 0){
+    var health = finalBossWorm.health;
+    document.getElementById("finalEnemyHealth").innerHTML = health + "%";
+          
+    }
+}
 /*
 function explode(){
   if (blueHero.health <= 0) {
@@ -742,8 +752,17 @@ function checkCollisionsAll() {
     if (finalBossWorm.health > 0 && entity_v_entity(shot, finalBossWorm)) {
       shot.readyToRemove = true;
       finalBossWorm.health--;
+      bossWormHealth();
+      document.getElementById("health__bossWorm").style.display = "block";
+      document.getElementById("boss2").style.display = "block";
       if(blueHero.health !== 0){
         heroHealthBar();
+      }
+
+      if (finalBossWorm.health == 0) {
+        document.getElementById("health__bossWorm").style.display = "none";
+        document.getElementById("boss2").style.display = "none";
+        bossAudio.pause();
       }
       console.log("shot hit final boss");
     }

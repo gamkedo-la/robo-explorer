@@ -1,7 +1,7 @@
 const FINALBOSS_MOVEMENT_SPEED = 20.0;
 const FINALBOSS_IMAGE_NAME = "boss";
 const FINALBOSS_FRAMES = 0;
-const FINAL_BOSS_HEALTH =10;
+const FINAL_BOSS_HEALTH =100;
 
 var bossWormX = 75;
 var bossWormY = 75;

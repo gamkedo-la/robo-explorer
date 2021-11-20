@@ -611,7 +611,7 @@ font-size: 8px;
     left:70%;
     width: 10%;
     font-size: 6px;
-    /* display: none; */
+    display: none; 
 } 
 
 #finalEnemyHealth{
@@ -634,7 +634,7 @@ font-size: 8px;
 
 
 #boss2{
-    /* display: none;  */
+    display: none;  
 }
 
 .boss2{
