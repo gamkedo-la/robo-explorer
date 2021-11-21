@@ -611,6 +611,12 @@ function gameOver(){
   document.getElementById("armor").style.display="none";
 }
 
+function undoGameOver(){ // for reset
+  document.getElementById("health").style.display = "block";
+  document.getElementById("gameOver").style.display = "none";
+  document.getElementById("armor").style.display="block";
+}
+
 function checkCollisionsAll() {
 
   //enemies bumping into bomb
