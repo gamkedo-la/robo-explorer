@@ -701,12 +701,21 @@ function checkCollisionsAll() {
             blueHero.health--;
             console.log("blueHero health" + blueHero.health);
           }
+
+          if (blueHero.swordSlash == 1) {
+            blueHero.keyHeld_Sword = true;
+           
+           
+            enemy.readyToRemove = true;
+          }
+
           if (blueHero.health <= 0) {
             gameOver();
             // document.getElementById("health").style.display = "none";
             // document.getElementById("gameOver").style.display = "block";
             // document.getElementById("gameOverSound").play();
           }
+
           console.log("Bump smallWorm");
           break;
         case WORLD_TRAP:
