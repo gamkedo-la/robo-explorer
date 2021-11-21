@@ -1,6 +1,7 @@
 const BOY_COCOON_MOVEMENT_SPEED = 2.0;
 const BOY_COCOON_IMAGE_NAME = "boy_cocoon";
 const BOY_COCOON_FRAMES = 0;
+const BOY_COCOON_LIFE= 10;
 
 function boyCocoonClass() {
   this.x = 75;
@@ -27,7 +28,7 @@ function boyCocoonClass() {
         var arrayIndex = rowColToArrayIndex(eachCol, eachRow);
         if (worldGrid[arrayIndex] == WORLD_BOY_COCOON) {
           worldGrid[arrayIndex] = WORLD_EMPTY;
-          this.health=10;// found in grid bringing to life.
+          this.health=BOY_COCOON_LIFE;// found in grid bringing to life.
           // this.ang = -Math.PI / 2;
           this.x = eachCol * WORLD_W + WORLD_W / 2;
           this.y = eachRow * WORLD_H + WORLD_H / 2;
