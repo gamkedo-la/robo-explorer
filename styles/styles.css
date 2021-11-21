@@ -961,4 +961,30 @@ font-size: 8px;
 }
 
 
+@media only screen and (max-width: 1024px) {
+    
+    #gameEnding{
+        top:70%;
+        left:40%;
+        width:80%;
+        text-align: center;
+    }
+
+    
+
+    @keyframes gameEnding{
+    0%{
+        scale:0%;
+        top:10%;
+        left:2%;
+    }
+  
+    100%{
+        scale:100%;
+       
+    }
+}
+}
+
+
 
