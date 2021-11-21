@@ -970,6 +970,10 @@ font-size: 8px;
         text-align: center;
     }
 
+    h3{
+        text-shadow: 2px 0 3px white;
+    }
+
     
 
     @keyframes gameEnding{
