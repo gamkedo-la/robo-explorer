@@ -615,6 +615,10 @@ function undoGameOver(){ // for reset
   document.getElementById("health").style.display = "block";
   document.getElementById("gameOver").style.display = "none";
   document.getElementById("armor").style.display="block";
+
+  // also for The End text
+  document.getElementById('gameHeading').style.display = 'block';
+  document.getElementById("gameEnding").style.display = "none";
 }
 
 function checkCollisionsAll() {
