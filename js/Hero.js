@@ -872,7 +872,22 @@ function heroClass() {
         worldGrid[walkIntoTileIndex] = WORLD_EMPTY;
         break;
 
-      case WORLD_MEMORY:
+        case WORLD_LOST_BOY:
+          if (blueHero.swordSlash == 1) {
+            //Load story of boy being saved by Robo-explorer.
+            //worldNow=5;//test ending story
+            worldNow = 4;
+            document.getElementById("gameHeading").innerHTML = "DR. AMBERVARD LAB";
+            levelList = worldList[worldNow];
+            levelNow = 0;
+            document.getElementById("progression").play();
+            document.getElementById("health__bossCockroach").style.display = "none";
+            loadLevel(levelList[levelNow]);
+            console.log("Hero hit boyCocoon");
+          }
+        break;
+
+        case WORLD_MEMORY:
          worldNow=5;//test ending story
         //  document.getElementById('gameHeading').innerHTML = 'THE END';
         document.getElementById('gameHeading').style.display = 'none';

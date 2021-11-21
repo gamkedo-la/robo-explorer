@@ -180,7 +180,7 @@ var levelNine = [  1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
                     1,29,29,29,29,1,1,29,29,29,29,29,29,29,29,29,29,29,29,29];
 
 var levelTen = [    1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,  
-                    2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,6,0,39,1,                          
+                    2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,6,0,28,1,                          
                     1,4,0,45,0,37,0,45,0,37,0,0,0,0,0,4,1,0,0,1,
                     1,4,0,0,0,0,0,0,0,0,0,0,0,0,0,4,1,0,0,1,
                     1,4,0,0,0,0,0,0,0,0,0,45,0,0,0,4,1,0,42,1,
@@ -367,6 +367,7 @@ var sideQuest4 = [
         const WORLD_MEMORY=92;
         const WORLD_TRANSPARENT=93;
         const WORLD_KALISTICKS=94;
+        
         // const WORLD_SMALLBRICK 
 
        
@@ -481,7 +482,8 @@ var sideQuest4 = [
             checkTileType == WORLD_EXITDOOR ||
             checkTileType == WORLD_DRAMBERVARD ||
             checkTileType == WORLD_MEMORY ||
-            checkTileType == WORLD_VINES
+            checkTileType == WORLD_VINES ||
+            checkTileType == WORLD_LOST_BOY
            
             
 

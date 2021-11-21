@@ -757,7 +757,7 @@ function checkCollisionsAll() {
     }
   }
 
-
+/*
   if (entity_v_entity(blueHero, boyCocoon)) {
     if (blueHero.swordSlash == 1) {
       //Load story of boy being saved by Robo-explorer.
@@ -772,7 +772,7 @@ function checkCollisionsAll() {
       console.log("Hero hit boyCocoon");
     }
    
-  }
+  }*/
 
 
   //slingShot collisions
