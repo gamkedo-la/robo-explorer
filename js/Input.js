@@ -135,6 +135,7 @@ function checkForCheatKeys (keyCode) {
       worldNow=0;
       levelList=worldList[worldNow];
       levelNow =0;
+      undoGameOver();
       loadLevel(levelList[levelNow]); 
       break;
     case KEY_2:
@@ -142,6 +143,7 @@ function checkForCheatKeys (keyCode) {
       worldNow=1;
       levelList=worldList[worldNow];
       levelNow =0;
+      undoGameOver();
       loadLevel(levelList[levelNow]); 
       break;
     

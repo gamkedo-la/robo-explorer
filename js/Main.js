@@ -605,10 +605,25 @@ function explode(){
 }*/
 
 function gameOver(){
+  document.getElementById("gameOverSound").play();
+
   document.getElementById("health").style.display = "none";
   document.getElementById("gameOver").style.display = "block";
-  document.getElementById("gameOverSound").play();
   document.getElementById("armor").style.display="none";
+}
+
+function undoGameOver(){ // for reset
+  document.getElementById("health").style.display = "block";
+  document.getElementById("gameOver").style.display = "none";
+  document.getElementById("armor").style.display="block";
+
+  // also for The End text
+  document.getElementById('gameHeading').style.display = 'block';
+  document.getElementById("gameEnding").style.display = "none";
+  document.getElementById("black__interface").style.display= 'block';
+  document.getElementById("rocketEnergy").style.display= 'block';
+  document.getElementById("health").style.display= 'block';
+  document.getElementById("armor").style.display= 'block';
 }
 
 function checkCollisionsAll() {
