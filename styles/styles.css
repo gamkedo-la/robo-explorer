@@ -1,82 +1,78 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'Press Start 2P', cursive;
-    margin: 0;
+  font-family: "Press Start 2P", cursive;
+  margin: 0;
 }
 
 .canvas {
-    height: 110vh;
-    background-color: rgb(41, 44, 41);
+  height: 110vh;
+  background-color: rgb(41, 44, 41);
 
-    display: block;
-    text-align: center; 
-    color: black;
-    padding-top: 1%;
-    border: 1px solid black;
-    position: relative; 
+  display: block;
+  text-align: center;
+  color: black;
+  padding-top: 1%;
+  border: 1px solid black;
+  position: relative;
 }
 
-#gameCanvas{
-    margin-top: .5%;
-    border-style:solid;
-    border-width: 5%;
-    border-color: rgba(97, 14, 14, 0.829);
-    box-shadow: 0 0 .2rem white;
-    
+#gameCanvas {
+  margin-top: 0.5%;
+  border-style: solid;
+  border-width: 5%;
+  border-color: rgba(97, 14, 14, 0.829);
+  box-shadow: 0 0 0.2rem white;
 }
 
 h1 {
-    color: #fff;
-    font-size: .7rem;
+  color: #fff;
+  font-size: 0.7rem;
 }
 
-#gameHeading{
-    color: rgb(250, 245, 245);
-    text-shadow: 0 .1rem 1rem rgba(255, 0, 0, 0.678), 
-    0 .1rem .1rem rgb(241, 237, 7);
-    text-align: left;
-    position: relative;
-    left: 20%;
-    width: 25%;
-    
+#gameHeading {
+  color: rgb(250, 245, 245);
+  text-shadow: 0 0.1rem 1rem rgba(255, 0, 0, 0.678),
+    0 0.1rem 0.1rem rgb(241, 237, 7);
+  text-align: left;
+  position: relative;
+  left: 20%;
+  width: 25%;
 }
 
 @media only screen and (max-width: 1024px) {
-    
-    #gameHeading{
-        color: rgb(239, 223, 240);
-        text-shadow: 0 .1rem 1rem rgba(255, 0, 0, 0.678), 
-        0 .1rem .1rem rgb(241, 237, 7);
-        text-align: left;
-        position: relative;
-        left: 10%;
-        width: 30%;
-    }
+  #gameHeading {
+    color: rgb(239, 223, 240);
+    text-shadow: 0 0.1rem 1rem rgba(255, 0, 0, 0.678),
+      0 0.1rem 0.1rem rgb(241, 237, 7);
+    text-align: left;
+    position: relative;
+    left: 2%;
+    width: 30%;
+  }
 }
 
 p {
-    color: #fff;
-    font-size: 3px;
+  color: #fff;
+  font-size: 3px;
 }
 
-.video-intro{
-    position: absolute;
-    top: 80%;
-    left:2%;
+.video-intro {
+  position: absolute;
+  top: 80%;
+  left: 2%;
 }
-a{
-text-align: center;
-text-decoration: none;
-color: #fff;
-
+a {
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
 }
-a:hover{
-color: red;
+a:hover {
+  color: red;
 }
 /* #hash {
     color: black;
@@ -104,65 +100,57 @@ color: red;
     color:#fff;
 } */
 
-
 /**************************************************Items User Interface***********************/
 
-#black__interface{
-background-image:url('../images/menu-items.png');
-background-size: auto;
-background-position: 100% 100%;
-margin-top: .8%;
-/* background-color: black; */
-position: absolute;
-/* top:7.5%;
+#black__interface {
+  background-image: url("../images/menu-items.png");
+  background-size: auto;
+  background-position: 100% 100%;
+  margin-top: 0.8%;
+  /* background-color: black; */
+  position: absolute;
+  /* top:7.5%;
 left: 1%; */
-/* width: 14rem; */
-height: 35rem; 
-border-radius: 2.5%;
-box-shadow:0 -1px rgba(1, 7, 10, 0.911);
-background-color: black;
-position: absolute;
-top:45%;
-left:90.5%;
-width: 18%;
-transform: translate(-50%,-50%);
-
-
+  /* width: 14rem; */
+  height: 35rem;
+  border-radius: 2.5%;
+  box-shadow: 0 -1px rgba(1, 7, 10, 0.911);
+  background-color: black;
+  position: absolute;
+  top: 45%;
+  left: 90.5%;
+  width: 18%;
+  transform: translate(-50%, -50%);
 }
-
 
 .items {
-    font-size: .5rem;
-    /* background-color:rgba(8, 196, 55, 0.959); */
-    border-radius: 2%;
-    /* padding: 1%; */
-    position: absolute;
-    top: 7.5%;
-    left: 24.5%;
-    
-    
+  font-size: 0.5rem;
+  /* background-color:rgba(8, 196, 55, 0.959); */
+  border-radius: 2%;
+  /* padding: 1%; */
+  position: absolute;
+  top: 7.5%;
+  left: 24.5%;
 }
 
-
 @media only screen and (max-width: 1024px) {
-    .canvas{
-        text-align: left;
-    }
-    #black__interface{
-        background-image:url('../images/menu-items.png');
-        background-size: 101%;
-        background-position: 10% 25% ;
-        background-repeat:no-repeat;
-        position: absolute;
-        top:45%;
-        left:90%;
-        width: 18%;
-        transform: translate(-50%,-50%);
-        height: 26rem; 
-     
-    }
+  .canvas {
+    text-align: left;
+  }
+  #black__interface {
+    background-image: url("../images/menu-items.png");
+    background-size: 101%;
+    background-position: 10% 25%;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 45%;
+    left: 90%;
+    width: 18%;
+    transform: translate(-50%, -50%);
+    height: 26rem;
+  }
 
-    /*
+  /*
     .items {
         padding: 0;
         position:fixed;
@@ -171,79 +159,75 @@ transform: translate(-50%,-50%);
 }
 
 #slingShot {
-    font-size: 12px;
-    position: absolute;
-    top: 16%;
-    left: 10%;
-    display: none;
-    height: 6%;
-
+  font-size: 12px;
+  position: absolute;
+  top: 16%;
+  left: 10%;
+  display: none;
+  height: 6%;
 }
 
 #sword {
-    font-size: 12px;
-    position: absolute;
-    top: 16%;
-    left: 30%;
-    display: none;
-    height: 5%;
-
+  font-size: 12px;
+  position: absolute;
+  top: 16%;
+  left: 30%;
+  display: none;
+  height: 5%;
 }
 
 #arrow {
-    font-size: 12px;
-    position: absolute;
-    top: 16%;
-    left: 56%;
-    display:none;
-    height: 4%;
-
+  font-size: 12px;
+  position: absolute;
+  top: 16%;
+  left: 56%;
+  display: none;
+  height: 4%;
 }
 
 #spear {
-    font-size: 12px;
-    position: absolute;
-    top: 16%;
-    left: 76%;
-    display:none;
-    height: 5%;
+  font-size: 12px;
+  position: absolute;
+  top: 16%;
+  left: 76%;
+  display: none;
+  height: 5%;
 }
 
-#crossbow{
-    font-size: 12px;
-    position: absolute;
-    top: 23%;
-    left: 10%;
-    display:none;
-    height: 5%;
+#crossbow {
+  font-size: 12px;
+  position: absolute;
+  top: 23%;
+  left: 10%;
+  display: none;
+  height: 5%;
 }
 
-#woodenBow{
-    font-size: 12px;
-    position: absolute;
-    top: 23%;
-    left: 33%;
-    height: 4%;
-    display:none;
+#woodenBow {
+  font-size: 12px;
+  position: absolute;
+  top: 23%;
+  left: 33%;
+  height: 4%;
+  display: none;
 }
 
-
-#treasureChest{
-    font-size: 12px;
-    position: absolute;
-    top: 22.5%;
-    left: 55%;
-    height: 4.8%;
-    display:none;
+#treasureChest {
+  font-size: 12px;
+  position: absolute;
+  top: 22.5%;
+  left: 55%;
+  height: 4.8%;
+  display: none;
 }
 
-#kaliSticks{
-    font-size: 12px;
-    position: absolute;
-    top: 22.5%;
-    left: 76%;
-    height: 4.8%;
-    display:none;
+#kaliSticks {
+  font-size: 12px;
+  position: absolute;
+  top: 22.5%;
+  left: 76%;
+  height: 4.8%;
+  display: none;
 }
 
 /***IIIIII*****IIIIIIIIIIII*****IIIIIIII****II*************II***IIIIIII*******************************************************/
@@ -255,537 +239,489 @@ transform: translate(-50%,-50%);
 /*****II************II**********II**********II*************II*****II**********************************/
 /***IIIIII**********II**********IIIIIIII****II*************II**IIII**********************************************/
 
-
 @media only screen and (max-width: 1024px) {
-    #slingShot {
-        font-size: .4rem;
-        top: 15.6%;
-        left: 11%;
+  #slingShot {
+    font-size: 0.4rem;
+    top: 15.6%;
+    left: 11%;
+  }
 
-    }
+  #sword {
+    font-size: 0.4rem;
+    top: 15.8%;
+    left: 30%;
+  }
 
-    #sword {
-        font-size: .4rem;
-        top: 15.8%;
-        left: 30%;
+  #arrow {
+    font-size: 0.4rem;
+    top: 15.7%;
+    left: 57%;
+  }
 
-    }
+  #spear {
+    font-size: 0.4rem;
+    top: 15.7%;
+    left: 75%;
+  }
 
-    #arrow {
-        font-size: .4rem;
-        top: 15.7%;
-        left: 57%;
+  #crossbow {
+    font-size: 12px;
+    position: absolute;
+    top: 23%;
+    left: 10%;
+    display: none;
+    height: 5%;
+  }
 
-    }
+  #woodenBow {
+    font-size: 12px;
+    position: absolute;
+    top: 23%;
+    left: 33%;
+    height: 4%;
+    display: none;
+  }
 
-    #spear {
-        font-size: .4rem;
-        top: 15.7%;
-        left: 75%;
-    }
-
-        
-    #crossbow{
-        font-size: 12px;
-        position: absolute;
-        top: 23%;
-        left: 10%;
-        display:none;
-        height: 5%;
-    }
-
-    #woodenBow{
-        font-size: 12px;
-        position: absolute;
-        top: 23%;
-        left: 33%;
-        height: 4%;
-        display:none;
-    }
-
-
-    #treasureChest{
-        font-size: 12px;
-        position: absolute;
-        top: 22.5%;
-        left: 55%;
-        height: 4.8%;
-        display:none;
-    }
-
-
- 
+  #treasureChest {
+    font-size: 12px;
+    position: absolute;
+    top: 22.5%;
+    left: 55%;
+    height: 4.8%;
+    display: none;
+  }
 }
-
 
 /******************************************************KEY TEXT MEDIA QUERY*********************/
-#key{
-    position: absolute;
-    width: 20%;
-    height: 8%;
-    top: 34.1%;
-    left:5%;
-    background-color: #097054;
-    border: 2px solid black;
-    border-radius: 20%;
+#key {
+  position: absolute;
+  width: 20%;
+  height: 8%;
+  top: 34.1%;
+  left: 5%;
+  background-color: #097054;
+  border: 2px solid black;
+  border-radius: 20%;
 }
 
-
 #keyText {
-    position: absolute;
-    font-size: .7rem;
-    top: 38%;
-    left: 38.5%;
-    transform: translate(-50%,-50%);
-    color: #fff;
-    background-color: rgba(167, 156, 7, 0.822);
-    border: 2px solid black;
-    border-radius: 20%;
-    width: 20%;
-    height: 5%;
-    padding: 5px 0;
+  position: absolute;
+  font-size: 0.7rem;
+  top: 38%;
+  left: 38.5%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  background-color: rgba(167, 156, 7, 0.822);
+  border: 2px solid black;
+  border-radius: 20%;
+  width: 20%;
+  height: 5%;
+  padding: 5px 0;
 }
 
 @media only screen and (max-width: 1024px) {
-    #key{
-        position: absolute;
-        width: 20%;
-        height: 9.2%;
-        top: 35%;
-        left:5%;
-        background-color: #097054;
-        border: 2px solid black;
-        border-radius: 20%;
-    }
-  
-    #keyText {
-        
-        font-size: .7rem;
-        top: 40%;
-        left: 37%;
-        transform: translate(-50%,-50%);
-        color: #fff;
-        height: 7%;
-        padding: 7px 0;
-        text-align: center;
-
-       
-    }
-
-}
-
-#dagger{
+  #key {
     position: absolute;
-    top: 38%;
-    left:65%;
-    transform:translate(-50%,-50%);
+    width: 20%;
+    height: 9.2%;
+    top: 35%;
+    left: 5%;
     background-color: #097054;
     border: 2px solid black;
     border-radius: 20%;
-    width: 20%;
+  }
+
+  #keyText {
+    font-size: 0.7rem;
+    top: 40%;
+    left: 37%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    height: 7%;
+    padding: 7px 0;
+    text-align: center;
+  }
 }
 
+#dagger {
+  position: absolute;
+  top: 38%;
+  left: 65%;
+  transform: translate(-50%, -50%);
+  background-color: #097054;
+  border: 2px solid black;
+  border-radius: 20%;
+  width: 20%;
+}
 
-#daggerText{
+#daggerText {
+  background-color: rgba(167, 156, 7, 0.822);
+  border: 2px solid black;
+  border-radius: 20%;
+  width: 20%;
+  height: 5%;
+  padding: 5px 0;
+  font-size: 12px;
+  position: absolute;
+  top: 35.5%;
+  left: 78%;
+  text-align: center;
+  color: rgb(35, 15, 209);
+}
+
+@media only screen and (max-width: 1024px) {
+  #dagger {
+    position: absolute;
+    top: 40%;
+    left: 65%;
+    height: 9%;
+  }
+
+  #daggerText {
     background-color: rgba(167, 156, 7, 0.822);
     border: 2px solid black;
     border-radius: 20%;
-    width: 20%;
-    height: 5%;
+    width: 18%;
+    height: 7%;
     padding: 5px 0;
     font-size: 12px;
     position: absolute;
-    top: 35.5%;
-    left:78%;
+    top: 36.5%;
+    left: 80%;
     text-align: center;
     color: rgb(35, 15, 209);
-}
-
-
-@media only screen and (max-width: 1024px) {
-    
-
-    #dagger{
-        position: absolute;
-        top: 40%;
-        left:65%;
-        height: 9%;
-       
-    }
-
-
-    #daggerText{
-        background-color: rgba(167, 156, 7, 0.822);
-        border: 2px solid black;
-        border-radius: 20%;
-        width: 18%;
-        height: 7%;
-        padding: 5px 0;
-        font-size: 12px;
-        position: absolute;
-        top: 36.5%;
-        left:80%;
-        text-align: center;
-        color: rgb(35, 15, 209);
-    }
-
+  }
 }
 
 /******************************************************ROCKET ENERGY AND HEALTH MEDIA QUERY*********************/
 
-
-.rocketEnergy{
-   
-    border-radius: 0% 20% 20% 0%;
-    position: absolute;
-    /* top: 50%;
+.rocketEnergy {
+  border-radius: 0% 20% 20% 0%;
+  position: absolute;
+  /* top: 50%;
     left:50%;
     width: 50%;
     margin: auto; */
-    background-color:rgb(119, 8, 8);
-    box-shadow: 0 0 .2rem red;
-    /*box-shadow: 0px 0px rgba(255, 255, 255, 0.835);*/
-    border-color: black;
-    border-style: solid;
-    border-width: .2rem;
-    top: .4%;
-    left:43%;
-    width: 10%;
-    /* height:4.5%; */
-    height: 3.8%;
-    font-size: 5px;
-    
-    margin: auto;
+  background-color: rgb(119, 8, 8);
+  box-shadow: 0 0 0.2rem red;
+  /*box-shadow: 0px 0px rgba(255, 255, 255, 0.835);*/
+  border-color: black;
+  border-style: solid;
+  border-width: 0.2rem;
+  top: 0.4%;
+  left: 43%;
+  width: 10%;
+  /* height:4.5%; */
+  height: 3.8%;
+  font-size: 5px;
+
+  margin: auto;
 }
 
 #myBar {
-width: 100%;
-height: 100%;
-background-color: rgb(211, 191, 11);
-padding: .4rem 0;
-border-radius: 0% 20% 20% 0%;
-color: #fff;
-font-size: 8px;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(211, 191, 11);
+  padding: 0.4rem 0;
+  border-radius: 0% 20% 20% 0%;
+  color: #fff;
+  font-size: 8px;
 }
 
-#rocketEnergyText{
-    padding-top:.5px;
-    font-size: 7px;
-    color:#fff;
+#rocketEnergyText {
+  padding-top: 0.5px;
+  font-size: 7px;
+  color: #fff;
 }
-
 
 @media only screen and (max-width: 1024px) {
-
-    .rocketEnergy{
-        position: absolute;
-        top: .3%;
-        left:42%;
-        width: 8%;
-        /* font-size: 4px; */
-        margin: auto;
-        height:3%;
-        border-radius: 0% 20% 20% 0%;
-        box-shadow: 0 0 .2rem red;
-        }
-    
-        #rocketEnergyText{
-        font-size: 5px;
-        color:#fff;
-        }
-
-            
-        #myBar {
-        width: 100%;
-        height: 100%;
-        background-color: rgb(211, 191, 11);
-        padding: .2rem 0;
-        border-radius: 0% 20% 20% 0%;
-        color: #fff;
-        
-        }
-    
-}
-
-
-
-
-.health{
-    /* border-radius: 0% 0% 20% 0%; */
-    border-radius:2%;
+  .rocketEnergy {
     position: absolute;
+    top: 0.3%;
+    left: 25%;
+    width: 8%;
+    /* font-size: 4px; */
     margin: auto;
-    background-color:rgb(119, 8, 8);
-    box-shadow: 0 0 .2rem red;
-    /*box-shadow: 0px 0px rgba(255, 255, 255, 0.835);*/
-    border-color: black;
-    border-style: solid;
-    border-width: .2rem;
-    top: .7%;
-    left:59%;
-    width: 5%;
-    font-size: 6px;
-}
-
-
-.armorImg{
-    position:absolute;
-    top: .5%;
-    left:55%;
-    width: 5%;
+    height: 3%;
+    width: 25%;
+    border-radius: 0% 43% 43% 0%;
+    box-shadow: 0 0 0.2rem red;
+    text-align: center;
     
+  }
+
+  #rocketEnergyText {
+    font-size: 5px;
+    color: #fff;
+    
+  }
+
+  #myBar {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(211, 191, 11);
+    padding: 0.2rem 0;
+    border-radius: 0% 43% 43% 0%;
+    color: #fff;
+    text-align: center;
+  }
 }
 
-.armorImg__img{
+.health {
+  /* border-radius: 0% 0% 20% 0%; */
+  border-radius: 2%;
+  position: absolute;
+  margin: auto;
+  background-color: rgb(119, 8, 8);
+  box-shadow: 0 0 0.2rem red;
+  /*box-shadow: 0px 0px rgba(255, 255, 255, 0.835);*/
+  border-color: black;
+  border-style: solid;
+  border-width: 0.2rem;
+  top: 0.7%;
+  left: 59%;
+  width: 5%;
+  font-size: 6px;
+}
+
+.armorImg {
+  position: absolute;
+  top: 0.5%;
+  left: 55%;
+  width: 5%;
+}
+
+.armorImg__img {
+  width: 40%;
+  height: 40%;
+}
+
+#health__character {
+  /* border-radius: 0% 0% 20% 0%; */
+  border-radius: 2%;
+  text-align: center;
+  padding: 0.3rem 0;
+  background-image: linear-gradient(
+    to top right,
+    rgba(0, 89, 255, 0.746),
+    rgb(211, 191, 11)
+  );
+  color: #fff;
+  width: 100%;
+  height: 15px;
+}
+
+#playerHealth {
+  font-size: 8px;
+}
+
+#health__bossCockroach {
+  border-radius: 0% 0% 0% 0%;
+  position: absolute;
+  margin: auto;
+  background-color: rgb(119, 8, 8);
+  /*box-shadow: 0px 0px rgba(255, 255, 255, 0.835);*/
+  border-color: black;
+  border-style: solid;
+  border-width: 0.2rem;
+  top: 0.3%;
+  left: 70%;
+  width: 10%;
+  font-size: 6px;
+  display: none;
+}
+
+#enemyHealth {
+  border-radius: 0% 0% 0% 0%;
+  text-align: center;
+  padding: 0.4rem 0;
+  background-color: rgb(8, 156, 15);
+  background-image: linear-gradient(to bottom right, green, yellow);
+  color: #fff;
+  width: 100%;
+  height: 15px;
+}
+
+#enemyHealthText {
+  padding-top: 0.5px;
+  font-size: 6px;
+  color: #fff;
+}
+
+#boss1 {
+  display: none;
+}
+
+.boss1 {
+  position: absolute;
+  top: -1.5%;
+  left: 65%;
+  width: 5%;
+}
+
+.boss1__img {
+  width: 70%;
+  height: 40%;
+}
+
+#health__bossWorm {
+  border-radius: 0% 0% 0% 0%;
+  position: absolute;
+  margin: auto;
+  background-color: rgb(119, 8, 8);
+  /*box-shadow: 0px 0px rgba(255, 255, 255, 0.835);*/
+  border-color: black;
+  border-style: solid;
+  border-width: 0.2rem;
+  top: 0.3%;
+  left: 70%;
+  width: 10%;
+  font-size: 6px;
+  display: none;
+}
+
+#finalEnemyHealth {
+  border-radius: 0% 0% 0% 0%;
+  text-align: center;
+  padding: 0.4rem 0;
+  background-color: rgb(8, 156, 15);
+  background-image: linear-gradient(to bottom right, green, yellow);
+  color: #fff;
+  width: 100%;
+  height: 15px;
+}
+
+#enemyHealthText {
+  padding-top: 0.5px;
+  font-size: 6px;
+  color: #fff;
+}
+
+#boss2 {
+  display: none;
+}
+
+.boss2 {
+  position: absolute;
+  top: -1.5%;
+  left: 65%;
+  width: 5%;
+}
+
+.boss2__img {
+  width: 64%;
+  height: 40%;
+}
+
+@media only screen and (max-width: 1024px) {
+  .armorImg {
+    position: absolute;
+    top: 0.5%;
+    left: 53%;
+    width: 5%;
+  }
+
+  .armorImg__img {
     width: 40%;
     height: 40%;
-}
+  }
 
-#health__character{
+  .health {
+    top: 0.4%;
+    left: 55.8%;
+    border-radius: 3%;
+    position: relative;
+    /* font-size: 5px; */
+    margin: auto;
+    border-radius: 15%;
+    position: absolute;
+    margin: auto;
+    box-shadow: 0 0 0.2rem red;
+    border-color: black;
+    border-style: solid;
+    border-width: 0.2rem;
     /* border-radius: 0% 0% 20% 0%; */
-    border-radius:2%;
-    text-align:center;
-    padding: .3rem 0;
-    background-image: linear-gradient( to top right,rgba(0, 89, 255, 0.746), rgb(211, 191, 11));
+  }
+
+  #health__character {
+    /* border-radius: 0% 0% 20% 0%; */
+    text-align: center;
+    background-color: rgb(211, 191, 11);
     color: #fff;
-    width: 100%;
-    height: 15px;
-}
+    font-size: 0.4rem;
+  }
 
-#playerHealth{
-    font-size: 8px;
-}
+  #playerHealth {
+    font-size: 6px;
+  }
 
-#health__bossCockroach{
-    border-radius: 0% 0% 0% 0%;
+  .boss1 {
     position: absolute;
-    margin: auto;
-    background-color:rgb(119, 8, 8);
-    /*box-shadow: 0px 0px rgba(255, 255, 255, 0.835);*/
-    border-color: black;
-    border-style: solid;
-    border-width: .2rem;
-    top: .3%;
-    left:70%;
-    width: 10%;
-    font-size: 6px;
-    display: none; 
-}
-
-#enemyHealth{
-    border-radius: 0% 0% 0% 0%;
-    text-align:center;
-    padding: .4rem 0;
-    background-color: rgb(8, 156, 15);
-    background-image: linear-gradient(to bottom right, green, yellow);
-    color: #fff;
-    width: 100%;
-    height: 15px;
-
-}
-
-#enemyHealthText{
-    padding-top:.5px;
-    font-size: 6px;
-    color:#fff;
-}
-
-
-#boss1{
-    display: none; 
-}
-
-.boss1{
-    position:absolute;
-    top: -1.5%;
-    left:65%;
+    top: -2.2%;
+    left: 63%;
     width: 5%;
-    
-}
+  }
 
-
-.boss1__img{
-    width: 70%;
-    height: 40%;
-}
-
-
-
-#health__bossWorm{
-    border-radius: 0% 0% 0% 0%;
-    position: absolute;
-    margin: auto;
-    background-color:rgb(119, 8, 8);
-    /*box-shadow: 0px 0px rgba(255, 255, 255, 0.835);*/
-    border-color: black;
-    border-style: solid;
-    border-width: .2rem;
-    top: .3%;
-    left:70%;
-    width: 10%;
-    font-size: 6px;
-    display: none; 
-} 
-
-#finalEnemyHealth{
-    border-radius: 0% 0% 0% 0%;
-    text-align:center;
-    padding: .4rem 0;
-    background-color: rgb(8, 156, 15);
-    background-image: linear-gradient(to bottom right, green, yellow);
-    color: #fff;
+  .boss1__img {
     width: 100%;
-    height: 15px;
+    height: 50%;
+  }
 
-}
-
-#enemyHealthText{
-    padding-top:.5px;
-    font-size: 6px;
-    color:#fff;
-}
-
-
-#boss2{
-    display: none;  
-}
-
-.boss2{
-    position:absolute;
-    top: -1.5%;
-    left:65%;
-    width: 5%;
-    
-}
-
-
-.boss2__img{
-    width: 64%;
-    height: 40%;
-}
-
-@media only screen and (max-width: 1024px) {
-
-        
-    .armorImg{
-        position:absolute;
-        top: .5%;
-        left:50%;
-        width: 5%;
-        
-    }
-
-    .armorImg__img{
-        width: 40%;
-        height: 40%;
-    }
-
-    .health{
-        top: .4%;
-        left:53.8%;
-        border-radius:3%;
-        position: relative;
-        /* font-size: 5px; */
-        margin: auto;
-        border-radius: 15%;
-        position: absolute;
-        margin: auto;
-        box-shadow: 0 0 .2rem red;
-        border-color: black;
-        border-style: solid;
-        border-width: .2rem;
-        /* border-radius: 0% 0% 20% 0%; */
-       
-    }
-
-    
-    #health__character{
-        /* border-radius: 0% 0% 20% 0%; */
-        text-align:center;
-        background-color: rgb(211, 191, 11);
-        color: #fff;
-        font-size: .4rem;
-       
-    }
-
-    #playerHealth{
-        font-size: 6px;
-    }
-
-    
-    .boss1{
-        position:absolute;
-        top: -2.2%;
-        left:63%;
-        width: 5%;
-       
-    }
-
-    .boss1__img{
-        width: 100%;
-        height: 50%;
-    }
-
-    
-    #health__bossCockroach{
-        left: 70%
-    }
+  #health__bossCockroach {
+    left: 70%;
+  }
 }
 
 /******************************************************CONTROL LIST ITEMS MEDIA QUERY*********************/
 
-#controlKeys{
-    font-size: 12px;
-    position: absolute;
-    top: 65%;
-    left:25%;
+#controlKeys {
+  font-size: 12px;
+  position: absolute;
+  top: 65%;
+  left: 25%;
 }
 
-.controlKeys__lists{
-    font-size: 8px;
-        position: absolute;
-        top: 50%;
-        left:18%;
-        text-align: justify;
-        list-style-type:none;
-        line-height: 1rem;
-        border: 1px solid black;
-        text-align: center;
-        box-shadow: 0 0 .2rem rgb(226, 176, 10),0 0 .5rem rgb(235, 220, 171);
-        display:inline-block;
-        background-color: rgb(122, 7, 7);
-        padding: 6% 2%;
-        border-radius: 5%;
-        height: 38%;
-    }   
-
-.controlKeys__lists--item:hover{
-    transform: translate(0%, -5%);
-    
+.controlKeys__lists {
+  font-size: 8px;
+  position: absolute;
+  top: 50%;
+  left: 18%;
+  text-align: justify;
+  list-style-type: none;
+  line-height: 1rem;
+  border: 1px solid black;
+  text-align: center;
+  box-shadow: 0 0 0.2rem rgb(226, 176, 10), 0 0 0.5rem rgb(235, 220, 171);
+  display: inline-block;
+  background-color: rgb(122, 7, 7);
+  padding: 6% 2%;
+  border-radius: 5%;
+  height: 38%;
 }
 
+.controlKeys__lists--item:hover {
+  transform: translate(0%, -5%);
+}
 
 @media only screen and (max-width: 1024px) {
-    
-    .controlKeys__lists{
-        font-size: 8px;
-        position: absolute;
-        top: 48%;
-        left:4%;
-        text-align: justify;
-        list-style-type:none;
-        line-height: 1rem;
-        border: 1px solid black;
-        text-align: center;
-        box-shadow: 0 0 .2rem rgb(226, 176, 10),0 0 .5rem rgb(235, 220, 171);
-        display:inline-block;
-        background-color: rgb(122, 7, 7);
-        padding: 0% 1%;
-        border-radius: 5%;
-        height: 47%;
-    }   
+  .controlKeys__lists {
+    font-size: 8px;
+    position: absolute;
+    top: 48%;
+    left: 4%;
+    text-align: justify;
+    list-style-type: none;
+    line-height: 1rem;
+    border: 1px solid black;
+    text-align: center;
+    box-shadow: 0 0 0.2rem rgb(226, 176, 10), 0 0 0.5rem rgb(235, 220, 171);
+    display: inline-block;
+    background-color: rgb(122, 7, 7);
+    padding: 0% 1%;
+    border-radius: 5%;
+    height: 47%;
+  }
 }
-
 
 /***********************HEALTH CHARACTER DIV*********************************/
 /***********************HEALTH CHARACTER DIV*********************************/
@@ -816,30 +752,29 @@ font-size: 8px;
     left: 82%;
 } */
 .text span {
-    opacity: 0;
+  opacity: 0;
 }
 
 .text span.revealed {
-    opacity: 1;
+  opacity: 1;
 }
 
 .text span.blue {
-    color: #0d398b;
+  color: #0d398b;
 }
 
 .text span.red {
-    color: #ff0000;
+  color: #ff0000;
 }
 
-
 .text {
-    font-size: 1rem;
-    word-spacing: 0.2em;
-    margin: 0 auto;
-    padding: 1.5em;
-    border-bottom: solid #08131b;
-    position: relative;
-    line-height: 1.2em;
+  font-size: 1rem;
+  word-spacing: 0.2em;
+  margin: 0 auto;
+  padding: 1.5em;
+  border-bottom: solid #08131b;
+  position: relative;
+  line-height: 1.2em;
 }
 
 /* .corner {
@@ -850,28 +785,25 @@ font-size: 8px;
     transform: translateY(80%);
 } */
 
-#storyMenu{
-    
-    position:absolute;
-    top:49%;
-    left:50%;
-    transform:translate(-50%,-50%);
-    width:800px; 
-    height:600px;
-    z-index:1;
-    background-color: black;
-   
-    
+#storyMenu {
+  position: absolute;
+  top: 49%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 600px;
+  z-index: 1;
+  background-color: black;
 }
 
-#story{
-    padding: 2%;
-    line-height: 1.5;
-    color:#fff;
-    font-size: 12px;
-    position: center;
-    text-align: left;
-    text-indent: 2rem;
+#story {
+  padding: 2%;
+  line-height: 1.5;
+  color: #fff;
+  font-size: 12px;
+  position: center;
+  text-align: left;
+  text-indent: 2rem;
 }
 /****************************Media Querry for 1024 Screens**************/
 
@@ -881,114 +813,92 @@ font-size: 8px;
     }
 }*/
 
-
-
 /**************GAME OVER HEADING***************************************/
-#gameOver{
-    position: absolute;
-    top:50%;
-    left:50%;
-    transform: translate(-50%,-50%);
-    display: none;
-    animation-name: gameOver;
-    animation-timing-function: ease-in-out;
-    animation-duration:4s;
-
+#gameOver {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  animation-name: gameOver;
+  animation-timing-function: ease-in-out;
+  animation-duration: 4s;
 }
 
-
-
-.gameOver__heading{
-    font-size: 5rem;
-    color: red;
-    text-shadow:0 0 .5rem #fff;
-    text-align: center;
-    
+.gameOver__heading {
+  font-size: 5rem;
+  color: red;
+  text-shadow: 0 0 0.5rem #fff;
+  text-align: center;
 }
 
+@keyframes gameOver {
+  0% {
+    scale: 0%;
+    top: 10%;
+    left: 20%;
+  }
 
-
-@keyframes gameOver{
-    0%{
-        scale:0%;
-        top:10%;
-        left:20%;
-    }
-  
-    100%{
-        scale:100%;
-    }
+  100% {
+    scale: 100%;
+  }
 }
 
-
-#gameEnding{
-    background-color: rgba(255, 0, 0, 0.377);
-    border-radius: 2%;
-    position: absolute;
-    top:70%;
-    left:50%;
-    transform: translate(-50%,-50%);
-    display: none;
-     width: 100%;
-    animation-name: gameEnding;
-    animation-timing-function: ease-in-out;
-    animation-duration:4s;
-
+#gameEnding {
+  background-color: rgba(255, 0, 0, 0.377);
+  border-radius: 2%;
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  width: 100%;
+  animation-name: gameEnding;
+  animation-timing-function: ease-in-out;
+  animation-duration: 4s;
 }
 
-
-.gameEnding__heading{
-    font-size: 5rem;
-    color: rgb(240, 232, 232);
-    text-shadow:0 0 .5rem #fff;
-    text-align: center;
-    text-shadow: 0 .1rem 1rem rgb(5, 2, 2), 
-    0 0 1rem rgb(2, 1, 10);
-
+.gameEnding__heading {
+  font-size: 5rem;
+  color: rgb(240, 232, 232);
+  text-shadow: 0 0 0.5rem #fff;
+  text-align: center;
+  text-shadow: 0 0.1rem 1rem rgb(5, 2, 2), 0 0 1rem rgb(2, 1, 10);
 }
 
-@keyframes gameEnding{
-    0%{
-        scale:0%;
-        top:10%;
-        left:5%;
-    }
-  
-    100%{
-        scale:100%;
-       
-    }
-}
+@keyframes gameEnding {
+  0% {
+    scale: 0%;
+    top: 10%;
+    left: 5%;
+  }
 
+  100% {
+    scale: 100%;
+  }
+}
 
 @media only screen and (max-width: 1024px) {
-    
-    #gameEnding{
-        top:70%;
-        left:40%;
-        width:80%;
-        text-align: center;
+  #gameEnding {
+    top: 70%;
+    left: 40%;
+    width: 80%;
+    text-align: center;
+  }
+
+  h3 {
+    text-shadow: 2px 0 3px white;
+  }
+
+  @keyframes gameEnding {
+    0% {
+      scale: 0%;
+      top: 10%;
+      left: 2%;
     }
 
-    h3{
-        text-shadow: 2px 0 3px white;
+    100% {
+      scale: 100%;
     }
-
-    
-
-    @keyframes gameEnding{
-    0%{
-        scale:0%;
-        top:10%;
-        left:2%;
-    }
-  
-    100%{
-        scale:100%;
-       
-    }
+  }
 }
-}
-
-
-
