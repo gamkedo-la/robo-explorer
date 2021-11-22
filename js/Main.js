@@ -796,13 +796,13 @@ function checkCollisionsAll() {
   //slingShot collisions
   for (var shot of slingShotList) {
     for (var enemy of enemyList) {
-      if (entity_v_entity(shot, enemy)) {
+      if (entity_v_entity_center(shot, enemy)) {
         enemy.readyToRemove = true;
         shot.readyToRemove = true;
       }
     }
 
-    if (bossEnemy.health > 0 && entity_v_entity(shot, bossEnemy)) {
+    if (bossEnemy.health > 0 && entity_v_entity_center(shot, bossEnemy)) {
       shot.readyToRemove = true;
       bossCockRoachSound()
       bossEnemy.health--;
@@ -820,7 +820,7 @@ function checkCollisionsAll() {
       console.log("shot hit boss");
     }
 
-    if (finalBossWorm.health > 0 && entity_v_entity(shot, finalBossWorm)) {
+    if (finalBossWorm.health > 0 && entity_v_entity_center(shot, finalBossWorm)) {
       shot.readyToRemove = true;
       finalBossWormSound();
       finalBossWorm.health--;
@@ -923,6 +923,19 @@ function entity_v_entity(entity1, entity2) {
   }
 }
 
+
+function entity_v_entity_center(entity1, entity2) {
+  if (
+    ((entity1.x > entity2.x - entity2.width/2 && entity1.x < entity2.x + entity2.width / 2) ||
+    (entity1.x + entity1.width > entity2.x - entity2.width /2 && entity1.x + entity1.width < entity2.x + entity2.width / 2)) &&
+    ((entity1.y > entity2.y - entity2.height/2 && entity1.y < entity2.y + entity2.height / 2) ||
+    (entity1.y + entity1.height > entity2.y - entity2.height/2 && entity1.y + entity1.height < entity2.y + entity2.height / 2))
+  ) {
+  return true;
+} else {
+  return false;
+}
+}
 /**************************************BRICKS FOR CAMERA SPAN************************************* */
 function drawOnlyBricksOnScreen() {
   // what are the top-left most col and row visible on canvas?
