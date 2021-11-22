@@ -603,15 +603,20 @@ function explode(){
   }
   
 }*/
-
+var inGameEnd = false;
 function gameOver(){
+  inGameEnd = true;
+  //document.getElementsByClassName("gameCanvas").css("cursor","not-allowed");
+  //document.getElementsByClassName("gameCanvas").css("pointer-events","none");
   document.getElementById("gameOverSound").play();
   document.getElementById("health").style.display = "none";
   document.getElementById("gameOver").style.display = "block";
   document.getElementById("armor").style.display="none";
+ 
 }
 
 function undoGameOver(){ // for reset
+  inGameEnd = false;
   document.getElementById("health").style.display = "block";
   document.getElementById("gameOver").style.display = "none";
   document.getElementById("armor").style.display="block";

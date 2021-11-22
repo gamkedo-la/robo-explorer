@@ -50,6 +50,9 @@ function updateMousePosition(mouseEvent) {
 }
 
 function mouseClick(evt) {
+  if(inGameEnd){
+    return;
+  }
   blueHero.fireSlingshot = 1;
   if (blueHero.x < mouseX) {
     addSlingShotRight();

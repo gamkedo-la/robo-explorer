@@ -890,6 +890,7 @@ function heroClass() {
         case WORLD_MEMORY:
          worldNow=5;//test ending story
         //  document.getElementById('gameHeading').innerHTML = 'THE END';
+        inGameEnd=true;
         document.getElementById('gameHeading').style.display = 'none';
         document.getElementById("gameEnding").style.display = "block";
          endingSong();
@@ -903,6 +904,7 @@ function heroClass() {
          
          //document.getElementById("progression").play();
          loadLevel(levelList[levelNow]);
+        
          break;
 
 
