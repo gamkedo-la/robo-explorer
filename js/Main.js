@@ -562,6 +562,7 @@ function heroHealthBar() {
   // if health collected increase armor by 10.
   
   blueHero.health--;
+  armorDamaged();
   updateHeroHealth();
 }
 
@@ -571,15 +572,6 @@ function updateHeroHealth(){
   }
   var health = blueHero.health;
   document.getElementById("health__character").innerHTML = health + "%";
-  armorDamaged();
-  //document.getElementById("health__character").style.width = width + "%";
-        
-  
-
- /*
-    if(blueHero.health == 0){
-      document.getElementById("health__character").innerHTML = health;
-    }*/
 }
 
 
