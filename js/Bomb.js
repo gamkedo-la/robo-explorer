@@ -14,6 +14,7 @@ function bombClass() {
   this.frameX = 0;
   this.frameY = 0;
   this.life=BOMB_TIME_PER_FRAME*BOMB_FRAMES;
+  this.detonated = false;
 
   this.reset = function () {
     // for (var eachRow = 0; eachRow < WORLD_ROWS; eachRow++) {
@@ -35,10 +36,26 @@ function bombClass() {
     if(this.life-- < 0){
       this.readyToRemove = true;
     }
+
+    if (this.life < BOMB_TIME_PER_FRAME && this.detonated == false){
+      this.detonated = true;  
+      var shotCount = 10;
+      for(var i = 0;i < shotCount;i++){
+        var newShot = new slingShotClass();
+        newShot.x = this.x;
+        newShot.y = this.y;
+        var moveAng = i * (Math.PI*2/shotCount);
+        var shotSpeed = 12;
+        newShot.velX = Math.cos(moveAng)*shotSpeed;
+        newShot.velY = Math.sin(moveAng)*shotSpeed;
+        slingShotList.push(newShot);
+
+      }
+    }
   }
 
   this.draw = function () {
-    
+   
     var frame = BOMB_FRAMES - Math.floor(this.life/BOMB_TIME_PER_FRAME)-1;
     // console.log(frame);
     var bombFrameW = 40;
