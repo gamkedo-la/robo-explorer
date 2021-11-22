@@ -606,7 +606,6 @@ function explode(){
 
 function gameOver(){
   document.getElementById("gameOverSound").play();
-
   document.getElementById("health").style.display = "none";
   document.getElementById("gameOver").style.display = "block";
   document.getElementById("armor").style.display="none";
@@ -677,6 +676,8 @@ function checkCollisionsAll() {
             // document.getElementById("gameOverSound").play();
             // blueHero.explode == 1;
             gameOver();
+          }else{
+            document.getElementById("gameOverSound").pause();
           }
          
           /*
@@ -706,6 +707,8 @@ function checkCollisionsAll() {
             // document.getElementById("gameOver").style.display = "block";
             // document.getElementById("gameOverSound").play();
             gameOver();
+          }else{
+            document.getElementById("gameOverSound").pause();
           }
           break;
         case WORLD_SMALLWORM:
@@ -729,6 +732,8 @@ function checkCollisionsAll() {
             // document.getElementById("health").style.display = "none";
             // document.getElementById("gameOver").style.display = "block";
             // document.getElementById("gameOverSound").play();
+          }else{
+            document.getElementById("gameOverSound").pause();
           }
 
           console.log("Bump smallWorm");
@@ -748,6 +753,8 @@ function checkCollisionsAll() {
             // document.getElementById("gameOver").style.display = "block";
             // document.getElementById("gameOverSound").play();
             // blueHero.explode = 1;
+          }else{
+            document.getElementById("gameOverSound").pause();
           }
           break;
         default:
@@ -857,6 +864,8 @@ function checkCollisionsAll() {
     gameOver();
     //  document.getElementById("gameOver").style.display = "block";
     //  document.getElementById("gameOverSound").play();
+   }else{
+    document.getElementById("gameOverSound").pause();
    }
    console.log("Hero hit boss Cockroach");
  }
@@ -864,7 +873,7 @@ function checkCollisionsAll() {
 
 
   if (finalBossWorm.health > 0 && entity_v_entity(blueHero, finalBossWorm)) {
-     /** HERO DIES TOMORROW */
+  
      if (blueHero.health > 0) {
       blueHero.health--;
       console.log("blueHero health" + blueHero.health);
@@ -876,6 +885,8 @@ function checkCollisionsAll() {
       gameOver();
       // document.getElementById("gameOver").style.display = "block";
       // document.getElementById("gameOverSound").play();
+    }else{
+      document.getElementById("gameOverSound").pause();
     }
     console.log("Hero hit final bossWorm");
   }
