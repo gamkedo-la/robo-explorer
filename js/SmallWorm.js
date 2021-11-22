@@ -49,8 +49,6 @@ function smallWormClass() {
   
 
   this.move = function(){ 
-    
-    
     this.x += this.speedX;
     if (this.x < canvas.width *0.1 && this.speedX < 0.0) {// left boundary
       //left side
@@ -60,18 +58,16 @@ function smallWormClass() {
       // right side
       this.speedX *= -1;
     }
-    
      this.y += this.speedY;
    
-     if (this.y < canvas.height -SMALL_WORM_BOUNDARY  && this.speedY < 0.0) { // top boundary
+     if (this.y <  SMALL_WORM_BOUNDARY  && this.speedY < 0.0) { // top boundary
        //top edge
        this.speedY *= -1;
      }
     if (this.y > canvas.height - SMALL_WORM_BOUNDARY && this.speedY > 0.0 ) {
       //bottom of the screen
       this.speedY *= -1;
-      this.ang += 0.02;  
-      //this.speedX *= 5;
+     
     }
 
 
