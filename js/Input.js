@@ -174,13 +174,13 @@ function checkForCheatKeys (keyCode) {
     
      
       
-    
+    /*
     case KEY_6:
       //loadLevel(levelSix);
       hideItems();
       uiToggle();
       break;
-    /*
+    
       case KEY_7:
         hideStoryMenu();
       break;
