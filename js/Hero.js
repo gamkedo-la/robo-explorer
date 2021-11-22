@@ -132,6 +132,7 @@ function heroClass() {
           worldGrid[arrayIndex] = WORLD_EMPTY;
           // this.ang = -Math.PI / 2;
           this.health = HERO_HEALTH;
+          updateHeroHealth();
           this.x = eachCol * WORLD_W + WORLD_W / 2;
           this.y = eachRow * WORLD_H + WORLD_H / 2;
           return;
