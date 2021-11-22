@@ -561,7 +561,7 @@ function heroHealthBar() {
   // if zero display gameOver message
   // if health collected increase armor by 10.
   
-  blueHero.health--;
+  blueHero.health-=0.5;
   armorDamaged();
   updateHeroHealth();
 }
@@ -570,7 +570,7 @@ function updateHeroHealth(){
   if(blueHero.health < 0){
     blueHero.health = 0;
   }
-  var health = blueHero.health;
+  var health = Math.floor(blueHero.health);
   document.getElementById("health__character").innerHTML = health + "%";
 }
 
@@ -664,16 +664,10 @@ function checkCollisionsAll() {
             enemy.readyToRemove = true;
           }
           
-          
-
           if(blueHero.health !== 0){
             heroHealthBar();
           }
-          if (blueHero.health > 0) {
-            blueHero.health--;
-         
-            console.log("blueHero health" + blueHero.health);
-          }
+        
           if (blueHero.health <= 0) {
             // document.getElementById("gameOver").style.display = "block";
             // document.getElementById("gameOverSound").play();
@@ -682,12 +676,6 @@ function checkCollisionsAll() {
           }else{
             document.getElementById("gameOverSound").pause();
           }
-         
-          /*
-          if (blueHero.health <= 0) {
-            heroHealthBar(); // test to reduce hero health bar.
-          }*/
-
           console.log("Bump rat");
           break;
 
@@ -702,10 +690,7 @@ function checkCollisionsAll() {
            
             enemy.readyToRemove = true;
           }
-          if (blueHero.health > 0) {
-            blueHero.health--;
-            console.log("blueHero health" + blueHero.health);
-          }
+        
           if (blueHero.health <= 0) {
             // document.getElementById("gameOver").style.display = "block";
             // document.getElementById("gameOverSound").play();
@@ -718,15 +703,8 @@ function checkCollisionsAll() {
           if(blueHero.health !== 0){
             heroHealthBar();
           }
-          if (blueHero.health > 0) {
-            blueHero.health--;
-            console.log("blueHero health" + blueHero.health);
-          }
-
           if (blueHero.swordSlash == 1) {
             blueHero.keyHeld_Sword = true;
-           
-           
             enemy.readyToRemove = true;
           }
 
@@ -746,10 +724,6 @@ function checkCollisionsAll() {
           playSoundUnlessAlreadyPlaying("trap_sound.mp3");
           if(blueHero.health !== 0){
             heroHealthBar();
-          }
-          if (blueHero.health > 0) {
-            blueHero.health--;
-            console.log("blueHero health" + blueHero.health);
           }
           if (blueHero.health <= 0) {
             gameOver();
