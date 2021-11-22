@@ -477,7 +477,7 @@ function rocketEnergyBar() {
        clearInterval(id);
         i = 0;
       } else {
-        width = blueHero.rocketEnergy;
+        width = Math.floor(blueHero.rocketEnergy);
         elem.style.width = width + "%";
         elem.innerHTML = width + "%";
       }

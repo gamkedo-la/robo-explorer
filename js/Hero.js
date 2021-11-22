@@ -116,7 +116,7 @@ function heroClass() {
     this.health = 0; 
     this.name = heroName;
     this.myHeroPic = whichImage;
-    this.keysHeld = 0;
+    this.keysHeld = 2;
     this.daggersHeld = 0;
     this.rocketEnergy = ROCKET_LIFE;
     // this.life = 3;
@@ -226,7 +226,7 @@ function heroClass() {
     if (this.keyHeld_Fly) {
       rocketEnergyBar();
       if (this.rocketEnergy !== 0) {
-        this.rocketEnergy--;
+        this.rocketEnergy-= 0.4;
         nextY -= JUMP_POWER;
         //console.log(this.rocketEnergy);
         for (var i = 0; i < START_PARTICLES; i++) {
