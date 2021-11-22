@@ -48,8 +48,8 @@ function bombClass() {
       0, //top left corner of spritesheet frame
       bombFrameW,
       bombPic.height, //size of frame
-      this.x - blueHero.width / 2,
-      this.y - blueHero.height / 2, //position on screen, centers image relative to self
+      this.x - bombFrameW / 2,
+      this.y - bombPic.height / 2, //position on screen, centers image relative to self
       bombFrameW,
       bombPic.height //size of image on screen
     );
